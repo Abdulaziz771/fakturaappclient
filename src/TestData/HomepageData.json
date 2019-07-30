@@ -1,0 +1,71 @@
+[
+  {
+    "uniqueId": "3deb84212e5b41619f2ef4e1c08833ad",
+    "title": "Договор на открыть счет",
+    "fileName": "c7ASsTBLejDTG74fgDWn.pdf",
+    "labelName": "",
+    "totalPrice": null,
+    "createdDateTime": 1553090823367,
+    "updatedDateTime": 1553090987330,
+    "isNew": false,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": 22,
+    "contractor": {
+      "inn": "302563857", "name": "302563857 Corporation"}
+  }, {
+  "uniqueId": "7373e3e58c5a4dcea6b96e92db46293b",
+  "title": "Договор на открыть счет",
+  "fileName": "eSBVUbW3fdhqlj3gaHCP.pdf",
+  "labelName": "",
+  "totalPrice": null,
+  "createdDateTime": 1553089861677,
+  "updatedDateTime": 1553089984280,
+  "isNew": false,
+  "isAgreementApproved": false,
+  "registry": null,
+  "status": 22,
+  "contractor": {
+    "inn": "302563857", "name": "302563857 Corporation"}
+}, {
+  "uniqueId": "37a5593912744d64a0574f23e612ce66",
+  "title": "Договор на открыть счет",
+  "fileName": "kMJQTJc0TqKYu1Io1IsW.pdf",
+  "labelName": "",
+  "totalPrice": null,
+  "createdDateTime": 1553074041360,
+  "updatedDateTime": 1553074747260,
+  "isNew": false,
+  "isAgreementApproved": false,
+  "registry": null,
+  "status": 22,
+  "contractor": {
+    "inn": "302563857", "name": "302563857 Corporation"}
+}, {
+  "uniqueId": "df744dc45bbc4ebdaaa9697603107e80",
+  "title": "Заявления на открыть счет",
+  "fileName": "SYaueHyI7NtMGJqypc3A.pdf",
+  "labelName": "",
+  "totalPrice": null,
+  "createdDateTime": 1552984950660,
+  "updatedDateTime": 1552984971257,
+  "isNew": false,
+  "isAgreementApproved": false,
+  "registry": null,
+  "status": 22,
+  "contractor": {"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+  "uniqueId": "9928f1694d51446db3e9208c0a04b57e",
+  "title": "Договор на открыть счет",
+  "fileName": "AiJU5yWE2intwyIL8JKw.pdf",
+  "labelName": "",
+  "totalPrice": null,
+  "createdDateTime": 1552984950513,
+  "updatedDateTime": 1552984964790,
+  "isNew": false,
+  "isAgreementApproved": false,
+  "registry": null,
+  "status": 22,
+  "contractor": { "inn": "302563857", "name": "302563857 Corporation"}
+}
+]

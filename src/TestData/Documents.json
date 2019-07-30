@@ -1,0 +1,275 @@
+[
+{
+"uniqueId": "3deb84212e5b41619f2ef4e1c08833ad",
+"title": "Договор на открыть счет",
+"fileName": "c7ASsTBLejDTG74fgDWn.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1553090823367,
+"updatedDateTime": 1553090987330,
+"isNew": false,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "7373e3e58c5a4dcea6b96e92db46293b",
+"title": "Договор на открыть счет",
+"fileName": "eSBVUbW3fdhqlj3gaHCP.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1553089861677,
+"updatedDateTime": 1553089984280,
+"isNew": false,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "37a5593912744d64a0574f23e612ce66",
+"title": "Договор на открыть счет",
+"fileName": "kMJQTJc0TqKYu1Io1IsW.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1553074041360,
+"updatedDateTime": 1553074747260,
+"isNew": false,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "df744dc45bbc4ebdaaa9697603107e80",
+"title": "Заявления на открыть счет",
+"fileName": "SYaueHyI7NtMGJqypc3A.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552984950660,
+"updatedDateTime": 1552984971257,
+"isNew": false,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "9928f1694d51446db3e9208c0a04b57e",
+"title": "Договор на открыть счет",
+"fileName": "AiJU5yWE2intwyIL8JKw.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552984950513,
+"updatedDateTime": 1552984964790,
+"isNew": false,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": { "inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "7e8c80c4bafa43ddb76c7ff1af0ce955",
+"title": "Заявления на открыть счет",
+"fileName": "tgz4wSxdGrh71eiBf507.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552984822340,
+"updatedDateTime": 1552984868210,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "593bde5a6cf1411a8ff674b5fb48f527",
+"title": "Договор на открыть счет",
+"fileName": "meJyve3GzTZPpG3Af5Nm.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552984823257,
+"updatedDateTime": 1552984859083,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "b47f647ec59c4f69a503603520961165",
+"title": "Заявления на открыть счет",
+"fileName": "gMQYrMXzVCld2y6hR5jo.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552981501550,
+"updatedDateTime": 1552981543350,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "ebfd1daaddd647139e0a986a3b7eee82",
+"title": "Договор на открыть счет",
+"fileName": "aEZbUmZLYGVDICFJqmxV.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552981501563,
+"updatedDateTime": 1552981536277,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "2105a959d6724724bf3510f9e516f945",
+"title": "Заявления на открыть счет",
+"fileName": "gOhR2ctn7Dq2Sl7kvtA9.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552980652930,
+"updatedDateTime": 1552980695197,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": { "inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "48d5f9e957f84921b8f86b60ecf7cb38",
+"title": "Договор на открыть счет",
+"fileName": "suGUfHNKrDvqFQy6lt1Y.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552980652887,
+"updatedDateTime": 1552980682800,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "96b3002111a6429fb5e6b0ab6973482d",
+"title": "Договор на открыть счет",
+"fileName": "r3dNXZVvfmzQtccHCjx9.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552980191410,
+"updatedDateTime": 1552980269803,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "598e5f3685644b9f98528eaef52357eb",
+"title": "Заявления на открыть счет",
+"fileName": "bqcsRz9OIeRe51uyn0hb.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552918307360,
+"updatedDateTime": 1552918336657,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "d0031708badd43ccb48ec2d36fe5574e",
+"title": "Договор на открыть счет",
+"fileName": "MnlCP2xpLJtsRl1Wqf4G.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552918307493,
+"updatedDateTime": 1552918327080,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "dd6983f912a64255bbdfc35ffca05047",
+"title": "Договор на открыть счет",
+"fileName": "rbaKjd0xZWhRMsVzLDQy.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552918104153,
+"updatedDateTime": 1552918145777,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": { "inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "4c2cc2186eee4862a5cdcb3b2f37b963",
+"title": "Заявления на открыть счет",
+"fileName": "gpomv0SbSAjeNUXWp3w1.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552917434803,
+"updatedDateTime": 1552917462507,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "788f18f2b1524d00a5225aeea9a0879c",
+"title": "Договор на открыть счет",
+"fileName": "ZZw5ho6ZUz4tbfARHI4k.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552917434697,
+"updatedDateTime": 1552917456143,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "7f0631f6366a4b2f99c770b2d65ee762",
+"title": "Заявления на открыть счет",
+"fileName": "cwKLAR19O8e0pSNltCj8.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552917243647,
+"updatedDateTime": 1552917273257,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {
+"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "8c12917c87674ce4bbde030a6916ddf0",
+"title": "Договор на открыть счет",
+"fileName": "t7Ej8MTdcg7MQUh2HKXZ.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552917243753,
+"updatedDateTime": 1552917265920,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": {"inn": "302563857", "name": "302563857 Corporation"}
+}, {
+"uniqueId": "16beafac833d4d658d8aa718f0abf712",
+"title": "Заявления на открыть счет",
+"fileName": "hCwk9bq5dMF7znb1GjJ4.pdf",
+"labelName": "",
+"totalPrice": null,
+"createdDateTime": 1552917128943,
+"updatedDateTime": 1552917150607,
+"isNew": true,
+"isAgreementApproved": false,
+"registry": null,
+"status": 22,
+"contractor": { "inn": "302563857", "name": "302563857 Corporation"}
+}
+]
