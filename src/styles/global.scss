@@ -1,0 +1,149 @@
+$default-border-color: #b9b9b9;
+$brand-color: #66c93e;
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Roboto, Arial, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  font-size: 13px;
+  line-height: 1.42857;
+  color: #404040;
+  height: 100%;
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.table-bordered thead th, .table-bordered thead td {
+  font-weight: 500;
+}
+
+b {
+  font-weight: 600;
+}
+
+a {
+  color: #404040;
+
+  &:hover {
+    color: #2d9c00;
+  }
+}
+
+#app {
+  height: 100%;
+}
+
+#wrapper {
+  margin-bottom: 15px;
+  margin-left: 285px;
+  margin-right: 10px;
+  position: relative;
+  top: 80px;
+  min-height: calc(100% - 85px);
+}
+
+#header .logo {
+  margin-left: 20px;
+  width: 180px;
+}
+
+.lightgray-button {
+  background-color: #edf0f5;
+  border-color: $default-border-color;
+  color: #28282d;
+
+  &:hover {
+    background-color: #edf0f5;
+    border-color: $default-border-color;
+    color: #28282d;
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    background-color: #edf0f5;
+    border-color: #edf0f5;
+    color: #495057;
+  }
+
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(210, 213, 218, 0.49);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(210, 213, 218, 0.49);
+  }
+}
+
+.default-success-button {
+  background-color: $brand-color;
+  border-color: $brand-color;
+
+  &:hover {
+    background-color: $brand-color;
+    border-color: $brand-color;
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    background-color: $brand-color;
+    border-color: $brand-color;
+  }
+
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(66, 185, 131, 0.28);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(66, 185, 131, 0.28);
+  }
+}
+
+.content-body-header .btn-secondary:not(:disabled):not(.disabled):active {
+  background-color: #edf0f5;
+  border-color: $default-border-color;
+  color: #28282d;
+}
+
+.content {
+  -webkit-box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+  box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
+}
+
+.content-header {
+  border-bottom: 1px solid #E0E0E0;
+  padding: 5px 20px;
+  background-color: #F9F9F9;
+  font-size: 25px;
+}
+
+.content-body {
+  margin: 10px 20px 0 20px;
+  padding-bottom: 20px;
+}
+
+.content-body-header .btn-secondary:focus {
+  box-shadow: none;
+}
+
+.page-link {
+  color: #28282d;
+}
+
+.action-icon:hover {
+  cursor: pointer;
+  color: $brand-color;
+}
+
+.help-icon {
+  color: $brand-color;
+  cursor: pointer;
+  width: 15px;
+  position: relative;
+  bottom: 6px;
+}
+
+.__cov-progress {
+  top: 68px !important;
+}
+
+
