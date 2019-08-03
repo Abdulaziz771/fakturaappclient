@@ -186,7 +186,7 @@
                   <td class="p-2">
                     <b-input-group>
                       <b-form-input size="sm"></b-form-input>
-                      <b-dropdown class="inovoice-dropdown" size="sm" text="Из списка" slot="append">
+                      <b-dropdown class="invoice-dropdown" size="sm" text="Из списка" slot="append">
                         <b-dropdown-item>Жамшид Касымов</b-dropdown-item>
                         <b-dropdown-item>Мирол Косимов</b-dropdown-item>
                       </b-dropdown>
@@ -198,7 +198,7 @@
                   <td class="p-2">
                     <b-input-group>
                       <b-form-input size="sm"></b-form-input>
-                      <b-dropdown class="inovoice-dropdown" size="sm" text="Из списка" slot="append">
+                      <b-dropdown class="invoice-dropdown" size="sm" text="Из списка" slot="append">
                         <b-dropdown-item>Жамшид Касымов</b-dropdown-item>
                         <b-dropdown-item>Мирол Косимов</b-dropdown-item>
                       </b-dropdown>
@@ -210,7 +210,7 @@
                   <td class="p-2">
                     <b-input-group>
                       <b-form-input size="sm"></b-form-input>
-                      <b-dropdown class="inovoice-dropdown" size="sm" text="Из списка" slot="append">
+                      <b-dropdown class="invoice-dropdown" size="sm" text="Из списка" slot="append">
                         <b-dropdown-item>Жамшид Касымов</b-dropdown-item>
                         <b-dropdown-item>Мирол Косимов</b-dropdown-item>
                       </b-dropdown>
@@ -249,7 +249,9 @@
   </div>
 </template>
 <script>
-
+  export default {
+    name: 'SystemInvoice'
+  }
 </script>
 <style lang="scss" scoped>
 
@@ -344,7 +346,7 @@
   }
 </style>
 <style lang="scss">
-  .inovoice-dropdown {
+  .invoice-dropdown {
     & button {
       padding: 0 8px;
     }

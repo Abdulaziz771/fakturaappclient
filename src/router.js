@@ -1,9 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import InboxDocuments from '../src/components/document/InboxDocuments';
-//import Systeminvoice from '../src/components/document/create/Systeminvoice';
-
+import Vue from 'vue';
+import Router from 'vue-router';
 Vue.use(Router)
 
 export default new Router({
@@ -12,12 +8,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import('./views/Home')
     },
     {
       path: '/document/inbox',
       name: 'InboxDocuments',
-      component: InboxDocuments
+      component: () => import('./components/document/InboxDocuments')
     },
     {
       path: '/document/create',
@@ -29,5 +25,10 @@ export default new Router({
       name: 'create-system-invoice',
       component: () => import('./components/document/create/Systeminvoice')
     },
+    {
+      path: '/settings/personalarea',
+      name: 'settings-personal-area',
+      component: () => import('./views/Settings/PersonalAreaSettingsView')
+    }
   ]
 })

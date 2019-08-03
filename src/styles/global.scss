@@ -11,6 +11,7 @@ body {
   color: #404040;
   height: 100%;
 }
+
 .cursor-pointer {
   cursor: pointer !important;
 }
@@ -55,7 +56,7 @@ a {
   color: #28282d;
 
   &:hover {
-    background-color: #edf0f5;
+    background-color: #f7f7f7;
     border-color: $default-border-color;
     color: #28282d;
   }
@@ -80,7 +81,7 @@ a {
   border-color: $brand-color;
 
   &:hover {
-    background-color: $brand-color;
+    background-color: #73d04d;
     border-color: $brand-color;
   }
 
@@ -146,4 +147,53 @@ a {
   top: 68px !important;
 }
 
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #66c93e;
+  background-color: #66c93e;
+}
 
+.custom-control-input:focus {
+  outline: none;
+}
+
+.second-inside-sidebar {
+  & .router-link-exact-active {
+    background-color: #edf0f5;
+  }
+
+  & .router-link {
+    padding: 7px 5px 7px 20px;
+    text-decoration: none;
+  }
+}
+
+.h-panel {
+  border: 1px solid #E0E0E0;
+
+  .panel-heading {
+    padding: 8px 20px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #E0E0E0;
+
+    svg {
+      cursor: pointer;
+
+      &:hover {
+        color: green;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+
+  .panel-body {
+    padding: 30px;
+
+    .list-group-item {
+      font-size: 14px;
+    }
+  }
+}

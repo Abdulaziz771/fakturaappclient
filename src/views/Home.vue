@@ -18,7 +18,7 @@
         </b-container>
       </div>
       <div class="content-body">
-        <b-table bordered striped hover :fields="fields" :items="documents">
+        <b-table responsive bordered striped hover :fields="fields" :items="documents">
           <template slot="title" slot-scope="data">
             {{ data.item.title }} <br>
             <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
@@ -57,7 +57,7 @@
         </b-container>
       </div>
       <div class="content-body">
-        <b-table bordered striped hover :fields="fields" :items="documents">
+        <b-table responsive bordered striped hover :fields="fields" :items="documents">
           <template slot="title" slot-scope="data">
             {{ data.item.title }} <br>
             <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
