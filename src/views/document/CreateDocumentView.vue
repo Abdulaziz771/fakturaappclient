@@ -126,7 +126,7 @@
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3"><a class="newdoc-footer-link">Доверенность</a></div>
-                <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                <div>Lorem 123 Ipsum is simply dummy text of the printing and typesetting industry.</div>
               </div>
             </div>
           </b-col>
@@ -137,7 +137,7 @@
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3"><a class="newdoc-footer-link">Платежное поручение</a></div>
-                <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                <div>Lorem234 Ipsum is simply dummy text of the printing and typesetting industry.</div>
               </div>
             </div>
           </b-col>
