@@ -10,7 +10,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto mr-2">
           <b-nav-item-dropdown right class="mr-4">
-            <template slot="button-content"><span class="profile-name pr-2">Баланс : 5 000 сум</span></template>
+            <template slot="button-content"><span class="profile-name pr-2">Баланс : 6 000 сум</span></template>
             <b-dropdown-item href="#">Финансовая информация</b-dropdown-item>
             <b-dropdown-item href="#">Пополнить баланс</b-dropdown-item>
           </b-nav-item-dropdown>
