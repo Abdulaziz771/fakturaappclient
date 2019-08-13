@@ -14,18 +14,13 @@
             <b-dropdown-item href="#">Финансовая информация</b-dropdown-item>
             <b-dropdown-item href="#">Пополнить баланс</b-dropdown-item>
           </b-nav-item-dropdown>
-          <b-nav-item-dropdown right class="mr-4">
+          <b-nav-item-dropdown right>
             <template slot="button-content"><span class="profile-name pr-2">Иванов Иван</span></template>
             <b-dropdown-item href="#">Организация: Teshavoy Corparation</b-dropdown-item>
             <b-dropdown-item href="#">Инн: 302563857</b-dropdown-item>
             <b-dropdown-item href="#">Список организаций</b-dropdown-item>
             <b-dropdown-item href="#">Выход</b-dropdown-item>
           </b-nav-item-dropdown>
-          <select class="form-control form-control-sm mt-2">
-            <option value="ru">Русский</option>
-            <option value="oz">O'zbekcha</option>
-            <option value="uz">Ўзбекча</option>
-          </select>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -43,16 +38,16 @@
     }
   }
 </script>
+
 <style lang="scss" scoped>
   #header {
     width: 100%;
     position: fixed !important;
     z-index: 999;
-    -webkit-box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
-    box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
     height: auto !important;
     top: 0;
     background-color: white;
+    border-bottom: 1px solid #e4e5e7;
 
     & .profile-name {
       font-size: 17px;
@@ -66,7 +61,6 @@
       }
     }
   }
-
 </style>
 <style lang="scss">
   #header {

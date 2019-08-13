@@ -1,55 +1,49 @@
 <template>
   <div class="content">
-    <div class="content-header">Входящие документы</div>
-    <div class="content-body">
+    <div class="fixed-content-header">
       <div class="content-body-header">
         <b-container fluid>
           <b-row>
-            <b-col md="10" class="p-0">
-              <b-button class="lightgray-button mr-2" size="sm">
-                <Edit2Icon/>
-                Подписать и отправить
+            <b-col cols="6" class="p-0">
+              <b-button class="lightgray-button mr-2">
+                <ArrowLeftCircleIcon class="mr-2"/>Назад
               </b-button>
-              <b-button class="lightgray-button mr-2" size="sm">
-                <XCircleIcon/>
-                Отказать и удалить
+              <b-button class="lightgray-button mr-2">
+                <Edit2Icon/>Подписать и отправить
               </b-button>
-              <b-button class="lightgray-button mr-2" size="sm">
-                <UsersIcon/>
-                Отправить на согласование
+              <b-button class="lightgray-button mr-2">
+                <XCircleIcon/>Отказать и удалить
               </b-button>
-              <b-button class="lightgray-button mr-2" size="sm">
-                <StarIcon/>
-                Отметить как
+              <b-button class="lightgray-button mr-2">
+                <UsersIcon v-b-tooltip.hover title="Отправить на согласование"/>
               </b-button>
+              <StarIcon class="cursor-pointer mr-3 mt-1" v-b-tooltip.hover title="Отметить как"/>
+              <PrinterIcon class="cursor-pointer mr-3 mt-1" v-b-tooltip.hover title="Отправить на печать"/>
             </b-col>
-            <b-col md="2" class="text-right p-0">
-              <b-button variant="outline-secondary" size="sm" class="mr-2" style="padding: 2px 4px;">
-                <PrinterIcon/>
-              </b-button>
-              <b-button variant="outline-secondary" size="sm">Фильтр</b-button>
-            </b-col>
-          </b-row>
-        </b-container>
-        <hr>
-        <b-container fluid>
-          <b-row>
-            <b-pagination-nav :number-of-pages="10"></b-pagination-nav>
-            <div class="ml-5 form-inline pb-4">
-              <label class="mr-1">Показать по: </label>
-              <select class="form-control form-control-sm">
-                <option>20</option>
-                <option>30</option>
-                <option>40</option>
-              </select>
-            </div>
-            <b-col class="text-right pt-2">
-              Общее количество: <b>164</b>
+            <b-col cols="6" class="p-0">
+              <div class="form-inline float-right">
+                <div class="pl-2 form-inline">
+                  <label class="mr-1">Показать по: </label>
+                  <select class="form-control form-control-sm">
+                    <option>20</option>
+                    <option>30</option>
+                    <option>40</option>
+                  </select>
+                </div>
+                <div class="form-inline pl-4 pr-2">
+                  <span class="pr-2">1-20 из 134</span>
+                  <ChevronLeftIcon class="cursor-pointer mr-1"/>
+                  <ChevronRightIcon class="cursor-pointer ml-1"/>
+                </div>
+                <b-button class="lightgray-button mr-2" size="sm" style="padding: 5px">Фильтр</b-button>
+              </div>
             </b-col>
           </b-row>
         </b-container>
       </div>
-      <b-table bordered striped hover :fields="fields" :items="documents" class="documentTable">
+    </div>
+    <div id="content-body-doc-page">
+      <b-table striped fixed hover :fields="fields" :items="documents" class="documentTable">
         <template slot="HEAD_selected" slot-scope="data">
           <b-form-checkbox v-model="selectAll" @change="select"/>
         </template>
@@ -81,8 +75,11 @@
   </div>
 </template>
 <script>
-  import Documents from '../../TestData/Documents';
+  import Documents from '../../TestData/Documents'
   import {
+    ArrowLeftCircleIcon,
+    ChevronRightIcon,
+    ChevronLeftIcon,
     EyeIcon,
     Edit2Icon,
     XCircleIcon,
@@ -94,16 +91,20 @@
   export default {
     name: 'inbox-documents-component',
     components: {
+      ArrowLeftCircleIcon,
       EyeIcon,
       Edit2Icon,
       XCircleIcon,
       UsersIcon,
       StarIcon,
-      PrinterIcon
+      PrinterIcon,
+      ChevronRightIcon,
+      ChevronLeftIcon
     },
     data () {
       return {
         selected: [],
+        fixed: true,
         selectAll: false,
         fields: [
           { key: 'selected', label: '' },
@@ -126,20 +127,29 @@
           }
         }
       }
+    },
+    mounted () {
+      document.getElementById("content-body-doc-page").style.height = "900px";
     }
   }
 </script>
 <style scoped>
   .lightgray-button svg {
-    padding-right: 6px;
     color: #6b6868;
+    padding: 2px;
+  }
+
+  .header-title {
+    padding-bottom: 10px;
+    font-size: 24px;
   }
 </style>
 <style lang="scss">
-  .documentTable thead th:first-child{
+  .documentTable thead th:first-child {
     width: 50px;
   }
-  .documentTable thead th:last-child{
+
+  .documentTable thead th:last-child {
     width: 50px;
   }
 </style>
