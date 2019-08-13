@@ -6,7 +6,9 @@
           <img alt="Header Logo" class="logo" src="../assets/newlogo.png">
         </router-link>
       </b-navbar-brand>
+
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto mr-2">
           <b-nav-item-dropdown right class="mr-4">
@@ -27,15 +29,8 @@
   </div>
 </template>
 <script>
-  import {
-    LogOutIcon
-  } from 'vue-feather-icons'
-
   export default {
-    name: 'headerComponent',
-    components: {
-      LogOutIcon
-    }
+    name: 'headerComponent'
   }
 </script>
 
