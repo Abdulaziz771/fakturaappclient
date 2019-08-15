@@ -23,11 +23,13 @@
           </div>
         </div>
 
-        <div class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
-          <div class="d-flex justify-content-center">
-            <div class="align-self-center">
-              <Edit3Icon class="menu-icon"/>
-              <div class="menu-text pt-2">Проверить подпись документа</div>
+        <div @click="onClickMenu(3)" :class="{active: activeMenu===3}">
+          <div class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+            <div class="d-flex justify-content-center">
+              <div class="align-self-center">
+                <Edit3Icon class="menu-icon"/>
+                <div class="menu-text pt-2">Проверить подпись документа</div>
+              </div>
             </div>
           </div>
         </div>
@@ -80,6 +82,7 @@
   import SidebarMenuDocuments from '../sidebar/SidebarMenuDocuments'
   import SidebarMenuCounterparties from '../sidebar/SidebarMenuCounterparties'
   import SidebarMenuSettings from '../sidebar/SidebarMenuSettings'
+  import SidebarMenuVerify from '../sidebar/SidebarMenuVerify'
 
   export default {
     name: 'sidebar-component',
@@ -92,7 +95,8 @@
       SidebarMenuDocuments,
       SidebarMenuCounterparties,
       SidebarMenuSettings,
-      SettingsIcon
+      SettingsIcon,
+      SidebarMenuVerify
     },
     data () {
       return {
@@ -105,6 +109,8 @@
           return 'SidebarMenuDocuments'
         } else if (this.activeMenu === 2) {
           return 'SidebarMenuCounterparties'
+        } else if (this.activeMenu === 3) {
+            return 'SidebarMenuVerify'
         } else if (this.activeMenu === 6) {
           return 'SidebarMenuSettings'
         }

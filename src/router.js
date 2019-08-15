@@ -26,9 +26,19 @@ export default new Router({
       component: () => import('./components/document/create/Systeminvoice')
     },
     {
+      path: '/document/verify',
+      name: 'verify-document-view',
+      component: () => import('./views/document/VerifyDocumentView')
+    },
+    {
       path: '/settings/personalarea',
       name: 'settings-personal-area',
       component: () => import('./views/Settings/PersonalAreaSettingsView')
+    },
+    {
+      path: '/counterparties',
+      name: 'counter-parties',
+      component: () => import('./views/counterparties/Counterparties')
     }
   ]
 })

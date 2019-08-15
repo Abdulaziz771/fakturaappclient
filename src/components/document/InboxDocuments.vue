@@ -4,23 +4,27 @@
       <div class="content-body-header">
         <b-container fluid>
           <b-row>
-            <b-col cols="6" class="p-0">
+            <b-col md="12" lg="5" class="p-0">
               <b-button class="lightgray-button mr-2">
-                <ArrowLeftCircleIcon class="mr-2"/>Назад
+                <ArrowLeftCircleIcon class="mr-2" v-b-tooltip.hover title="Назад"/>
               </b-button>
               <b-button class="lightgray-button mr-2">
-                <Edit2Icon/>Подписать и отправить
+                <Edit2Icon v-b-tooltip.hover title="Подписать и отправить" />
               </b-button>
               <b-button class="lightgray-button mr-2">
-                <XCircleIcon/>Отказать и удалить
+                <XCircleIcon v-b-tooltip.hover title="Отказать и удалить"/>
               </b-button>
               <b-button class="lightgray-button mr-2">
                 <UsersIcon v-b-tooltip.hover title="Отправить на согласование"/>
               </b-button>
-              <StarIcon class="cursor-pointer mr-3 mt-1" v-b-tooltip.hover title="Отметить как"/>
-              <PrinterIcon class="cursor-pointer mr-3 mt-1" v-b-tooltip.hover title="Отправить на печать"/>
+              <b-button class="lightgray-button mr-2">
+                <StarIcon class="cursor-pointer " v-b-tooltip.hover title="Отметить как"/>
+              </b-button>
+              <b-button class="lightgray-button mr-2">
+                <PrinterIcon class="cursor-pointer " v-b-tooltip.hover title="Отправить на печать"/>
+              </b-button>
             </b-col>
-            <b-col cols="6" class="p-0">
+            <b-col md="12" lg="7" class="p-0">
               <div class="form-inline float-right">
                 <div class="pl-2 form-inline">
                   <label class="mr-1">Показать по: </label>

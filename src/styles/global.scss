@@ -149,6 +149,12 @@ a {
   color: $brand-color;
 }
 
+.action-icon-delete {
+  &:hover {
+    color:#ea4f4f;
+  }
+}
+
 .help-icon {
   color: $brand-color;
   cursor: pointer;
