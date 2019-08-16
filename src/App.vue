@@ -2,7 +2,7 @@
   <div id="app">
     <headerComponent></headerComponent>
     <sidebarComponent></sidebarComponent>
-    <router-view id="wrapper"/>
+    <router-view id="wrapper"></router-view>
     <vue-progress-bar></vue-progress-bar>
   </div>
 </template>

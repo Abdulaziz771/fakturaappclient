@@ -8,13 +8,15 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.25",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-feather-icons": "^4.22.0",
     "vue-progressbar": "^0.7.5",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "vue-underscore": "^0.1.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
