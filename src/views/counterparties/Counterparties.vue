@@ -32,8 +32,8 @@
         </div>
       </div>
     </div>
-    <div id="counterparties-body-doc-page">
-      <b-table striped fixed hover :items="counterparties" :fields="fields" class="counter-parties-table ">
+    <div id="content-body-doc-page">
+      <b-table striped fixed hover :items="counterparties" :fields="fields" class="counter-parties-table">
         <template slot="action">
           <SendIcon class="cursor-pointer mr-2 action-icon"></SendIcon>
           <Trash2Icon class="cursor-pointer  mr-1 action-icon-delete"></Trash2Icon>
@@ -70,7 +70,7 @@
                 ],
                 counterparties: Counterpartiestable
             }
-        },
+        }
     }
 </script>
 
@@ -84,8 +84,5 @@
     th:last-child {
       width: 90px;
     }
-  }
-  #counterparties-body-doc-page {
-    overflow-y: scroll;
   }
 </style>

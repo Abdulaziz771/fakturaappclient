@@ -133,7 +133,8 @@
       }
     },
     mounted () {
-      document.getElementById("content-body-doc-page").style.height = "900px";
+        let intViewportHeight = window.innerHeight - 69 + "px";
+        document.getElementById("content-body-doc-page").style.height = intViewportHeight;
     }
   }
 </script>
