@@ -42,40 +42,107 @@
       </b-container>
     </div>
     <div id="scroll-content-body">
-      <b-table striped fixed hover :fields="fields" :items="documents" class="documentTable">
-        <template slot="HEAD_selected" slot-scope="data">
-          <b-form-checkbox v-model="selectAll" @change="select"/>
-        </template>
-        <template slot="selected" slot-scope="data">
-          <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
-        </template>
-        <template slot="title" slot-scope="data">
-          {{ data.item.title }} <br>
-          <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
-        </template>
-        <template slot="totalPrice" slot-scope="data">
-          {{ data.item.totalPrice }}
-        </template>
-        <template slot="company_name" slot-scope="data">
-          <b>{{ data.item.contractor.name }}</b> <br>
-          <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
-        </template>
-        <template slot="updatedDateTime" slot-scope="data">
-          {{ data.item.updatedDateTime }}
-        </template>
-        <template slot="status" slot-scope="data">
-          {{ data.item.status }}
-        </template>
-        <template slot="action" slot-scope="data">
-          <EyeIcon class="action-icon"/>
-        </template>
-      </b-table>
+      <b-tabs justified class="mt-2 document-tabs">
+        <b-tab title-item-class="h5" active>
+          <template slot="title">Счет фактуры</template>
+          <b-table sticky-header striped hover sticky-header="800px" :fields="fields" :items="documents"
+                   class="documentTable">
+            <template slot="HEAD_selected" slot-scope="data">
+              <b-form-checkbox v-model="selectAll" @change="select"/>
+            </template>
+            <template slot="selected" slot-scope="data">
+              <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+            </template>
+            <template slot="title" slot-scope="data">
+              {{ data.item.title }} <br>
+              <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
+            </template>
+            <template slot="totalPrice" slot-scope="data">
+              {{ data.item.totalPrice }}
+            </template>
+            <template slot="company_name" slot-scope="data">
+              <b>{{ data.item.contractor.name }}</b> <br>
+              <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
+            </template>
+            <template slot="updatedDateTime" slot-scope="data">
+              {{ data.item.updatedDateTime }}
+            </template>
+            <template slot="status" slot-scope="data">
+              {{ data.item.status }}
+            </template>
+            <template slot="action" slot-scope="data">
+              <EyeIcon class="action-icon"/>
+            </template>
+          </b-table>
+        </b-tab>
+        <b-tab title-item-class="h5">
+          <template slot="title">Договоры</template>
+          <b-table sticky-header striped hover :fields="fields" :items="documents" class="documentTable">
+            <template slot="HEAD_selected" slot-scope="data">
+              <b-form-checkbox v-model="selectAll" @change="select"/>
+            </template>
+            <template slot="selected" slot-scope="data">
+              <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+            </template>
+            <template slot="title" slot-scope="data">
+              {{ data.item.title }} <br>
+              <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
+            </template>
+            <template slot="totalPrice" slot-scope="data">
+              {{ data.item.totalPrice }}
+            </template>
+            <template slot="company_name" slot-scope="data">
+              <b>{{ data.item.contractor.name }}</b> <br>
+              <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
+            </template>
+            <template slot="updatedDateTime" slot-scope="data">
+              {{ data.item.updatedDateTime }}
+            </template>
+            <template slot="status" slot-scope="data">
+              {{ data.item.status }}
+            </template>
+            <template slot="action" slot-scope="data">
+              <EyeIcon class="action-icon"/>
+            </template>
+          </b-table>
+        </b-tab>
+        <b-tab title-item-class="h5">
+          <template slot="title">Акты</template>
+          <b-table sticky-header striped hover :fields="fields" :items="documents" class="documentTable">
+            <template slot="HEAD_selected" slot-scope="data">
+              <b-form-checkbox v-model="selectAll" @change="select"/>
+            </template>
+            <template slot="selected" slot-scope="data">
+              <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+            </template>
+            <template slot="title" slot-scope="data">
+              {{ data.item.title }} <br>
+              <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
+            </template>
+            <template slot="totalPrice" slot-scope="data">
+              {{ data.item.totalPrice }}
+            </template>
+            <template slot="company_name" slot-scope="data">
+              <b>{{ data.item.contractor.name }}</b> <br>
+              <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
+            </template>
+            <template slot="updatedDateTime" slot-scope="data">
+              {{ data.item.updatedDateTime }}
+            </template>
+            <template slot="status" slot-scope="data">
+              {{ data.item.status }}
+            </template>
+            <template slot="action" slot-scope="data">
+              <EyeIcon class="action-icon"/>
+            </template>
+          </b-table>
+        </b-tab>
+      </b-tabs>
     </div>
   </div>
 </template>
 <script>
   import Documents from '../../TestData/Documents'
-
   import {
     ArrowLeftCircleIcon,
     ChevronRightIcon,
@@ -137,6 +204,7 @@
   }
 </style>
 <style lang="scss">
+
   .documentTable thead th:first-child {
     width: 50px;
   }
