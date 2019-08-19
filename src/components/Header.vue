@@ -20,18 +20,25 @@
             <template slot="button-content"><span class="profile-name pr-2">Иванов Иван</span></template>
             <b-dropdown-item href="#">Организация: Teshavoy Corparation</b-dropdown-item>
             <b-dropdown-item href="#">Инн: 302563857</b-dropdown-item>
-            <b-dropdown-item href="#">Список организаций</b-dropdown-item>
+            <b-dropdown-item href="#" v-b-modal.modal-lg @click="toggleModal" ref="btnToggle">Список организаций
+            </b-dropdown-item>
             <b-dropdown-item href="#">Выход</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
+    <Organization></Organization>
   </div>
 </template>
 <script>
-  export default {
-    name: 'headerComponent'
-  }
+    import Organization from "../views/Organization"
+
+    export default {
+        name: 'headerComponent',
+        components: {
+            Organization
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
