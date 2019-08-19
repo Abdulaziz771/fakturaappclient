@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/document/inbox',
       name: 'InboxDocuments',
-      component: () => import('./components/document/InboxDocuments')
+      component: () => import('./views/document/InboxDocumentsView')
     },
     {
       path: '/document/create',
@@ -23,7 +23,7 @@ export default new Router({
     {
       path: '/document/create/systeminvoice',
       name: 'create-system-invoice',
-      component: () => import('./components/document/create/Systeminvoice')
+      component: () => import('./views/document/create/SystemInvoiceView')
     },
     {
       path: '/document/verify',

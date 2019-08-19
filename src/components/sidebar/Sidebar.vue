@@ -2,7 +2,6 @@
   <div id="sidebar">
     <div class="first-inside-sidebar">
       <div class="d-flex flex-column">
-
         <div @click="onClickMenu(1)" :class="{active: activeMenu===1}"
              class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center">
@@ -61,7 +60,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <div class="second-inside-sidebar">

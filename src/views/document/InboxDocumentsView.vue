@@ -6,10 +6,7 @@
           <b-row>
             <b-col md="12" lg="5" class="p-0">
               <b-button class="lightgray-button mr-2">
-                <ArrowLeftCircleIcon class="mr-2" v-b-tooltip.hover title="Назад"/>
-              </b-button>
-              <b-button class="lightgray-button mr-2">
-                <Edit2Icon v-b-tooltip.hover title="Подписать и отправить" />
+                <Edit2Icon v-b-tooltip.hover title="Подписать и отправить"/>
               </b-button>
               <b-button class="lightgray-button mr-2">
                 <XCircleIcon v-b-tooltip.hover title="Отказать и удалить"/>
@@ -131,10 +128,6 @@
           }
         }
       }
-    },
-    mounted () {
-        let intViewportHeight = window.innerHeight - 69 + "px";
-        document.getElementById("content-body-doc-page").style.height = intViewportHeight;
     }
   }
 </script>
