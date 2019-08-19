@@ -1,49 +1,47 @@
 <template>
   <div class="content">
-    <div class="fixed-content-header">
-      <div class="content-body-header">
-        <b-container fluid>
-          <b-row>
-            <b-col md="12" lg="5" class="p-0">
-              <b-button class="lightgray-button mr-2">
-                <Edit2Icon v-b-tooltip.hover title="Подписать и отправить"/>
-              </b-button>
-              <b-button class="lightgray-button mr-2">
-                <XCircleIcon v-b-tooltip.hover title="Отказать и удалить"/>
-              </b-button>
-              <b-button class="lightgray-button mr-2">
-                <UsersIcon v-b-tooltip.hover title="Отправить на согласование"/>
-              </b-button>
-              <b-button class="lightgray-button mr-2">
-                <StarIcon class="cursor-pointer " v-b-tooltip.hover title="Отметить как"/>
-              </b-button>
-              <b-button class="lightgray-button mr-2">
-                <PrinterIcon class="cursor-pointer " v-b-tooltip.hover title="Отправить на печать"/>
-              </b-button>
-            </b-col>
-            <b-col md="12" lg="7" class="p-0">
-              <div class="form-inline float-right">
-                <div class="pl-2 form-inline">
-                  <label class="mr-1">Показать по: </label>
-                  <select class="form-control form-control-sm">
-                    <option>20</option>
-                    <option>30</option>
-                    <option>40</option>
-                  </select>
-                </div>
-                <div class="form-inline pl-4 pr-2">
-                  <span class="pr-2">1-20 из 134</span>
-                  <ChevronLeftIcon class="cursor-pointer mr-1"/>
-                  <ChevronRightIcon class="cursor-pointer ml-1"/>
-                </div>
-                <b-button class="lightgray-button mr-2" size="sm" style="padding: 5px">Фильтр</b-button>
+    <div id="fixed-content-header">
+      <b-container fluid>
+        <b-row>
+          <b-col md="12" lg="5" class="p-0">
+            <b-button class="lightgray-button mr-2">
+              <Edit2Icon v-b-tooltip.hover title="Подписать и отправить"/>
+            </b-button>
+            <b-button class="lightgray-button mr-2">
+              <XCircleIcon v-b-tooltip.hover title="Отказать и удалить"/>
+            </b-button>
+            <b-button class="lightgray-button mr-2">
+              <UsersIcon v-b-tooltip.hover title="Отправить на согласование"/>
+            </b-button>
+            <b-button class="lightgray-button mr-2">
+              <StarIcon class="cursor-pointer " v-b-tooltip.hover title="Отметить как"/>
+            </b-button>
+            <b-button class="lightgray-button mr-2">
+              <PrinterIcon class="cursor-pointer " v-b-tooltip.hover title="Отправить на печать"/>
+            </b-button>
+          </b-col>
+          <b-col md="12" lg="7" class="p-0">
+            <div class="form-inline float-right">
+              <div class="pl-2 form-inline">
+                <label class="mr-1">Показать по: </label>
+                <select class="form-control form-control-sm">
+                  <option>20</option>
+                  <option>30</option>
+                  <option>40</option>
+                </select>
               </div>
-            </b-col>
-          </b-row>
-        </b-container>
-      </div>
+              <div class="form-inline pl-4 pr-2">
+                <span class="pr-2">1-20 из 134</span>
+                <ChevronLeftIcon class="cursor-pointer mr-1"/>
+                <ChevronRightIcon class="cursor-pointer ml-1"/>
+              </div>
+              <b-button class="lightgray-button mr-2" size="sm" style="padding: 5px">Фильтр</b-button>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
     </div>
-    <div id="content-body-doc-page">
+    <div id="scroll-content-body">
       <b-table striped fixed hover :fields="fields" :items="documents" class="documentTable">
         <template slot="HEAD_selected" slot-scope="data">
           <b-form-checkbox v-model="selectAll" @change="select"/>
@@ -77,6 +75,7 @@
 </template>
 <script>
   import Documents from '../../TestData/Documents'
+
   import {
     ArrowLeftCircleIcon,
     ChevronRightIcon,
@@ -135,11 +134,6 @@
   .lightgray-button svg {
     color: #6b6868;
     padding: 2px;
-  }
-
-  .header-title {
-    padding-bottom: 10px;
-    font-size: 24px;
   }
 </style>
 <style lang="scss">

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="content-body-header m-3">
+    <div id="fixed-content-header">
       <div class="row">
         <div class="col-6">
           <div class="input-group input-group-sm">
@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div id="content-body-doc-page">
+    <div id="scroll-content-body">
       <b-table striped fixed hover :items="counterparties" :fields="fields" class="counter-parties-table">
         <template slot="action">
           <SendIcon class="cursor-pointer mr-2 action-icon"></SendIcon>

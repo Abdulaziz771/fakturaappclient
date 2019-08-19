@@ -104,7 +104,7 @@ a {
   color: #28282d;
 }
 
-.fixed-content-header {
+#fixed-content-header {
   padding: 10px;
   background-color: white;
   position: fixed;
@@ -133,10 +133,10 @@ a {
   }
 }
 
-#content-body-doc-page {
-  padding-bottom: 20px;
+#scroll-content-body {
   padding-top: 48px;
   overflow-y: scroll;
+  height: 93vh;
 }
 
 
@@ -151,7 +151,7 @@ a {
 
 .action-icon-delete {
   &:hover {
-    color:#ea4f4f;
+    color: #ea4f4f;
   }
 }
 
