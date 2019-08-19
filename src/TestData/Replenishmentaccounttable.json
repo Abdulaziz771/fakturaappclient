@@ -1,0 +1,362 @@
+[
+  {
+    "uniqueId": "1",
+    "documentUniqueId": "48AA970DB2",
+    "amount": 60000.00,
+    "state": 1,
+    "createdAtUtc": 1497250162730,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "5",
+    "documentUniqueId": "47EAE32197",
+    "amount": 20000.00,
+    "state": 1,
+    "createdAtUtc": 1497955207303,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "6",
+    "documentUniqueId": "0D8F9E046B",
+    "amount": 35000.00,
+    "state": 1,
+    "createdAtUtc": 1497955269887,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "7",
+    "documentUniqueId": "1EA40F3107",
+    "amount": 400000.00,
+    "state": 1,
+    "createdAtUtc": 1497956250587,
+    "isDocumentPublished": true
+  },
+  {
+    "uniqueId": "10",
+    "documentUniqueId": "0F55269AAD",
+    "amount": 10000.00,
+    "state": 1,
+    "createdAtUtc": 1498111955937,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "11",
+    "documentUniqueId": "A4F4EFE07A",
+    "amount": 50000.00,
+    "state": 1,
+    "createdAtUtc": 1498222285707,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "13",
+    "documentUniqueId": "D728848B9C",
+    "amount": 100.00,
+    "state": 2,
+    "createdAtUtc": 1498566474917,
+    "isDocumentPublished": true
+  },
+  {
+    "uniqueId": "15",
+    "documentUniqueId": "0D77478873",
+    "amount": 41000.00,
+    "state": 1,
+    "createdAtUtc": 1499153197957,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "38dc4e24df73484385303e59060344",
+    "documentUniqueId": "62E645D566",
+    "amount": 4444444.00,
+    "state": 1,
+    "createdAtUtc": 1501235279623,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "69aac74ab17a4377858d56e3230854",
+    "documentUniqueId": "FEBD002E8A",
+    "amount": 50000.00,
+    "state": 1,
+    "createdAtUtc": 1505210324297,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "d0531be9768f40baa7deb258d0b8fc",
+    "documentUniqueId": "551BBCDD14",
+    "amount": 10000.00,
+    "state": 1,
+    "createdAtUtc": 1507894449917,
+    "isDocumentPublished": true
+  },
+  {
+    "uniqueId": "f3a541bc1ff045099f26861749bf46",
+    "documentUniqueId": "399535B705",
+    "amount": 100000.00,
+    "state": 1,
+    "createdAtUtc": 1511766018420,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "57f511b3ae354286bfe57a52bb481c",
+    "documentUniqueId": "552E0C7031",
+    "amount": 111.00,
+    "state": 1,
+    "createdAtUtc": 1518156650923,
+    "isDocumentPublished": true
+  },
+  {
+    "uniqueId": "1648548fe5e94129869f5b9cdd198f",
+    "documentUniqueId": "706BE1502D",
+    "amount": 1000.00,
+    "state": 1,
+    "createdAtUtc": 1522917967837,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "0503541dafee45aebbef4e298a9c3a",
+    "documentUniqueId": "42844C6300",
+    "amount": 1000.00,
+    "state": 1,
+    "createdAtUtc": 1522918297573,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "5497238e15194aba9477af232acb00",
+    "documentUniqueId": "CC504F513B",
+    "amount": 1000.00,
+    "state": 1,
+    "createdAtUtc": 1523355941957,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "47200f1ccc68447ebaac4c8e4d4ef0",
+    "documentUniqueId": "2D4B6FE18B",
+    "amount": 40000.00,
+    "state": 1,
+    "createdAtUtc": 1523446777033,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "28286b7c9cac4104aeabb014217cf7",
+    "documentUniqueId": "8C53D316B7",
+    "amount": 40000.00,
+    "state": 1,
+    "createdAtUtc": 1523450639810,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "3453d9dccb5040be94657e32ea1740",
+    "documentUniqueId": "FF772ADF10",
+    "amount": 40000.00,
+    "state": 1,
+    "createdAtUtc": 1523450846370,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "dd440187b9654052aa096dbe275a78",
+    "documentUniqueId": "FADE99F477",
+    "amount": 5000.00,
+    "state": 1,
+    "createdAtUtc": 1523531013890,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "2e484e4ce4814f71a0c7cb69ab6903",
+    "documentUniqueId": "20882B0205",
+    "amount": 5000.00,
+    "state": 1,
+    "createdAtUtc": 1523532230197,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "4ed0e300dd134f8dba8d4465292cd8",
+    "documentUniqueId": "C952827E4F",
+    "amount": 5000.00,
+    "state": 1,
+    "createdAtUtc": 1523532310603,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "2e6bca1608d14ec3aec34c3b41a476",
+    "documentUniqueId": "DB49B26AD8",
+    "amount": 5000.00,
+    "state": 1,
+    "createdAtUtc": 1523532338440,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "bf1b0318c71b4d7a86fc984d108740",
+    "documentUniqueId": "142C90B922",
+    "amount": 1000.00,
+    "state": 1,
+    "createdAtUtc": 1523949399677,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "00ecf4b4f9e54238af6c780832683b",
+    "documentUniqueId": "5226C456CB",
+    "amount": 4000.00,
+    "state": 1,
+    "createdAtUtc": 1524487856080,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "b262f90a4e354c65840baaff02da69",
+    "documentUniqueId": "992A8F0D9A",
+    "amount": 10000.00,
+    "state": 1,
+    "createdAtUtc": 1526395735050,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "78b58e7365f44655a9317595924cf5",
+    "documentUniqueId": "F71733F508",
+    "amount": 5000.00,
+    "state": 1,
+    "createdAtUtc": 1527074581947,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "04319d55b366483599b60a2ef63fa1",
+    "documentUniqueId": "AD0D11BF01",
+    "amount": 5000.00,
+    "state": 1,
+    "createdAtUtc": 1527074628713,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "fa7fcb268f9740e799da01fbe710c0",
+    "documentUniqueId": "0651fcf6024347beadad6e02e5d612e3",
+    "amount": 30000.00,
+    "state": 1,
+    "createdAtUtc": 1533810899560,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "49e88b15fc2a42aaa755a22672ce96",
+    "documentUniqueId": "2776a277c7ad42ef92fcc8be226c5c85",
+    "amount": 132121.00,
+    "state": 1,
+    "createdAtUtc": 1535373163537,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "a7635b33c6fe4d3c8a9bb9f989ec41",
+    "documentUniqueId": "759ae5bacb7c4de6a69393e9ed4bdd64",
+    "amount": 200000.00,
+    "state": 1,
+    "createdAtUtc": 1535542731073,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "f80b1b839c1541008ff00e14662756",
+    "documentUniqueId": "2fe7fa7baaa04f01869f3aaf61141d52",
+    "amount": 289.00,
+    "state": 1,
+    "createdAtUtc": 1536749686330,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "eccee0a45d9f48f581ab72f66de52d",
+    "documentUniqueId": "77af3065b44344eca44227e63916b845",
+    "amount": 289.00,
+    "state": 1,
+    "createdAtUtc": 1536749786480,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "99300c4211014c40873e276dfc8e24",
+    "documentUniqueId": "cb735acf92ed4c6fa835d0722499c7ef",
+    "amount": 289.00,
+    "state": 1,
+    "createdAtUtc": 1536754604480,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "73ebadebf409425eaa85b3cecf3a27",
+    "documentUniqueId": "70e74ca7ba2f4189bbf2502f9779cb3f",
+    "amount": 101.00,
+    "state": 1,
+    "createdAtUtc": 1536773511737,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "eabeb48698de4bf3991de8959127c0",
+    "documentUniqueId": "c61eb73941954bcfb32f1ae6d9ada410",
+    "amount": 100.00,
+    "state": 1,
+    "createdAtUtc": 1536839464297,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "b71e33ea0870406abbe8c232020b41",
+    "documentUniqueId": "19054442ba524640964dacffb084f4fa",
+    "amount": 101.00,
+    "state": 1,
+    "createdAtUtc": 1537021571093,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "ba2f136de5dc47868994eb04f46b4e",
+    "documentUniqueId": "91d067e3a123446eabd8c73496da8dd0",
+    "amount": 200000.00,
+    "state": 1,
+    "createdAtUtc": 1538134011143,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "9a8a0afc58ab42fb9b2c5d67840c33",
+    "documentUniqueId": "e316aa2e2559406eba89fdd47c500972",
+    "amount": 200000.00,
+    "state": 1,
+    "createdAtUtc": 1538134016213,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "e1774bf400254feebed6050cc43cd8",
+    "documentUniqueId": "ce053b57b187496294de5f359eace9c2",
+    "amount": 5000.00,
+    "state": 1,
+    "createdAtUtc": 1538223564507,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "2615989492ee4552a045f673d8b114",
+    "documentUniqueId": "71a2efe69bb3489bb3a93758d84c6480",
+    "amount": 40000.00,
+    "state": 1,
+    "createdAtUtc": 1538466317407,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "b27fa1f72dc047f38292555be691fe",
+    "documentUniqueId": "b84c72e2dfe7425681377435d1c8f293",
+    "amount": 1000.00,
+    "state": 1,
+    "createdAtUtc": 1548419222867,
+    "isDocumentPublished": true
+  },
+  {
+    "uniqueId": "4b759d8e9ec44c60bed6c0105bcd14",
+    "documentUniqueId": "a4e46a81c5014a81be174c1032fb4cf0",
+    "amount": 40000.00,
+    "state": 1,
+    "createdAtUtc": 1555330180820,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "dee78bbaa26849c8a29b8ddb946892",
+    "documentUniqueId": "ba23acda805f4fb08a3921af0405213a",
+    "amount": 5000.00,
+    "state": 1,
+    "createdAtUtc": 1562663586647,
+    "isDocumentPublished": false
+  },
+  {
+    "uniqueId": "25506f9019da4fc7b8bb8556f3b2d9",
+    "documentUniqueId": "1ce06d8c81984603ab78c2f43c588f1a",
+    "amount": 1312312.00,
+    "state": 1,
+    "createdAtUtc": 1566204775667,
+    "isDocumentPublished": false
+  }
+]
