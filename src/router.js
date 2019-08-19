@@ -39,6 +39,16 @@ export default new Router({
       path: '/counterparties',
       name: 'counter-parties',
       component: () => import('./views/counterparties/Counterparties')
+    },
+    {
+      path: '/replenishmentaccount',
+      name: 'replenishment-account',
+      component: () => import('./views/Finance/Replenishmentaccount')
+    },
+    {
+      path: '/myorganization',
+      name: 'my-organization-list',
+      component: () => import('./views/Myorganization')
     }
   ]
 })
