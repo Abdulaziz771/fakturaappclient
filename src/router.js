@@ -41,9 +41,14 @@ export default new Router({
       component: () => import('./views/counterparties/Counterparties')
     },
     {
-      path: '/replenishmentaccount',
-      name: 'replenishment-account',
-      component: () => import('./views/Finance/Replenishmentaccount')
+      path: '/finance/index',
+      name: 'index',
+      component: () => import('./views/Finance/Index')
+    },
+    {
+      path: '/finance/deposit',
+      name: 'deposit',
+      component: () => import('./views/Finance/Deposit')
     },
     {
       path: '/myorganization',

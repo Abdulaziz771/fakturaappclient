@@ -13,7 +13,8 @@
       </div>
     </div>
     <div id="content-body-doc-page">
-      <b-table striped fixed hover :fields="fields" :items="ReplenishmentAccountTable" class="replenishment-account-table">
+      <b-table striped fixed hover :fields="fields" :items="ReplenishmentAccountTable"
+               class="index-account-table">
         <template slot="docname" slot-scope="data">
           Счет на оплату на {{data.item.amount}} сум от 19.08.2019
         </template>
@@ -23,8 +24,8 @@
         <template slot="status" slot-scope="data">
           Счёт на оплату не подписан
         </template>
-        <template slot="action" slot-scope="data">
-          <button class="btn rounded default-success-button btn-secondary btn-sm">Перейти к подтверждению</button>
+        <template  slot="action" slot-scope="data">
+          <CheckCircleIcon class="action-icon"></CheckCircleIcon>
         </template>
       </b-table>
     </div>
@@ -33,9 +34,12 @@
 
 <script>
     import Replenishmentaccounttable from '../../TestData/Replenishmentaccounttable'
+    import {
+        CheckCircleIcon
+    } from 'vue-feather-icons'
 
     export default {
-        name: 'ReplenishmentAccount',
+        name: 'index',
         data() {
             return {
                 fields: [
@@ -47,20 +51,32 @@
                 ],
                 ReplenishmentAccountTable: Replenishmentaccounttable
             }
+        },
+        components: {
+            CheckCircleIcon
         }
     }
 </script>
 
 <style lang="scss">
-  .replenishment-account-table thead {
+  .index-account-table thead {
     th:nth-child(1) {
-      width:260px;
+      width: 320px;
     }
+
     th:nth-child(2) {
-      width:90px;
+      width: 90px;
     }
+
     th:nth-child(5) {
-      width:218px;
+      width: 100px;
+      text-align: center;
+    }
+  }
+
+  .index-account-table tbody {
+    td:nth-child(5) {
+      text-align: center;
     }
   }
 </style>

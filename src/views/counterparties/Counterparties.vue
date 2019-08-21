@@ -35,8 +35,8 @@
     <div id="scroll-content-body">
       <b-table striped fixed hover :items="counterparties" :fields="fields" class="counter-parties-table">
         <template slot="action">
-          <SendIcon class="cursor-pointer mr-2 action-icon"></SendIcon>
-          <Trash2Icon class="cursor-pointer  mr-1 action-icon-delete"></Trash2Icon>
+          <SendIcon class="mr-2 action-icon"></SendIcon>
+          <Trash2Icon class="mr-1 action-icon-delete"></Trash2Icon>
         </template>
       </b-table>
     </div>
