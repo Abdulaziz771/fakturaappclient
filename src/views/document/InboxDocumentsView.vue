@@ -45,7 +45,8 @@
       <b-tabs justified class="mt-2 document-tabs">
         <b-tab title-item-class="h5" active>
           <template slot="title">Счет фактуры</template>
-          <b-table sticky-header striped hover :fields="fields" :items="documents" class="scrollTable">
+          <b-table sticky-header striped hover sticky-header="83vh" :fields="fields" :items="documents"
+                   class="documentTable">
             <template slot="HEAD_selected" slot-scope="data">
               <b-form-checkbox v-model="selectAll" @change="select"/>
             </template>

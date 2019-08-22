@@ -1,8 +1,8 @@
 <template>
   <div class="content">
     <div id="fixed-content-header">
-      <div class="row">
-        <div class="col-6">
+      <b-row>
+        <b-col cols="6">
           <div class="input-group input-group-sm">
             <select class="custom-select" id="inputGroupSelect04">
               <option selected></option>
@@ -11,8 +11,8 @@
               <button class="btn btn btn-success" type="button">Добавить</button>
             </div>
           </div>
-        </div>
-        <div class="col-6">
+        </b-col>
+        <b-col cols="6">
           <div class="form-inline float-right">
             <div class="pl-2 form-inline">
               <label class="mr-1">Показать по: </label>
@@ -29,14 +29,14 @@
             </div>
             <b-button class="lightgray-button mr-2" size="sm" style="padding: 5px">Фильтр</b-button>
           </div>
-        </div>
-      </div>
+        </b-col>
+      </b-row>
     </div>
     <div id="scroll-content-body">
       <b-table striped fixed hover :items="counterparties" :fields="fields" class="counter-parties-table">
         <template slot="action">
-          <SendIcon class="cursor-pointer mr-2 action-icon"></SendIcon>
-          <Trash2Icon class="cursor-pointer  mr-1 action-icon-delete"></Trash2Icon>
+          <SendIcon class="mr-2 action-icon"></SendIcon>
+          <Trash2Icon class="mr-1 action-icon-delete"></Trash2Icon>
         </template>
       </b-table>
     </div>
