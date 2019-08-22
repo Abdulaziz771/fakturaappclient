@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" id="financeIndex">
     <div class="fixed-content-header">
       <div class="row">
         <div class="col-sm-12 col-md-6 text-center text-md-left">
@@ -14,22 +14,26 @@
         </div>
       </div>
     </div>
-    <div id="content-body-doc-page">
-      <b-table striped fixed hover :fields="fields" :items="ReplenishmentAccountTable"
-               class="index-account-table">
-        <template slot="docname" slot-scope="data">
-          Счет на оплату на {{data.item.amount}} сум от 19.08.2019
-        </template>
-        <template slot="datecreate" slot-scope="data">
-          19.08.2019 13:52:55
-        </template>
-        <template slot="status" slot-scope="data">
-          Счёт на оплату не подписан
-        </template>
-        <template  slot="action" slot-scope="data">
-          <CheckCircleIcon class="action-icon"></CheckCircleIcon>
-        </template>
-      </b-table>
+    <div id="scroll-content-body">
+      <div striped sticky-header hover :fields="fields" :items="ReplenishmentAccountTable" class="scrollTable">
+        <div id="content-body-doc-page">
+          <b-table striped fixed hover :fields="fields" :items="ReplenishmentAccountTable"
+                   class="index-account-table">
+            <template slot="docname" slot-scope="data">
+              Счет на оплату на {{data.item.amount}} сум от 19.08.2019
+            </template>
+            <template slot="datecreate" slot-scope="data">
+              19.08.2019 13:52:55
+            </template>
+            <template slot="status" slot-scope="data">
+              Счёт на оплату не подписан
+            </template>
+            <template slot="action" slot-scope="data">
+              <CheckCircleIcon class="action-icon"></CheckCircleIcon>
+            </template>
+          </b-table>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -61,24 +65,30 @@
 </script>
 
 <style lang="scss">
-  .index-account-table thead {
+  #financeIndex .scrollTable thead {
     th:nth-child(1) {
-      width: 320px;
+      width: 260px;
     }
 
-    th:nth-child(2) {
-      width: 90px;
+    .index-account-table thead {
+      th:nth-child(1) {
+        width: 320px;
+      }
+
+      th:nth-child(2) {
+        width: 90px;
+      }
+
+      th:nth-child(5) {
+        width: 100px;
+        text-align: center;
+      }
     }
 
-    th:nth-child(5) {
-      width: 100px;
-      text-align: center;
-    }
-  }
-
-  .index-account-table tbody {
-    td:nth-child(5) {
-      text-align: center;
+    .index-account-table tbody {
+      td:nth-child(5) {
+        text-align: center;
+      }
     }
   }
 </style>
