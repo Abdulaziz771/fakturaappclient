@@ -142,6 +142,19 @@ a {
   color: #28282d;
 }
 
+.router-link-drop:hover {
+  color:#404040;
+}
+
+.router-link-button {
+  color:whitesmoke;
+
+  &:hover {
+    color:white;
+  }
+
+}
+
 .action-icon:hover {
   cursor: pointer;
   color: $brand-color;

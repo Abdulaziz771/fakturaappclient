@@ -3,12 +3,14 @@
     <div class="fixed-content-header">
       <div class="row">
         <div class="col-sm-12 col-md-6 text-center text-md-left">
-          <h5>Проверка электронного документа</h5>
+          <h5 class="p-2">Проверка электронного документа</h5>
         </div>
         <div class="col-sm-12 col-md-6 text-center">
-          <button class="btn rounded default-success-button btn-secondary float-md-right btn-sm">Запросить новый счет на
-            пополнение
-          </button>
+          <b-button class="btn rounded default-success-button btn-secondary float-md-right btn-sm m-2">
+            <router-link class="text-decoration-none router-link-button" :to="{name: 'deposit'}">
+              Запросить новый счет на пополнение
+            </router-link>
+          </b-button>
         </div>
       </div>
     </div>
