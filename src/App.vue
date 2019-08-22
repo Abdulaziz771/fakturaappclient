@@ -14,6 +14,11 @@
     components: {
       headerComponent,
       sidebarComponent,
+    },
+    computed: {
+      setHeight () {
+        document.getElementById('scrollTable').style.height = '800px'
+      }
     }
   }
 </script>

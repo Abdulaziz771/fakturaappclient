@@ -16,6 +16,7 @@ Vue.use(VueProgressBar, {
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
+
 new Vue({
   router,
   render: h => h(App)

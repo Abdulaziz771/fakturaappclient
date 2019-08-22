@@ -41,12 +41,11 @@
         </b-row>
       </b-container>
     </div>
-    <div id="scroll-content-body">
+    <div id="scroll-content-body" class="pt-5">
       <b-tabs justified class="mt-2 document-tabs">
         <b-tab title-item-class="h5" active>
           <template slot="title">Счет фактуры</template>
-          <b-table sticky-header striped hover sticky-header="800px" :fields="fields" :items="documents"
-                   class="documentTable">
+          <b-table sticky-header striped hover :fields="fields" :items="documents" class="scrollTable">
             <template slot="HEAD_selected" slot-scope="data">
               <b-form-checkbox v-model="selectAll" @change="select"/>
             </template>
@@ -77,7 +76,7 @@
         </b-tab>
         <b-tab title-item-class="h5">
           <template slot="title">Договоры</template>
-          <b-table sticky-header striped hover :fields="fields" :items="documents" class="documentTable">
+          <b-table sticky-header striped hover :fields="fields" :items="documents" class="scrollTable">
             <template slot="HEAD_selected" slot-scope="data">
               <b-form-checkbox v-model="selectAll" @change="select"/>
             </template>
@@ -108,7 +107,7 @@
         </b-tab>
         <b-tab title-item-class="h5">
           <template slot="title">Акты</template>
-          <b-table sticky-header striped hover :fields="fields" :items="documents" class="documentTable">
+          <b-table sticky-header striped hover :fields="fields" :items="documents" class="scrollTable">
             <template slot="HEAD_selected" slot-scope="data">
               <b-form-checkbox v-model="selectAll" @change="select"/>
             </template>
@@ -204,12 +203,11 @@
   }
 </style>
 <style lang="scss">
-
-  .documentTable thead th:first-child {
+  .scrollTable thead th:first-child {
     width: 50px;
   }
 
-  .documentTable thead th:last-child {
+  .scrollTable thead th:last-child {
     width: 50px;
   }
 </style>

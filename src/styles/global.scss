@@ -133,11 +133,6 @@ a {
     margin-bottom: 0;
   }
 }
-
-#scroll-content-body {
-  padding-top: 48px;
-}
-
 .page-link {
   color: #28282d;
 }
@@ -231,3 +226,6 @@ a {
   border: none;
 }
 
+.scrollTable {
+  max-height: 80vh !important;
+}
