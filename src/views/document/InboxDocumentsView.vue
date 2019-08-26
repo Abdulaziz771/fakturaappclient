@@ -36,6 +36,9 @@
                 <ChevronRightIcon class="cursor-pointer ml-1"/>
               </div>
               <b-button class="lightgray-button mr-2" size="sm" style="padding: 5px">Фильтр</b-button>
+              <b-button class="lightgray-button mr-2" @click="activeRightSidebar = !activeRightSidebar" size="sm"
+                        style="padding: 5px">Массовое подписание
+              </b-button>
             </div>
           </b-col>
         </b-row>
@@ -138,11 +141,14 @@
           </b-table>
         </b-tab>
       </b-tabs>
+      <RightSidebar :active="activeRightSidebar"/>
     </div>
   </div>
 </template>
 <script>
   import Documents from '../../TestData/Documents'
+  import RightSidebar from '../../components/sidebar/RightSidebar'
+
   import {
     ArrowLeftCircleIcon,
     ChevronRightIcon,
@@ -166,12 +172,14 @@
       StarIcon,
       PrinterIcon,
       ChevronRightIcon,
-      ChevronLeftIcon
+      ChevronLeftIcon,
+      RightSidebar
     },
     data () {
       return {
         selected: [],
         fixed: true,
+        activeRightSidebar: true,
         selectAll: false,
         fields: [
           { key: 'selected', label: '' },

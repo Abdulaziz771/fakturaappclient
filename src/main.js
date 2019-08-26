@@ -6,6 +6,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "@/styles/global.scss"
 import VueProgressBar from 'vue-progressbar';
+import Multiselect from 'vue-multiselect'
+Vue.component('multiselect', Multiselect)
+
+import "vue-multiselect/dist/vue-multiselect.min.css"
 
 Vue.use(VueProgressBar, {
   color: '#28a745',

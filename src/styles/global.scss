@@ -33,6 +33,11 @@ a {
   }
 }
 
+.smallButtonIconSize {
+  width: 15px;
+  height: 15px;
+}
+
 #app {
   height: 100%;
 }
@@ -133,6 +138,7 @@ a {
     margin-bottom: 0;
   }
 }
+
 .page-link {
   color: #28282d;
 }
@@ -220,6 +226,10 @@ a {
   border-color: transparent transparent #f3f3f3;
   border-bottom: 2px solid !important;
   font-weight: bold;
+}
+
+.document-tabs .table th, .table td {
+  border-top: unset;
 }
 
 .document-tabs .nav-link:hover {
