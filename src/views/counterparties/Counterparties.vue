@@ -34,8 +34,14 @@
         </b-row>
       </b-container>
     </div>
-    <div id="scroll-content-body">
-      <b-table hover :items="counterparties" :fields="fields" class="counter-parties-table">
+    <div class="pt-5">
+      <b-table sticky-header striped hover sticky-header="87vh" :fields="fields" :items="counterparties">
+        <template slot="name" slot-scope="data">
+          {{ data.item.name }}
+        </template>
+        <template slot="inn" slot-scope="data">
+          {{ data.item.inn }}
+        </template>
         <template slot="action">
           <SendIcon class="mr-2 action-icon"></SendIcon>
           <Trash2Icon class="mr-1 action-icon-delete"></Trash2Icon>
@@ -62,15 +68,14 @@
       ChevronRightIcon,
       ChevronLeftIcon
     },
-
     data () {
       return {
+        counterparties: Counterpartiestable,
         fields: [
           { key: 'name', label: 'Наименования контрагента' },
           { key: 'inn', label: 'ИНН' },
           { key: 'action', label: '' }
         ],
-        counterparties: Counterpartiestable
       }
     }
   }

@@ -9,7 +9,7 @@
               <HelpCircleIcon class="help-icon" v-b-tooltip.hover title="В ожидании подписания"></HelpCircleIcon>
             </b-col>
             <b-col class="text-right p-0">
-              <router-link :to="{name: 'InboxDocuments'}" class="view-all-link">
+              <router-link :to="{name: 'inbox-documents'}" class="view-all-link">
                 Посмотрет все
                 <ChevronRightIcon/>
               </router-link>
@@ -48,7 +48,7 @@
               <HelpCircleIcon class="help-icon" v-b-tooltip.hover title="Недавно подписанные документы"></HelpCircleIcon>
             </b-col>
             <b-col class="text-right p-0">
-              <router-link :to="{name: 'InboxDocuments'}" class="view-all-link">
+              <router-link :to="{name: 'inbox-documents'}" class="view-all-link">
                 Посмотрет все
                 <ChevronRightIcon/>
               </router-link>

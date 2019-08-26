@@ -44,7 +44,7 @@
         </b-row>
       </b-container>
     </div>
-    <div id="scroll-content-body" class="pt-5">
+    <div class="pt-5">
       <b-tabs justified class="mt-2 document-tabs">
         <b-tab title-item-class="h5" active>
           <template slot="title">Счет фактуры</template>
@@ -215,7 +215,6 @@
   .scrollTable thead th:first-child {
     width: 50px;
   }
-
   .scrollTable thead th:last-child {
     width: 50px;
   }

@@ -1,6 +1,6 @@
 <template>
   <transition name="slide">
-    <b-media-aside class="shadow overflow-auto" right-align vertical-align="center" v-if="active"
+    <b-media-aside class="shadow" right-align vertical-align="center" v-if="active"
                    :class="{ active: active}"
                    id="rightSidebar">
       <div class="content-rights-sidebar m-2">
@@ -42,7 +42,7 @@
             Подписать
           </b-button>
         </div>
-        <div class="pt-2">
+        <div class="mt-2 overflow-auto" style="height: 60vh">
           <div class="mb-1 p-2 document-list">
             <div><b>Договор на открыть счет</b></div>
             <div class="clearfix text-success">
@@ -266,18 +266,18 @@
 </script>
 
 <style lang="scss" scoped>
-  #rightSidebar::-webkit-scrollbar-track {
+  #rightSidebar .overflow-auto::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background-color: #F5F5F5;
   }
 
-  #rightSidebar::-webkit-scrollbar {
+  #rightSidebar .overflow-auto::-webkit-scrollbar {
     width: 5px;
     background-color: #F5F5F5;
   }
 
-  #rightSidebar::-webkit-scrollbar-thumb {
+  #rightSidebar .overflow-auto::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #939294;
@@ -291,7 +291,7 @@
     position: absolute;
     top: 146px;
     right: 16px;
-    height: 78vh;
+    height: 100%;
     width: 500px;
     padding-bottom: 20px;
 
