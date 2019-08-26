@@ -11,16 +11,26 @@
         <b-navbar-nav class="ml-auto mr-2">
           <b-nav-item-dropdown right class="mr-4">
             <template slot="button-content"><span class="profile-name pr-2">Баланс : 6 000 сум</span></template>
-            <b-dropdown-item href="#" :to="{name: 'index'}">
-              Финансовая информация
+            <b-dropdown-item href="#">
+              <router-link class="text-decoration-none router-link-drop" :to="{name: 'index'}">
+                Список организаций
+              </router-link>
             </b-dropdown-item>
-            <b-dropdown-item href="#" :to="{name: 'deposit'}">Пополнить баланс</b-dropdown-item>
+            <b-dropdown-item href="#">
+              <router-link class="text-decoration-none router-link-drop" :to="{name: 'deposit'}">
+                Пополнить баланс
+              </router-link>
+            </b-dropdown-item>
           </b-nav-item-dropdown>
           <b-nav-item-dropdown right>
             <template slot="button-content"><span class="profile-name pr-2">Иванов Иван</span></template>
             <b-dropdown-item href="#">Организация: Teshavoy Corparation</b-dropdown-item>
             <b-dropdown-item href="#">Инн: 302563857</b-dropdown-item>
-            <b-dropdown-item href="#" :to="{name: 'my-organization-list'}">Список организаций</b-dropdown-item>
+            <b-dropdown-item href="#">
+              <router-link class="text-decoration-none router-link-drop" :to="{name: 'my-organization-list' }">
+                Список организаций
+              </router-link>
+            </b-dropdown-item>
             <b-dropdown-item href="#">Выход</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>

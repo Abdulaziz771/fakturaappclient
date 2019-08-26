@@ -1,18 +1,18 @@
 <template>
   <div class="content" id="financeIndex">
     <div class="fixed-content-header">
-      <b-container>
-        <b-row>
-          <b-col col>
-            <h5>Проверка электронного документа</h5>
-          </b-col>
-          <b-col col>
-            <button class="btn rounded default-success-button btn-secondary float-md-right btn-sm">Запросить новый счет
-              на пополнение
-            </button>
-          </b-col>
-        </b-row>
-      </b-container>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 text-center text-md-left">
+          <h5 class="p-2">Проверка электронного документа</h5>
+        </div>
+        <div class="col-sm-12 col-md-6 text-center">
+          <b-button class="btn rounded default-success-button btn-secondary float-md-right btn-sm m-2">
+            <router-link class="text-decoration-none router-link-button" :to="{name: 'deposit'}">
+              Запросить новый счет на пополнение
+            </router-link>
+          </b-button>
+        </div>
+      </div>
     </div>
     <div id="scroll-content-body">
       <div striped sticky-header hover :fields="fields" :items="ReplenishmentAccountTable" class="scrollTable">
@@ -39,29 +39,29 @@
 </template>
 
 <script>
-  import Replenishmentaccounttable from '../../TestData/Replenishmentaccounttable'
-  import {
-    CheckCircleIcon
-  } from 'vue-feather-icons'
+    import Replenishmentaccounttable from '../../TestData/Replenishmentaccounttable'
+    import {
+        CheckCircleIcon
+    } from 'vue-feather-icons'
 
-  export default {
-    name: 'index',
-    data () {
-      return {
-        fields: [
-          { key: 'docname', label: 'Название документа' },
-          { key: 'amount', label: 'На сумму' },
-          { key: 'datecreate', label: 'Дата создания' },
-          { key: 'status', label: 'Статус' },
-          { key: 'action', label: 'Действие' }
-        ],
-        ReplenishmentAccountTable: Replenishmentaccounttable
-      }
-    },
-    components: {
-      CheckCircleIcon
+    export default {
+        name: 'index',
+        data() {
+            return {
+                fields: [
+                    {key: 'docname', label: 'Название документа'},
+                    {key: 'amount', label: 'На сумму'},
+                    {key: 'datecreate', label: 'Дата создания'},
+                    {key: 'status', label: 'Статус'},
+                    {key: 'action', label: 'Действие'}
+                ],
+                ReplenishmentAccountTable: Replenishmentaccounttable
+            }
+        },
+        components: {
+            CheckCircleIcon
+        }
     }
-  }
 </script>
 
 <style lang="scss">
