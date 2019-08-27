@@ -32,6 +32,14 @@ a {
     color: #2d9c00;
   }
 }
+.table th, .table td {
+  border-top: unset;
+}
+
+.smallButtonIconSize {
+  width: 15px;
+  height: 15px;
+}
 
 #app {
   height: 100%;
@@ -42,6 +50,9 @@ a {
   position: relative;
   top: 66px;
   //min-height: calc(100% - 85px);
+}
+.dropdown-item.active, .dropdown-item:active{
+  background-color: #edf0f5;
 }
 
 #header .logo {
@@ -133,6 +144,7 @@ a {
     margin-bottom: 0;
   }
 }
+
 .page-link {
   color: #28282d;
 }

@@ -8,7 +8,7 @@
 
     <b-list-group class="mt-3">
       <span class="pt-2 pl-3 pb-2 text-muted">Документооборот</span>
-      <router-link class="router-link" :to="{name: 'InboxDocuments'}">
+      <router-link class="router-link" :to="{name: 'inbox-documents'}">
         Входящие
       </router-link>
       <b-list-group-item href="#">Исходящие

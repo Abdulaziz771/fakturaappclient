@@ -12,12 +12,12 @@
           <b-nav-item-dropdown right class="mr-4">
             <template slot="button-content"><span class="profile-name pr-2">Баланс : 6 000 сум</span></template>
             <b-dropdown-item href="#">
-              <router-link class="text-decoration-none router-link-drop" :to="{name: 'index'}">
-                Список организаций
+              <router-link class="text-decoration-none router-link-drop" :to="{name: 'finance-index'}">
+                История счета на пополнение
               </router-link>
             </b-dropdown-item>
             <b-dropdown-item href="#">
-              <router-link class="text-decoration-none router-link-drop" :to="{name: 'deposit'}">
+              <router-link class="text-decoration-none router-link-drop" :to="{name: 'finance-deposit'}">
                 Пополнить баланс
               </router-link>
             </b-dropdown-item>

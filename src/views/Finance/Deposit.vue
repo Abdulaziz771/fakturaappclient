@@ -7,9 +7,9 @@
       <hr>
     </div>
     <div class="content-body">
-      <b-container>
+      <b-container fluid>
         <b-tabs content-class="mt-3" justified class="create-new-document-tabs">
-          <b-tab title="Шаг 1-Детали">
+          <b-tab title-item-class="h5" title="Шаг 1-Детали">
             <b-row class="pt-3">
               <b-col md="7">
                 <div class="input-group mb-3 pl-5">
@@ -23,38 +23,42 @@
                 </div>
               </b-col>
               <b-col md="5" class="text-right">
-                <b-button variant="outline-success" size="sm">Показать запросы на пополнение</b-button>
+                <router-link :to="{name: 'finance-index'}">
+                  <b-button class="lightgray-button pl-2" size="sm">Показать запросы на пополнение <ChevronsRightIcon class="p-1"/></b-button>
+                </router-link>
               </b-col>
             </b-row>
             <b-row>
               <b-col md="12" class="pl-5 pr-5 pt-4">
                 <div><p class="small m-t-md"></p>
-                  <InfoIcon class="float-left icon mr-2 pay-icons"></InfoIcon>
-                  <p>
-                    Основанием перевода денежных средств служит документ-счёт на оплату, который подписывается обеими
-                    сторонами и имеет юридическую силу.Клиент имеет возможность изменять сумму пополнения до тех пор,
-                    пока не переведет денежные средства.
-                  </p>
-                  <p>
-                    Пополнение баланса в системе происходит поэтапно:
-                  </p>
-                  <ol class="font-light">
-                    <li>Определение суммы пополнения.</li>
-                    <li>Подтверждение подписанием счета на оплату.</li>
-                    <li>Перевод денежных средств через доступные методы.</li>
-                    <li>Информация о пополнении.</li>
-                  </ol>
-                  <p></p>
-                  <p>
-                    При переводе денежных средств методами онлайн-оплаты, баланс клиента пополняется в системе сразу
-                    после успешной оплаты.При переводе денежных средств методом банковского перевода или другими,
-                    которые требуют на подтверждение некоторое время, баланс клиента пополняется сразу после получения
-                    подтверждения перевода.
-                  </p></div>
+                  <div class="text-justify">
+                    <p>
+                      Основанием перевода денежных средств служит документ-счёт на оплату, который подписывается обеими
+                      сторонами и имеет юридическую силу.Клиент имеет возможность изменять сумму пополнения до тех пор,
+                      пока не переведет денежные средства.
+                    </p>
+                    <p>
+                      Пополнение баланса в системе происходит поэтапно:
+                    </p>
+                    <ol class="font-light">
+                      <li>Определение суммы пополнения.</li>
+                      <li>Подтверждение подписанием счета на оплату.</li>
+                      <li>Перевод денежных средств через доступные методы.</li>
+                      <li>Информация о пополнении.</li>
+                    </ol>
+                    <p></p>
+                    <p>
+                      При переводе денежных средств методами онлайн-оплаты, баланс клиента пополняется в системе сразу
+                      после успешной оплаты.При переводе денежных средств методом банковского перевода или другими,
+                      которые требуют на подтверждение некоторое время, баланс клиента пополняется сразу после получения
+                      подтверждения перевода.
+                    </p>
+                  </div>
+                </div>
               </b-col>
             </b-row>
           </b-tab>
-          <b-tab title="Шаг 2-Подтверждение">
+          <b-tab title-item-class="h5" title="Шаг 2-Подтверждение">
             <b-row class="mb-4">
               <b-col md="2" offset-md="10" class="text-center">
                 <b-button variant="outline-success" size="sm">Подписать</b-button>
@@ -66,10 +70,11 @@
               </b-col>
             </b-row>
           </b-tab>
-          <b-tab title="Шаг 3-Оплата">
+          <b-tab title-item-class="h5" title="Шаг 3-Оплата">
             <b-row class="mb-4">
               <b-col md="4">
-                <img id="show-btn" @click="$bvModal.show('payme-modal')" src="../../assets/payme.png" class="w-100 pr-5 pl-5"
+                <img id="show-btn" @click="$bvModal.show('payme-modal')" src="../../assets/payme.png"
+                     class="cursor-pointer w-100 pr-5 pl-5"
                      alt="Payme">
                 <b-modal id="payme-modal" size="sm" hide-footer>
                   <template slot="modal-title">
@@ -109,7 +114,7 @@
               </b-col>
             </b-row>
           </b-tab>
-          <b-tab title="Шаг 4-Информация о переводе">
+          <b-tab title-item-class="h5" title="Шаг 4-Информация о переводе">
             <b-row class="pt-5">
               <b-col md="5" offset-md="3" class="text-center">
                 <!--                <CheckCircleIcon class="pay-icons icon mr-3"></CheckCircleIcon>-->
@@ -126,20 +131,20 @@
 </template>
 
 <script>
-    import {
-        CreditCardIcon,
-        InfoIcon,
-        CheckCircleIcon
-    } from 'vue-feather-icons'
+  import {
+    CreditCardIcon,
+    CheckCircleIcon,
+    ChevronsRightIcon
+  } from 'vue-feather-icons'
 
-    export default {
-        name: 'deposit',
-        components: {
-            CreditCardIcon,
-            InfoIcon,
-            CheckCircleIcon
-        }
+  export default {
+    name: 'deposit',
+    components: {
+      CreditCardIcon,
+      CheckCircleIcon,
+      ChevronsRightIcon
     }
+  }
 </script>
 
 <style lang="scss">

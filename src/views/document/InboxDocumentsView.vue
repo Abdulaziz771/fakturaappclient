@@ -122,14 +122,16 @@
                 <ChevronLeftIcon class="cursor-pointer mr-1"/>
                 <ChevronRightIcon class="cursor-pointer ml-1"/>
               </div>
-              <b-button class="lightgray-button mr-2" v-b-toggle.filter-inbox size="sm" style="padding: 5px">Фильтр
+              <b-button class="lightgray-button mr-2" v-b-toggle.filter-inbox size="sm" style="padding: 5px">Фильтр</b-button>
+              <b-button class="lightgray-button mr-2" @click="activeRightSidebar = !activeRightSidebar" size="sm"
+                        style="padding: 5px">Массовое подписание
               </b-button>
             </div>
           </b-col>
         </b-row>
       </b-container>
     </div>
-    <div id="scroll-content-body" class="pt-5">
+    <div class="pt-5">
       <b-tabs justified class="mt-2 document-tabs">
         <b-tab title-item-class="h5" active>
           <template slot="title">Счет фактуры</template>
@@ -226,12 +228,14 @@
           </b-table>
         </b-tab>
       </b-tabs>
+      <RightSidebar :active="activeRightSidebar"/>
     </div>
   </div>
 </template>
 <script>
     import Documents from '../../TestData/Documents'
     import Multiselect from 'vue-multiselect'
+    import RightSidebar from '../../components/sidebar/RightSidebar'
 
     import {
         ArrowLeftCircleIcon,
@@ -257,13 +261,15 @@
             PrinterIcon,
             ChevronRightIcon,
             ChevronLeftIcon,
-            Multiselect
+            Multiselect,
+            RightSidebar
         },
         data() {
             return {
                 selected: [],
                 fixed: true,
                 selectAll: false,
+                activeRightSidebar: true,
                 fields: [
                     {key: 'selected', label: ''},
                     {key: 'title', label: 'Наименование документа'},
@@ -276,16 +282,16 @@
                 documents: Documents,
                 value: [],
                 options: [
-                    { name: 'Договор' },
-                    { name: 'Счёт-фактура' },
-                    { name: 'Оферта' },
-                    { name: 'Отчёт по транзакциям' },
-                    { name: 'Акт и счёт фактура' },
-                    { name: 'Счет на оплату' },
-                    { name: 'Материальный отчет' },
-                    { name: 'Акт на штрафные санкции' },
-                    { name: 'Доверенность' },
-                    { name: 'Справка' }
+                    {name: 'Договор'},
+                    {name: 'Счёт-фактура'},
+                    {name: 'Оферта'},
+                    {name: 'Отчёт по транзакциям'},
+                    {name: 'Акт и счёт фактура'},
+                    {name: 'Счет на оплату'},
+                    {name: 'Материальный отчет'},
+                    {name: 'Акт на штрафные санкции'},
+                    {name: 'Доверенность'},
+                    {name: 'Справка'}
                 ]
             }
         },
@@ -298,7 +304,7 @@
                     }
                 }
             },
-            addTag (newTag) {
+            addTag(newTag) {
                 const tag = {
                     name: newTag,
                     code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
@@ -319,11 +325,8 @@
   .scrollTable thead th:first-child {
     width: 50px;
   }
-
   .scrollTable thead th:last-child {
     width: 50px;
   }
 </style>
-
-<style src="../../../node_modules/vue-multiselect/dist/vue-multiselect.min.css"></style>
 

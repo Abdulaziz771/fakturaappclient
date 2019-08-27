@@ -1,8 +1,13 @@
 <template>
   <div class="content">
-    <div class="content-header">Личный кабинет</div>
+    <div class="content-header">
+      <b-container fluid>
+        <h5 class="text-center">Личный кабинет</h5>
+        <hr class="m-0">
+      </b-container>
+    </div>
     <div class="content-body">
-      <b-container>
+      <b-container fluid>
         <div class="h-panel shadow">
           <div class="panel-heading">
             <b-row>

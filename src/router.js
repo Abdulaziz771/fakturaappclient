@@ -13,7 +13,7 @@ const router = new Router({
     },
     {
       path: '/document/inbox',
-      name: 'InboxDocuments',
+      name: 'inbox-documents',
       component: () => import('./views/document/InboxDocumentsView')
     },
     {
@@ -43,12 +43,12 @@ const router = new Router({
     },
     {
       path: '/finance/index',
-      name: 'index',
+      name: 'finance-index',
       component: () => import('./views/Finance/Index')
     },
     {
       path: '/finance/deposit',
-      name: 'deposit',
+      name: 'finance-deposit',
       component: () => import('./views/Finance/Deposit')
     },
     {
