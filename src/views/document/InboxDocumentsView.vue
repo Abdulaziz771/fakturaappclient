@@ -73,7 +73,7 @@
           <b-col md="6">
             <label for="selectDoc">Тип документа</label>
             <multiselect id="selectDoc" v-model="value" tag-placeholder="Add this as new tag"
-                         label="name" :options="options" :multiple="true" :taggable="true"
+                         label="name" track-by="code" :options="options" :multiple="true" :taggable="true"
                          @tag="addTag">
             </multiselect>
           </b-col>
@@ -282,16 +282,16 @@
                 documents: Documents,
                 value: [],
                 options: [
-                    {name: 'Договор'},
-                    {name: 'Счёт-фактура'},
-                    {name: 'Оферта'},
-                    {name: 'Отчёт по транзакциям'},
-                    {name: 'Акт и счёт фактура'},
-                    {name: 'Счет на оплату'},
-                    {name: 'Материальный отчет'},
-                    {name: 'Акт на штрафные санкции'},
-                    {name: 'Доверенность'},
-                    {name: 'Справка'}
+                    {name: 'Договор', code:'1'},
+                    {name: 'Счёт-фактура',  code:'2'},
+                    {name: 'Оферта', code:'3'},
+                    {name: 'Отчёт по транзакциям', code:'4'},
+                    {name: 'Акт и счёт фактура' , code:'5'},
+                    {name: 'Счет на оплату' , code:'6'},
+                    {name: 'Материальный отчет' , code:'7'},
+                    {name: 'Акт на штрафные санкции' , code:'8'},
+                    {name: 'Доверенность' , code:'9'},
+                    {name: 'Справка' , code:'10'}
                 ]
             }
         },
@@ -304,7 +304,7 @@
                     }
                 }
             },
-            addTag(newTag) {
+            addTag (newTag) {
                 const tag = {
                     name: newTag,
                     code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))

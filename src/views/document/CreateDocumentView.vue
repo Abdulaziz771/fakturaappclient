@@ -3,12 +3,12 @@
     <div class="content-header">Создать новый документ</div>
     <div class="content-body">
       <b-container>
-        <b-tabs content-class="mt-3" justified class="create-new-document-tabs">
+        <b-tabs content-class="mt-3" justified class="create-new-document-tabs document-tabs">
           <b-tab title="Загрузить одного документа" class="newdoc-tab" active>
             <div class="d-flex justify-content-center">
               <div class="align-self-center text-center">
                 <div class="newdoc-file-upload-field-icon">
-                  <FileIcon/>
+                  <img src="../../assets/download.png" alt="doc">
                 </div>
                 <div>
                   <div class="input-file-text">
@@ -25,7 +25,7 @@
             <div class="d-flex justify-content-center">
               <div class="align-self-center text-center">
                 <div class="newdoc-file-upload-field-icon">
-                  <FileIcon/>
+                  <img src="../../assets/file.png" alt="doc">
                 </div>
                 <div class="input-file-text">
                   <label for="upload-file-tab-two">Укажите архив файл</label>
@@ -45,7 +45,7 @@
             <div class="d-flex justify-content-center">
               <div class="align-self-center text-center">
                 <div class="newdoc-file-upload-field-icon">
-                  <FileIcon/>
+                  <img src="../../assets/import.png" alt="doc">
                 </div>
                 <div class="input-file-text">
                   <label for="upload-file-tab-three">Выберите реестр</label>
@@ -122,7 +122,7 @@
           <b-col>
             <div class="d-flex flex-row">
               <div class="p-2">
-                <FileIcon/>
+                <img src="../../assets/contract.png" alt="doc">
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3"><a class="newdoc-footer-link">Доверенность</a></div>
@@ -133,7 +133,7 @@
           <b-col>
             <div class="d-flex flex-row">
               <div class="p-2">
-                <FileIcon/>
+                <img src="../../assets/list.png" alt="doc">
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3"><a class="newdoc-footer-link">Платежное поручение</a></div>
@@ -144,7 +144,7 @@
           <b-col>
             <div class="d-flex flex-row">
               <div class="p-2">
-                <FileIcon/>
+                <img src="../../assets/folder.png" alt="doc">
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3"><a class="newdoc-footer-link">Публичный документ</a></div>
