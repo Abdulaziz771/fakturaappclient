@@ -27,6 +27,11 @@ const router = new Router({
       component: () => import('./views/document/create/SystemInvoiceView')
     },
     {
+      path: '/document/create/systemusdinvoice',
+      name: 'system-usdin-voice',
+      component: () => import('./views/document/create/Systemusdinvoice')
+    },
+    {
       path: '/document/verify',
       name: 'verify-document-view',
       component: () => import('./views/document/VerifyDocumentView')

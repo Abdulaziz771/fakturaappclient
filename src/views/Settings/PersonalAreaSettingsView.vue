@@ -7,7 +7,7 @@
       </b-container>
     </div>
     <div class="content-body">
-      <b-container fluid>
+      <b-container fluid class="pb-4">
         <div class="h-panel shadow">
           <div class="panel-heading">
             <b-row>
@@ -76,10 +76,10 @@
                 </b-form-group>
 
                 <div class="mt-3 d-flex flex-row-reverse">
-                  <b-button class="default-success-button">Сохранить</b-button>
-                  <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickCancelPersonalData">Отмена
-                  </b-button>
-                </div>
+                <b-button class="default-success-button">Сохранить</b-button>
+                <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickCancelPersonalData">Отмена
+                </b-button>
+              </div>
               </b-col>
             </b-row>
             <b-row v-else>
@@ -103,6 +103,108 @@
           </div>
         </div>
       </b-container>
+      <b-container fluid class="pb-4">
+        <div class="h-panel shadow">
+          <div class="panel-heading">
+            <b-row>
+              <b-col class="text-left"><span>Права в организации</span></b-col>
+            </b-row>
+          </div>
+          <div class="panel-body">
+            <b-row>
+              <b-col>
+                <b-list-group>
+                <b-list-group-item><b>Подразделение </b> Руководства</b-list-group-item>
+                <b-list-group-item><b>Должность </b> Директор</b-list-group-item>
+                </b-list-group>
+              </b-col>
+            </b-row>
+          </div>
+        </div>
+      </b-container>
+      <b-container fluid class="pb-4">
+        <div class="h-panel shadow">
+          <div class="panel-heading">
+            <b-row>
+              <b-col><span>Настройки уведомления</span></b-col>
+              <b-col class="text-right" v-if="!showNotificationSettings">
+                <EditIcon @click="onClickNotificationSettings(true)"/>
+              </b-col>
+            </b-row>
+          </div>
+          <div class="panel-body">
+            <b-row v-if="showNotificationSettings">
+              <b-col>
+                <b-form-group
+                  label-cols-sm="3"
+                  label-cols-md="2"
+                  label-cols-lg="2"
+                  label-cols-xl="2"
+                  label="Уведомления:"
+                  label-align-sm="right"
+                  label-for="notifications"
+                >
+                  <b-form-checkbox clascons="pt-1" id="notifications" v-model="form.notifications"  value="Включено" unchecked-value="Выключено"></b-form-checkbox>
+                </b-form-group>
+
+                <b-input-group
+                  label-cols-sm="1"
+                  label="Адрес эл. почты:"
+                  label-align-sm="right"
+                  label-for="mail_address"
+                  class="w-50 pb-3  "
+                >
+                  <b-form-input id="mail_address" type="email" v-model="form.mail_address"></b-form-input>
+                  <b-input-group-append>
+                    <b-button variant="outline-secondary">Подтвердить</b-button>
+                  </b-input-group-append>
+                </b-input-group>
+
+                <b-input-group
+                  label-cols-sm="1"
+                  label="Сотовый телефон:"
+                  label-align-sm="right"
+                  label-for="phone_number"
+                  class="w-50"
+                >
+                  <b-form-input id="phone_number" type="email" v-model="form.phone_number"></b-form-input>
+                  <b-input-group-append>
+                    <b-button variant="outline-secondary">Подтвердить</b-button>
+                  </b-input-group-append>
+                </b-input-group>
+
+                <div class="mt-3 d-flex flex-row-reverse">
+                  <b-button class="default-success-button">Сохранить</b-button>
+                  <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickNotificationSettings(false)">Отмена
+                  </b-button>
+                </div>
+              </b-col>
+            </b-row>
+            <b-row v-else>
+              <b-col>
+                <b-list-group>
+                  <b-list-group-item><b>Уведомления:</b> {{form.notifications}}</b-list-group-item>
+                  <b-list-group-item><b>Адрес эл. почты:</b> {{form.mail_address}}</b-list-group-item>
+                  <b-list-group-item><b>Сотовый телефон:</b> {{form.phone_number}}</b-list-group-item>
+                </b-list-group>
+              </b-col>
+            </b-row>
+          </div>
+        </div>
+      </b-container>
+      <b-container fluid>
+        <div class="h-panel shadow">
+          <div class="panel-heading">
+            <b-row>
+                <b-col><span>Смена пароля</span></b-col>
+            </b-row>
+          </div>
+          <div class="panel-body">
+            <b-button size="sm" variant="outline-secondary" class="mr-2">Изсенить пароль</b-button>
+            <b-button size="sm" variant="outline-success">Сохранить</b-button>
+          </div>
+        </div>
+      </b-container>
     </div>
   </div>
 </template>
@@ -122,11 +224,15 @@
       return {
         imgUrl: null,
         showEditingPersonalData: false,
+          showNotificationSettings: false,
         form: {
           last_name: 'Иванов',
           first_name: 'Иван',
           middle_name: 'Иванович',
           inn: '457896123',
+            notifications: 'Выключено',
+            mail_address: 'Testorganization@gmail.com',
+            phone_number: '+998998342345'
         }
       }
     },
@@ -143,11 +249,20 @@
       },
       onClickCancelPersonalData () {
         this.showEditingPersonalData = false
-      }
+      },
+        onClickNotificationSettings(value) {
+            this.showNotificationSettings = value
+        },
     }
   }
 </script>
 <style lang="scss">
+
+  .content-body {
+    overflow-y: scroll;
+    height: 83vh;
+  }
+
   .avatar-upload {
     position: relative;
     max-width: 205px;
