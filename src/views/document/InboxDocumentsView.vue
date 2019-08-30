@@ -179,7 +179,7 @@
       return {
         selected: [],
         fixed: true,
-        activeRightSidebar: true,
+        activeRightSidebar: false,
         selectAll: false,
         fields: [
           { key: 'selected', label: '' },

@@ -51,6 +51,8 @@
         </div>
       </div>
     </div>
+
+    <router-view />
   </div>
 </template>
 <script>
@@ -59,7 +61,7 @@
     } from 'vue-feather-icons'
 
     export default {
-        name: 'verify-document-view',
+        name: 'document-verify',
         components: {
             InfoIcon
         }

@@ -10,6 +10,7 @@ import Multiselect from 'vue-multiselect'
 Vue.component('multiselect', Multiselect)
 
 import "vue-multiselect/dist/vue-multiselect.min.css"
+import store from './store'
 
 Vue.use(VueProgressBar, {
   color: '#28a745',
@@ -23,5 +24,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

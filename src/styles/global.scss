@@ -33,7 +33,7 @@ a {
   }
 }
 .table th, .table td {
-  border-top: unset;
+  //border-top: unset;
 }
 
 .smallButtonIconSize {
@@ -45,12 +45,7 @@ a {
   height: 100%;
 }
 
-#wrapper {
-  margin-left: 276px;
-  position: relative;
-  top: 66px;
-  //min-height: calc(100% - 85px);
-}
+
 .dropdown-item.active, .dropdown-item:active{
   background-color: #edf0f5;
 }

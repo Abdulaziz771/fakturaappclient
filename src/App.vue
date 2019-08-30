@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <headerComponent></headerComponent>
-    <sidebarComponent></sidebarComponent>
-    <router-view id="wrapper"></router-view>
+    <sidebarComponent @activeSecondSidebar="activeSecondSidebar"></sidebarComponent>
+    <router-view v-bind:class="activeClass"></router-view>
     <vue-progress-bar></vue-progress-bar>
   </div>
 </template>
@@ -11,15 +11,37 @@
   import sidebarComponent from './components/sidebar/Sidebar'
 
   export default {
+    data () {
+      return {
+        isActiveSecondSidebar: false
+      }
+    },
     components: {
       headerComponent,
-      sidebarComponent,
+      sidebarComponent
     },
     computed: {
-      setHeight () {
-        document.getElementById('scrollTable').style.height = '800px'
+      activeClass () {
+        return this.isActiveSecondSidebar ? 'wrapper' : 'fullContent';
+      }
+    },
+    methods: {
+      activeSecondSidebar (value) {
+        this.isActiveSecondSidebar = value
       }
     }
   }
 </script>
+<style>
+  .fullContent {
+    margin-left: 97px !important;
+    position: relative;
+    top: 66px;
+  }
+  .wrapper {
+    margin-left: 276px !important;
+    position: relative;
+    top: 66px;
+  }
+</style>
 

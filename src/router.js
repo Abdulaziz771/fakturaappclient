@@ -12,47 +12,83 @@ const router = new Router({
       component: () => import('./views/Home')
     },
     {
-      path: '/document/inbox',
-      name: 'inbox-documents',
-      component: () => import('./views/document/InboxDocumentsView')
-    },
-    {
-      path: '/document/create',
-      name: 'create-document-view',
-      component: () => import('./views/document/CreateDocumentView')
-    },
-    {
-      path: '/document/create/systeminvoice',
-      name: 'create-system-invoice',
-      component: () => import('./views/document/create/SystemInvoiceView')
-    },
-    {
-      path: '/document/verify',
-      name: 'verify-document-view',
+      path: '/document-verify',
+      name: 'document-verify',
       component: () => import('./views/document/VerifyDocumentView')
     },
     {
-      path: '/settings/personalarea',
+      path: '/document',
+      name: 'document',
+      component: () => import('./views/document/DocumentRouterView'),
+      children: [
+        {
+          path: '',
+          name: 'document-home',
+          redirect: {name: 'document-inbox'}
+        },
+        {
+          path: 'inbox',
+          name: 'document-inbox',
+          component: () => import('./views/document/InboxDocumentsView')
+        },
+        {
+          path: 'create',
+          name: 'document-create',
+          component: () => import('./views/document/create/CreateDocumentRouterView'),
+          children: [
+            {
+              path: '',
+              name: 'document-create-home',
+              redirect: {name: 'document-create-index'}
+            },
+            {
+              path: 'index',
+              name: 'document-create-index',
+              component: () => import('./views/document/create/CreateDocumentView')
+            },
+            {
+              path: 'system-invoice',
+              name: 'document-create-system-invoice',
+              component: () => import('./views/document/create/SystemInvoiceView')
+            }
+          ]
+        }
+      ]
+    },
+    {
+      path: '/settings/personal-area',
       name: 'settings-personal-area',
       component: () => import('./views/Settings/PersonalAreaSettingsView')
     },
     {
-      path: '/counterparties',
+      path: '/counter-parties',
       name: 'counter-parties',
       component: () => import('./views/counterparties/Counterparties')
     },
     {
-      path: '/finance/index',
-      name: 'finance-index',
-      component: () => import('./views/Finance/Index')
+      path: '/finance',
+      name: 'finance',
+      component: () => import('./views/finance/FinanceRouterView'),
+      children: [
+        {
+          path: '',
+          name: 'finance-home',
+          redirect: {name: 'finance-index'}
+        },
+        {
+          path: 'index',
+          name: 'finance-index',
+          component: () => import('./views/finance/Index')
+        },
+        {
+          path: 'deposit',
+          name: 'finance-deposit',
+          component: () => import('./views/finance/Deposit')
+        }
+      ]
     },
     {
-      path: '/finance/deposit',
-      name: 'finance-deposit',
-      component: () => import('./views/Finance/Deposit')
-    },
-    {
-      path: '/myorganization',
+      path: '/my-organization',
       name: 'my-organization-list',
       component: () => import('./views/Myorganization')
     }

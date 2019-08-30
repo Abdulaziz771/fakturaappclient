@@ -111,7 +111,7 @@
               <div class="p-2">
                 <div class="fs21 mb-3">Счет-фактура</div>
                 <div class="mb-2 newdoc-footer-link">
-                  <router-link :to="{ name: 'create-system-invoice'}">Счет-фактура</router-link>
+                  <router-link :to="{ name: 'document-create-system-invoice'}">Счет-фактура</router-link>
                 </div>
                 <div class="mb-2 newdoc-footer-link">Акт и счет-фактура</div>
                 <div class="mb-2 newdoc-footer-link">Счет на оплату</div>

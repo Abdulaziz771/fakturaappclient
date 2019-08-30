@@ -2,36 +2,35 @@
   <div id="sidebar">
     <div class="first-inside-sidebar">
       <div class="d-flex flex-column">
-        <div @click="onClickMenu(1)" :class="{active: activeMenu===1}"
-             class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <router-link :to="{name: 'document-home'}"
+                     class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <FileIcon class="menu-icon"/>
               <div class="menu-text pt-2">Документы</div>
             </div>
           </div>
-        </div>
+        </router-link>
 
-        <div @click="onClickMenu(2)" :class="{active: activeMenu===2}"
-             class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <router-link :to="{name: 'counter-parties'}"
+                     class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <GridIcon class="menu-icon"/>
               <div class="menu-text pt-2">Контрагенты</div>
             </div>
           </div>
-        </div>
+        </router-link>
 
-        <div @click="onClickMenu(3)" :class="{active: activeMenu===3}">
-          <div class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
-            <div class="d-flex justify-content-center">
-              <div class="align-self-center">
-                <Edit3Icon class="menu-icon"/>
-                <div class="menu-text pt-2">Проверить подпись документа</div>
-              </div>
+        <router-link :to="{name: 'document-verify'}"
+                     class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+          <div class="d-flex justify-content-center">
+            <div class="align-self-center">
+              <Edit3Icon class="menu-icon"/>
+              <div class="menu-text pt-2">Проверить подпись документа</div>
             </div>
           </div>
-        </div>
+        </router-link>
 
         <div class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center">
@@ -51,19 +50,19 @@
           </div>
         </div>
 
-        <div @click="onClickMenu(6)" :class="{active: activeMenu===6}"
-             class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <router-link :to="{name: 'settings-personal-area'}"
+                     class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <SettingsIcon class="menu-icon"/>
               <div class="menu-text pt-2">Настройки</div>
             </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
-    <div class="second-inside-sidebar">
-      <component :is="isSidebar"></component>
+    <div v-if="activeSidebar" class="second-inside-sidebar">
+      <component :is="activeSidebar"></component>
     </div>
   </div>
 </template>
@@ -102,27 +101,36 @@
       }
     },
     computed: {
-      isSidebar () {
-        if (this.activeMenu === 1) {
-          return 'SidebarMenuDocuments'
-        } else if (this.activeMenu === 2) {
-          return 'SidebarMenuCounterparties'
-        } else if (this.activeMenu === 3) {
-            return 'SidebarMenuVerify'
-        } else if (this.activeMenu === 6) {
-          return 'SidebarMenuSettings'
+      activeSidebar () {
+        this.$Progress.start();
+        if (this.$route.matched.length > 0) {
+          if (this.$route.matched[0].name === 'document') {
+            this.$emit('activeSecondSidebar', true);
+            this.$Progress.finish();
+            return SidebarMenuDocuments
+          } else if (this.$route.matched[0].name === 'counter-parties') {
+            this.$emit('activeSecondSidebar', true);
+            this.$Progress.finish();
+            return SidebarMenuCounterparties
+          } else if (this.$route.matched[0].name === 'document-verify') {
+            this.$emit('activeSecondSidebar', true);
+            this.$Progress.finish();
+            return SidebarMenuVerify
+          } else if (this.$route.matched[0].name === 'settings-personal-area') {
+            this.$emit('activeSecondSidebar', true);
+            this.$Progress.finish();
+            return SidebarMenuSettings
+          } else {
+            this.$emit('activeSecondSidebar', false);
+            this.$Progress.finish();
+            return null
+          }
+        } else {
+          this.$emit('activeSecondSidebar', false);
+          this.$Progress.finish();
+          return null
         }
       }
-    },
-    methods: {
-      onClickMenu (value) {
-        this.$Progress.start()
-        this.activeMenu = value
-        this.$Progress.finish()
-      }
-    },
-    mounted () {
-      this.activeMenu = 1
     }
   }
 </script>
@@ -135,6 +143,7 @@
     border-right: $default-border;
     float: left;
     position: fixed;
+    top: 67px;
 
     & .first-inside-sidebar {
       position: fixed;
@@ -142,8 +151,8 @@
       width: 96px;
       background: #f3f3f3;
       border-right: $default-border;
-      top: 67px;
       overflow-y: auto;
+      text-transform: uppercase;
 
       & .menu-text {
         font-size: 12px;
@@ -166,7 +175,7 @@
         }
       }
 
-      & .active {
+      & .router-link-active {
         background-color: white;
         border-bottom: $default-border;
 
@@ -183,10 +192,13 @@
     width: 180px;
     margin-left: 96px;
     border-right: $default-border;
-    top: 67px;
     background: white;
     font-size: 14px;
     overflow-y: auto;
+
+    & .router-link-active {
+      background-color: #f2f2f2;
+    }
   }
 
   .new-doc-menu {

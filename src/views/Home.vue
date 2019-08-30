@@ -18,7 +18,7 @@
         </b-container>
       </div>
       <div class="content-body">
-        <b-table responsive bordered striped hover :fields="fields" :items="documents">
+        <b-table responsive striped hover :fields="fields" :items="documents">
           <template slot="title" slot-scope="data">
             {{ data.item.title }} <br>
             <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
@@ -45,7 +45,8 @@
           <b-row>
             <b-col class="text-left p-0">
               Недавно подписанные документы
-              <HelpCircleIcon class="help-icon" v-b-tooltip.hover title="Недавно подписанные документы"></HelpCircleIcon>
+              <HelpCircleIcon class="help-icon" v-b-tooltip.hover
+                              title="Недавно подписанные документы"></HelpCircleIcon>
             </b-col>
             <b-col class="text-right p-0">
               <router-link :to="{name: 'inbox-documents'}" class="view-all-link">
@@ -114,9 +115,11 @@
     font-size: 17px;
     text-decoration: none;
     font-weight: 500;
-    &:hover{
+
+    &:hover {
       color: #28a745;
     }
+
     & svg {
       width: 20px;
       position: relative;
