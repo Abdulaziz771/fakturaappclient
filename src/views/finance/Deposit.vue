@@ -8,7 +8,7 @@
     </div>
     <div class="content-body">
       <b-container fluid>
-        <b-tabs content-class="mt-3" justified class="create-new-document-tabs">
+        <b-tabs content-class="mt-3" justified class="create-new-document-tabs document-tabs">
           <b-tab title-item-class="h5" title="Шаг 1-Детали">
             <b-row class="pt-3">
               <b-col md="7">

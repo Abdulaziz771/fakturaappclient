@@ -3,12 +3,12 @@
     <div class="content-header">Создать новый документ</div>
     <div class="content-body">
       <b-container>
-        <b-tabs content-class="mt-3" justified class="create-new-document-tabs">
+        <b-tabs content-class="mt-3" justified class="create-new-document-tabs document-tabs">
           <b-tab title="Загрузить одного документа" class="newdoc-tab" active>
             <div class="d-flex justify-content-center">
               <div class="align-self-center text-center">
                 <div class="newdoc-file-upload-field-icon">
-                  <FileIcon/>
+                  <img src="../../../assets/download.png" alt="doc">
                 </div>
                 <div>
                   <div class="input-file-text">
@@ -25,7 +25,7 @@
             <div class="d-flex justify-content-center">
               <div class="align-self-center text-center">
                 <div class="newdoc-file-upload-field-icon">
-                  <FileIcon/>
+                  <img src="../../../assets/file.png" alt="doc">
                 </div>
                 <div class="input-file-text">
                   <label for="upload-file-tab-two">Укажите архив файл</label>
@@ -45,7 +45,7 @@
             <div class="d-flex justify-content-center">
               <div class="align-self-center text-center">
                 <div class="newdoc-file-upload-field-icon">
-                  <FileIcon/>
+                  <img src="../../../assets/import.png" alt="doc">
                 </div>
                 <div class="input-file-text">
                   <label for="upload-file-tab-three">Выберите реестр</label>
@@ -110,19 +110,17 @@
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3">Счет-фактура</div>
-                <div class="mb-2 newdoc-footer-link">
-                  <router-link :to="{ name: 'document-create-system-invoice'}">Счет-фактура</router-link>
-                </div>
-                <div class="mb-2 newdoc-footer-link">Акт и счет-фактура</div>
-                <div class="mb-2 newdoc-footer-link">Счет на оплату</div>
-                <div class="mb-2 newdoc-footer-link">Импорт счет-фактуры</div>
+                <div class="mb-2 action-icon" @click="$bvModal.show('type-of-layout')">Счет-фактура</div>
+                <div class="mb-2 action-icon">Акт и счет-фактура</div>
+                <div class="mb-2 action-icon">Счет на оплату</div>
+                <div class="mb-2 action-icon">Импорт счет-фактуры</div>
               </div>
             </div>
           </b-col>
           <b-col>
             <div class="d-flex flex-row">
               <div class="p-2">
-                <FileIcon/>
+                <img src="../../../assets/contract.png" alt="doc">
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3"><a class="newdoc-footer-link">Доверенность</a></div>
@@ -133,7 +131,7 @@
           <b-col>
             <div class="d-flex flex-row">
               <div class="p-2">
-                <FileIcon/>
+                <img src="../../../assets/list.png" alt="doc">
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3"><a class="newdoc-footer-link">Платежное поручение</a></div>
@@ -144,7 +142,7 @@
           <b-col>
             <div class="d-flex flex-row">
               <div class="p-2">
-                <FileIcon/>
+                <img src="../../../assets/folder.png" alt="doc">
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3"><a class="newdoc-footer-link">Публичный документ</a></div>
@@ -153,6 +151,32 @@
             </div>
           </b-col>
         </b-row>
+        <b-modal id="type-of-layout" hide-footer>
+          <template slot="modal-title">Выберите тип шаблона</template>
+          <div class="d-block">
+            <div class="cursor-pointer">
+              <router-link class="router-link-drop text-decoration-none" :to="{ name: 'create-system-invoice'}">
+                <h5 class="p-4 border rounded">Стандартная счет фактура</h5>
+              </router-link>
+            </div>
+            <div class="cursor-pointer">
+              <router-link class="router-link-drop text-decoration-none" :to="{ name: 'system-usdin-voice'}">
+                <h5 class="p-4 border rounded">Валютная счет фактура</h5>
+              </router-link>
+            </div>
+            <div class="cursor-pointer">
+              <h5 class="p-4 border cursor-pointer rounded">Стандартная счет-фактура (новая форма)</h5>
+            </div>
+            <div class="cursor-pointer">
+              <h5 class="p-4 border cursor-pointer rounded">Стандартная счет-фактура для плательщиков акциозного налога
+                (новая форма)</h5>
+            </div>
+          </div>
+          <div class="d-block">
+            <b-button class="mt-3 default-success-button" block @click="$bvModal.hide('type-of-layout')">Закрыть
+            </b-button>
+          </div>
+        </b-modal>
       </b-container>
     </div>
   </div>
@@ -216,6 +240,16 @@
     width: 65px;
     height: 65px;
     color: #66c93e;
+  }
+
+  .modal-backdrop {
+    width: 200vw !important;
+    height: 200vh !important;
+  }
+
+  .content-body {
+    overflow-y: scroll;
+    height: 83vh;
   }
 
 </style>

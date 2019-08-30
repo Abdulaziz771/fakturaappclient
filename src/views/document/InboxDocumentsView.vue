@@ -1,5 +1,92 @@
 <template>
   <div class="content">
+    <b-collapse id="filter-inbox" class="m-2">
+      <b-card>
+        <b-row>
+          <b-col md="6">
+
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="Counterparty">Контрагент</label>
+              </div>
+              <select class="custom-select" id="Counterparty" placeholder="Введите инн или название"></select>
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputId5">Создан с</label>
+              </div>
+              <b-form-input type="date" id="inputId5"></b-form-input>
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputId4">по</label>
+              </div>
+              <b-form-input type="date" id="inputId4"></b-form-input>
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="status">Статус</label>
+              </div>
+              <select class="custom-select" id="status">
+                <option value="1"></option>
+                <option value="2">Требуется подпись</option>
+                <option value="3">На рассмотрении аннулирования</option>
+              </select>
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="Subdivision">Подразделение</label>
+              </div>
+              <select class="custom-select" id="Subdivision">
+                <option></option>
+                <option value="18">Бухгалтерия</option>
+                <option value="40">Руководства</option>
+                <option value="861">Call center (код:)</option>
+                <option value="898">Sub Accounting</option>
+              </select>
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputId3">Реестр</label>
+              </div>
+              <b-form-input type="text" id="inputId3"></b-form-input>
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputId2">Наименование документа</label>
+              </div>
+              <b-form-input type="text" id="inputId2"></b-form-input>
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputId1">Метка</label>
+              </div>
+              <b-form-input type="text" id="inputId1"></b-form-input>
+            </div>
+
+          </b-col>
+
+          <b-col md="6">
+            <label for="selectDoc">Тип документа</label>
+            <multiselect id="selectDoc" v-model="value" tag-placeholder="Add this as new tag"
+                         label="name" track-by="code" :options="options" :multiple="true" :taggable="true"
+                         @tag="addTag">
+            </multiselect>
+          </b-col>
+
+        </b-row>
+        <b-row>
+          <b-col md="3" offset-md="9" class="text-right">
+            <b-button variant="success" size="sm" class="m-1">Показать</b-button>
+            <b-button variant="light" size="sm" class="m-1">Сбросить</b-button>
+          </b-col>
+        </b-row>
+      </b-card>
+    </b-collapse>
     <div id="fixed-content-header">
       <b-container fluid>
         <b-row>
@@ -35,7 +122,8 @@
                 <ChevronLeftIcon class="cursor-pointer mr-1"/>
                 <ChevronRightIcon class="cursor-pointer ml-1"/>
               </div>
-              <b-button class="lightgray-button mr-2" size="sm" style="padding: 5px">Фильтр</b-button>
+              <b-button class="lightgray-button mr-2" v-b-toggle.filter-inbox size="sm" style="padding: 5px">Фильтр
+              </b-button>
               <b-button class="lightgray-button mr-2" @click="activeRightSidebar = !activeRightSidebar" size="sm"
                         style="padding: 5px">Массовое подписание
               </b-button>
@@ -147,6 +235,7 @@
 </template>
 <script>
   import Documents from '../../TestData/Documents'
+  import Multiselect from 'vue-multiselect'
   import RightSidebar from '../../components/sidebar/RightSidebar'
 
   import {
@@ -173,14 +262,15 @@
       PrinterIcon,
       ChevronRightIcon,
       ChevronLeftIcon,
+      Multiselect,
       RightSidebar
     },
     data () {
       return {
         selected: [],
         fixed: true,
-        activeRightSidebar: false,
         selectAll: false,
+        activeRightSidebar: true,
         fields: [
           { key: 'selected', label: '' },
           { key: 'title', label: 'Наименование документа' },
@@ -190,7 +280,20 @@
           { key: 'status', label: 'Статус' },
           { key: 'action', label: '' }
         ],
-        documents: Documents
+        documents: Documents,
+        value: [],
+        options: [
+          { name: 'Договор', code: '1' },
+          { name: 'Счёт-фактура', code: '2' },
+          { name: 'Оферта', code: '3' },
+          { name: 'Отчёт по транзакциям', code: '4' },
+          { name: 'Акт и счёт фактура', code: '5' },
+          { name: 'Счет на оплату', code: '6' },
+          { name: 'Материальный отчет', code: '7' },
+          { name: 'Акт на штрафные санкции', code: '8' },
+          { name: 'Доверенность', code: '9' },
+          { name: 'Справка', code: '10' }
+        ]
       }
     },
     methods: {
@@ -201,6 +304,14 @@
             this.selected.push(this.documents[i].uniqueId)
           }
         }
+      },
+      addTag (newTag) {
+        const tag = {
+          name: newTag,
+          code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
+        }
+        this.options.push(tag)
+        this.value.push(tag)
       }
     }
   }
@@ -215,6 +326,7 @@
   .scrollTable thead th:first-child {
     width: 50px;
   }
+
   .scrollTable thead th:last-child {
     width: 50px;
   }

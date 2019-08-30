@@ -50,6 +50,11 @@ const router = new Router({
               path: 'system-invoice',
               name: 'document-create-system-invoice',
               component: () => import('./views/document/create/SystemInvoiceView')
+            },
+            {
+              path: 'system-usd-invoice',
+              name: 'system-usd-invoice',
+              component: () => import('./views/document/create/Systemusdinvoice')
             }
           ]
         }
