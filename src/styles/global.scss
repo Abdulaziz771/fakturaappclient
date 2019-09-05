@@ -32,6 +32,7 @@ a {
     color: #2d9c00;
   }
 }
+
 .table th, .table td {
   //border-top: unset;
 }
@@ -45,8 +46,12 @@ a {
   height: 100%;
 }
 
+.page-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
 
-.dropdown-item.active, .dropdown-item:active{
+.dropdown-item.active, .dropdown-item:active {
   background-color: #edf0f5;
 }
 
@@ -60,6 +65,11 @@ a {
   border-color: $default-border-color;
   color: #28282d;
   padding: 3px;
+
+  & svg {
+    color: #6b6868;
+    padding: 2px;
+  }
 
   &:hover {
     background-color: #f7f7f7;
@@ -111,12 +121,19 @@ a {
   color: #28282d;
 }
 
+.fullContent {
+  & #fixed-content-header {
+    position: unset !important;
+    width: auto !important;
+  }
+}
+
 #fixed-content-header {
   padding: 10px;
   background-color: white;
   position: fixed;
-  width: calc(100% - 276px);
-  z-index: 99;
+  width: calc(100% - 292px);
+  z-index: 998;
   border-bottom: 1px solid #e4e5e7;
 }
 
@@ -128,6 +145,10 @@ a {
 .content-body {
   padding-bottom: 20px;
   overflow: hidden;
+}
+
+.content-page {
+  padding: 10px;
 }
 
 .content-body-header {
@@ -145,14 +166,14 @@ a {
 }
 
 .router-link-drop:hover {
-  color:#404040;
+  color: #404040;
 }
 
 .router-link-button {
-  color:whitesmoke;
+  color: whitesmoke;
 
   &:hover {
-    color:white;
+    color: white;
   }
 
 }
@@ -196,6 +217,7 @@ a {
 .second-inside-sidebar {
   & .router-link-exact-active {
     background-color: #edf0f5;
+    color: #43454b;
   }
 
   & .router-link {

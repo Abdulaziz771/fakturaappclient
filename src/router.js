@@ -24,12 +24,17 @@ const router = new Router({
         {
           path: '',
           name: 'document-home',
-          redirect: {name: 'document-inbox'}
+          redirect: {name: 'document-create-home'}
         },
         {
           path: 'inbox',
           name: 'document-inbox',
           component: () => import('./views/document/InboxDocumentsView')
+        },
+        {
+          path: 'details/:id',
+          name: 'document-details',
+          component: () => import('./views/document/DocumentDetailsView')
         },
         {
           path: 'create',
@@ -53,7 +58,7 @@ const router = new Router({
             },
             {
               path: 'system-usd-invoice',
-              name: 'system-usd-invoice',
+              name: 'document-create-system-usd-invoice',
               component: () => import('./views/document/create/Systemusdinvoice')
             }
           ]

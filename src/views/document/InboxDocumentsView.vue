@@ -4,14 +4,12 @@
       <b-card>
         <b-row>
           <b-col md="6">
-
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="Counterparty">Контрагент</label>
               </div>
               <select class="custom-select" id="Counterparty" placeholder="Введите инн или название"></select>
             </div>
-
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputId5">Создан с</label>
@@ -22,7 +20,6 @@
               </div>
               <b-form-input type="date" id="inputId4"></b-form-input>
             </div>
-
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="status">Статус</label>
@@ -33,7 +30,6 @@
                 <option value="3">На рассмотрении аннулирования</option>
               </select>
             </div>
-
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="Subdivision">Подразделение</label>
@@ -46,7 +42,6 @@
                 <option value="898">Sub Accounting</option>
               </select>
             </div>
-
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="inputId3">Реестр</label>
@@ -92,7 +87,8 @@
         <b-row>
           <b-col md="12" lg="5" class="p-0">
             <b-button class="lightgray-button mr-2">
-              <Edit2Icon v-b-tooltip.hover title="Подписать и отправить"/>
+              <Edit2Icon @click="slideOut.extraShow = !slideOut.extraShow" v-b-tooltip.hover
+                         title="Подписать и отправить"/>
             </b-button>
             <b-button class="lightgray-button mr-2">
               <XCircleIcon v-b-tooltip.hover title="Отказать и удалить"/>
@@ -136,7 +132,7 @@
       <b-tabs justified class="mt-2 document-tabs">
         <b-tab title-item-class="h5" active>
           <template slot="title">Счет фактуры</template>
-          <b-table sticky-header striped hover sticky-header="83vh" :fields="fields" :items="documents"
+          <b-table sticky-header hover sticky-header="83vh" :fields="fields" :items="documents"
                    class="documentTable">
             <template slot="HEAD_selected" slot-scope="data">
               <b-form-checkbox v-model="selectAll" @change="select"/>
@@ -168,7 +164,7 @@
         </b-tab>
         <b-tab title-item-class="h5">
           <template slot="title">Договоры</template>
-          <b-table sticky-header striped hover :fields="fields" :items="documents" class="scrollTable">
+          <b-table sticky-header hover :fields="fields" :items="documents" class="scrollTable">
             <template slot="HEAD_selected" slot-scope="data">
               <b-form-checkbox v-model="selectAll" @change="select"/>
             </template>
@@ -199,7 +195,7 @@
         </b-tab>
         <b-tab title-item-class="h5">
           <template slot="title">Акты</template>
-          <b-table sticky-header striped hover :fields="fields" :items="documents" class="scrollTable">
+          <b-table sticky-header hover :fields="fields" :items="documents" class="scrollTable">
             <template slot="HEAD_selected" slot-scope="data">
               <b-form-checkbox v-model="selectAll" @change="select"/>
             </template>
@@ -231,12 +227,23 @@
       </b-tabs>
       <RightSidebar :active="activeRightSidebar"/>
     </div>
+    <vue-slideout-panel
+      closeHtml='<span>X</span>'
+      v-model="slideOut.extraShow"
+      @close="slideOut.extraShow=false"
+      :count=2
+      :styles="slideOut.styles"
+    >
+      slideOut
+      <div slot="extra">extrashow Text</div>
+    </vue-slideout-panel>
   </div>
 </template>
 <script>
   import Documents from '../../TestData/Documents'
   import Multiselect from 'vue-multiselect'
   import RightSidebar from '../../components/sidebar/RightSidebar'
+  import VueSlideOutPanel from 'vue-slideout-panel'
 
   import {
     ArrowLeftCircleIcon,
@@ -263,14 +270,34 @@
       ChevronRightIcon,
       ChevronLeftIcon,
       Multiselect,
-      RightSidebar
+      RightSidebar,
+      'vue-slideout-panel': VueSlideOutPanel
     },
     data () {
       return {
+        slideOut: {
+          styles: [
+            {},
+            {
+              backgroundColor: '#ffc29c',
+              paddingTop: '2rem',
+              paddingBottom: '1rem'
+            },
+            {},
+            {
+              color: '#555',
+              textDecoration: 'none',
+              top: '8px',
+              right: '1rem'
+            }
+          ],
+          isActiveSlideOut: false,
+          extraShow: false,
+        },
         selected: [],
         fixed: true,
         selectAll: false,
-        activeRightSidebar: true,
+        activeRightSidebar: false,
         fields: [
           { key: 'selected', label: '' },
           { key: 'title', label: 'Наименование документа' },
@@ -317,10 +344,7 @@
   }
 </script>
 <style scoped>
-  .lightgray-button svg {
-    color: #6b6868;
-    padding: 2px;
-  }
+
 </style>
 <style lang="scss">
   .scrollTable thead th:first-child {

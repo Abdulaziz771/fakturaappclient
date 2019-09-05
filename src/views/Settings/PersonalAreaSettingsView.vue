@@ -8,7 +8,7 @@
     </div>
     <div class="content-body">
       <b-container fluid class="pb-4">
-        <div class="h-panel shadow">
+        <div class="h-panel shadow-sm">
           <div class="panel-heading">
             <b-row>
               <b-col><span>Персональные данные</span></b-col>
@@ -104,7 +104,7 @@
         </div>
       </b-container>
       <b-container fluid class="pb-4">
-        <div class="h-panel shadow">
+        <div class="h-panel shadow-sm">
           <div class="panel-heading">
             <b-row>
               <b-col class="text-left"><span>Права в организации</span></b-col>
@@ -123,7 +123,7 @@
         </div>
       </b-container>
       <b-container fluid class="pb-4">
-        <div class="h-panel shadow">
+        <div class="h-panel shadow-sm">
           <div class="panel-heading">
             <b-row>
               <b-col><span>Настройки уведомления</span></b-col>
@@ -193,7 +193,7 @@
         </div>
       </b-container>
       <b-container fluid>
-        <div class="h-panel shadow">
+        <div class="h-panel shadow-sm">
           <div class="panel-heading">
             <b-row>
                 <b-col><span>Смена пароля</span></b-col>
@@ -260,7 +260,6 @@
 
   .content-body {
     overflow-y: scroll;
-    height: 83vh;
   }
 
   .avatar-upload {

@@ -108,10 +108,6 @@
             this.$emit('activeSecondSidebar', true);
             this.$Progress.finish();
             return SidebarMenuDocuments
-          } else if (this.$route.matched[0].name === 'counter-parties') {
-            this.$emit('activeSecondSidebar', true);
-            this.$Progress.finish();
-            return SidebarMenuCounterparties
           } else if (this.$route.matched[0].name === 'document-verify') {
             this.$emit('activeSecondSidebar', true);
             this.$Progress.finish();
@@ -148,8 +144,8 @@
     & .first-inside-sidebar {
       position: fixed;
       height: calc(100% - 67px);
-      width: 96px;
-      background: #f3f3f3;
+      width: 110px;
+      background: white;
       border-right: $default-border;
       overflow-y: auto;
       text-transform: uppercase;
@@ -164,23 +160,30 @@
         & .menu-icon {
           width: 30px;
           height: 30px;
+          color: #a2a2a2;
         }
-
         &:hover {
-          background-color: white;
+          background-color: #edf0f5;
+          text-decoration: none;
 
           & .menu-icon {
-            color: $brand-color;
+            color: #585757;
+          }
+          & .menu-text {
+            color: #585757;
           }
         }
       }
 
       & .router-link-active {
-        background-color: white;
-        border-bottom: $default-border;
+        background-color: #edf0f5;
 
         & .menu-icon {
-          color: $brand-color;
+          color: #585757;
+        }
+        & .menu-text {
+          color: #585757;
+          font-weight: 500;
         }
       }
     }
@@ -190,7 +193,7 @@
     position: fixed;
     height: calc(100% - 67px);
     width: 180px;
-    margin-left: 96px;
+    margin-left: 110px;
     border-right: $default-border;
     background: white;
     font-size: 14px;

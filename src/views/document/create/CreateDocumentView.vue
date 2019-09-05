@@ -106,7 +106,7 @@
           <b-col>
             <div class="d-flex flex-row">
               <div class="p-2">
-                <FileTextIcon/>
+                <img src="../../../assets/document.jpg" alt="doc">
               </div>
               <div class="p-2">
                 <div class="fs21 mb-3">Счет-фактура</div>
@@ -155,12 +155,12 @@
           <template slot="modal-title">Выберите тип шаблона</template>
           <div class="d-block">
             <div class="cursor-pointer">
-              <router-link class="router-link-drop text-decoration-none" :to="{ name: 'create-system-invoice'}">
+              <router-link class="router-link-drop text-decoration-none" :to="{ name: 'document-create-system-invoice'}">
                 <h5 class="p-4 border rounded">Стандартная счет фактура</h5>
               </router-link>
             </div>
             <div class="cursor-pointer">
-              <router-link class="router-link-drop text-decoration-none" :to="{ name: 'system-usdin-voice'}">
+              <router-link class="router-link-drop text-decoration-none" :to="{ name: 'document-create-system-usd-invoice'}">
                 <h5 class="p-4 border rounded">Валютная счет фактура</h5>
               </router-link>
             </div>

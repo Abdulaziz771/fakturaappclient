@@ -9,7 +9,7 @@
               <HelpCircleIcon class="help-icon" v-b-tooltip.hover title="В ожидании подписания"></HelpCircleIcon>
             </b-col>
             <b-col class="text-right p-0">
-              <router-link :to="{name: 'inbox-documents'}" class="view-all-link">
+              <router-link :to="{name: 'document-inbox'}" class="view-all-link">
                 Посмотрет все
                 <ChevronRightIcon/>
               </router-link>
@@ -18,7 +18,7 @@
         </b-container>
       </div>
       <div class="content-body">
-        <b-table responsive striped hover :fields="fields" :items="documents">
+        <b-table responsive bordered striped hover :fields="fields" :items="documents">
           <template slot="title" slot-scope="data">
             {{ data.item.title }} <br>
             <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
@@ -49,7 +49,7 @@
                               title="Недавно подписанные документы"></HelpCircleIcon>
             </b-col>
             <b-col class="text-right p-0">
-              <router-link :to="{name: 'inbox-documents'}" class="view-all-link">
+              <router-link :to="{name: 'document-inbox'}" class="view-all-link">
                 Посмотрет все
                 <ChevronRightIcon/>
               </router-link>
