@@ -1,6 +1,6 @@
 <template>
   <div class="content" id="financeIndex">
-    <div class="fixed-content-header">
+    <div class="content-header">
       <div class="row">
         <div class="col-sm-12 col-md-6 text-center text-md-left">
           <h5 class="p-2">Счета на пополнение</h5>
@@ -15,22 +15,24 @@
       </div>
       <hr class="m-0">
     </div>
-    <div>
-      <b-table striped sticky-header hover sticky-header="87vh" :fields="fields" :items="ReplenishmentAccountTable"
-               class="index-account-table">
-        <template slot="docname" slot-scope="data">
-          Счет на оплату на {{data.item.amount}} сум от 19.08.2019
-        </template>
-        <template slot="datecreate" slot-scope="data">
-          19.08.2019 13:52:55
-        </template>
-        <template slot="status" slot-scope="data">
-          Счёт на оплату не подписан
-        </template>
-        <template slot="action" slot-scope="data">
-          <CheckCircleIcon class="action-icon"></CheckCircleIcon>
-        </template>
-      </b-table>
+    <div class="content-body">
+      <div class="table-body">
+        <b-table striped hover :fields="fields" :items="ReplenishmentAccountTable"
+                 class="index-account-table">
+          <template slot="docname" slot-scope="data">
+            Счет на оплату на {{data.item.amount}} сум от 19.08.2019
+          </template>
+          <template slot="datecreate" slot-scope="data">
+            19.08.2019 13:52:55
+          </template>
+          <template slot="status" slot-scope="data">
+            Счёт на оплату не подписан
+          </template>
+          <template slot="action" slot-scope="data">
+            <CheckCircleIcon class="action-icon"></CheckCircleIcon>
+          </template>
+        </b-table>
+      </div>
     </div>
   </div>
 </template>

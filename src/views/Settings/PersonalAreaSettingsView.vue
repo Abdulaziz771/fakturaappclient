@@ -1,210 +1,206 @@
 <template>
-  <div class="content">
-    <div class="content-header">
-      <b-container fluid>
-        <h5 class="text-center">Личный кабинет</h5>
-        <hr class="m-0">
-      </b-container>
-    </div>
+  <div class="content no-title">
     <div class="content-body">
-      <b-container fluid class="pb-4">
-        <div class="h-panel shadow-sm">
-          <div class="panel-heading">
-            <b-row>
-              <b-col><span>Персональные данные</span></b-col>
-              <b-col class="text-right" v-if="!showEditingPersonalData">
-                <EditIcon @click="onClickEditPersonalData"/>
-              </b-col>
-            </b-row>
-          </div>
-          <div class="panel-body">
-            <b-row v-if="showEditingPersonalData">
-              <b-col md="4">
-                <div class="avatar-upload">
-                  <div class="avatar-edit">
-                    <input type='file' id="imageUpload" ref="imageUpload" @change="onChangeUploadAvatar"
-                           accept=".png, .jpg, .jpeg"/>
-                    <label for="imageUpload">
-                      <EditIcon/>
-                    </label>
-                    <label v-if="imgUrl" @click="onClickDeleteAvatar" class="deleteAvatar">
-                      <DeleteIcon/>
-                    </label>
+      <div class="table-body">
+        <b-container fluid class="pb-4">
+          <div class="h-panel shadow-sm">
+            <div class="panel-heading">
+              <b-row>
+                <b-col><span>Персональные данные</span></b-col>
+                <b-col class="text-right" v-if="!showEditingPersonalData">
+                  <EditIcon @click="onClickEditPersonalData"/>
+                </b-col>
+              </b-row>
+            </div>
+            <div class="panel-body">
+              <b-row v-if="showEditingPersonalData">
+                <b-col md="4">
+                  <div class="avatar-upload">
+                    <div class="avatar-edit">
+                      <input type='file' id="imageUpload" ref="imageUpload" @change="onChangeUploadAvatar"
+                             accept=".png, .jpg, .jpeg"/>
+                      <label for="imageUpload">
+                        <EditIcon/>
+                      </label>
+                      <label v-if="imgUrl" @click="onClickDeleteAvatar" class="deleteAvatar">
+                        <DeleteIcon/>
+                      </label>
+                    </div>
+                    <div class="avatar-preview shadow-lg">
+                      <img v-if="imgUrl" class="imagePreview" :src="imgUrl" alt>
+                      <img class="imagePreview" v-else src="../../assets/user.png" alt>
+                    </div>
                   </div>
-                  <div class="avatar-preview shadow-lg">
-                    <img v-if="imgUrl" class="imagePreview" :src="imgUrl" alt>
-                    <img class="imagePreview" v-else src="../../assets/user.png" alt>
+                  <div class="pt-4 pl-3">Допустимые форматы файла: jpeg, jpg, png, tif, tiff</div>
+                </b-col>
+                <b-col md="8">
+                  <b-form-group
+                    label-cols-sm="3"
+                    label="Фамилия:"
+                    label-align-sm="right"
+                    label-for="last_name"
+                  >
+                    <b-form-input id="last_name" v-model="form.last_name"></b-form-input>
+                  </b-form-group>
+
+                  <b-form-group
+                    label-cols-sm="3"
+                    label="Имя:"
+                    label-align-sm="right"
+                    label-for="first_name"
+                  >
+                    <b-form-input id="first_name" v-model="form.middle_name"></b-form-input>
+                  </b-form-group>
+
+                  <b-form-group
+                    label-cols-sm="3"
+                    label="Отчество:"
+                    label-align-sm="right"
+                    label-for="middle_name"
+                  >
+                    <b-form-input id="middle_name" v-model="form.middle_name"></b-form-input>
+                  </b-form-group>
+
+                  <b-form-group
+                    label-cols-sm="3"
+                    label="ИНН:"
+                    label-align-sm="right"
+                    label-for="inn"
+                  >
+                    <b-form-input id="inn" v-model="form.inn"></b-form-input>
+                  </b-form-group>
+
+                  <div class="mt-3 d-flex flex-row-reverse">
+                    <b-button class="default-success-button">Сохранить</b-button>
+                    <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickCancelPersonalData">Отмена
+                    </b-button>
                   </div>
-                </div>
-                <div class="pt-4 pl-3">Допустимые форматы файла: jpeg, jpg, png, tif, tiff</div>
-              </b-col>
-              <b-col md="8">
-                <b-form-group
-                  label-cols-sm="3"
-                  label="Фамилия:"
-                  label-align-sm="right"
-                  label-for="last_name"
-                >
-                  <b-form-input id="last_name" v-model="form.last_name"></b-form-input>
-                </b-form-group>
-
-                <b-form-group
-                  label-cols-sm="3"
-                  label="Имя:"
-                  label-align-sm="right"
-                  label-for="first_name"
-                >
-                  <b-form-input id="first_name" v-model="form.middle_name"></b-form-input>
-                </b-form-group>
-
-                <b-form-group
-                  label-cols-sm="3"
-                  label="Отчество:"
-                  label-align-sm="right"
-                  label-for="middle_name"
-                >
-                  <b-form-input id="middle_name" v-model="form.middle_name"></b-form-input>
-                </b-form-group>
-
-                <b-form-group
-                  label-cols-sm="3"
-                  label="ИНН:"
-                  label-align-sm="right"
-                  label-for="inn"
-                >
-                  <b-form-input id="inn" v-model="form.inn"></b-form-input>
-                </b-form-group>
-
-                <div class="mt-3 d-flex flex-row-reverse">
-                <b-button class="default-success-button">Сохранить</b-button>
-                <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickCancelPersonalData">Отмена
-                </b-button>
-              </div>
-              </b-col>
-            </b-row>
-            <b-row v-else>
-              <b-col md="4">
-                <div class="avatar-upload">
-                  <div class="avatar-preview shadow-lg">
-                    <img v-if="imgUrl" class="imagePreview" :src="imgUrl" alt>
-                    <img class="imagePreview" v-else src="../../assets/user.png" alt>
+                </b-col>
+              </b-row>
+              <b-row v-else>
+                <b-col md="4">
+                  <div class="avatar-upload">
+                    <div class="avatar-preview shadow-lg">
+                      <img v-if="imgUrl" class="imagePreview" :src="imgUrl" alt>
+                      <img class="imagePreview" v-else src="../../assets/user.png" alt>
+                    </div>
                   </div>
-                </div>
-              </b-col>
-              <b-col md="8">
-                <b-list-group>
-                  <b-list-group-item><b>Фамилия:</b> {{form.last_name}}</b-list-group-item>
-                  <b-list-group-item><b>Имя:</b> {{form.first_name}}</b-list-group-item>
-                  <b-list-group-item><b>Отчества:</b> {{form.middle_name}}</b-list-group-item>
-                  <b-list-group-item><b>ИНН:</b> {{form.inn}}</b-list-group-item>
-                </b-list-group>
-              </b-col>
-            </b-row>
+                </b-col>
+                <b-col md="8">
+                  <b-list-group>
+                    <b-list-group-item><b>Фамилия:</b> {{form.last_name}}</b-list-group-item>
+                    <b-list-group-item><b>Имя:</b> {{form.first_name}}</b-list-group-item>
+                    <b-list-group-item><b>Отчества:</b> {{form.middle_name}}</b-list-group-item>
+                    <b-list-group-item><b>ИНН:</b> {{form.inn}}</b-list-group-item>
+                  </b-list-group>
+                </b-col>
+              </b-row>
+            </div>
           </div>
-        </div>
-      </b-container>
-      <b-container fluid class="pb-4">
-        <div class="h-panel shadow-sm">
-          <div class="panel-heading">
-            <b-row>
-              <b-col class="text-left"><span>Права в организации</span></b-col>
-            </b-row>
+        </b-container>
+        <b-container fluid class="pb-4">
+          <div class="h-panel shadow-sm">
+            <div class="panel-heading">
+              <b-row>
+                <b-col class="text-left"><span>Права в организации</span></b-col>
+              </b-row>
+            </div>
+            <div class="panel-body">
+              <b-row>
+                <b-col>
+                  <b-list-group>
+                    <b-list-group-item><b>Подразделение </b> Руководства</b-list-group-item>
+                    <b-list-group-item><b>Должность </b> Директор</b-list-group-item>
+                  </b-list-group>
+                </b-col>
+              </b-row>
+            </div>
           </div>
-          <div class="panel-body">
-            <b-row>
-              <b-col>
-                <b-list-group>
-                <b-list-group-item><b>Подразделение </b> Руководства</b-list-group-item>
-                <b-list-group-item><b>Должность </b> Директор</b-list-group-item>
-                </b-list-group>
-              </b-col>
-            </b-row>
-          </div>
-        </div>
-      </b-container>
-      <b-container fluid class="pb-4">
-        <div class="h-panel shadow-sm">
-          <div class="panel-heading">
-            <b-row>
-              <b-col><span>Настройки уведомления</span></b-col>
-              <b-col class="text-right" v-if="!showNotificationSettings">
-                <EditIcon @click="onClickNotificationSettings(true)"/>
-              </b-col>
-            </b-row>
-          </div>
-          <div class="panel-body">
-            <b-row v-if="showNotificationSettings">
-              <b-col>
-                <b-form-group
-                  label-cols-sm="3"
-                  label-cols-md="2"
-                  label-cols-lg="2"
-                  label-cols-xl="2"
-                  label="Уведомления:"
-                  label-align-sm="right"
-                  label-for="notifications"
-                >
-                  <b-form-checkbox clascons="pt-1" id="notifications" v-model="form.notifications"  value="Включено" unchecked-value="Выключено"></b-form-checkbox>
-                </b-form-group>
+        </b-container>
+        <b-container fluid class="pb-4">
+          <div class="h-panel shadow-sm">
+            <div class="panel-heading">
+              <b-row>
+                <b-col><span>Настройки уведомления</span></b-col>
+                <b-col class="text-right" v-if="!showNotificationSettings">
+                  <EditIcon @click="onClickNotificationSettings(true)"/>
+                </b-col>
+              </b-row>
+            </div>
+            <div class="panel-body">
+              <b-row v-if="showNotificationSettings">
+                <b-col>
+                  <b-form-group
+                    label-cols-sm="3"
+                    label-cols-md="2"
+                    label-cols-lg="2"
+                    label-cols-xl="2"
+                    label="Уведомления:"
+                    label-align-sm="right"
+                    label-for="notifications"
+                  >
+                    <b-form-checkbox clascons="pt-1" id="notifications" v-model="form.notifications"  value="Включено" unchecked-value="Выключено"></b-form-checkbox>
+                  </b-form-group>
 
-                <b-input-group
-                  label-cols-sm="1"
-                  label="Адрес эл. почты:"
-                  label-align-sm="right"
-                  label-for="mail_address"
-                  class="w-50 pb-3  "
-                >
-                  <b-form-input id="mail_address" type="email" v-model="form.mail_address"></b-form-input>
-                  <b-input-group-append>
-                    <b-button variant="outline-secondary">Подтвердить</b-button>
-                  </b-input-group-append>
-                </b-input-group>
+                  <b-input-group
+                    label-cols-sm="1"
+                    label="Адрес эл. почты:"
+                    label-align-sm="right"
+                    label-for="mail_address"
+                    class="w-50 pb-3  "
+                  >
+                    <b-form-input id="mail_address" type="email" v-model="form.mail_address"></b-form-input>
+                    <b-input-group-append>
+                      <b-button variant="outline-secondary">Подтвердить</b-button>
+                    </b-input-group-append>
+                  </b-input-group>
 
-                <b-input-group
-                  label-cols-sm="1"
-                  label="Сотовый телефон:"
-                  label-align-sm="right"
-                  label-for="phone_number"
-                  class="w-50"
-                >
-                  <b-form-input id="phone_number" type="email" v-model="form.phone_number"></b-form-input>
-                  <b-input-group-append>
-                    <b-button variant="outline-secondary">Подтвердить</b-button>
-                  </b-input-group-append>
-                </b-input-group>
+                  <b-input-group
+                    label-cols-sm="1"
+                    label="Сотовый телефон:"
+                    label-align-sm="right"
+                    label-for="phone_number"
+                    class="w-50"
+                  >
+                    <b-form-input id="phone_number" type="email" v-model="form.phone_number"></b-form-input>
+                    <b-input-group-append>
+                      <b-button variant="outline-secondary">Подтвердить</b-button>
+                    </b-input-group-append>
+                  </b-input-group>
 
-                <div class="mt-3 d-flex flex-row-reverse">
-                  <b-button class="default-success-button">Сохранить</b-button>
-                  <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickNotificationSettings(false)">Отмена
-                  </b-button>
-                </div>
-              </b-col>
-            </b-row>
-            <b-row v-else>
-              <b-col>
-                <b-list-group>
-                  <b-list-group-item><b>Уведомления:</b> {{form.notifications}}</b-list-group-item>
-                  <b-list-group-item><b>Адрес эл. почты:</b> {{form.mail_address}}</b-list-group-item>
-                  <b-list-group-item><b>Сотовый телефон:</b> {{form.phone_number}}</b-list-group-item>
-                </b-list-group>
-              </b-col>
-            </b-row>
+                  <div class="mt-3 d-flex flex-row-reverse">
+                    <b-button class="default-success-button">Сохранить</b-button>
+                    <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickNotificationSettings(false)">Отмена
+                    </b-button>
+                  </div>
+                </b-col>
+              </b-row>
+              <b-row v-else>
+                <b-col>
+                  <b-list-group>
+                    <b-list-group-item><b>Уведомления:</b> {{form.notifications}}</b-list-group-item>
+                    <b-list-group-item><b>Адрес эл. почты:</b> {{form.mail_address}}</b-list-group-item>
+                    <b-list-group-item><b>Сотовый телефон:</b> {{form.phone_number}}</b-list-group-item>
+                  </b-list-group>
+                </b-col>
+              </b-row>
+            </div>
           </div>
-        </div>
-      </b-container>
-      <b-container fluid>
-        <div class="h-panel shadow-sm">
-          <div class="panel-heading">
-            <b-row>
+        </b-container>
+        <b-container fluid>
+          <div class="h-panel shadow-sm">
+            <div class="panel-heading">
+              <b-row>
                 <b-col><span>Смена пароля</span></b-col>
-            </b-row>
+              </b-row>
+            </div>
+            <div class="panel-body">
+              <b-button size="sm" variant="outline-secondary" class="mr-2">Изсенить пароль</b-button>
+              <b-button size="sm" variant="outline-success">Сохранить</b-button>
+            </div>
           </div>
-          <div class="panel-body">
-            <b-button size="sm" variant="outline-secondary" class="mr-2">Изсенить пароль</b-button>
-            <b-button size="sm" variant="outline-success">Сохранить</b-button>
-          </div>
-        </div>
-      </b-container>
+        </b-container>
+      </div>
     </div>
   </div>
 </template>
@@ -257,10 +253,6 @@
   }
 </script>
 <style lang="scss">
-
-  .content-body {
-    overflow-y: scroll;
-  }
 
   .avatar-upload {
     position: relative;

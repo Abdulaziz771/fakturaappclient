@@ -35,13 +35,9 @@
 <style>
   .fullContent {
     margin-left: 110px !important;
-    position: relative;
-    top: 66px;
   }
   .wrapper {
     margin-left: 290px !important;
-    position: relative;
-    top: 66px;
   }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div id="fixed-content-header">
+    <div class="content-header">
       <b-container fluid>
         <b-row>
           <b-col cols="6">
@@ -34,18 +34,22 @@
         </b-row>
       </b-container>
     </div>
-    <b-table sticky-header hover sticky-header="87vh" :fields="fields" :items="counterparties">
-      <template slot="name" slot-scope="data">
-        {{ data.item.name }}
-      </template>
-      <template slot="inn" slot-scope="data">
-        {{ data.item.inn }}
-      </template>
-      <template slot="action">
-        <SendIcon class="mr-2 action-icon"></SendIcon>
-        <Trash2Icon class="mr-1 action-icon-delete"></Trash2Icon>
-      </template>
-    </b-table>
+    <div class="content-body">
+      <div class="table-body">
+        <b-table hover :fields="fields" :items="counterparties">
+          <template slot="name" slot-scope="data">
+            {{ data.item.name }}
+          </template>
+          <template slot="inn" slot-scope="data">
+            {{ data.item.inn }}
+          </template>
+          <template slot="action">
+            <SendIcon class="mr-2 action-icon"></SendIcon>
+            <Trash2Icon class="mr-1 action-icon-delete"></Trash2Icon>
+          </template>
+        </b-table>
+      </div>
+    </div>
   </div>
 </template>
 
