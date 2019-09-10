@@ -1,44 +1,5 @@
 <template>
   <div>
-    <div class="content mb-4">
-      <div class="content-header">
-        <b-container fluid>
-          <b-row>
-            <b-col class="text-left p-0">
-              В ожидании подписания
-              <HelpCircleIcon class="help-icon" v-b-tooltip.hover title="В ожидании подписания"></HelpCircleIcon>
-            </b-col>
-            <b-col class="text-right p-0">
-              <router-link :to="{name: 'document-inbox'}" class="view-all-link">
-                Посмотрет все
-                <ChevronRightIcon/>
-              </router-link>
-            </b-col>
-          </b-row>
-        </b-container>
-      </div>
-      <div class="content-body">
-        <b-table responsive bordered striped hover :fields="fields" :items="documents">
-          <template slot="title" slot-scope="data">
-            {{ data.item.title }} <br>
-            <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
-          </template>
-          <template slot="totalPrice" slot-scope="data">
-            {{ data.item.totalPrice }}
-          </template>
-          <template slot="company_name" slot-scope="data">
-            <b>{{ data.item.contractor.name }}</b> <br>
-            <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
-          </template>
-          <template slot="updatedDateTime" slot-scope="data">
-            {{ data.item.updatedDateTime }}
-          </template>
-          <template slot="status" slot-scope="data">
-            {{ data.item.status }}
-          </template>
-        </b-table>
-      </div>
-    </div>
     <div class="content">
       <div class="content-header">
         <b-container fluid>
@@ -58,25 +19,27 @@
         </b-container>
       </div>
       <div class="content-body">
-        <b-table responsive bordered striped hover :fields="fields" :items="documents">
-          <template slot="title" slot-scope="data">
-            {{ data.item.title }} <br>
-            <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
-          </template>
-          <template slot="totalPrice" slot-scope="data">
-            {{ data.item.totalPrice }}
-          </template>
-          <template slot="company_name" slot-scope="data">
-            <b>{{ data.item.contractor.name }}</b> <br>
-            <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
-          </template>
-          <template slot="updatedDateTime" slot-scope="data">
-            {{ data.item.updatedDateTime }}
-          </template>
-          <template slot="status" slot-scope="data">
-            {{ data.item.status }}
-          </template>
-        </b-table>
+        <div class="table-body">
+          <b-table responsive bordered striped hover :fields="fields" :items="documents">
+            <template slot="title" slot-scope="data">
+              {{ data.item.title }} <br>
+              <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
+            </template>
+            <template slot="totalPrice" slot-scope="data">
+              {{ data.item.totalPrice }}
+            </template>
+            <template slot="company_name" slot-scope="data">
+              <b>{{ data.item.contractor.name }}</b> <br>
+              <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
+            </template>
+            <template slot="updatedDateTime" slot-scope="data">
+              {{ data.item.updatedDateTime }}
+            </template>
+            <template slot="status" slot-scope="data">
+              {{ data.item.status }}
+            </template>
+          </b-table>
+        </div>
       </div>
     </div>
   </div>

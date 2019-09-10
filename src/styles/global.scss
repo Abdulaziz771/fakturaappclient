@@ -64,7 +64,7 @@ a {
   background-color: #edf0f5;
   border-color: $default-border-color;
   color: #28282d;
-  padding: 3px;
+  padding: 0px;
 
   & svg {
     color: #6b6868;
@@ -201,6 +201,7 @@ a {
 }
 
 .content-body {
+  position: absolute;
   display: flex;
   top: 122px;
   left: 290px;
@@ -212,77 +213,86 @@ a {
 .table-body {
   overflow-y: auto;
   overflow-x: hidden;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 .content-header {
-  margin-top: 66px;
-  padding: 0.5rem !important;
+margin-top: 66px;
+padding: 0.5rem !important;
 }
 
 .fullContent {
   .content-body {
-    left: 110px !important;
+  left: 110px !important;
   }
+}
+
+.collapse-doc-show {
+  display: none;
 }
 
 .no-title {
-  .content-body {
-    top: 76px !important;
-  }
+.content-body {
+top: 76px !important;
+}
 }
 
 .title-page {
-  .content-body {
-    top: 145px;
-  }
+.content-body {
+top: 145px;
+}
 }
 
 .h-panel {
-  border: 1px solid #E0E0E0;
+border: 1px solid #E0E0E0;
 
-  .panel-heading {
-    padding: 8px 20px;
-    background: #f9f9f9;
-    border-bottom: 1px solid #E0E0E0;
+.panel-heading {
+padding: 8px 20px;
+background: #f9f9f9;
+border-bottom: 1px solid #E0E0E0;
 
-    svg {
-      cursor: pointer;
+svg {
+  cursor: pointer;
 
-      &:hover {
-        color: green;
-      }
-    }
-
-    span {
-      font-size: 20px;
-      font-weight: 400;
-    }
+  &:hover {
+    color: green;
   }
+}
 
-  .panel-body {
-    padding: 30px;
+span {
+  font-size: 20px;
+  font-weight: 400;
+}
+}
 
-    .list-group-item {
-      font-size: 14px;
-    }
-  }
+.panel-body {
+padding: 30px;
+
+.list-group-item {
+  font-size: 14px;
+}
+}
 }
 
 .document-tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  color: $brand-color;
-  border-color: transparent transparent #f3f3f3;
-  border-bottom: 2px solid !important;
-  font-weight: bold;
+color: $brand-color;
+border-color: transparent transparent #f3f3f3;
+border-bottom: 2px solid !important;
+font-weight: bold;
 }
 
 .document-tabs .nav-link:hover {
-  border: none;
+border: none;
 }
 
 .document-tabs .nav-tabs .nav-link {
-  border: none;
+border: none;
 }
 
 .scrollTable {
-  max-height: 80vh !important;
+max-height: 80vh !important;
 }

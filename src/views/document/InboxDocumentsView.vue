@@ -2,7 +2,7 @@
   <div class="content border">
     <div class="content-header">
       <b-row class="m-0">
-        <b-col md="12" lg="4" class="p-0">
+        <b-col md="3" class="p-0">
           <b-button class="lightgray-button mr-2">
             <Edit2Icon @click="slideOut.extraShow = !slideOut.extraShow" v-b-tooltip.hover
                        title="Подписать и отправить"/>
@@ -20,7 +20,7 @@
             <PrinterIcon class="cursor-pointer " v-b-tooltip.hover title="Отправить на печать"/>
           </b-button>
         </b-col>
-        <b-col md="12" lg="8" class="p-0">
+        <b-col md="9" class="p-0">
           <div class="form-inline float-right">
             <div class="pl-2 form-inline">
               <label class="mr-1">Показать по: </label>
@@ -30,24 +30,24 @@
                 <option>40</option>
               </select>
             </div>
-            <div class="form-inline pl-4 pr-2">
+            <div class="form-inline pl-1 pr-2">
               <span class="pr-2">1-20 из 134</span>
               <ChevronLeftIcon class="cursor-pointer mr-1"/>
               <ChevronRightIcon class="cursor-pointer ml-1"/>
             </div>
-            <b-button class="lightgray-button mr-2"  v-b-toggle.filter-inbox size="sm" style="padding: 5px">Фильтр
+            <b-button class="lightgray-button mr-2" v-b-toggle.filter-inbox size="sm" style="padding: 2px">Фильтр
             </b-button>
             <b-button class="lightgray-button mr-2" @click="activeRightSidebar = !activeRightSidebar" size="sm"
-                      style="padding: 5px">Массовое подписание
+                      style="padding: 2px">Массовое подписание
             </b-button>
           </div>
         </b-col>
       </b-row>
     </div>
-    <div class="content-body" :class="{ 'position-absolute': bodyPosition  }">
+    <div class="content-body">
       <div class="table-body">
         <div>
-          <b-tabs justified class="document-tabs">
+          <b-tabs justified class="document-tabs table-responsive">
             <b-tab title-item-class="h5" active>
               <template slot="title">Счет фактуры</template>
               <b-table hover :fields="fields" :items="documents"
@@ -241,7 +241,7 @@
                     { name: 'Акт на штрафные санкции', code: '8' },
                     { name: 'Доверенность', code: '9' },
                     { name: 'Справка', code: '10' }
-                ],
+                ]
             }
         },
         methods: {
@@ -260,7 +260,7 @@
                 }
                 this.options.push(tag)
                 this.value.push(tag)
-            },
+            }
         }
     }
 </script>

@@ -4,11 +4,38 @@
       <div class="d-flex flex-column">
         <router-link :to="{name: 'document-home'}"
                      class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center" v-b-toggle.collapse-documents >
             <div class="align-self-center">
               <FileIcon class="menu-icon"/>
               <div class="menu-text pt-2">Документы</div>
             </div>
+          </div>
+          <div class="collapse-doc-show">
+            <b-collapse id="collapse-documents">
+              <hr>
+              <b-card class="collpse-doc-in">
+                <div class="second-mobile-sidebar">
+
+                  <router-link class="router-link" :to="{name: 'document-create-index'}">
+                    Создать новый документ
+                  </router-link>
+
+                  <span class="text-muted">Документооборот</span>
+                  <router-link class="router-link" :to="{name: 'document-inbox'}">
+                    Входящие
+                  </router-link>
+                  <a href="#">Исходящие</a>
+                  <a href="#">Черновики</a>
+                  <a href="#">Реестры</a>
+
+
+                  <span class="text-muted">Согласование</span>
+                  <a href="#">В обработке</a>
+                  <a href="#">Обработанные</a>
+
+                </div>
+              </b-card>
+            </b-collapse>
           </div>
         </router-link>
 

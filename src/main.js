@@ -17,6 +17,7 @@ import "vue-multiselect/dist/vue-multiselect.min.css"
 
 
 import "@/styles/global.scss"
+import "@/styles/media.scss"
 
 Vue.use(VueProgressBar, {
   color: '#28a745',
