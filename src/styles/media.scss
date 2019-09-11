@@ -1,13 +1,7 @@
 @media all and (max-width: 767px) {
     .second-inside-sidebar {
-        display: none;
+        margin-left: 95px !important;
     }
-
-    .collpse-doc-in {
-        border: none;
-        background-color: #edf0f5;
-    }
-
     .first-inside-sidebar {
         width: 95px !important;
 
@@ -22,32 +16,6 @@
             .menu-text {
                 font-size: 10px !important;
             }
-
-             .collapse-doc-show {
-                display: block;
-
-                 .card-body {
-                     padding: 10px 5px;
-                 }
-            }
-        }
-    }
-
-    .second-mobile-sidebar {
-        display: flex;
-        flex-direction: column;
-
-        a {
-            font-size: 8px;
-            padding-bottom: 8px;
-
-            &:hover {
-                text-decoration: none;
-            }
-        }
-
-        span {
-            font-size: 8px;
         }
     }
 
@@ -57,5 +25,9 @@
         .content-body {
             left: 94px !important;
         }
+    }
+
+    .chevronLeftIcon {
+        display: block;
     }
 }

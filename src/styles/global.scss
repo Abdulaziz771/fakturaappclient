@@ -167,6 +167,14 @@ a {
   }
 }
 
+.chevronLeftIcon {
+  position: absolute;
+  z-index: 999;
+  left: 150px;
+  top: 5px;
+  display: none;
+}
+
 .help-icon {
   color: $brand-color;
   cursor: pointer;
@@ -189,6 +197,8 @@ a {
 }
 
 .second-inside-sidebar {
+  z-index: 9;
+
   & .router-link-exact-active {
     background-color: #edf0f5;
     color: #43454b;

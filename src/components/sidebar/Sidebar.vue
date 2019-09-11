@@ -2,7 +2,8 @@
   <div id="sidebar">
     <div class="first-inside-sidebar">
       <div class="d-flex flex-column">
-        <router-link :to="{name: 'document-home'}"
+
+        <router-link v-on:click.native="secondSidebar = false" :to="{name: 'document-home'}"
                      class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center" v-b-toggle.collapse-documents >
             <div class="align-self-center">
@@ -10,36 +11,10 @@
               <div class="menu-text pt-2">Документы</div>
             </div>
           </div>
-          <div class="collapse-doc-show">
-            <b-collapse id="collapse-documents">
-              <hr>
-              <b-card class="collpse-doc-in">
-                <div class="second-mobile-sidebar">
 
-                  <router-link class="router-link" :to="{name: 'document-create-index'}">
-                    Создать новый документ
-                  </router-link>
-
-                  <span class="text-muted">Документооборот</span>
-                  <router-link class="router-link" :to="{name: 'document-inbox'}">
-                    Входящие
-                  </router-link>
-                  <a href="#">Исходящие</a>
-                  <a href="#">Черновики</a>
-                  <a href="#">Реестры</a>
-
-
-                  <span class="text-muted">Согласование</span>
-                  <a href="#">В обработке</a>
-                  <a href="#">Обработанные</a>
-
-                </div>
-              </b-card>
-            </b-collapse>
-          </div>
         </router-link>
 
-        <router-link :to="{name: 'counter-parties'}"
+        <router-link v-on:click.native="secondSidebar = false" :to="{name: 'counter-parties'}"
                      class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
@@ -49,7 +24,7 @@
           </div>
         </router-link>
 
-        <router-link :to="{name: 'document-verify'}"
+        <router-link v-on:click.native="secondSidebar = false" :to="{name: 'document-verify'}"
                      class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
@@ -77,7 +52,7 @@
           </div>
         </div>
 
-        <router-link :to="{name: 'settings-personal-area'}"
+        <router-link v-on:click.native="secondSidebar = false" :to="{name: 'settings-personal-area'}"
                      class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
@@ -88,9 +63,11 @@
         </router-link>
       </div>
     </div>
-    <div v-if="activeSidebar" class="second-inside-sidebar">
-      <component :is="activeSidebar"></component>
-    </div>
+    <transition name="slide-fade">
+      <div class="second-inside-sidebar" :class="{ 'd-none d-md-block': secondSidebar }" v-if="activeSidebar">
+        <component @changeShow="viewSeconSidebar" :is="activeSidebar"></component>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
@@ -100,7 +77,9 @@
     Edit3Icon,
     CreditCardIcon,
     MessageCircleIcon,
-    SettingsIcon
+    SettingsIcon,
+      ChevronLeftIcon
+
   } from 'vue-feather-icons'
 
   import SidebarMenuDocuments from '../sidebar/SidebarMenuDocuments'
@@ -120,11 +99,13 @@
       SidebarMenuCounterparties,
       SidebarMenuSettings,
       SettingsIcon,
-      SidebarMenuVerify
+      SidebarMenuVerify,
+        ChevronLeftIcon
     },
     data () {
       return {
-        activeMenu: null
+        activeMenu: null,
+          secondSidebar: true
       }
     },
     computed: {
@@ -154,7 +135,12 @@
           return null
         }
       }
-    }
+    },
+      methods: {
+          viewSeconSidebar(value) {
+              this.secondSidebar = value
+          }
+      }
   }
 </script>
 <style lang="scss" scoped>
@@ -176,6 +162,7 @@
       border-right: $default-border;
       overflow-y: auto;
       text-transform: uppercase;
+      z-index: 999;
 
       & .menu-text {
         font-size: 12px;
@@ -234,6 +221,7 @@
   .new-doc-menu {
     cursor: pointer;
   }
+
 </style>
 <style>
   .second-inside-sidebar .list-group-item {

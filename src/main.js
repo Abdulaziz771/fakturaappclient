@@ -15,7 +15,6 @@ Vue.component('multiselect', Multiselect)
 import "vue-multiselect/dist/vue-multiselect.min.css"
 
 
-
 import "@/styles/global.scss"
 import "@/styles/media.scss"
 

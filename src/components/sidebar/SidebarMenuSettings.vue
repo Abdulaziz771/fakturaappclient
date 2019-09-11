@@ -1,6 +1,9 @@
 <template>
   <div>
-    <b-list-group class="mt-3">
+
+    <ChevronLeftIcon class="chevronLeftIcon cursor-pointer" @click="emitEvent"></ChevronLeftIcon>
+
+    <b-list-group>
       <span class="pt-2 pl-3 pb-2 text-muted">Настройки</span>
       <router-link :to="{name: 'settings-personal-area'}" class="router-link">
         Личный кабинет
@@ -18,7 +21,21 @@
   </div>
 </template>
 <script>
+
+    import {
+        ChevronLeftIcon
+
+    } from 'vue-feather-icons'
+
   export default {
-    name: 'sidebar-menu-settings'
+    name: 'sidebar-menu-settings',
+      components: {
+          ChevronLeftIcon
+      },
+      methods: {
+          emitEvent() {
+              this.$emit('changeShow', true)
+          }
+      }
   }
 </script>

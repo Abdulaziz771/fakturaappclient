@@ -1,6 +1,9 @@
 <template>
   <div>
-    <b-list-group class="mt-3">
+
+    <ChevronLeftIcon class="chevronLeftIcon cursor-pointer" @click="emitEvent"></ChevronLeftIcon>
+
+    <b-list-group>
       <router-link class="router-link" :to="{name: 'document-create-index'}">
         Создать новый документ
       </router-link>
@@ -26,7 +29,20 @@
   </div>
 </template>
 <script>
+    import {
+        ChevronLeftIcon
+
+    } from 'vue-feather-icons'
+
   export default {
-    name: 'sidebar-menu-documents'
+    name: 'sidebar-menu-documents',
+      components: {
+          ChevronLeftIcon
+      },
+      methods: {
+          emitEvent() {
+              this.$emit('changeShow', true)
+          }
+      }
   }
 </script>
