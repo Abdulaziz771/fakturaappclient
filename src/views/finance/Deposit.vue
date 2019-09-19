@@ -13,7 +13,7 @@
             <b-tab title-item-class="h5" title="Шаг 1-Детали">
               <b-row class="pt-3">
                 <b-col md="7">
-                  <div class="input-group mb-3 pl-5">
+                  <div class="input-group pay-input-group mb-3 pl-5">
                     <div class="input-group-prepend">
                       <b-button variant="light" class="border" type="button">Создать счет</b-button>
                     </div>
@@ -23,9 +23,9 @@
                     </div>
                   </div>
                 </b-col>
-                <b-col md="5" class="text-right">
+                <b-col md="5" class="text-center text-sm-center text-md-right">
                   <router-link :to="{name: 'finance-index'}">
-                    <b-button class="lightgray-button pl-2" size="sm">Показать запросы на пополнение <ChevronsRightIcon class="p-1"/></b-button>
+                    <b-button class="lightgray-button p-1" size="sm">Показать запросы на пополнение </b-button>
                   </router-link>
                 </b-col>
               </b-row>
@@ -62,7 +62,7 @@
             <b-tab title-item-class="h5" title="Шаг 2-Подтверждение">
               <b-row class="mb-4">
                 <b-col md="2" offset-md="10" class="text-center">
-                  <b-button variant="outline-success" size="sm">Подписать</b-button>
+                  <b-button variant="outline-success sign-doc" size="sm">Подписать</b-button>
                 </b-col>
               </b-row>
               <b-row>

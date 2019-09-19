@@ -133,25 +133,24 @@
                   <b-form-group
                     label-cols-sm="3"
                     label-cols-md="2"
-                    label-cols-lg="2"
-                    label-cols-xl="2"
                     label="Уведомления:"
                     label-align-sm="right"
                     label-for="notifications"
                   >
-                    <b-form-checkbox clascons="pt-1" id="notifications" v-model="form.notifications"  value="Включено" unchecked-value="Выключено"></b-form-checkbox>
+                    <b-form-checkbox class="pt-1"  clascons="pt-1" id="notifications" v-model="form.notifications"  value="Включено" unchecked-value="Выключено" switch></b-form-checkbox>
                   </b-form-group>
+
 
                   <b-input-group
                     label-cols-sm="1"
                     label="Адрес эл. почты:"
                     label-align-sm="right"
                     label-for="mail_address"
-                    class="w-50 pb-3  "
+                    class="w-50 pb-3 input-group-email "
                   >
-                    <b-form-input id="mail_address" type="email" v-model="form.mail_address"></b-form-input>
-                    <b-input-group-append>
-                      <b-button variant="outline-secondary">Подтвердить</b-button>
+                    <b-form-input class="email-addres" id="mail_address" type="email" v-model="form.mail_address"></b-form-input>
+                    <b-input-group-append >
+                      <b-button size="sm" class="email-addres" variant="outline-secondary">Подтвердить</b-button>
                     </b-input-group-append>
                   </b-input-group>
 
@@ -160,17 +159,17 @@
                     label="Сотовый телефон:"
                     label-align-sm="right"
                     label-for="phone_number"
-                    class="w-50"
+                    class="w-50 input-group-phone"
                   >
-                    <b-form-input id="phone_number" type="email" v-model="form.phone_number"></b-form-input>
+                    <b-form-input class="phone-number" id="phone_number" type="email" v-model="form.phone_number"></b-form-input>
                     <b-input-group-append>
-                      <b-button variant="outline-secondary">Подтвердить</b-button>
+                      <b-button size="sm" class="phone-number"  variant="outline-secondary">Подтвердить</b-button>
                     </b-input-group-append>
                   </b-input-group>
 
                   <div class="mt-3 d-flex flex-row-reverse">
-                    <b-button class="default-success-button">Сохранить</b-button>
-                    <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickNotificationSettings(false)">Отмена
+                    <b-button size="sm" class="default-success-button">Сохранить</b-button>
+                    <b-button  size="sm" class="btn lightgray-button btn-sm mr-3" @click="onClickNotificationSettings(false)">Отмена
                     </b-button>
                   </div>
                 </b-col>

@@ -105,8 +105,8 @@
           <b-row>
             <b-col>
               <div class="d-flex flex-row">
-                <div class="p-2">
-                  <img src="../../../assets/document.jpg" alt="doc">
+                <div class="p-2 action-icon-doc d-none d-md-block">
+                  <img src="../../../assets/document.png" alt="doc">
                 </div>
                 <div class="p-2">
                   <div class="fs21 mb-3">Счет-фактура</div>
@@ -119,34 +119,34 @@
             </b-col>
             <b-col>
               <div class="d-flex flex-row">
-                <div class="p-2">
+                <div class="p-2 action-icon-doc d-none d-md-block">
                   <img src="../../../assets/contract.png" alt="doc">
                 </div>
                 <div class="p-2">
                   <div class="fs21 mb-3"><a class="newdoc-footer-link">Доверенность</a></div>
-                  <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                  <div class="action-describe">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                 </div>
               </div>
             </b-col>
             <b-col>
               <div class="d-flex flex-row">
-                <div class="p-2">
+                <div class="p-2 action-icon-doc d-none d-md-block">
                   <img src="../../../assets/list.png" alt="doc">
                 </div>
                 <div class="p-2">
                   <div class="fs21 mb-3"><a class="newdoc-footer-link">Платежное поручение</a></div>
-                  <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                  <div class="action-describe">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                 </div>
               </div>
             </b-col>
             <b-col>
               <div class="d-flex flex-row">
-                <div class="p-2">
-                  <img src="../../../assets/folder.png" alt="doc">
+                <div class="p-2 action-icon-doc d-none d-md-block">
+                  <img  src="../../../assets/folder.png" alt="doc">
                 </div>
                 <div class="p-2">
                   <div class="fs21 mb-3"><a class="newdoc-footer-link">Публичный документ</a></div>
-                  <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                  <div class="action-describe">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                 </div>
               </div>
             </b-col>

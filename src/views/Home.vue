@@ -3,16 +3,13 @@
     <div class="content">
       <div class="content-header">
         <b-container fluid>
-          <b-row>
-            <b-col class="text-left p-0">
-              Недавно подписанные документы
-              <HelpCircleIcon class="help-icon" v-b-tooltip.hover
-                              title="Недавно подписанные документы"></HelpCircleIcon>
+          <b-row class="home-header-action">
+            <b-col class="text-left pt-3 ">
+              <h6>Недавно подписанные документы</h6>
             </b-col>
-            <b-col class="text-right p-0">
+            <b-col class="text-right pt-3">
               <router-link :to="{name: 'document-inbox'}" class="view-all-link">
-                Посмотрет все
-                <ChevronRightIcon/>
+                <h6>Посмотрет все</h6>
               </router-link>
             </b-col>
           </b-row>

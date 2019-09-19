@@ -53,7 +53,7 @@
     height: auto !important;
     top: 0;
     background-color: white;
-    border-bottom: 1px solid #e4e5e7;
+    /*border-bottom: 1px solid #e4e5e7;*/
 
     & .profile-name {
       font-size: 17px;
@@ -70,6 +70,8 @@
 </style>
 <style lang="scss">
   #header {
+
+    z-index: 999999;
     & .navbar {
       background-color: white !important;
     }

@@ -2,7 +2,7 @@
   <div class="content title-page">
     <div class="content-header">
       <div class="container-fluid">
-        <h5 class="text-center">Проверка электронного документа</h5>
+        <h5 class="text-center verify-doc-header">Проверка электронного документа</h5>
       </div>
       <hr>
     </div>
@@ -68,7 +68,7 @@
     }
 </script>
 
-<style>
+<style scoped>
   .infoicon {
     width: 35px;
     height: 35px;
@@ -79,6 +79,28 @@
     height: 35px;
     padding: 0px 10px;
     font-size: 20px;
+  }
+
+  @media all and (max-width: 767px) {
+    .container {
+      max-width: 540px !important;
+    }
+
+    p  {
+      font-size: 10px;
+    }
+
+    h6 {
+      font-size: 14px;
+    }
+
+    button {
+      background: #d6d6d6 !important;
+    }
+
+    .verify-doc-header {
+      font-size: 15px;
+    }
   }
 
 </style>

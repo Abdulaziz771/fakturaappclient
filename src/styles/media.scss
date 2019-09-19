@@ -1,33 +1,194 @@
+@media all and (min-width: 1200px) {
+  
+}
+
+@media all and (max-width: 1200px) {
+  .tool-actions {
+    padding: 8px 8px !important;
+    span {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 1069px) {
+  .add-inn-input {
+    select, button {
+      font-size: 10px !important;
+    }
+  }
+
+  .phone-number, .email-addres {
+    font-size: 10px !important;
+  }
+
+  .input-group-phone, .input-group-email {
+    width: 100% !important;
+  }
+
+  .inbox-document-tabs ul {
+    width: 100%;
+  }
+}
+
 @media all and (max-width: 767px) {
-    .second-inside-sidebar {
-        margin-left: 95px !important;
+  .container {
+    max-width: fit-content !important;
+  }
+
+  .nav-link, .fs21 {
+    font-size: 12px !important;
+  }
+
+  .newdoc-tab .d-flex {
+    padding: 0 !important;
+  }
+
+  .pay-input-group {
+    padding: 0 !important;
+  }
+
+  .input-file-text label {
+    font-size: 15px !important;
+  }
+
+  .action-icon-doc {
+    width: 70px;
+    height: 70px;
+
+  }
+
+  .action-icon {
+    font-size: 8px !important;
+  }
+
+  .send-icon {
+    width: 20px;
+  }
+
+  .action-describe {
+    font-size: 8px !important;
+  }
+
+  .add-inn-input {
+    select {
+      font-size: 7px !important;
     }
-    .first-inside-sidebar {
-        width: 95px !important;
 
-        .content-menus {
-            padding: 10px 0px !important;
+    button {
+      font-size: 7px !important;
+      svg {
+        width: 7px !important;
+        height: 7px !important;
+      }
+    }
+  }
 
-            .menu-icon {
-                width: 20px !important;
-                height: 20px !important;
-            }
+  .second-inside-sidebar {
+    margin-left: 95px !important;
+    width: 124px !important;
+    font-size: 10px !important;
+  }
 
-            .menu-text {
-                font-size: 10px !important;
-            }
-        }
+  .first-inside-sidebar {
+    width: 95px !important;
+
+    .content-menus {
+      padding: 10px 0px !important;
+
+      .menu-icon {
+        width: 20px !important;
+        height: 20px !important;
+      }
+
+      .menu-text {
+        font-size: 10px !important;
+      }
+    }
+  }
+
+  .wrapper {
+    margin-left: 93px !important;
+
+    .content-body {
+      left: 94px !important;
+    }
+  }
+
+  table {
+    font-size: 9px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .chevronLeftIcon {
+    display: block;
+    left: 103px !important;
+    width: 18px !important;
+    color: gray;
+  }
+
+  .avatar-upload {
+    max-width: 118px !important;
+
+    .avatar-preview,img {
+      width: 120px !important;
+      height: 120px !important;
+    }
+  }
+
+  .replenishment-check-text, .replenishment-button-text {
+    font-size: 10px !important;
+  }
+
+  .sign-doc {
+    font-size: 10px !important;
+  }
+}
+
+@media all and (max-width: 475px) {
+  .nav-link {
+    font-size: 8px !important;
+  }
+
+  .home-header-action {
+    h6 {
+      font-size: 9px !important;
+      padding-top: 5px !important;
     }
 
-    .wrapper {
-        margin-left: 93px !important;
+    .text-right {
+      a {
+        font-size: 9px !important;
+        padding-top: 5px !important;
+      }
 
-        .content-body {
-            left: 94px !important;
-        }
+      svg {
+        width: 15px;
+      }
+    }
+  }
+
+
+  .pay-input-group {
+    padding: 0 !important;
+
+    input {
+      font-size: 10px !important;
     }
 
-    .chevronLeftIcon {
-        display: block;
+    .input-group-prepend {
+
+      button {
+        font-size: 10px !important;
+      }
     }
+
+    .input-group-text {
+      font-size: 10px !important;
+    }
+  }
 }

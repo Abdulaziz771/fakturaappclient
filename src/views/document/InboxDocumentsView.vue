@@ -1,45 +1,40 @@
 <template>
-  <div class="content border">
-    <div class="content-header">
+  <div class="content">
+    <div class="content-header border-bottom-tool">
       <b-row class="m-0">
-        <b-col md="3" class="p-0">
-          <b-button class="lightgray-button mr-2">
-            <Edit2Icon @click="slideOut.extraShow = !slideOut.extraShow" v-b-tooltip.hover
-                       title="Подписать и отправить"/>
-          </b-button>
-          <b-button class="lightgray-button mr-2">
-            <XCircleIcon v-b-tooltip.hover title="Отказать и удалить"/>
-          </b-button>
-          <b-button class="lightgray-button mr-2">
-            <UsersIcon v-b-tooltip.hover title="Отправить на согласование"/>
-          </b-button>
-          <b-button class="lightgray-button mr-2">
-            <StarIcon class="cursor-pointer " v-b-tooltip.hover title="Отметить как"/>
-          </b-button>
-          <b-button class="lightgray-button mr-2">
-            <PrinterIcon class="cursor-pointer " v-b-tooltip.hover title="Отправить на печать"/>
-          </b-button>
+        <b-col sm="6" md="6" xl="8" class="d-sm-flex action-list d-none" :class="bindClass2">
+          <div class="tool-actions pt-3" :class="bindClass">
+            <Edit2Icon v-b-tooltip.hover title="Подписать" /><span>Подписать</span>
+          </div>
+          <div class="tool-actions pt-3" :class="bindClass">
+            <XIcon v-b-tooltip.hover title="Удалить"/><span>Удалить</span>
+          </div>
+          <div class="tool-actions pt-3" :class="bindClass">
+            <UsersIcon v-b-tooltip.hover title="Согласовать"/><span>Согласовать</span>
+          </div>
+          <div class="tool-actions pt-3" :class="bindClass">
+            <StarIcon v-b-tooltip.hover title="Отметить"/><span>Отметить</span>
+          </div>
+          <div class="tool-actions pt-3" :class="bindClass">
+            <PrinterIcon v-b-tooltip.hover title="Печать"/><span>Печать</span>
+          </div>
         </b-col>
-        <b-col md="9" class="p-0">
-          <div class="form-inline float-right">
-            <div class="pl-2 form-inline">
-              <label class="mr-1">Показать по: </label>
-              <select class="form-control form-control-sm">
-                <option>20</option>
-                <option>30</option>
-                <option>40</option>
-              </select>
-            </div>
-            <div class="form-inline pl-1 pr-2">
-              <span class="pr-2">1-20 из 134</span>
-              <ChevronLeftIcon class="cursor-pointer mr-1"/>
-              <ChevronRightIcon class="cursor-pointer ml-1"/>
-            </div>
-            <b-button class="lightgray-button mr-2" v-b-toggle.filter-inbox size="sm" style="padding: 2px">Фильтр
-            </b-button>
-            <b-button class="lightgray-button mr-2" @click="activeRightSidebar = !activeRightSidebar" size="sm"
-                      style="padding: 2px">Массовое подписание
-            </b-button>
+        <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end p-0" :class="bindClass3">
+          <div class="counter-tool counter">
+            <span>
+              <span>
+                <span>1</span>–<span>20</span>
+              </span> из <span>21</span>
+            </span>
+          </div>
+          <div class="counter-tool toggle-page-left rounded-circle mr-1">
+            <ChevronLeftIcon class="cursor-pointer"/>
+          </div>
+          <div class="counter-tool toggle-page-right rounded-circle">
+            <ChevronRightIcon class="cursor-pointer"/>
+          </div>
+          <div class="counter-tool filter-view">
+            <SlidersIcon class="cursor-pointer"/>
           </div>
         </b-col>
       </b-row>
@@ -47,26 +42,28 @@
     <div class="content-body">
       <div class="table-body">
         <div>
-          <b-tabs justified class="document-tabs table-responsive">
+          <b-tabs justified class="document-tabs table-responsive inbox-document-tabs">
             <b-tab title-item-class="h5" active>
               <template slot="title">Счет фактуры</template>
               <b-table hover :fields="fields" :items="documents"
-                       class="documentTable">
+                       class="documentTable inboxDocTable" >
                 <template slot="HEAD_selected" slot-scope="data">
-                  <b-form-checkbox v-model="selectAll" @change="select"/>
+                  <b-form-checkbox v-model="selectAll" @change="select" />
                 </template>
                 <template slot="selected" slot-scope="data">
-                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected" />
                 </template>
                 <template slot="title" slot-scope="data">
-                  {{ data.item.title }} <br>
-                  <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
+                    <b>{{ data.item.title }} <br>
+                    <small><em> Создан: {{ data.item.createdDateTime }} </em></small></b>
+                  </router-link>
                 </template>
                 <template slot="totalPrice" slot-scope="data">
                   {{ data.item.totalPrice }}
                 </template>
                 <template slot="company_name" slot-scope="data">
-                  <b>{{ data.item.contractor.name }}</b> <br>
+                  {{ data.item.contractor.name }} <br>
                   <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
                 </template>
                 <template slot="updatedDateTime" slot-scope="data">
@@ -74,30 +71,30 @@
                 </template>
                 <template slot="status" slot-scope="data">
                   {{ data.item.status }}
-                </template>
-                <template slot="action" slot-scope="data">
-                  <EyeIcon class="action-icon"/>
                 </template>
               </b-table>
             </b-tab>
             <b-tab title-item-class="h5">
               <template slot="title">Договоры</template>
-              <b-table hover :fields="fields" :items="documents" class="scrollTable">
+              <b-table hover :fields="fields" :items="documents" class="scrollTable inboxDocTable">
+
                 <template slot="HEAD_selected" slot-scope="data">
                   <b-form-checkbox v-model="selectAll" @change="select"/>
                 </template>
                 <template slot="selected" slot-scope="data">
-                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected" />
                 </template>
                 <template slot="title" slot-scope="data">
-                  {{ data.item.title }} <br>
-                  <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
+                    <b>{{ data.item.title }} <br>
+                    <small><em> Создан: {{ data.item.createdDateTime }} </em></small></b>
+                  </router-link>
                 </template>
                 <template slot="totalPrice" slot-scope="data">
                   {{ data.item.totalPrice }}
                 </template>
                 <template slot="company_name" slot-scope="data">
-                  <b>{{ data.item.contractor.name }}</b> <br>
+                  {{ data.item.contractor.name }} <br>
                   <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
                 </template>
                 <template slot="updatedDateTime" slot-scope="data">
@@ -105,30 +102,29 @@
                 </template>
                 <template slot="status" slot-scope="data">
                   {{ data.item.status }}
-                </template>
-                <template slot="action" slot-scope="data">
-                  <EyeIcon class="action-icon"/>
                 </template>
               </b-table>
             </b-tab>
             <b-tab title-item-class="h5">
-              <template slot="title">Акты</template>
-              <b-table hover :fields="fields" :items="documents" class="scrollTable">
-                <template slot="HEAD_selected" slot-scope="data">
-                  <b-form-checkbox v-model="selectAll" @change="select"/>
+              <template slot="title" >Акты</template>
+              <b-table hover :fields="fields" :items="documents" class="scrollTable inboxDocTable">
+                <template slot="HEAD_selected" slot-scope="data" >
+                  <b-form-checkbox v-model="selectAll" @change="select" />
                 </template>
-                <template slot="selected" slot-scope="data">
+                <template slot="selected" slot-scope="data" class="checkbox-table">
                   <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
                 </template>
                 <template slot="title" slot-scope="data">
-                  {{ data.item.title }} <br>
-                  <small><em> Создан: {{ data.item.createdDateTime }} </em></small>
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
+                    <b>{{ data.item.title }} <br>
+                    <small><em> Создан: {{ data.item.createdDateTime }} </em></small></b>
+                  </router-link>
                 </template>
                 <template slot="totalPrice" slot-scope="data">
                   {{ data.item.totalPrice }}
                 </template>
                 <template slot="company_name" slot-scope="data">
-                  <b>{{ data.item.contractor.name }}</b> <br>
+                  {{ data.item.contractor.name }}<br>
                   <small><em> ИНН: {{ data.item.contractor.inn }} </em></small>
                 </template>
                 <template slot="updatedDateTime" slot-scope="data">
@@ -136,9 +132,6 @@
                 </template>
                 <template slot="status" slot-scope="data">
                   {{ data.item.status }}
-                </template>
-                <template slot="action" slot-scope="data">
-                  <EyeIcon class="action-icon"/>
                 </template>
               </b-table>
             </b-tab>
@@ -175,7 +168,9 @@
         XCircleIcon,
         UsersIcon,
         StarIcon,
-        PrinterIcon
+        PrinterIcon,
+        XIcon,
+        SlidersIcon,
     } from 'vue-feather-icons'
 
     export default {
@@ -190,8 +185,8 @@
             PrinterIcon,
             ChevronRightIcon,
             ChevronLeftIcon,
-            Multiselect,
-            RightSidebar,
+            XIcon,
+            SlidersIcon,
             'vue-slideout-panel': VueSlideOutPanel
         },
         data () {
@@ -226,7 +221,6 @@
                     { key: 'company_name', label: 'Контрагент' },
                     { key: 'updatedDateTime', label: 'Обновлен' },
                     { key: 'status', label: 'Статус' },
-                    { key: 'action', label: '' }
                 ],
                 documents: Documents,
                 value: [],
@@ -242,6 +236,30 @@
                     { name: 'Доверенность', code: '9' },
                     { name: 'Справка', code: '10' }
                 ]
+            }
+        },
+        computed: {
+          bindClass() {
+              if (this.selected.length > 0) {
+                  return 'cursor-pointer hover-effect-active';
+
+              } else if (this.selected.length == 0) {
+                  return 'text-disabled cursor-default'
+              }
+          },
+          bindClass2() {
+              if (this.selected.length > 0) {
+                  return 'd-flex'
+              } else if (this.selected.length == 0) {
+                  return 'd-none'
+              }
+          },
+            bindClass3() {
+              if (this.selected.length > 0) {
+                  return 'd-none'
+              } else if (this.selected.length == 0) {
+                  return 'd-flex'
+              }
             }
         },
         methods: {
@@ -268,8 +286,8 @@
 
 </style>
 <style lang="scss">
-
-
-
+  .page:hover {
+    background:rgba(0,0,0,0.05);
+  }
 </style>
 
