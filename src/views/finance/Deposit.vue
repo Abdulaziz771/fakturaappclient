@@ -1,12 +1,11 @@
 <template>
   <div class="content title-page">
-    <div class="content-header">
-      <div class="container-fluid">
-        <h5 class="text-center">Пополнить баланс</h5>
-      </div>
-      <hr>
-    </div>
     <div class="content-body">
+      <div class="content-header">
+        <div class="container-fluid">
+          <h5 class="text-center">Пополнить баланс</h5>
+        </div>
+      </div>
       <div class="table-body">
         <b-container fluid>
           <b-tabs content-class="mt-3" justified class="create-new-document-tabs document-tabs">

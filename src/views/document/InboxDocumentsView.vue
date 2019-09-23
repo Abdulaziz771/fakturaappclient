@@ -1,45 +1,46 @@
 <template>
   <div class="content">
-    <div class="content-header border-bottom-tool">
-      <b-row class="m-0">
-        <b-col sm="6" md="6" xl="8" class="d-sm-flex action-list d-none" :class="bindClass2">
-          <div class="tool-actions pt-3" :class="bindClass">
-            <Edit2Icon v-b-tooltip.hover title="Подписать" /><span>Подписать</span>
-          </div>
-          <div class="tool-actions pt-3" :class="bindClass">
-            <XIcon v-b-tooltip.hover title="Удалить"/><span>Удалить</span>
-          </div>
-          <div class="tool-actions pt-3" :class="bindClass">
-            <UsersIcon v-b-tooltip.hover title="Согласовать"/><span>Согласовать</span>
-          </div>
-          <div class="tool-actions pt-3" :class="bindClass">
-            <StarIcon v-b-tooltip.hover title="Отметить"/><span>Отметить</span>
-          </div>
-          <div class="tool-actions pt-3" :class="bindClass">
-            <PrinterIcon v-b-tooltip.hover title="Печать"/><span>Печать</span>
-          </div>
-        </b-col>
-        <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end p-0" :class="bindClass3">
-          <div class="counter-tool counter">
+
+    <div class="content-body">
+      <div class="content-header border-bottom-tool">
+        <b-row class="m-0">
+          <b-col sm="6" md="6" xl="8" class="d-sm-flex action-list d-none" :class="bindClass2">
+            <div class="tool-actions pt-3" :class="bindClass">
+              <Edit2Icon v-b-tooltip.hover title="Подписать" /><span>Подписать</span>
+            </div>
+            <div class="tool-actions pt-3" :class="bindClass">
+              <XIcon v-b-tooltip.hover title="Удалить"/><span>Удалить</span>
+            </div>
+            <div class="tool-actions pt-3" :class="bindClass">
+              <UsersIcon v-b-tooltip.hover title="Согласовать"/><span>Согласовать</span>
+            </div>
+            <div class="tool-actions pt-3" :class="bindClass">
+              <StarIcon v-b-tooltip.hover title="Отметить"/><span>Отметить</span>
+            </div>
+            <div class="tool-actions pt-3" :class="bindClass">
+              <PrinterIcon v-b-tooltip.hover title="Печать"/><span>Печать</span>
+            </div>
+          </b-col>
+          <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end p-0" :class="bindClass3">
+            <div class="counter-tool counter">
             <span>
               <span>
                 <span>1</span>–<span>20</span>
               </span> из <span>21</span>
             </span>
-          </div>
-          <div class="counter-tool toggle-page-left rounded-circle mr-1">
-            <ChevronLeftIcon class="cursor-pointer"/>
-          </div>
-          <div class="counter-tool toggle-page-right rounded-circle">
-            <ChevronRightIcon class="cursor-pointer"/>
-          </div>
-          <div class="counter-tool filter-view">
-            <SlidersIcon class="cursor-pointer"/>
-          </div>
-        </b-col>
-      </b-row>
-    </div>
-    <div class="content-body">
+            </div>
+            <div class="counter-tool toggle-page-left rounded-circle mr-1">
+              <ChevronLeftIcon class="cursor-pointer"/>
+            </div>
+            <div class="counter-tool toggle-page-right rounded-circle">
+              <ChevronRightIcon class="cursor-pointer"/>
+            </div>
+            <div class="counter-tool filter-view">
+              <SlidersIcon class="cursor-pointer"/>
+            </div>
+          </b-col>
+        </b-row>
+      </div>
       <div class="table-body">
         <div>
           <b-tabs justified class="document-tabs table-responsive inbox-document-tabs">

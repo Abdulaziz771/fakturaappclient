@@ -1,11 +1,17 @@
 <template>
   <div id="header">
-    <b-navbar toggleable="lg" type="dark" variant="success">
+    <b-navbar class="header-nav" toggleable="lg" type="dark" variant="success">
       <b-navbar-brand>
         <router-link :to="{name: 'home'}">
           <img alt="Header Logo" class="logo" src="../assets/newlogo.png">
         </router-link>
       </b-navbar-brand>
+      <div class="input-group content-search">
+        <div class="input-group-prepend">
+          <span class="input-group-text content-search-icon" id="basic-addon1"><SearchIcon/></span>
+        </div>
+        <input type="text" class="form-control content-search-input" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto mr-2">
@@ -39,22 +45,26 @@
   </div>
 </template>
 <script>
+    import {
+        SearchIcon
+    } from 'vue-feather-icons'
 
   export default {
-    name: 'headerComponent'
+    name: 'headerComponent',
+      components: {
+          SearchIcon
+      }
   }
 </script>
 
 <style lang="scss" scoped>
+
   #header {
     width: 100%;
     position: fixed !important;
     z-index: 999;
     height: auto !important;
     top: 0;
-    background-color: white;
-    /*border-bottom: 1px solid #e4e5e7;*/
-
     & .profile-name {
       font-size: 17px;
     }

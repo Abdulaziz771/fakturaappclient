@@ -1,23 +1,23 @@
 <template>
   <div>
     <div class="content">
-      <div class="content-header">
-        <b-container fluid>
-          <b-row class="home-header-action">
-            <b-col class="text-left pt-3 ">
-              <h6>Недавно подписанные документы</h6>
-            </b-col>
-            <b-col class="text-right pt-3">
-              <router-link :to="{name: 'document-inbox'}" class="view-all-link">
-                <h6>Посмотрет все</h6>
-              </router-link>
-            </b-col>
-          </b-row>
-        </b-container>
-      </div>
       <div class="content-body">
+        <div class="content-header">
+          <b-container fluid>
+            <b-row class="home-header-action">
+              <b-col class="text-left pt-3 ">
+                <h6>Недавно подписанные документы</h6>
+              </b-col>
+              <b-col class="text-right pt-3">
+                <router-link :to="{name: 'document-inbox'}" class="view-all-link">
+                  <h6>Посмотрет все</h6>
+                </router-link>
+              </b-col>
+            </b-row>
+          </b-container>
+        </div>
         <div class="table-body">
-          <b-table responsive bordered striped hover :fields="fields" :items="documents">
+          <b-table bordered striped hover :fields="fields" :items="documents">
             <template slot="title" slot-scope="data">
               {{ data.item.title }} <br>
               <small><em> Создан: {{ data.item.createdDateTime }} </em></small>

@@ -1,5 +1,10 @@
 <template>
     <div class="content-body">
+      <div class="content-header">
+        <b-row>
+          <b-col cols="12" class="text-center"><h5>Мои организации</h5></b-col>
+        </b-row>
+      </div>
       <div class="table-body">
         <div class="container">
           <b-row class="mb-3">

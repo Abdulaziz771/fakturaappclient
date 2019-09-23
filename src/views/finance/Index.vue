@@ -1,21 +1,21 @@
 <template>
   <div class="content" id="financeIndex">
-    <div class="content-header">
-      <div class="row">
-        <div class="col-5 col-sm-5 col-md-6  text-md-left">
-          <h5 class="p-2 replenishment-check-text">Счета на пополнение</h5>
-        </div>
-        <div class="col-7 col-sm-7 col-md-6  text-sm-right">
-          <router-link :to="{name: 'finance-deposit'}">
-            <b-button class="btn replenishment-button-text lightgray-button float-md-right btn-sm m-2 p-1">
-              Запросить новый счет на пополнение
-            </b-button>
-          </router-link>
-        </div>
-      </div>
-      <hr class="m-0">
-    </div>
     <div class="content-body">
+      <div class="content-header">
+        <div class="row">
+          <div class="col-5 col-sm-5 col-md-6  text-md-left">
+            <h5 class="p-2 replenishment-check-text">Счета на пополнение</h5>
+          </div>
+          <div class="col-7 col-sm-7 col-md-6  text-sm-right">
+            <router-link :to="{name: 'finance-deposit'}">
+              <b-button class="btn replenishment-button-text lightgray-button float-md-right btn-sm m-2 p-1">
+                Запросить новый счет на пополнение
+              </b-button>
+            </router-link>
+          </div>
+        </div>
+        <hr class="m-0">
+      </div>
       <div class="table-body">
         <div class="table-responsive">
           <b-table  striped hover :fields="fields" :items="ReplenishmentAccountTable"

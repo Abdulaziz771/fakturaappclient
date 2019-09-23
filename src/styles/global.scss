@@ -3,6 +3,8 @@
 
 $default-border-color: #b9b9b9;
 $brand-color: #66c93e;
+
+
 html {
   height: 100%;
 }
@@ -100,11 +102,18 @@ table tbody tr:hover {
   width: 180px;
 }
 
+#header {
+  .navbar {
+    display: grid;
+    grid-template-columns: 288px 65% 18%;
+  }
+}
+
 .lightgray-button {
   background-color: #edf0f5;
   border-color: $default-border-color;
   color: #28282d;
-  padding: 0px;
+  padding: 0;
 
   & svg {
     color: #6b6868;
@@ -157,7 +166,6 @@ table tbody tr:hover {
 
 .content-body-header .btn-secondary:not(:disabled):not(.disabled):active {
   background-color: #edf0f5;
-  border-color62cb31: $default-border-color;
   color: #28282d;
 }
 
@@ -238,6 +246,32 @@ table tbody tr:hover {
   outline: none;
 }
 
+.content-search {
+  .content-search-icon {
+    background: #edf0f5;
+    height: 30px;
+    padding: 7px ;
+    border-radius: 5px !important;
+    cursor: pointer;
+    svg {
+      width: 14px;
+    }
+  }
+
+  .content-search-input {
+    background: #edf0f5;
+    height: 30px;
+    display: none;
+  }
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: none;
+}
+
+
+
 .second-inside-sidebar {
   z-index: 9;
 
@@ -255,7 +289,7 @@ table tbody tr:hover {
 .content-body {
   position: absolute;
   display: flex;
-  top: 115px;
+  top: 67px;
   left: 290px;
   flex-direction: column;
   right: 0;
@@ -267,20 +301,41 @@ table tbody tr:hover {
   overflow-x: hidden;
   position: absolute;
   bottom: 0;
-  top: 0;
+  top: 48px;
   right: 0;
   left: 0;
 }
 
+.table-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.table-body::-webkit-scrollbar-button {
+  display: none
+}
+
+.table-body::-webkit-scrollbar-track-piece {
+  background: white;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+  background: #9aa2af;
+  border-radius: 5px;
+}
+
+
+.table-body::-webkit-scrollbar-thumb:hover {
+  background: #848b96;
+}
+
 .content-header {
   position: relative;
-  top: 66px;
+  top: 0;
 }
 
 .fullContent {
   .content-body {
     left: 110px !important;
-    top: 114px !important;
   }
 }
 
@@ -338,10 +393,6 @@ table tbody tr:hover {
 }
 
 .title-page {
-  .content-body {
-    top: 145px !important;
-  }
-
   .content-header {
     padding: 0.5rem !important;
   }
