@@ -2,10 +2,7 @@
   <div class="content title-page">
     <div class="content-body">
       <div class="content-header">
-        <div class="container-fluid">
-          <h5 class="text-center verify-doc-header">Проверка электронного документа</h5>
-        </div>
-        <hr>
+        <h5 class="text-center">Проверка электронного документа</h5>
       </div>
       <div class="table-body">
         <div class="content-info container border rounded">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="content">
+    <div class="content without-second-sidebar">
       <div class="content-body">
         <div class="content-header">
           <b-container fluid>

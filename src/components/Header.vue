@@ -1,60 +1,93 @@
 <template>
   <div id="header">
-    <b-navbar class="header-nav" toggleable="lg" type="dark" variant="success">
-      <b-navbar-brand>
-        <router-link :to="{name: 'home'}">
-          <img alt="Header Logo" class="logo" src="../assets/newlogo.png">
-        </router-link>
-      </b-navbar-brand>
-      <div class="input-group content-search">
-        <div class="input-group-prepend">
-          <span class="input-group-text content-search-icon" id="basic-addon1"><SearchIcon/></span>
+    <div class="header-nav row">
+      <div class="col-3 col-sm-7 col-lg-5">
+        <div class="content-search">
+          <MenuIcon @click="offSecondSidebar" class="menu-icon-header text-muted cursor-pointer float-left mt-2"/>
+          <b-input-group class="float-left d-none d-sm-flex">
+            <template v-slot:append>
+              <b-input-group-text>
+                <SearchIcon/>
+              </b-input-group-text>
+            </template>
+            <b-form-input placeholder="Поиск"></b-form-input>
+          </b-input-group>
         </div>
-        <input type="text" class="form-control content-search-input" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
       </div>
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav class="ml-auto mr-2">
-          <b-nav-item-dropdown right class="mr-4">
-            <template slot="button-content"><span class="profile-name pr-2">Баланс : 6 000 сум</span></template>
-            <b-dropdown-item href="#">
-              <router-link class="text-decoration-none router-link-drop" :to="{name: 'finance-index'}">
-                История счета на пополнение
-              </router-link>
-            </b-dropdown-item>
-            <b-dropdown-item href="#">
-              <router-link class="text-decoration-none router-link-drop" :to="{name: 'finance-deposit'}">
-                Пополнить баланс
-              </router-link>
-            </b-dropdown-item>
-          </b-nav-item-dropdown>
-          <b-nav-item-dropdown right>
-            <template slot="button-content"><span class="profile-name pr-2">Иванов Иван</span></template>
-            <b-dropdown-item href="#">Организация: Teshavoy Corparation</b-dropdown-item>
-            <b-dropdown-item href="#">Инн: 302563857</b-dropdown-item>
-            <b-dropdown-item href="#">
-              <router-link class="text-decoration-none router-link-drop" :to="{name: 'my-organization-list' }">
-                Список организаций
-              </router-link>
-            </b-dropdown-item>
-            <b-dropdown-item href="#">Выход</b-dropdown-item>
-          </b-nav-item-dropdown>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
+      <div class="col-9 col-sm-5 col-lg-7 text-right">
+        <b-navbar toggleable="lg" type="dark" class="pt-0 float-right">
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <b-collapse id="nav-collapse" class="float-right" is-nav>
+            <b-navbar-nav class="mr-2">
+              <b-nav-item-dropdown right class="mr-4">
+                <template slot="button-content"><span class="profile-name pr-2">Баланс: 6 000 сум</span></template>
+                <b-dropdown-item href="#">
+                  <router-link @click.native="offSecondSidebar" class="text-decoration-none router-link-drop"
+                               :to="{name: 'finance-index'}">
+                    История счета на пополнение
+                  </router-link>
+                </b-dropdown-item>
+                <b-dropdown-item href="#">
+                  <router-link @click.native="offSecondSidebar" class="text-decoration-none router-link-drop"
+                               :to="{name: 'finance-deposit'}">
+                    Пополнить баланс
+                  </router-link>
+                </b-dropdown-item>
+              </b-nav-item-dropdown>
+              <b-nav-item-dropdown right>
+                <template slot="button-content"><span class="profile-name pr-2">Иванов Иван</span></template>
+                <b-dropdown-item href="#">Организация: Teshavoy Corparation</b-dropdown-item>
+                <b-dropdown-item href="#">Инн: 302563857</b-dropdown-item>
+                <b-dropdown-item href="#">
+                  <router-link @click.native="offSecondSidebar" class="text-decoration-none router-link-drop"
+                               :to="{name: 'my-organization-list' }">
+                    Список организаций
+                  </router-link>
+                </b-dropdown-item>
+                <b-dropdown-item href="#">Выход</b-dropdown-item>
+              </b-nav-item-dropdown>
+            </b-navbar-nav>
+          </b-collapse>
+        </b-navbar>
+        <div class="header-tools">
+          <MessageSquareIcon class="cursor-pointer header-icons mr-2"/>
+          <BellIcon class="cursor-pointer header-icons mr-2"/>
+          <SettingsIcon class="cursor-pointer header-icons mr-2"/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
     import {
-        SearchIcon
+        SearchIcon,
+        MessageSquareIcon,
+        BellIcon,
+        SettingsIcon,
+        MenuIcon
     } from 'vue-feather-icons'
 
-  export default {
-    name: 'headerComponent',
-      components: {
-          SearchIcon
-      }
-  }
+    export default {
+        name: 'headerComponent',
+        data() {
+            return {
+                isActiveSecondSidebar: true
+            }
+        },
+        components: {
+            SearchIcon,
+            MessageSquareIcon,
+            BellIcon,
+            SettingsIcon,
+            MenuIcon
+        },
+        methods: {
+            offSecondSidebar() {
+                this.isActiveSecondSidebar = !this.isActiveSecondSidebar;
+                this.$emit('offSecondSidebar', this.isActiveSecondSidebar);
+            },
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -65,6 +98,7 @@
     z-index: 999;
     height: auto !important;
     top: 0;
+
     & .profile-name {
       font-size: 17px;
     }
@@ -80,12 +114,6 @@
 </style>
 <style lang="scss">
   #header {
-
-    z-index: 999999;
-    & .navbar {
-      background-color: white !important;
-    }
-
     & .navbar-toggler {
       background-color: #67c93f;
       cursor: pointer;

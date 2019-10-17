@@ -1,6 +1,11 @@
 <template>
   <div>
-      <ChevronLeftIcon class="chevronLeftIcon cursor-pointer" @click="emitEvent"></ChevronLeftIcon>
+
+    <XCircleIcon @click="offSecondSidebarMoblie" class="x-circle-icon cursor-pointer"></XCircleIcon>
+
+      <router-link style="background: none" :to="{name: 'home'}">
+        <img src="../../assets/newlogo.png" style="background: none; width: 100%; padding: 18px 15px" alt="">
+      </router-link>
 
       <b-list-group>
 
@@ -13,7 +18,7 @@
 
       <b-list-group class="mt-3">
         <span class="pt-2 pl-3 pb-2 text-muted">Документооборот</span>
-        <router-link class="router-link" :to="{name: 'document-inbox'}">
+        <router-link class="router-link"  :to="{name: 'document-inbox'}">
           Входящие
         </router-link>
         <b-list-group-item href="#">Исходящие
@@ -31,20 +36,18 @@
     </div>
 </template>
 <script>
-    import {
-        ChevronLeftIcon
-
-    } from 'vue-feather-icons'
-
+  import  {
+    XCircleIcon
+  } from 'vue-feather-icons'
   export default {
     name: 'sidebar-menu-documents',
       components: {
-          ChevronLeftIcon
+          XCircleIcon
       },
       methods: {
-          emitEvent() {
-              this.$emit('changeShow', true)
-          }
+          offSecondSidebarMoblie() {
+              this.$emit('offSecondSidebarMoblie', false);
+          },
       }
   }
 </script>

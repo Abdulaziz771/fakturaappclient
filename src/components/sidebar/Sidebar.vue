@@ -1,75 +1,72 @@
 <template>
   <div id="sidebar">
+
     <div class="first-inside-sidebar">
+      <div class="logo-sidebar">
+        <img src="../../assets/logo-faktura.png" >
+      </div>
       <div class="d-flex flex-column">
 
-        <router-link v-on:click.native="secondSidebar = false" :to="{name: 'document-home'}"
-                     class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <router-link @click.native="openSidebar" :to="{name: 'document-home'}"
+                     class=" text-center content-menus">
           <div class="d-flex justify-content-center" v-b-toggle.collapse-documents>
             <div class="align-self-center">
               <FileIcon class="menu-icon"/>
-              <div class="menu-text pt-2">Документы</div>
             </div>
           </div>
 
         </router-link>
 
-        <router-link  :to="{name: 'counter-parties'}"
-                     class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <router-link @click.native="closeSidebar" :to="{name: 'counter-parties'}"
+                      class="text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <GridIcon class="menu-icon"/>
-              <div class="menu-text pt-2">Контрагенты</div>
             </div>
           </div>
         </router-link>
 
-        <router-link :to="{name: 'document-verify'}"
-                     class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <router-link @click.native="closeSidebar" :to="{name: 'document-verify'}"
+                     class=" text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <Edit3Icon class="menu-icon"/>
-              <div class="menu-text pt-2">Проверить подпись документа</div>
             </div>
           </div>
         </router-link>
 
-        <div class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <div class=" text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <MessageCircleIcon class="menu-icon"/>
-              <div class="menu-text pt-2">Сообщения</div>
             </div>
           </div>
         </div>
 
-        <div class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <div class=" text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <CreditCardIcon class="menu-icon"/>
-              <div class="menu-text pt-2">История КПК и POS транзакций</div>
             </div>
           </div>
         </div>
 
-        <router-link v-on:click.native="secondSidebar = false" :to="{name: 'settings-personal-area'}"
-                     class="pb-4 pt-4 pl-2 pr-2 text-center content-menus">
+        <router-link @click.native="openSidebar" :to="{name: 'settings-personal-area'}"
+                     class=" text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <SettingsIcon class="menu-icon"/>
-              <div class="menu-text pt-2">Настройки</div>
             </div>
           </div>
         </router-link>
       </div>
     </div>
 
-    <!--      <transition name="slide-fade">-->
-    <div class="second-inside-sidebar" v-cloak :class="{ 'd-none d-md-block': secondSidebar }"  v-if="activeSidebar">
-      <component @changeShow="viewSeconSidebar":is="activeSidebar"></component>
+    <div v-show="!isOffSecondSidebar">
+      <div class="second-inside-sidebar" v-cloak  v-if="activeSidebar">
+        <component @offSecondSidebarMoblie="offSecondSidebarMoblie" :is="activeSidebar"></component>
+      </div>
     </div>
-
-    <!--      </transition>-->
 
   </div>
 </template>
@@ -81,7 +78,6 @@
         CreditCardIcon,
         MessageCircleIcon,
         SettingsIcon,
-        ChevronLeftIcon
 
     } from 'vue-feather-icons'
 
@@ -96,15 +92,23 @@
             CreditCardIcon,
             FileIcon,
             MessageCircleIcon,
-            SidebarMenuDocuments,
-            SidebarMenuSettings,
             SettingsIcon,
-            ChevronLeftIcon
+
         },
+        props: ['isOffSecondSidebar'],
         data() {
             return {
                 activeMenu: null,
-                secondSidebar: true
+                test: true
+            }
+        },
+        methods: {
+            openSidebar() {
+                this.isOffSecondSidebar = false;
+                this.$emit("openSidebar", false)
+            },
+            closeSidebar() {
+                this.$emit("openSidebar", true)
             }
         },
         computed: {
@@ -131,11 +135,6 @@
                 }
             }
         },
-        methods: {
-            viewSeconSidebar(value) {
-                this.secondSidebar = value
-            }
-        }
     }
 </script>
 <style lang="scss" scoped>
@@ -146,37 +145,41 @@
     z-index: 99;
     float: left;
     position: fixed;
-    top: 67px;
 
     & .first-inside-sidebar {
       position: fixed;
-      height: calc(100% - 67px);
-      width: 110px;
-      border-right:$default-border ;
+      height: 100%;
+      width: 75px;
+      border-right: $default-border ;
       background: white;
       overflow-y: auto;
       text-transform: uppercase;
       z-index: 99999;
+      background: #34495e;
 
       & .menu-text {
-        font-size: 12px;
+        font-size: 10px;
       }
 
       & .content-menus {
         cursor: pointer;
+        padding: 22px 0px;
+        margin: 2px 0px;
+        border-bottom: 1px solid rgba(248,249,250,.05);
 
         & .menu-icon {
-          width: 30px;
-          height: 30px;
-          color: #a2a2a2;
+          width: 24px;
+          height: 24px;
+          color: rgb(255, 255, 255);
         }
 
         &:hover {
-          background-color: #edf0f5;
+          border-left: 2px solid #b2b2b2;
+          background-color: transparent;
           text-decoration: none;
 
           & .menu-icon {
-            color: #585757;
+            color: white;
           }
 
           & .menu-text {
@@ -186,10 +189,11 @@
       }
 
       & .router-link-active {
-        background-color: #edf0f5;
+        background: transparent;
+        border-left: 2px solid rgb(255, 255, 255);
 
         & .menu-icon {
-          color: #585757;
+          color: white;
         }
 
         & .menu-text {
@@ -202,16 +206,31 @@
 
   #sidebar .second-inside-sidebar {
     position: fixed;
-    height: calc(100% - 67px);
+    height: 100%;
     width: 180px;
-    margin-left: 110px;
+    margin-left: 74px;
     background: white;
     font-size: 14px;
     overflow-y: auto;
     z-index: 9999;
+    background: white;
+    box-shadow: 0 4px 20px 1px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.06);
+
 
     & .router-link-active {
       background-color: #f2f2f2;
+    }
+
+    .router-link-exact-active {
+      background: #eee !important;
+    }
+
+    .list-group-item {
+      background: transparent !important;;
+    }
+
+    a:hover {
+      background: #eee;
     }
   }
 
@@ -227,20 +246,5 @@
 
   #sidebar a {
     color: black;
-  }
-
-  .slide-fade-enter-active {
-    transition: all .2s ease;
-  }
-
-  .slide-fade-leave-active {
-    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-
-  .slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active до версии 2.1.8 */
-  {
-    transform: translateX(-100px);
-    opacity: 0;
   }
 </style>

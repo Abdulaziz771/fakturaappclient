@@ -1,4 +1,5 @@
 <template>
+  <div class="without-second-sidebar">
     <div class="content-body">
       <div class="content-header">
         <b-row>
@@ -98,6 +99,7 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
     import {

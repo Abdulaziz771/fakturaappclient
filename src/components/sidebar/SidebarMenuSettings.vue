@@ -1,7 +1,11 @@
 <template>
   <div>
 
-    <ChevronLeftIcon class="chevronLeftIcon cursor-pointer" @click="emitEvent"></ChevronLeftIcon>
+    <XCircleIcon @click="offSecondSidebarMoblie" class="x-circle-icon cursor-pointer"></XCircleIcon>
+
+    <router-link :to="{name: 'home'}">
+      <img src="../../assets/newlogo.png" style="width: 100%; padding: 18px 15px" alt="">
+    </router-link>
 
     <b-list-group>
       <span class="pt-2 pl-3 pb-2 text-muted">Настройки</span>
@@ -23,18 +27,17 @@
 <script>
 
     import {
-        ChevronLeftIcon
-
+      XCircleIcon
     } from 'vue-feather-icons'
 
   export default {
     name: 'sidebar-menu-settings',
       components: {
-          ChevronLeftIcon
+          XCircleIcon
       },
       methods: {
-          emitEvent() {
-              this.$emit('changeShow', true)
+          offSecondSidebarMoblie() {
+              this.$emit('offSecondSidebarMoblie', false);
           }
       }
   }

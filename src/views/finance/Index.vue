@@ -1,5 +1,5 @@
 <template>
-  <div class="content" id="financeIndex">
+  <div class="content without-second-sidebar" id="financeIndex">
     <div class="content-body">
       <div class="content-header">
         <div class="row">

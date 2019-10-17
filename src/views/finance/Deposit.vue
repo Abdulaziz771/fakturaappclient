@@ -1,5 +1,5 @@
 <template>
-  <div class="content title-page">
+  <div class="content title-page without-second-sidebar">
     <div class="content-body">
       <div class="content-header">
         <div class="container-fluid">

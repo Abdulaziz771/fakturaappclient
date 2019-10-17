@@ -2,7 +2,7 @@
   <div class="content no-title">
     <div class="content-body">
       <div class="table-body">
-        <b-container fluid class="pb-4">
+        <b-container fluid class="pb-4 personal-area">
           <div class="h-panel shadow-sm">
             <div class="panel-heading">
               <b-row>
@@ -71,8 +71,8 @@
                   </b-form-group>
 
                   <div class="mt-3 d-flex flex-row-reverse">
-                    <b-button class="default-success-button">Сохранить</b-button>
-                    <b-button class="btn lightgray-button btn-sm mr-3" @click="onClickCancelPersonalData">Отмена
+                    <b-button class="btn-sm" variant="outline-success">Сохранить</b-button>
+                    <b-button class="mr-3 btn-sm" variant="outline-secondary" @click="onClickCancelPersonalData">Отмена
                     </b-button>
                   </div>
                 </b-col>
@@ -136,6 +136,7 @@
                     label="Уведомления:"
                     label-align-sm="right"
                     label-for="notifications"
+                    class="checkbox-notifications"
                   >
                     <b-form-checkbox class="pt-1"  clascons="pt-1" id="notifications" v-model="form.notifications"  value="Включено" unchecked-value="Выключено" switch></b-form-checkbox>
                   </b-form-group>
@@ -168,8 +169,8 @@
                   </b-input-group>
 
                   <div class="mt-3 d-flex flex-row-reverse">
-                    <b-button size="sm" class="default-success-button">Сохранить</b-button>
-                    <b-button  size="sm" class="btn lightgray-button btn-sm mr-3" @click="onClickNotificationSettings(false)">Отмена
+                    <b-button size="sm" variant="outline-success" >Сохранить</b-button>
+                    <b-button  size="sm" variant="outline-secondary" class="mr-3" @click="onClickNotificationSettings(false)">Отмена
                     </b-button>
                   </div>
                 </b-col>
@@ -314,6 +315,24 @@
         background-repeat: no-repeat;
         background-position: center;
       }
+    }
+  }
+
+  .checkbox-notifications {
+    width: 600px;
+  }
+
+  .form-control {
+    background: #f7f7f7;
+  }
+
+  .personal-area {
+    .form-control:focus {
+      color: #665c70;
+      background-color: #fff;
+      border-color: #7984d2 !important;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(51, 111, 153, 0.25) !important;
     }
   }
 </style>
