@@ -2,7 +2,7 @@
   <div class="content title-page">
     <div class="content-body">
       <div class="content-header">
-        <h5 class="text-center">Валютная счет-фактура</h5>
+        <h5 class="text-center">Стандартная счет-фактура (новая форма)</h5>
       </div>
       <div class="table-body">
         <div class="ml-3 mr-3" id="invoice">
@@ -21,12 +21,6 @@
                   <td>Дата</td>
                   <td><input type="text" class="form-control form-control-sm"></td>
                 </tr>
-                <tr>
-                  <td>Курс</td>
-                  <td><input type="text" class="form-control form-control-sm"></td>
-                  <td>Дата</td>
-                  <td><input type="text" class="form-control form-control-sm"></td>
-                </tr>
               </table>
             </b-row>
           </b-container>
@@ -35,88 +29,40 @@
             <b-row>
               <b-col>
                 <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Поставщик :</b></b-col>
-                  <b-col cols="8" class="text-left">302563857 Corporation</b-col>
+                  <b-col cols="5" class="text-right"><b>Поставщик :</b></b-col>
+                  <b-col cols="7" class="text-left">302563857 Corporation</b-col>
                 </b-row>
                 <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Адрес :</b></b-col>
-                  <b-col cols="8" class="text-left">ГОРОД ТАШКЕНТ, ЮНУСАБАДСКИЙ РАЙОН, ул. Дехканабад, 1</b-col>
+                  <b-col cols="5" class="text-right"><b>Адрес :</b></b-col>
+                  <b-col cols="7" class="text-left">ГОРОД ТАШКЕНТ, ЮНУСАБАДСКИЙ РАЙОН, ул. Дехканабад, 1</b-col>
                 </b-row>
                 <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Телефон :</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
+                  <b-col cols="5" class="text-right"><b>ИНН:</b></b-col>
+                  <b-col cols="7" class="text-left">302563857</b-col>
                 </b-row>
                 <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Расчётный счёт № :</b></b-col>
-                  <b-col cols="8" class="text-left">20208000900214706001</b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Банк</b></b-col>
-                  <b-col cols="8" class="text-left">ТОШКЕНТ Ш., "ИПАК ЙУЛИ" АИТ БАНКИНИНГ ЧИЛОНЗОР ФИЛИАЛИ</b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>МФО</b></b-col>
-                  <b-col cols="8" class="text-left">01067</b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>ИНН</b></b-col>
-                  <b-col cols="8" class="text-left">302563857</b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>ОКОНХ</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>ОКЭД</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Эл.адрес</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
+                  <b-col cols="5" class="text-right"><b>Регистрационный код плательщика НДС:</b></b-col>
+                  <b-col cols="7" class="text-left"></b-col>
                 </b-row>
               </b-col>
               <b-col>
                 <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Заказчик :</b></b-col>
-                  <b-col cols="8" class="text-left">
+                  <b-col cols="5" class="text-right"><b>Заказчик :</b></b-col>
+                  <b-col cols="7" class="text-left">
                     <b-select size="sm"></b-select>
                   </b-col>
                 </b-row>
                 <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Адрес:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
+                  <b-col cols="5" class="text-right"><b>Адрес:</b></b-col>
+                  <b-col cols="7" class="text-left"></b-col>
                 </b-row>
                 <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Телефон:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
+                  <b-col cols="5" class="text-right"><b>МФО:</b></b-col>
+                  <b-col cols="7" class="text-left"></b-col>
                 </b-row>
                 <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Расчётный счёт №:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Банк:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>МФО:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>ИНН:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>ОКОНХ:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>ОКЭД:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
-                </b-row>
-                <b-row class="pb-2">
-                  <b-col cols="4" class="text-right"><b>Эл.адрес:</b></b-col>
-                  <b-col cols="8" class="text-left"></b-col>
+                  <b-col cols="5" class="text-right"><b>Регистрационный код плательщика НДС:</b></b-col>
+                  <b-col cols="7" class="text-left"></b-col>
                 </b-row>
               </b-col>
             </b-row>
@@ -127,6 +73,7 @@
               <table class="invoice-table table-sm table-bordered">
                 <thead>
                 <tr>
+                  <th rowspan="2" style="width: 50px;">№</th>
                   <th rowspan="2" scope="col" style="width: 255px;">Наименование товара, выполненных работ и оказанных
                     услуг
                   </th>
@@ -148,6 +95,7 @@
                 </thead>
                 <tbody>
                 <tr>
+                  <td class="text-center">1</td>
                   <td><textarea class="form-control"></textarea></td>
                   <td>
                     <b-form-input></b-form-input>
@@ -178,19 +126,6 @@
                 </tr>
                 <tr>
                   <td colspan="4" class="text-right">Всего к оплате:</td>
-                  <td colspan="7" class="text-center"></td>
-                </tr>
-                <tr>
-                  <td colspan="4" class="text-right">Итого сум:	</td>
-                  <td colspan="5" class="text-center"></td>
-                  <td colspan="2" class="text-left">
-                    <div class="pl-2">
-                      <b-form-checkbox class="float-left"/><span class="vertical-align-sub">С учетом налогов</span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="4" class="text-right">Всего к оплате (сум):</td>
                   <td colspan="7" class="text-center"></td>
                 </tr>
                 </tbody>
@@ -273,9 +208,9 @@
 </template>
 
 <script>
-export default {
-  name: 'SystemUsdInvoice'
-}
+    export default {
+        name: 'SystemVatInvoice'
+    }
 </script>
 
 <style lang="scss" scoped>

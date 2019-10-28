@@ -34,7 +34,7 @@
         </b-row>
       </div>
       <div class="table-body">
-        <b-table hover :fields="fields" :items="counterparties" class="counter-parties-table">
+        <b-table hover :fields="fields" :items="counterparties" class="counter-parties-table ml-2">
           <template slot="name" slot-scope="data">
             <b>{{ data.item.name }}</b><br>
             <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.inn }}</small>
@@ -46,7 +46,30 @@
         </b-table>
       </div>
     </div>
+    <b-modal ref="my-modal" hide-footer title="Иван Иванов">
+      <div class="d-block">
+        <div class="d-flex">
+          <div class="mr-2">
+            <InfoIcon></InfoIcon>
+          </div>
+          <div>
+            <p>Чтобы добавить организацию в список контрагентов, воспользуйтесь поиском.
+              Также в список автоматически добавляются организации, с которыми ваша организация уже обменивалась документами через Faktura.uz.</p>
+          </div>
+        </div>
+        <b-input-group>
+          <b-form-input list="my-list-id"></b-form-input>
 
+          <datalist id="my-list-id">
+            <option>Manual Option</option>
+            <option v-for="size in sizes">{{ size }}</option>
+          </datalist>
+          <b-input-group-append>
+            <b-button variant="secondary" size="sm" block @click="toggleModal">Добавить</b-button>
+          </b-input-group-append>
+        </b-input-group>
+      </div>
+    </b-modal>
   </div>
 </template>
 
@@ -100,6 +123,12 @@
     }
 </script>
 
+<style scoped>
+  .table th, .table td {
+    padding-left: 15px !important;
+  }
+</style>
+
 <style lang="scss">
 
   .counter-parties-table thead {
@@ -121,7 +150,7 @@
   }
 
   .table th, .table td {
-    padding-left: 15px;
+    /*padding-left: 15px !important;*/
   }
 
   .gabarage-icon {
@@ -145,3 +174,4 @@
     box-shadow: 0 0 0 0.2rem rgba(51, 111, 153, 0.25) !important;
   }
 </style>
+

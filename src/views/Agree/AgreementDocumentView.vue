@@ -1,3 +1,4 @@
+
 <template>
   <div class="content">
     <div class="content-body">
@@ -22,11 +23,11 @@
           </b-col>
           <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end p-0" :class="bindClass3">
             <div class="counter-tool counter  cursor-pointer">
-              <span class="pt-1">
-                <span>
-                  <span>1</span>–<span>20</span>
-                </span> из <span>21</span>
-              </span>
+          <span class="pt-1">
+            <span>
+              <span>1</span>–<span>20</span>
+            </span> из <span>21</span>
+          </span>
             </div>
             <div class="counter-tool toggle-page-left rounded-circle mr-2">
               <ChevronLeftIcon class="cursor-pointer"/>
@@ -113,104 +114,104 @@
             </b-card>
           </b-collapse>
           <b-tabs justified class="document-tabs table-responsive inbox-document-tabs">
-              <b-tab title-item-class="h5 " active>
-                <template slot="title"><FileIcon class="tab-icon"></FileIcon>Счет фактуры</template>
-                <b-table hover :fields="fields" :items="documents"
-                         class="documentTable inboxDocTable" >
-                  <template slot="HEAD_selected" slot-scope="data">
-                    <b-form-checkbox v-model="selectAll" @change="select" />
-                  </template>
-                  <template slot="selected" slot-scope="data">
-                    <b-form-checkbox :value="data.item.uniqueId" v-model="selected" />
-                  </template>
-                  <template slot="title" slot-scope="data">
-                    <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
-                      <b>{{ data.item.title }} <br>
-                        <small><ClockIcon class="clockIcon"></ClockIcon> Создан: {{ data.item.createdDateTime }}</small></b>
-                    </router-link>
-                  </template>
-                  <template slot="totalPrice" slot-scope="data">
-                    {{ data.item.totalPrice }}
-                  </template>
-                  <template slot="company_name" slot-scope="data">
-                    {{ data.item.contractor.name }} <br>
-                    <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }}</small>
-                  </template>
-                  <template slot="updatedDateTime" slot-scope="data">
-                    {{ data.item.updatedDateTime }}
-                  </template>
-                  <template slot="status" slot-scope="data">
-                  <span class="badge  badge-success">
-                    {{ data.item.status }}
-                  </span>
-                  </template>
-                </b-table>
-              </b-tab>
-              <b-tab title-item-class="h5">
-                <template slot="title"><LayersIcon class="tab-icon"></LayersIcon>Договоры</template>
-                <b-table hover :fields="fields" :items="documents" class="scrollTable inboxDocTable">
+            <b-tab title-item-class="h5 " active>
+              <template slot="title"><FileIcon class="tab-icon"></FileIcon>Счет фактуры</template>
+              <b-table hover :fields="fields" :items="documents"
+                       class="documentTable inboxDocTable" >
+                <template slot="HEAD_selected" slot-scope="data">
+                  <b-form-checkbox v-model="selectAll" @change="select" />
+                </template>
+                <template slot="selected" slot-scope="data">
+                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected" />
+                </template>
+                <template slot="title" slot-scope="data">
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
+                    <b>{{ data.item.title }} <br>
+                      <small><ClockIcon class="clockIcon"></ClockIcon> Создан: {{ data.item.createdDateTime }}</small></b>
+                  </router-link>
+                </template>
+                <template slot="totalPrice" slot-scope="data">
+                  {{ data.item.totalPrice }}
+                </template>
+                <template slot="company_name" slot-scope="data">
+                  {{ data.item.contractor.name }} <br>
+                  <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }}</small>
+                </template>
+                <template slot="updatedDateTime" slot-scope="data">
+                  {{ data.item.updatedDateTime }}
+                </template>
+                <template slot="status" slot-scope="data">
+              <span class="badge  badge-success">
+                {{ data.item.status }}
+              </span>
+                </template>
+              </b-table>
+            </b-tab>
+            <b-tab title-item-class="h5">
+              <template slot="title"><LayersIcon class="tab-icon"></LayersIcon>Договоры</template>
+              <b-table hover :fields="fields" :items="documents" class="scrollTable inboxDocTable">
 
-                  <template slot="HEAD_selected" slot-scope="data">
-                    <b-form-checkbox v-model="selectAll" @change="select"/>
-                  </template>
-                  <template slot="selected" slot-scope="data">
-                    <b-form-checkbox :value="data.item.uniqueId" v-model="selected" />
-                  </template>
-                  <template slot="title" slot-scope="data">
-                    <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
-                      <b>{{ data.item.title }} <br>
-                        <small><ClockIcon class="clockIcon"></ClockIcon>Создан: {{ data.item.createdDateTime }} </small></b>
-                    </router-link>
-                  </template>
-                  <template slot="totalPrice" slot-scope="data">
-                    {{ data.item.totalPrice }}
-                  </template>
-                  <template slot="company_name" slot-scope="data">
-                    {{ data.item.contractor.name }} <br>
-                    <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }} </small>
-                  </template>
-                  <template slot="updatedDateTime" slot-scope="data">
-                    {{ data.item.updatedDateTime }}
-                  </template>
-                  <template slot="status" slot-scope="data">
-                  <span class="badge badge-warning">
-                    {{ data.item.status }}
-                  </span>
-                  </template>
-                </b-table>
-              </b-tab>
-              <b-tab title-item-class="h5">
-                <template slot="title" ><FileTextIcon class="tab-icon"></FileTextIcon>Акты</template>
-                <b-table hover :fields="fields" :items="documents" class="scrollTable inboxDocTable">
-                  <template slot="HEAD_selected" slot-scope="data" >
-                    <b-form-checkbox v-model="selectAll" @change="select" />
-                  </template>
-                  <template slot="selected" slot-scope="data" class="checkbox-table">
-                    <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
-                  </template>
-                  <template slot="title" slot-scope="data">
-                    <router-link class="router-link table-router-link" :to="{name: 'document-details', }">
-                      <b>{{ data.item.title }} <br>
-                        <small><ClockIcon class="clockIcon"></ClockIcon> Создан: {{ data.item.createdDateTime }}</small></b>
-                    </router-link>
-                  </template>
-                  <template slot="totalPrice" slot-scope="data">
-                    {{ data.item.totalPrice }}
-                  </template>
-                  <template slot="company_name" slot-scope="data">
-                    {{ data.item.contractor.name }}<br>
-                    <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }}</small>
-                  </template>
-                  <template slot="updatedDateTime" slot-scope="data">
-                    {{ data.item.updatedDateTime }}
-                  </template>
-                  <template slot="status" slot-scope="data">
-                  <span class="badge badge-info">
-                    <i class="fab fa-accessible-icon"></i>{{ data.item.status }}
-                  </span>
-                  </template>
-                </b-table>
-              </b-tab>
+                <template slot="HEAD_selected" slot-scope="data">
+                  <b-form-checkbox v-model="selectAll" @change="select"/>
+                </template>
+                <template slot="selected" slot-scope="data">
+                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected" />
+                </template>
+                <template slot="title" slot-scope="data">
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
+                    <b>{{ data.item.title }} <br>
+                      <small><ClockIcon class="clockIcon"></ClockIcon>Создан: {{ data.item.createdDateTime }} </small></b>
+                  </router-link>
+                </template>
+                <template slot="totalPrice" slot-scope="data">
+                  {{ data.item.totalPrice }}
+                </template>
+                <template slot="company_name" slot-scope="data">
+                  {{ data.item.contractor.name }} <br>
+                  <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }} </small>
+                </template>
+                <template slot="updatedDateTime" slot-scope="data">
+                  {{ data.item.updatedDateTime }}
+                </template>
+                <template slot="status" slot-scope="data">
+              <span class="badge badge-warning">
+                {{ data.item.status }}
+              </span>
+                </template>
+              </b-table>
+            </b-tab>
+            <b-tab title-item-class="h5">
+              <template slot="title" ><FileTextIcon class="tab-icon"></FileTextIcon>Акты</template>
+              <b-table hover :fields="fields" :items="documents" class="scrollTable inboxDocTable">
+                <template slot="HEAD_selected" slot-scope="data" >
+                  <b-form-checkbox v-model="selectAll" @change="select" />
+                </template>
+                <template slot="selected" slot-scope="data" class="checkbox-table">
+                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+                </template>
+                <template slot="title" slot-scope="data">
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details', }">
+                    <b>{{ data.item.title }} <br>
+                      <small><ClockIcon class="clockIcon"></ClockIcon> Создан: {{ data.item.createdDateTime }}</small></b>
+                  </router-link>
+                </template>
+                <template slot="totalPrice" slot-scope="data">
+                  {{ data.item.totalPrice }}
+                </template>
+                <template slot="company_name" slot-scope="data">
+                  {{ data.item.contractor.name }}<br>
+                  <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }}</small>
+                </template>
+                <template slot="updatedDateTime" slot-scope="data">
+                  {{ data.item.updatedDateTime }}
+                </template>
+                <template slot="status" slot-scope="data">
+              <span class="badge badge-info">
+                <i class="fab fa-accessible-icon"></i>{{ data.item.status }}
+              </span>
+                </template>
+              </b-table>
+            </b-tab>
           </b-tabs>
           <RightSidebar :active="activeRightSidebar"/>
         </div>
@@ -231,8 +232,6 @@
 </template>
 <script>
     import Documents from '../../TestData/Documents'
-    import Multiselect from 'vue-multiselect'
-    import RightSidebar from '../../components/sidebar/RightSidebar'
     import VueSlideOutPanel from 'vue-slideout-panel'
 
     import {
@@ -255,7 +254,7 @@
     } from 'vue-feather-icons'
 
     export default {
-        name: 'inbox-documents-component',
+        name: 'agreement-document-view',
         components: {
             ArrowLeftCircleIcon,
             EyeIcon,
@@ -326,27 +325,27 @@
             }
         },
         computed: {
-          bindClass() {
-              if (this.selected.length > 0) {
-                  return 'cursor-pointer hover-effect-active';
+            bindClass() {
+                if (this.selected.length > 0) {
+                    return 'cursor-pointer hover-effect-active';
 
-              } else if (this.selected.length == 0) {
-                  return 'text-disabled cursor-default'
-              }
-          },
-          bindClass2() {
-              if (this.selected.length > 0) {
-                  return 'd-flex'
-              } else if (this.selected.length == 0) {
-                  return 'd-none'
-              }
-          },
+                } else if (this.selected.length == 0) {
+                    return 'text-disabled cursor-default'
+                }
+            },
+            bindClass2() {
+                if (this.selected.length > 0) {
+                    return 'd-flex'
+                } else if (this.selected.length == 0) {
+                    return 'd-none'
+                }
+            },
             bindClass3() {
-              if (this.selected.length > 0) {
-                  return 'd-none'
-              } else if (this.selected.length == 0) {
-                  return 'd-flex'
-              }
+                if (this.selected.length > 0) {
+                    return 'd-none'
+                } else if (this.selected.length == 0) {
+                    return 'd-flex'
+                }
             }
         },
         methods: {
@@ -468,4 +467,6 @@
     }
   }
 </style>
+
+
 

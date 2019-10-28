@@ -5,13 +5,7 @@
         <b-row class="m-0">
           <b-col sm="6" md="6" xl="8" class="d-sm-flex action-list d-none" :class="bindClass2">
             <div class="tool-actions pt-3" :class="bindClass">
-              <Edit2Icon v-b-tooltip.hover title="Подписать" /><span>Подписать</span>
-            </div>
-            <div class="tool-actions pt-3" :class="bindClass">
               <XIcon v-b-tooltip.hover title="Удалить"/><span>Удалить</span>
-            </div>
-            <div class="tool-actions pt-3" :class="bindClass">
-              <UsersIcon v-b-tooltip.hover title="Согласовать"/><span>Согласовать</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
               <StarIcon v-b-tooltip.hover title="Отметить"/><span>Отметить</span>
@@ -255,7 +249,7 @@
     } from 'vue-feather-icons'
 
     export default {
-        name: 'inbox-documents-component',
+        name: 'outbox-documents-component',
         components: {
             ArrowLeftCircleIcon,
             EyeIcon,

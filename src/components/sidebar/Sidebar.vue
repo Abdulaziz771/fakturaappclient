@@ -35,16 +35,17 @@
           </div>
         </router-link>
 
-        <div class=" text-center content-menus">
+        <router-link @click.native="openSidebar" :to="{name: 'agreement-document-view'}"
+                     class=" text-center content-menus">
           <div class="d-flex justify-content-center">
             <div class="align-self-center">
               <MessageCircleIcon class="menu-icon"/>
             </div>
           </div>
-        </div>
+        </router-link>
 
         <div class=" text-center content-menus">
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center" >
             <div class="align-self-center">
               <CreditCardIcon class="menu-icon"/>
             </div>
@@ -83,6 +84,7 @@
 
     import SidebarMenuDocuments from '../sidebar/SidebarMenuDocuments'
     import SidebarMenuSettings from '../sidebar/SidebarMenuSettings'
+    import SidebarMenuAgree from '../sidebar/SidebarMenuAgree'
 
     export default {
         name: 'sidebar-component',
@@ -93,7 +95,6 @@
             FileIcon,
             MessageCircleIcon,
             SettingsIcon,
-
         },
         props: ['isOffSecondSidebar'],
         data() {
@@ -123,6 +124,10 @@
                         this.$emit('activeSecondSidebar', true);
                         this.$Progress.finish();
                         return SidebarMenuSettings
+                    } else if (this.$route.matched[0].name === 'agreement-document-view') {
+                        this.$emit('activeSecondSidebar', true);
+                        this.$Progress.finish();
+                        return SidebarMenuAgree
                     } else {
                         this.$emit('activeSecondSidebar', false);
                         this.$Progress.finish();

@@ -156,24 +156,28 @@
             <div class="d-block">
               <div class="cursor-pointer">
                 <router-link class="router-link-drop text-decoration-none" :to="{ name: 'document-create-system-invoice'}">
-                  <h5 class="p-4 border rounded">Стандартная счет фактура</h5>
+                  <h6 class="p-3 border rounded">Стандартная счет фактура</h6>
                 </router-link>
               </div>
               <div class="cursor-pointer">
                 <router-link class="router-link-drop text-decoration-none" :to="{ name: 'document-create-system-usd-invoice'}">
-                  <h5 class="p-4 border rounded">Валютная счет фактура</h5>
+                  <h6 class="p-3 border rounded">Валютная счет фактура</h6>
                 </router-link>
               </div>
               <div class="cursor-pointer">
-                <h5 class="p-4 border cursor-pointer rounded">Стандартная счет-фактура (новая форма)</h5>
+                <router-link class="router-link-drop text-decoration-none" :to="{ name: 'document-create-system-vat-invoice'}">
+                  <h6 class="p-3 border cursor-pointer rounded">Стандартная счет-фактура (новая форма)</h6>
+                </router-link>
               </div>
               <div class="cursor-pointer">
-                <h5 class="p-4 border cursor-pointer rounded">Стандартная счет-фактура для плательщиков акциозного налога
-                  (новая форма)</h5>
+                <router-link class="router-link-drop text-decoration-none" :to="{ name: 'document-create-system-tax-invoice'}">
+                  <h6 class="p-3 border cursor-pointer rounded">Стандартная счет-фактура для плательщиков акциозного налога
+                  (новая форма)</h6>
+                </router-link>
               </div>
             </div>
-            <div class="d-block">
-              <b-button class="mt-3 default-success-button" block @click="$bvModal.hide('type-of-layout')">Закрыть
+            <div class="d-flex justify-content-end">
+              <b-button size="sm" class="mt-3" variant="outline-secondary" @click="$bvModal.hide('type-of-layout')">Закрыть
               </b-button>
             </div>
           </b-modal>

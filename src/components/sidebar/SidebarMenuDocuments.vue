@@ -21,11 +21,12 @@
         <router-link class="router-link"  :to="{name: 'document-inbox'}">
           Входящие
         </router-link>
-        <b-list-group-item href="#">Исходящие
+        <router-link class="router-link"  :to="{name: 'document-outbox'}">Исходящие
           <b-badge variant="success" pill>+ 24</b-badge>
-        </b-list-group-item>
-        <b-list-group-item href="#">Черновики</b-list-group-item>
-        <b-list-group-item href="#">Реестры</b-list-group-item>
+        </router-link>
+        <router-link class="router-link"  :to="{name: 'document-draft'}">Черновики
+        </router-link>
+        <router-link class="router-link"  :to="{name: 'document-import'}">Реестры</router-link>
       </b-list-group>
 
       <b-list-group class="mt-3">

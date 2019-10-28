@@ -38,11 +38,8 @@
                 <template slot="button-content"><span class="profile-name pr-2">Иванов Иван</span></template>
                 <b-dropdown-item href="#">Организация: Teshavoy Corparation</b-dropdown-item>
                 <b-dropdown-item href="#">Инн: 302563857</b-dropdown-item>
-                <b-dropdown-item href="#">
-                  <router-link @click.native="offSecondSidebar" class="text-decoration-none router-link-drop"
-                               :to="{name: 'my-organization-list' }">
+                <b-dropdown-item id="list" @click="openOrgList">
                     Список организаций
-                  </router-link>
                 </b-dropdown-item>
                 <b-dropdown-item href="#">Выход</b-dropdown-item>
               </b-nav-item-dropdown>
@@ -56,6 +53,16 @@
         </div>
       </div>
     </div>
+    <b-modal  size="lg" ref="orgList" hide-footer title="Список организации">
+      <div class="d-block">
+        <b-row class="footer-modal">
+          <b-col md="12" class="text-right">
+          <div class="closeModal"><p @click="openOrgList">Добавить новую организацию</p></div>
+          <div class="canelMdoal"><p @click="openOrgList">Отмена</p></div>
+          </b-col>
+        </b-row>
+      </div>
+    </b-modal>
   </div>
 </template>
 <script>
@@ -86,6 +93,9 @@
                 this.isActiveSecondSidebar = !this.isActiveSecondSidebar;
                 this.$emit('offSecondSidebar', this.isActiveSecondSidebar);
             },
+            openOrgList() {
+                this.$refs['orgList'].toggle('#list')
+            }
         }
     }
 </script>

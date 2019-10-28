@@ -11,10 +11,10 @@
               <XIcon v-b-tooltip.hover title="Удалить"/><span>Удалить</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
-              <UsersIcon v-b-tooltip.hover title="Согласовать"/><span>Согласовать</span>
+              <StarIcon v-b-tooltip.hover title="Отметить"/><span>Отметить</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
-              <StarIcon v-b-tooltip.hover title="Отметить"/><span>Отметить</span>
+              <MoveIcon v-b-tooltip.hover title="Отметить"/><span>Переместить</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
               <PrinterIcon v-b-tooltip.hover title="Печать"/><span>Печать</span>
@@ -252,10 +252,11 @@
         FileIcon,
         LayersIcon,
         FileTextIcon,
+        MoveIcon,
     } from 'vue-feather-icons'
 
     export default {
-        name: 'inbox-documents-component',
+        name: 'draft-documents-component',
         components: {
             ArrowLeftCircleIcon,
             EyeIcon,
@@ -273,6 +274,7 @@
             SlidersIcon,
             LayersIcon,
             FileIcon,
+            MoveIcon,
             'vue-slideout-panel': VueSlideOutPanel
         },
         data () {

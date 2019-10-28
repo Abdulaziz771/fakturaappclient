@@ -12,6 +12,11 @@ const router = new Router({
       component: () => import('./views/Home')
     },
     {
+      path: '/agreement-document-view',
+      name: 'agreement-document-view',
+      component: () => import('./views/Agree/AgreementDocumentView')
+    },
+    {
       path: '/document-verify',
       name: 'document-verify',
       component: () => import('./views/document/VerifyDocumentView')
@@ -30,6 +35,21 @@ const router = new Router({
           path: 'inbox',
           name: 'document-inbox',
           component: () => import('./views/document/InboxDocumentsView')
+        },
+        {
+          path: 'outbox',
+          name: 'document-outbox',
+          component: () => import('./views/document/OutboxDocumentsView')
+        },
+        {
+          path: 'draft',
+          name: 'document-draft',
+          component: () => import('./views/document/DraftDocumentsView')
+        },
+        {
+          path: 'import',
+          name: 'document-import',
+          component: () => import('./views/document/ImportDocumentView')
         },
         {
           path: 'details/:id',
@@ -60,6 +80,16 @@ const router = new Router({
               path: 'system-usd-invoice',
               name: 'document-create-system-usd-invoice',
               component: () => import('./views/document/create/Systemusdinvoice')
+            },
+            {
+              path: 'system-vat-invoice',
+              name: 'document-create-system-vat-invoice',
+              component: () => import('./views/document/create/SystemVatInvoice')
+            },
+            {
+              path: 'system-vat-invoice',
+              name: 'document-create-system-tax-invoice',
+              component: () => import('./views/document/create/SystemTaxInvoice')
             }
           ]
         }
@@ -96,11 +126,6 @@ const router = new Router({
           component: () => import('./views/finance/Deposit')
         }
       ]
-    },
-    {
-      path: '/my-organization',
-      name: 'my-organization-list',
-      component: () => import('./views/Myorganization')
     }
   ]
 })

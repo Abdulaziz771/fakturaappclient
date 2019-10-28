@@ -1,0 +1,342 @@
+[
+  {
+    "uniqueId": "3deb84212e5b41619f2ef4e1c08833ad",
+    "title": "ucel.xlsx",
+    "fileName": "c7ASsTBLejDTG74fgDWn.pdf",
+    "labelName": "",
+    "totalPrice": "0.00" ,
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": false,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "0"
+    }
+  },
+  {
+    "uniqueId": "7373e3e58c5a4dcea6b96e92db46293b",
+    "title": "Образец реестра акт и счёт-фактур.xlsx",
+    "fileName": "eSBVUbW3fdhqlj3gaHCP.pdf",
+    "labelName": "",
+    "totalPrice": "70267668.92 | 0.00",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": false,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "в проверки",
+    "contractor": {
+      "inn": "302563857",
+      "name": "103 | 0"
+    }
+  },
+  {
+    "uniqueId": "37a5593912744d64a0574f23e612ce66",
+    "title": "4285267b4161448c8ff65a207514d1.xlsx",
+    "fileName": "kMJQTJc0TqKYu1Io1IsW.pdf",
+    "labelName": "",
+    "totalPrice": "3831003,36",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": false,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "ошибка",
+    "contractor": {
+      "inn": "302563857",
+      "name": "1319"
+    }
+  },
+  {
+    "uniqueId": "df744dc45bbc4ebdaaa9697603107e80",
+    "title": "1_Faktura_uz___Реестр_вознаграждений.xlsx",
+    "fileName": "SYaueHyI7NtMGJqypc3A.pdf",
+    "labelName": "",
+    "totalPrice": "81868.80 | 4923345184.80",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": false,
+    "isAgreementApproved": true,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "5 | 1163"
+    }
+  },
+  {
+    "uniqueId": "9928f1694d51446db3e9208c0a04b57e",
+    "title": "Akt i schet faktura.xlsx",
+    "fileName": "AiJU5yWE2intwyIL8JKw.pdf",
+    "labelName": "",
+    "totalPrice": "0.00 | 203635519.20",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": false,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "в проверки",
+    "contractor": {
+      "inn": "302563857",
+      "name": "0 | 3"
+    }
+  },
+  {
+    "uniqueId": "7e8c80c4bafa43ddb76c7ff1af0ce955",
+    "title": "Schet faktura.xlsx",
+    "fileName": "tgz4wSxdGrh71eiBf507.pdf",
+    "labelName": "",
+    "totalPrice": "0.00",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "в проверки",
+    "contractor": {
+      "inn": "302563857",
+      "name": "5 | 1163"
+    }
+  },
+  {
+    "uniqueId": "593bde5a6cf1411a8ff674b5fb48f527",
+    "title": "ucell_реестра вознаграждений - 1000.xlsx",
+    "fileName": "meJyve3GzTZPpG3Af5Nm.pdf",
+    "labelName": "",
+    "totalPrice": "0.00 | 0.00",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "5 | 1163"
+    }
+  },
+  {
+    "uniqueId": "b47f647ec59c4f69a503603520961165",
+    "title": "Образец реестра.xlsx",
+    "fileName": "gMQYrMXzVCld2y6hR5jo.pdf",
+    "labelName": "",
+    "totalPrice": "0.00 | 2143773426.39",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "ошибка",
+    "contractor": {
+      "inn": "302563857",
+      "name": "3 | 0"
+    }
+  },
+  {
+    "uniqueId": "ebfd1daaddd647139e0a986a3b7eee82",
+    "title": "Образец beeline реестра счёт-фактур.xlsx",
+    "fileName": "aEZbUmZLYGVDICFJqmxV.pdf",
+    "labelName": "",
+    "totalPrice": "3831003,36",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "в проверки",
+    "contractor": {
+      "inn": "302563857",
+      "name": "302"
+    }
+  },
+  {
+    "uniqueId": "3deb84212e5b41619f2ef4e1c08833ad",
+    "title": "ucel.xlsx",
+    "fileName": "c7ASsTBLejDTG74fgDWn.pdf",
+    "labelName": "",
+    "totalPrice": "0.00" ,
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": false,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "5 | 1163"
+    }
+  },
+  {
+    "uniqueId": "48d5f9e957f84921b8f86b60ecf7cb38",
+    "title": "beeline_invoice_registry_example.xlsx",
+    "fileName": "suGUfHNKrDvqFQy6lt1Y.pdf",
+    "labelName": "",
+    "totalPrice": "3831003,36",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "ошибка",
+    "contractor": {
+      "inn": "302563857",
+      "name": "0 | 9"
+    }
+  },
+  {
+    "uniqueId": "96b3002111a6429fb5e6b0ab6973482d",
+    "title": "beeline_invoice_registry_example.xlsx",
+    "fileName": "r3dNXZVvfmzQtccHCjx9.pdf",
+    "labelName": "",
+    "totalPrice": "2572275,14",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "в проверки",
+    "contractor": {
+      "inn": "302563857",
+      "name": "0 | 9"
+    }
+  },
+  {
+    "uniqueId": "3deb84212e5b41619f2ef4e1c08833ad",
+    "title": "ucel.xlsx",
+    "fileName": "c7ASsTBLejDTG74fgDWn.pdf",
+    "labelName": "",
+    "totalPrice": "0.00" ,
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": false,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "0 | 9"
+    }
+  },
+  {
+    "uniqueId": "ebfd1daaddd647139e0a986a3b7eee82",
+    "title": "Образец beeline реестра счёт-фактур.xlsx",
+    "fileName": "aEZbUmZLYGVDICFJqmxV.pdf",
+    "labelName": "",
+    "totalPrice": "3831003,36",
+    "createdDateTime": "28.10.2019 12:52",
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "ошибка",
+    "contractor": {
+      "inn": "302563857",
+      "name": "0 | 1"
+    }
+  },
+  {
+    "uniqueId": "3deb84212e5b41619f2ef4e1c08833ad",
+    "title": "ucel.xlsx",
+    "fileName": "c7ASsTBLejDTG74fgDWn.pdf",
+    "labelName": "",
+    "totalPrice": "0.00" ,
+    "createdDateTime": 1553090823367,
+    "updatedDateTime": "21.05.2019",
+    "isNew": false,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "ошибка",
+    "contractor": {
+      "inn": "302563857",
+      "name": "0 | 9"
+    }
+  },
+  {
+    "uniqueId": "4c2cc2186eee4862a5cdcb3b2f37b963",
+    "title": "Заявления на открыть счет",
+    "fileName": "gpomv0SbSAjeNUXWp3w1.pdf",
+    "labelName": "",
+    "totalPrice": "2572275,14",
+    "createdDateTime": 1552917434803,
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "ошибка",
+    "contractor": {
+      "inn": "302563857",
+      "name": "103 | 0"
+    }
+  },
+  {
+    "uniqueId": "788f18f2b1524d00a5225aeea9a0879c",
+    "title": "Договор на открыть счет",
+    "fileName": "ZZw5ho6ZUz4tbfARHI4k.pdf",
+    "labelName": "",
+    "totalPrice": "3831003,36",
+    "createdDateTime": 1552917434697,
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "103 | 0"
+    }
+  },
+  {
+    "uniqueId": "7f0631f6366a4b2f99c770b2d65ee762",
+    "title": "Заявления на открыть счет",
+    "fileName": "cwKLAR19O8e0pSNltCj8.pdf",
+    "labelName": "",
+    "totalPrice": "3831003,36",
+    "createdDateTime": 1552917243647,
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "103 | 0"
+    }
+  },
+  {
+    "uniqueId": "8c12917c87674ce4bbde030a6916ddf0",
+    "title": "Договор на открыть счет",
+    "fileName": "t7Ej8MTdcg7MQUh2HKXZ.pdf",
+    "labelName": "",
+    "totalPrice": "2572275,14",
+    "createdDateTime": 1552917243753,
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "43"
+    }
+  },
+  {
+    "uniqueId": "16beafac833d4d658d8aa718f0abf712",
+    "title": "Заявления на открыть счет",
+    "fileName": "hCwk9bq5dMF7znb1GjJ4.pdf",
+    "labelName": "",
+    "totalPrice": "3831003,36",
+    "createdDateTime": 1552917128943,
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "обработана",
+    "contractor": {
+      "inn": "302563857",
+      "name": "0"
+    }
+  }
+]
