@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Жамшид Касымов Хикматович",
+    "post" : "Директор",
+    "subdivision": "Руководства",
+    "accountant": 	"Нет",
+    "status": "Aктивный",
+    "isActiveStatus": true,
+    "director": true
+  },
+  {
+    "name": "Мирол Косимов Миркосимович",
+    "post" : "Сотрудник",
+    "subdivision": "Бухгалтерия",
+    "accountant": 	"Нет",
+    "status": "Aктивный",
+    "isActiveStatus": true
+  },
+  {
+    "name": "Sanjar Sancho Sancho",
+    "post" : "Tester",
+    "subdivision": "Sub Accounting",
+    "accountant": 	"Нет",
+    "status": "Aктивный",
+    "isActiveStatus": true
+  },
+  {
+    "name": "Ахмедов Абдулазиз Акмалович",
+    "post" : "Call center",
+    "subdivision": "Frontend",
+    "accountant": 	"Нет",
+    "status": "Не активный",
+    "isActiveStatus": false
+  }
+]

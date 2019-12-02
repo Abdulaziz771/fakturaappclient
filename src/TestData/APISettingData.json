@@ -1,0 +1,17 @@
+[
+  {
+    "clientId": "FinboxOnlineService",
+    "clientSecret": "apDrVENtMXLMAzIs1x6dYZckediouCtfwfYeSKIlmuxR4n3QuhQM",
+    "callbackURL": "https://finbox.uz/callback"
+  },
+  {
+    "clientId": "NewTestClient1",
+    "clientSecret": "nhnFzFbXjTM4zW4N304FK1w6rZqueYK9eoadbJXPNcOgQY2bF62YsVw1B7kP",
+    "callbackURL": "https://noname.com/callback"
+  },
+  {
+    "clientId": "AkhmedovService",
+    "clientSecret": "apDrVENtashdJHkjHKSJDAzIs1x6dYZckediouCtfwfYeSKIlmuxR4n3QuhQM",
+    "callbackURL": "https://PrimaWeb.uz/callback"
+  }
+]

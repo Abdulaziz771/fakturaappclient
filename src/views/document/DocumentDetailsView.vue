@@ -47,7 +47,7 @@
                       <span>Получатель:</span>
                     </b-col>
                     <b-col class="second-desc" md="8">
-                      <span id="toggle-btn" @click="toggleModal" class="cursor-pointer">302563857 Corporation</span>
+                      <span id="toggle-btn" @click="modalOrg" class="cursor-pointer">302563857 Corporation</span>
                     </b-col>
                   </b-row>
                   <b-row>
@@ -190,7 +190,6 @@
               <b-form-input list="my-list-id"></b-form-input>
               <datalist id="my-list-id">
                 <option>Manual Option</option>
-                <option v-for="size in sizes">{{ size }}</option>
               </datalist>
             </b-input-group>
           </b-col>
@@ -327,7 +326,7 @@
   ul.timeline:before {
     content: ' ';
     background: #d4d9df;
-    display: inline-blo ck;
+    display: inline-block;
     position: absolute;
     left: 11px;
     width: 2px;
@@ -381,7 +380,7 @@
     }
 
     .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {
-      box-shadow:d-none;
+      /*box-shadow:d-none;*/
     }
 
     .btn-sm, .btn-group-sm > .btn {

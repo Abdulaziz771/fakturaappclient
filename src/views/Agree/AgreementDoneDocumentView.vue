@@ -5,19 +5,28 @@
         <b-row class="m-0">
           <b-col sm="6" md="6" xl="8" class="d-sm-flex action-list d-none" :class="bindClass2">
             <div class="tool-actions pt-3" :class="bindClass">
+              <Edit2Icon v-b-tooltip.hover title="Подписать" /><span>Подписать</span>
+            </div>
+            <div class="tool-actions pt-3" :class="bindClass">
+              <XIcon v-b-tooltip.hover title="Удалить"/><span>Удалить</span>
+            </div>
+            <div class="tool-actions pt-3" :class="bindClass">
               <StarIcon v-b-tooltip.hover title="Отметить"/><span>Отметить</span>
+            </div>
+            <div class="tool-actions pt-3" :class="bindClass">
+              <MoveIcon v-b-tooltip.hover title="Отметить"/><span>Переместить</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
               <PrinterIcon v-b-tooltip.hover title="Печать"/><span>Печать</span>
             </div>
           </b-col>
           <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end padding-for-pages-with-table" :class="bindClass3">
-            <div class="counter-tool counter  cursor-pointer">
-          <span class="page-counter">
-            <span>
-              <span>1</span>–<span>20</span>
-            </span> из <span>21</span>
-          </span>
+            <div class="counter-tool counter cursor-pointer">
+              <span class="page-counter">
+                <span>
+                  <span>1</span>–<span>20</span>
+                </span> из <span>21</span>
+              </span>
             </div>
             <div class="counter-tool cursor-pointer toggle-page-left rounded-circle mr-2">
               <ChevronLeftIcon class=""/>
@@ -129,9 +138,9 @@
                 {{ data.item.updatedDateTime }}
               </template>
               <template slot="status" slot-scope="data">
-              <span class="badge  badge-danger">
-                {{ data.item.status }}
-              </span>
+                  <span class="badge  badge-success">
+                    {{ data.item.status }}
+                  </span>
               </template>
             </b-table>
           </div>
@@ -154,6 +163,8 @@
 </template>
 <script>
     import Documents from '../../TestData/Documents'
+    import Multiselect from 'vue-multiselect'
+    import RightSidebar from '../../components/sidebar/RightSidebar'
     import VueSlideOutPanel from 'vue-slideout-panel'
 
     import {
@@ -173,10 +184,11 @@
         FileIcon,
         LayersIcon,
         FileTextIcon,
+        MoveIcon,
     } from 'vue-feather-icons'
 
     export default {
-        name: 'agreement-document-view',
+        name: 'inbox-documents-component',
         components: {
             ArrowLeftCircleIcon,
             EyeIcon,
@@ -194,6 +206,7 @@
             SlidersIcon,
             LayersIcon,
             FileIcon,
+            MoveIcon,
             'vue-slideout-panel': VueSlideOutPanel
         },
         data () {
@@ -394,6 +407,4 @@
     text-align: center;
   }
 </style>
-
-
 

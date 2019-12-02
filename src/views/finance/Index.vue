@@ -1,33 +1,51 @@
 <template>
   <div class="content without-second-sidebar" id="financeIndex">
     <div class="content-body">
-      <div class="content-header">
-        <div class="row">
-          <div class="col-5 col-sm-5 col-md-6  text-md-left">
-            <h5 class="p-2 replenishment-check-text">Счета на пополнение</h5>
-          </div>
-          <div class="col-7 col-sm-7 col-md-6  text-sm-right">
-            <router-link :to="{name: 'finance-deposit'}">
-              <b-button class="btn replenishment-button-text lightgray-button float-md-right btn-sm m-2 p-1">
-                Запросить новый счет на пополнение
-              </b-button>
-            </router-link>
-          </div>
-        </div>
-        <hr class="m-0">
+      <div class="content-header border-bottom">
+        <b-row>
+          <b-col lg="4" md="6" sm="5" >
+            <h5 class="title-text">Счета на пополнение</h5>
+            <span class="title-border"></span>
+            <div class="action-list upBalance">
+              <router-link :to="{name: 'finance-deposit'}">
+                <div class="d-flex  w-fill-content tool-actions cursor-pointer hover-effect-active">
+                    <span class="pt-1"><CreditCardIcon class="pb-1 mr-2"></CreditCardIcon>Поплнить баланс</span>
+                </div>
+              </router-link>
+            </div>
+          </b-col>
+          <b-col lg="8" md="6" sm="7" class="table-filter-action action-list d-flex justify-content-end">
+            <div class="counter-tool counter  cunterparties-counter  cursor-pointer">
+              <span class="pt-1">
+                <span>
+                  <span>1</span>–<span>20</span>
+                </span> из <span>21</span>
+              </span>
+            </div>
+            <div class="counter-tool cursor-pointer toggle-page-left rounded-circle mr-1">
+              <ChevronLeftIcon class=""/>
+            </div>
+            <div class="counter-tool cursor-pointer toggle-page-right rounded-circle">
+              <ChevronRightIcon class=""/>
+            </div>
+          </b-col>
+        </b-row>
       </div>
       <div class="table-body">
         <div class="table-responsive">
-          <b-table  striped hover :fields="fields" :items="ReplenishmentAccountTable"
-                    class="index-account-table">
+          <b-table responsive hover :fields="fields" :items="ReplenishmentAccountTable"
+                    class="index-account-table pl-2">
             <template slot="docname" slot-scope="data">
-              Счет на оплату на {{data.item.amount}} сум от 19.08.2019
+              <b>Счет на оплату</b><br>
+              <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> Создан: 05.11.2019</small>
             </template>
-            <template slot="datecreate" slot-scope="data">
-              19.08.2019 13:52:55
+            <template slot="amount" slot-scope="data">
+              {{ data.item.amount }}.00
             </template>
             <template slot="status" slot-scope="data">
-              Счёт на оплату не подписан
+              <span class="badge badge-danger">
+                Не подписан
+              </span>
             </template>
             <template slot="action" slot-scope="data">
               <CheckCircleIcon class="action-icon"></CheckCircleIcon>
@@ -42,7 +60,11 @@
 <script>
   import Replenishmentaccounttable from '../../TestData/Replenishmentaccounttable'
   import {
-    CheckCircleIcon
+    CheckCircleIcon,
+    CreditCardIcon,
+      AlertCircleIcon,
+      ChevronRightIcon,
+      ChevronLeftIcon
   } from 'vue-feather-icons'
 
   export default {
@@ -52,7 +74,6 @@
         fields: [
           { key: 'docname', label: 'Название документа' },
           { key: 'amount', label: 'На сумму' },
-          { key: 'datecreate', label: 'Дата создания' },
           { key: 'status', label: 'Статус' },
           { key: 'action', label: 'Действие' }
         ],
@@ -60,36 +81,54 @@
       }
     },
     components: {
-      CheckCircleIcon
+      CheckCircleIcon,
+      CreditCardIcon,
+        AlertCircleIcon,
+        ChevronRightIcon,
+        ChevronLeftIcon
     }
   }
 </script>
 
 <style lang="scss">
-  #financeIndex .scrollTable thead {
-    th:nth-child(1) {
-      width: 260px;
-    }
 
-    .index-account-table thead {
-      th:nth-child(1) {
-        width: 320px;
-      }
-
-      th:nth-child(2) {
-        width: 90px;
-      }
-
-      th:nth-child(5) {
-        width: 100px;
-        text-align: center;
+  .upBalance {
+    a {
+      &:hover {
+        text-decoration: none;
+        color: #404040;
       }
     }
-
-    .index-account-table tbody {
-      td:nth-child(5) {
-        text-align: center;
+  }
+  #financeIndex {
+    thead {
+      tr {
+        th:nth-child(4) {
+          width: 100px;
+          text-align: center;
+        }
+        th:nth-child(3) {
+          width: 112px;
+          text-align: center;
+        }
+        th:nth-child(1) {
+          width: 250px;
+        }
       }
     }
+    tbody {
+      tr {
+        td:nth-child(4) {
+          text-align: center;
+        }
+        td:nth-child(3) {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .clockIcon, .alertCircleIcon {
+    width: 9px;
   }
 </style>

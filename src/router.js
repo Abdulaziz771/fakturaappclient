@@ -12,14 +12,43 @@ const router = new Router({
       component: () => import('./views/Home')
     },
     {
-      path: '/agreement-document-view',
-      name: 'agreement-document-view',
-      component: () => import('./views/Agree/AgreementDocumentView')
+      path: '/agree',
+      name: '',
+      component: () => import('./views/document/DocumentAgreeView'),
+      children: [
+        {
+          path: '',
+          name: 'agree',
+          redirect: { name: "agreement-document-view" }
+        },
+        {
+          path: '/agree/agreement-document-view',
+          name: 'agreement-document-view',
+          component: () => import('./views/Agree/AgreementDocumentView')
+        },
+        {
+          path: '/agree/agreement-done-document-view',
+          name: 'agreement-done-document-view',
+          component: () => import('./views/Agree/AgreementDoneDocumentView')
+        },
+      ]
     },
     {
       path: '/document-verify',
-      name: 'document-verify',
-      component: () => import('./views/document/VerifyDocumentView')
+      name: '',
+      component: () => import('./views/document/VerifyDocumentView'),
+      children: [
+        {
+          path: '',
+          name: 'document-verify',
+          redirect: { name: "document-router-verify" }
+        },
+        {
+          path: '/document-verify',
+          name: 'document-router-verify',
+          component: () => import('./views/document/create/VerifyDocumentRouter.vue')
+        }
+      ]
     },
     {
       path: '/document',
@@ -52,13 +81,13 @@ const router = new Router({
           component: () => import('./views/document/ImportDocumentView')
         },
         {
-          path: 'details/:id',
+          path: 'details',
           name: 'document-details',
           component: () => import('./views/document/DocumentDetailsView')
         },
         {
           path: 'create',
-          name: 'document-create',
+          name: 'create',
           component: () => import('./views/document/create/CreateDocumentRouterView'),
           children: [
             {
@@ -96,18 +125,88 @@ const router = new Router({
       ]
     },
     {
-      path: '/settings/personal-area',
-      name: 'settings-personal-area',
-      component: () => import('./views/Settings/PersonalAreaSettingsView')
+      path: "/settings",
+      name: "",
+      component: () => import('./views/document/create/DocumentSettingsVew'),
+      children: [
+        {
+          path: '',
+          name: 'settings',
+          redirect: {name: 'settings-personal-area'}
+        },
+        {
+          path: '/settings/personal-area',
+          name: 'settings-personal-area',
+          component: () => import('./views/Settings/PersonalAreaSettingsView')
+        },
+        {
+          path: '/settings/props-personal-area',
+          name: 'props-area-settings-view',
+          component: () => import('./views/Settings/PropsAreaSettingsView')
+        },
+        {
+          path: '/settings/subdivision',
+          name: 'subdivision-settings-view',
+          component: () => import('./views/Settings/SubdivisionSettingsView')
+        },
+        {
+          path: '/settings/label',
+          name: 'label-settings-view',
+          component: () => import('./views/Settings/LabelSettingsView')
+        },
+        {
+          path: '/settings/employee',
+          name: 'employee-settings-view',
+          component: () => import('./views/Settings/EmployeeSettingsView')
+        },
+        {
+          path: '/settings/reestr',
+          name: 'reestr-settings-view',
+          component: () => import('./views/Settings/RegistrySettingsView')
+        },
+        {
+          path: '/settings/matching',
+          name: 'matching-settings-view',
+          component: () => import('./views/Settings/MatchingSettingsView')
+        },
+        {
+          path: '/settings/roles',
+          name: 'roles-settings-view',
+          component: () => import('./views/Settings/RolesSettingsView')
+        },
+        {
+          path: '/settings/document-templates',
+          name: 'document-templates-settings-view',
+          component: () => import('./views/Settings/DocumentTemplatesSettingsView')
+        },
+        {
+          path: '/settings/access-api',
+          name: 'access-api-settings-view',
+          component: () => import('./views/Settings/AccessAPISettingsView')
+        },
+      ]
+
     },
     {
       path: '/counter-parties',
-      name: 'counter-parties',
-      component: () => import('./views/counterparties/Counterparties')
+      name: '',
+      component: () => import('./views/counterparties/Counterparties'),
+      children: [
+        {
+          path: '',
+          name: 'counter-parties',
+          redirect: { name: "counter-parties-view" }
+        },
+        {
+          path: '/counter-parties',
+          name: 'counter-parties-view',
+          component: () => import('./views/counterparties/CounterPartiesView')
+        },
+      ]
     },
     {
       path: '/finance',
-      name: 'finance',
+      name: '',
       component: () => import('./views/finance/FinanceRouterView'),
       children: [
         {
@@ -124,6 +223,11 @@ const router = new Router({
           path: 'deposit',
           name: 'finance-deposit',
           component: () => import('./views/finance/Deposit')
+        },
+        {
+          path: 'finance-information',
+          name: 'finance-information',
+          component: () => import('./views/finance/FinanceInformation')
         }
       ]
     }
@@ -151,3 +255,4 @@ const router = new Router({
 })*/
 
 export default router
+

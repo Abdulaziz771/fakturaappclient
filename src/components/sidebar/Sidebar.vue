@@ -1,60 +1,51 @@
 <template>
-  <div id="sidebar">
+  <div id="sidebar" v-if="$store.getters.iswholeMenuToggleButtonSidebar">
 
     <div class="first-inside-sidebar">
       <div class="logo-sidebar">
-        <img src="../../assets/logo-faktura.png" >
+        <MenuIcon @click="offSecondSidebar" class="menu-icon-header text-muted cursor-pointer"/>
       </div>
       <div class="d-flex flex-column">
 
-        <router-link @click.native="openSidebar" :to="{name: 'document-home'}"
-                     class=" text-center content-menus">
-          <div class="d-flex justify-content-center" v-b-toggle.collapse-documents>
+        <router-link  :to="{name: 'document-home'}"
+                     class="text-center content-menus">
+          <div @click="offSecondSidebar" class="d-flex justify-content-center">
             <div class="align-self-center">
               <FileIcon class="menu-icon"/>
             </div>
           </div>
-
         </router-link>
 
-        <router-link @click.native="closeSidebar" :to="{name: 'counter-parties'}"
-                      class="text-center content-menus">
-          <div class="d-flex justify-content-center">
+        <router-link :to="{name: 'counter-parties'}"
+                     class="text-center content-menus">
+          <div @click="offSecondSidebar" class="d-flex justify-content-center">
             <div class="align-self-center">
               <GridIcon class="menu-icon"/>
             </div>
           </div>
         </router-link>
 
-        <router-link @click.native="closeSidebar" :to="{name: 'document-verify'}"
+        <router-link :to="{name: 'document-verify'}"
                      class=" text-center content-menus">
-          <div class="d-flex justify-content-center">
+          <div @click="offSecondSidebar" class="d-flex justify-content-center">
             <div class="align-self-center">
               <Edit3Icon class="menu-icon"/>
             </div>
           </div>
         </router-link>
 
-        <router-link @click.native="openSidebar" :to="{name: 'agreement-document-view'}"
+        <router-link :to="{name: 'agree'}"
                      class=" text-center content-menus">
-          <div class="d-flex justify-content-center">
+          <div @click="offSecondSidebar" class="d-flex justify-content-center" >
             <div class="align-self-center">
               <MessageCircleIcon class="menu-icon"/>
             </div>
           </div>
         </router-link>
 
-        <div class=" text-center content-menus">
-          <div class="d-flex justify-content-center" >
-            <div class="align-self-center">
-              <CreditCardIcon class="menu-icon"/>
-            </div>
-          </div>
-        </div>
-
-        <router-link @click.native="openSidebar" :to="{name: 'settings-personal-area'}"
+        <router-link :to="{name: 'settings'}"
                      class=" text-center content-menus">
-          <div class="d-flex justify-content-center">
+          <div @click="offSecondSidebar" class="d-flex justify-content-center">
             <div class="align-self-center">
               <SettingsIcon class="menu-icon"/>
             </div>
@@ -62,89 +53,59 @@
         </router-link>
       </div>
     </div>
-
-    <div v-show="!isOffSecondSidebar">
-      <div class="second-inside-sidebar" v-cloak  v-if="activeSidebar">
-        <component @offSecondSidebarMoblie="offSecondSidebarMoblie" :is="activeSidebar"></component>
-      </div>
-    </div>
-
   </div>
 </template>
 <script>
+    import eventBus from '../../eventBus';
+
     import {
+    GridIcon,
+    FileIcon,
+    Edit3Icon,
+    CreditCardIcon,
+    MessageCircleIcon,
+    SettingsIcon,
+    MenuIcon
+
+} from 'vue-feather-icons'
+
+export default {
+    name: 'sidebar-component',
+    data() {
+        return {
+        }
+    },
+    components: {
         GridIcon,
-        FileIcon,
         Edit3Icon,
         CreditCardIcon,
+        FileIcon,
         MessageCircleIcon,
         SettingsIcon,
-
-    } from 'vue-feather-icons'
-
-    import SidebarMenuDocuments from '../sidebar/SidebarMenuDocuments'
-    import SidebarMenuSettings from '../sidebar/SidebarMenuSettings'
-    import SidebarMenuAgree from '../sidebar/SidebarMenuAgree'
-
-    export default {
-        name: 'sidebar-component',
-        components: {
-            GridIcon,
-            Edit3Icon,
-            CreditCardIcon,
-            FileIcon,
-            MessageCircleIcon,
-            SettingsIcon,
-        },
-        props: ['isOffSecondSidebar'],
-        data() {
-            return {
-                activeMenu: null,
-                test: true
-            }
-        },
-        methods: {
-            openSidebar() {
-                this.isOffSecondSidebar = false;
-                this.$emit("openSidebar", false)
-            },
-            closeSidebar() {
-                this.$emit("openSidebar", true)
-            }
-        },
-        computed: {
-            activeSidebar() {
-                this.$Progress.start();
-                if (this.$route.matched.length > 0) {
-                    if (this.$route.matched[0].name === 'document') {
-                        this.$emit('activeSecondSidebar', true);
-                        this.$Progress.finish();
-                        return SidebarMenuDocuments
-                    } else if (this.$route.matched[0].name === 'settings-personal-area') {
-                        this.$emit('activeSecondSidebar', true);
-                        this.$Progress.finish();
-                        return SidebarMenuSettings
-                    } else if (this.$route.matched[0].name === 'agreement-document-view') {
-                        this.$emit('activeSecondSidebar', true);
-                        this.$Progress.finish();
-                        return SidebarMenuAgree
-                    } else {
-                        this.$emit('activeSecondSidebar', false);
-                        this.$Progress.finish();
-                        return null
-                    }
-                } else {
-                    this.$emit('activeSecondSidebar', false);
-                    this.$Progress.finish();
-                    return null
-                }
-            }
-        },
+        MenuIcon
+    },
+    methods: {
+         offSecondSidebar() {
+             if( this.$store.getters.ismainPageOpen) {
+                 eventBus.$emit('offSecondSidebar');
+             } else {
+                 this.$router.push('document')
+             }
+         }
+    },
+    created() {
+    },
+    beforeDestroy() {
     }
+}
 </script>
 <style lang="scss" scoped>
   $brand-color: #66c93e;
   $default-border: 1px solid #e4e5e7;
+
+  .closeAllSidebar {
+    display: none;
+  }
 
   #sidebar {
     z-index: 99;
@@ -159,7 +120,7 @@
       background: white;
       overflow-y: auto;
       text-transform: uppercase;
-      z-index: 99999;
+      z-index: 999;
       background: #34495e;
 
       & .menu-text {
@@ -217,7 +178,7 @@
     background: white;
     font-size: 14px;
     overflow-y: auto;
-    z-index: 9999;
+    z-index: 999;
     background: white;
     box-shadow: 0 4px 20px 1px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.06);
 

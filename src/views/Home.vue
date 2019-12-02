@@ -66,6 +66,15 @@
           { key: 'status', label: 'Статус' },
         ]
       }
+    },
+    created() {
+        this.$store.dispatch('hideToggleMenuButtonInHeader');
+        this.$store.dispatch('showsetWholeMenuInSidebar');
+        this.$store.dispatch('closeToggleMenuButtonInHeader');
+        this.$store.dispatch('hideMainPage');
+    },
+    beforeDestroy() {
+        this.$store.dispatch('showMainPage');
     }
   }
 </script>

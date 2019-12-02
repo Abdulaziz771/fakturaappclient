@@ -8,30 +8,30 @@
               <XIcon v-b-tooltip.hover title="Удалить"/>
               <span>Удалить</span>
             </div>
-            <div class="doc-search" @click="isActiveSrch = !isActiveSrch" :class="{ activeDocSearch : isActiveSrch }">
-              <label for="search" @click="isActiveSrch = !isActiveSrch">
-                <SearchIcon></SearchIcon>
-              </label>
-              <b-input-group size="sm" class="">
-                <b-form-input placeholder="Поиск" id="search"></b-form-input>
-              </b-input-group>
-              <span><XIcon></XIcon></span>
-            </div>
+<!--            <div class="doc-search" @click="isActiveSrch = !isActiveSrch" :class="{ activeDocSearch : isActiveSrch }">-->
+<!--              <label for="search" @click="isActiveSrch = !isActiveSrch">-->
+<!--                <SearchIcon></SearchIcon>-->
+<!--              </label>-->
+<!--              <b-input-group size="sm" class="">-->
+<!--                <b-form-input placeholder="Поиск" id="search"></b-form-input>-->
+<!--              </b-input-group>-->
+<!--              <span><XIcon></XIcon></span>-->
+<!--            </div>-->
           </b-col>
-          <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end pr-2"
+          <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end pr-2 padding-for-pages-with-table"
                  :class="bindClass3">
             <div class="counter-tool counter  cursor-pointer">
-              <span class="pt-1">
+              <span class="page-counter">
                 <span>
                   <span>1</span>–<span>20</span>
                 </span> из <span>21</span>
               </span>
             </div>
-            <div class="counter-tool toggle-page-left rounded-circle mr-2">
-              <ChevronLeftIcon class="cursor-pointer"/>
+            <div class="counter-tool cursor-pointer toggle-page-left rounded-circle mr-2">
+              <ChevronLeftIcon class=""/>
             </div>
-            <div class="counter-tool toggle-page-right rounded-circle">
-              <ChevronRightIcon class="cursor-pointer"/>
+            <div class="counter-tool cursor-pointer toggle-page-right rounded-circle">
+              <ChevronRightIcon class=""/>
             </div>
           </b-col>
         </b-row>
@@ -83,7 +83,7 @@
               </template>
             </b-table>
           </div>
-          <RightSidebar :active="activeRightSidebar"/>
+<!--          <RightSidebar :active="activeRightSidebar"/>-->
         </div>
       </div>
     </div>
@@ -346,53 +346,53 @@
     }
   }
 
-  .doc-search {
-    position: relative;
-    left: 495px;
-    z-index: 99;
-    transition: 0.1s;
-    width: 487px;
-    margin: 8px;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: unset;
-    background: #f6f6f7;
-    cursor: pointer;
+  /*.doc-search {*/
+  /*  position: relative;*/
+  /*  left: 495px;*/
+  /*  z-index: 99;*/
+  /*  transition: 0.1s;*/
+  /*  width: 487px;*/
+  /*  margin: 8px;*/
+  /*  display: flex;*/
+  /*  border-radius: 5px;*/
+  /*  flex-direction: unset;*/
+  /*  background: #f6f6f7;*/
+  /*  cursor: pointer;*/
 
-    label {
-      margin: 6px;
-      margin-left: 11px;
+  /*  label {*/
+  /*    margin: 6px;*/
+  /*    margin-left: 11px;*/
 
-      svg {
-        color: #a5a5a5;
-        width: 20px;
-        cursor: pointer;
-      }
-    }
+  /*    svg {*/
+  /*      color: #a5a5a5;*/
+  /*      width: 20px;*/
+  /*      cursor: pointer;*/
+  /*    }*/
+  /*  }*/
 
-    span {
-      display: none;
-      margin: 6px;
+  /*  span {*/
+  /*    display: none;*/
+  /*    margin: 6px;*/
 
-      svg {
-        color: #a5a5a5;
-        width: 20px;
-        cursor: pointer;
-      }
-    }
+  /*    svg {*/
+  /*      color: #a5a5a5;*/
+  /*      width: 20px;*/
+  /*      cursor: pointer;*/
+  /*    }*/
+  /*  }*/
 
-    .form-control {
-      height: auto !important;
-      background: transparent;
-      border: none;
+  /*  .form-control {*/
+  /*    height: auto !important;*/
+  /*    background: transparent;*/
+  /*    border: none;*/
 
-      &:focus {
-        box-shadow: none !important;
-        border: none;
-        background: transparent;
-      }
-    }
-  }
+  /*    &:focus {*/
+  /*      box-shadow: none !important;*/
+  /*      border: none;*/
+  /*      background: transparent;*/
+  /*    }*/
+  /*  }*/
+  /*}*/
 
   #collapse-1 {
     //filter forms

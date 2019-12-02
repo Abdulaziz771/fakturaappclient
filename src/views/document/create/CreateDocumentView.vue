@@ -103,7 +103,7 @@
         </b-modal>
         <b-container class="create-newdoc-footer">
           <b-row>
-            <b-col>
+            <b-col xl="3" lg="3" md="6">
               <div class="d-flex flex-row">
                 <div class="p-2 action-icon-doc d-none d-md-block">
                   <img src="../../../assets/document.png" alt="doc">
@@ -117,7 +117,7 @@
                 </div>
               </div>
             </b-col>
-            <b-col>
+            <b-col xl="3" lg="3" md="6">
               <div class="d-flex flex-row">
                 <div class="p-2 action-icon-doc d-none d-md-block">
                   <img src="../../../assets/contract.png" alt="doc">
@@ -128,7 +128,7 @@
                 </div>
               </div>
             </b-col>
-            <b-col>
+            <b-col xl="3" lg="3" md="6">
               <div class="d-flex flex-row">
                 <div class="p-2 action-icon-doc d-none d-md-block">
                   <img src="../../../assets/list.png" alt="doc">
@@ -139,7 +139,7 @@
                 </div>
               </div>
             </b-col>
-            <b-col>
+            <b-col xl="3" lg="3" md="6">
               <div class="d-flex flex-row">
                 <div class="p-2 action-icon-doc d-none d-md-block">
                   <img  src="../../../assets/folder.png" alt="doc">
@@ -220,9 +220,6 @@
   }
 </script>
 <style lang="scss">
-  .create-new-document-tabs .nav-tabs .nav-link {
-    font-size: 18px;
-  }
 
   .create-newdoc-footer {
     & .row {
@@ -255,7 +252,7 @@
 </style>
 <style lang="scss" scoped>
   .fs21 {
-    font-size: 21px;
+    font-size: 16px;
   }
 
   .input-file-text {

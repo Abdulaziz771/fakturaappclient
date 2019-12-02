@@ -20,22 +20,22 @@
               <PrinterIcon v-b-tooltip.hover title="Печать"/><span>Печать</span>
             </div>
           </b-col>
-          <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end p-0" :class="bindClass3">
-            <div class="counter-tool counter  cursor-pointer">
-              <span class="pt-1">
+          <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end padding-for-pages-with-table" :class="bindClass3">
+            <div class="counter-tool counter cursor-pointer">
+              <span class="page-counter">
                 <span>
                   <span>1</span>–<span>20</span>
                 </span> из <span>21</span>
               </span>
             </div>
-            <div class="counter-tool toggle-page-left rounded-circle mr-2">
-              <ChevronLeftIcon class="cursor-pointer"/>
+            <div class="counter-tool cursor-pointer toggle-page-left rounded-circle mr-2">
+              <ChevronLeftIcon class=""/>
             </div>
-            <div class="counter-tool toggle-page-right rounded-circle">
-              <ChevronRightIcon class="cursor-pointer"/>
+            <div class="counter-tool cursor-pointer toggle-page-right rounded-circle">
+              <ChevronRightIcon class=""/>
             </div>
-            <div class="counter-tool filter-view" :class="{ fltrBtonAct : isActiveFltr }" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>
-              <SlidersIcon class="cursor-pointer"/>
+            <div class="counter-tool cursor-pointer filter-view" :class="{ fltrBtonAct : isActiveFltr }" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>
+              <SlidersIcon class=""/>
             </div>
           </b-col>
         </b-row>
@@ -212,7 +212,7 @@
                 </b-table>
               </b-tab>
           </b-tabs>
-          <RightSidebar :active="activeRightSidebar"/>
+<!--          <RightSidebar :active="activeRightSidebar"/>-->
         </div>
       </div>
     </div>
@@ -468,6 +468,11 @@
     .form-control {
       border: 1px solid #e8e8e8;
     }
+  }
+
+  table td:nth-child(6), table thead th:nth-child(6)  {
+    width: 162px;
+    text-align: center;
   }
 </style>
 

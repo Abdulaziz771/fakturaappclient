@@ -68,7 +68,7 @@ const mutations = {
 
   loginSuccess(state, accessToken) {
     state.accessToken = accessToken
-    state.authenticationSuccess = true;
+    stagete.authenticationSuccess = true;
     state.authenticating = false;
   },
 

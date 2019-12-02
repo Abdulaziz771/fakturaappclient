@@ -1,0 +1,42 @@
+[
+  {
+    "docType": "Динамический документ",
+    "templateType": "Html",
+    "numbering": "Не определен"
+  },
+  {
+    "docType": "ЕОПЦ Акт и счёт фактура",
+    "templateType": "Html",
+    "numbering": "Не определен"
+  },
+  {
+    "docType": "ЕОПЦ Акт и счёт фактура",
+    "templateType": "Excel",
+    "numbering": "Не определен"
+  },
+  {
+    "docType": "Счет-фактура (новая форма)",
+    "templateType": "Html",
+    "numbering": "Не определен"
+  },
+  {
+    "docType": "Счет-фактура (новая форма)",
+    "templateType": "Excel",
+    "numbering": "Не определен"
+  },
+  {
+    "docType": "Счёт фактура",
+    "templateType": "Html",
+    "numbering": "CЧ-####"
+  },
+  {
+    "docType": "Счёт фактурат",
+    "templateType": "Excel",
+    "numbering": "CЧ-####"
+  },
+  {
+    "docType": "Доверенность",
+    "templateType": "Html",
+    "numbering": "Не определен"
+  }
+]

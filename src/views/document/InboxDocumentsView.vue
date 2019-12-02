@@ -20,98 +20,98 @@
               <PrinterIcon v-b-tooltip.hover title="Печать"/><span>Печать</span>
             </div>
           </b-col>
-          <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end p-0" :class="bindClass3">
-            <div class="counter-tool counter  cursor-pointer">
-              <span class="pt-1">
+          <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end padding-for-pages-with-table" :class="bindClass3">
+            <div class="counter-tool counter cursor-pointer">
+              <span class="page-counter">
                 <span>
                   <span>1</span>–<span>20</span>
                 </span> из <span>21</span>
               </span>
             </div>
-            <div class="counter-tool toggle-page-left rounded-circle mr-2">
-              <ChevronLeftIcon class="cursor-pointer"/>
+            <div class="counter-tool cursor-pointer toggle-page-left rounded-circle mr-2">
+              <ChevronLeftIcon class=""/>
             </div>
-            <div class="counter-tool toggle-page-right rounded-circle">
-              <ChevronRightIcon class="cursor-pointer"/>
+            <div class="counter-tool cursor-pointer toggle-page-right rounded-circle">
+              <ChevronRightIcon class=""/>
             </div>
-            <div class="counter-tool filter-view" :class="{ fltrBtonAct : isActiveFltr }" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>
-              <SlidersIcon class="cursor-pointer"/>
+            <div class="counter-tool cursor-pointer filter-view" :class="{ fltrBtonAct : isActiveFltr }" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>
+              <SlidersIcon class=""/>
             </div>
           </b-col>
         </b-row>
+        <b-collapse  id="collapse-1">
+          <b-card style="z-index: 9;">
+            <b-row>
+              <b-col md="6">
+                <div class="input-group input-group-sm mb-3">
+                  <span class="filter-form" for="Counterparty">Контрагент</span>
+                  <select class="custom-select custom-select-ftr left-form" id="Counterparty" placeholder="Введите инн или название"></select>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" >Создан</label>
+                  <div class="input-group input-group-sm left-form">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text">с</label>
+                    </div>
+                    <b-form-input type="date" id="inputId5"></b-form-input>
+                    <div class="input-group-prepend">
+                      <label class="input-group-text">по</label>
+                    </div>
+                    <b-form-input type="date" id="inputId4"></b-form-input>
+                  </div>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" for="status">Статус</label>
+                  <select class="custom-select custom-select-ftr left-form" id="status">
+                    <option value="1"></option>
+                    <option value="2">Требуется подпись</option>
+                    <option value="3">На рассмотрении аннулирования</option>
+                  </select>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" for="Subdivision">Подразделение</label>
+                  <select class="custom-select custom-select-ftr left-form" id="Subdivision">
+                    <option></option>
+                    <option value="18">Бухгалтерия</option>
+                    <option value="40">Руководства</option>
+                    <option value="861">Call center (код:)</option>
+                    <option value="898">Sub Accounting</option>
+                  </select>
+                </div>
+              </b-col>
+              <b-col md="6">
+                <label  class="multi-select-label" for="selectDoc">Тип документа</label>
+                <multiselect class="multi-select" id="selectDoc" v-model="value" tag-placeholder="Add this as new tag"
+                             label="name" track-by="code" :options="options" :multiple="true" :taggable="true"
+                             @tag="addTag">
+                </multiselect>
+                <div class="input-group input-group-sm pt-2 mb-3">
+                  <label class="filter-form" >Реестр</label>
+                  <b-form-input class="left-form" type="text" id="inputId3"></b-form-input>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" >Наименование документа</label>
+                  <b-form-input class="left-form" type="text" id="inputId2"></b-form-input>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" >Метка</label>
+                  <b-form-input class="left-form" type="text" id="inputId1"></b-form-input>
+                </div>
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col cols="12">
+                <div class="text-right">
+                  <b-button size="sm" variant="outline-secondary" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Отменить</b-button>
+                  <b-button size="sm" variant="outline-success" class="ml-2" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Применить</b-button>
+                </div>
+              </b-col>
+            </b-row>
+          </b-card>
+        </b-collapse>
       </div>
       <div class="table-body">
         <div>
-          <b-collapse id="collapse-1">
-            <b-card>
-              <b-row>
-                <b-col md="6">
-                  <div class="input-group input-group-sm mb-3">
-                    <span class="filter-form" for="Counterparty">Контрагент</span>
-                    <select class="custom-select custom-select-ftr left-form" id="Counterparty" placeholder="Введите инн или название"></select>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" >Создан</label>
-                    <div class="input-group input-group-sm left-form">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text">с</label>
-                      </div>
-                      <b-form-input type="date" id="inputId5"></b-form-input>
-                      <div class="input-group-prepend">
-                        <label class="input-group-text">по</label>
-                      </div>
-                      <b-form-input type="date" id="inputId4"></b-form-input>
-                    </div>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" for="status">Статус</label>
-                    <select class="custom-select custom-select-ftr left-form" id="status">
-                      <option value="1"></option>
-                      <option value="2">Требуется подпись</option>
-                      <option value="3">На рассмотрении аннулирования</option>
-                    </select>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" for="Subdivision">Подразделение</label>
-                    <select class="custom-select custom-select-ftr left-form" id="Subdivision">
-                      <option></option>
-                      <option value="18">Бухгалтерия</option>
-                      <option value="40">Руководства</option>
-                      <option value="861">Call center (код:)</option>
-                      <option value="898">Sub Accounting</option>
-                    </select>
-                  </div>
-                </b-col>
-                <b-col md="6">
-                  <label  class="multi-select-label" for="selectDoc">Тип документа</label>
-                  <multiselect class="multi-select" id="selectDoc" v-model="value" tag-placeholder="Add this as new tag"
-                               label="name" track-by="code" :options="options" :multiple="true" :taggable="true"
-                               @tag="addTag">
-                  </multiselect>
-                  <div class="input-group input-group-sm pt-2 mb-3">
-                    <label class="filter-form" >Реестр</label>
-                    <b-form-input class="left-form" type="text" id="inputId3"></b-form-input>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" >Наименование документа</label>
-                    <b-form-input class="left-form" type="text" id="inputId2"></b-form-input>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" >Метка</label>
-                    <b-form-input class="left-form" type="text" id="inputId1"></b-form-input>
-                  </div>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="12">
-                  <div class="text-right">
-                    <b-button size="sm" variant="outline-secondary" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Отменить</b-button>
-                    <b-button size="sm" variant="outline-success" class="ml-2" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Применить</b-button>
-                  </div>
-                </b-col>
-              </b-row>
-            </b-card>
-          </b-collapse>
           <b-tabs justified class="document-tabs table-responsive inbox-document-tabs">
               <b-tab title-item-class="h5 " active>
                 <template slot="title"><FileIcon class="tab-icon"></FileIcon>Счет фактуры</template>
@@ -212,7 +212,7 @@
                 </b-table>
               </b-tab>
           </b-tabs>
-          <RightSidebar :active="activeRightSidebar"/>
+<!--          <RightSidebar :active="activeRightSidebar"/>-->
         </div>
       </div>
     </div>
@@ -466,6 +466,11 @@
     .form-control {
       border: 1px solid #e8e8e8;
     }
+  }
+
+  table td:nth-child(6), table thead th:nth-child(6)  {
+    width: 162px;
+    text-align: center;
   }
 </style>
 

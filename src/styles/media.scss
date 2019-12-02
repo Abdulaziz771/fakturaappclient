@@ -1,32 +1,161 @@
 @media all and (max-width: 1367px) {
   #header {
     .input-group {
-      width: 311px !important;
+      width: 300px !important;
+    }
+  }
+  .content-body {
+    .h-panel {
+       .panel-body {
+         .dataOfuser {
+           button {
+              font-size: 10px !important;
+           }
+         }
+       }
     }
   }
 }
 
 @media all and (max-width: 1200px) {
 
-  .sidebarOn {
-    margin-left: 24px !important;
-    padding-right: 24px !important;
-  }
-
-  .sidebarOn {
+  .open {
     .header-nav {
-      margin-left: 0 !important;
+      padding-left: 104px !important;
     }
   }
 
-  .sidebarOn {
-    .content-body {
-      left: 74px !important;
+  .content-header {
+    h5 {
+      font-size: 15px !important;
+    }
+  }
+
+  //for ../index page
+  .content-body {
+    left: 74px !important;
+    .document-tabs {
+      .newdoc-tab {
+        .d-flex {
+          height: 300px !important;
+          .input-file-text {
+            label {
+              font-size: 16px !important;
+            }
+          }
+          img {
+            width: 45px;
+            height: 45px;
+          }
+        }
+      }
+      .nav-link {
+        font-size: 9px !important;
+      }
+    }
+    .create-newdoc-footer {
+      .action-icon-doc {
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  //for ../inbox page
+  .content-body {
+    .btn-sm {
+      font-size: 0.675rem !important;
+    }
+    .badge {
+      padding: 0.3rem !important;
+    }
+    .table {
+      font-size: 10px;
+    }
+  }
+
+  //for ../personal-area page
+  .content-body {
+    .h-panel {
+      .panel-heading {
+        span {
+          font-size: 16px;
+        }
+      }
+      .panel-body {
+        .dataOfuser {
+          background: #f8f9fa;
+          border: 1px solid #eaeaea;
+          padding: 15px;
+        }
+        .list-group-item {
+          font-size: 11px;
+        }
+        .form-control {
+          height: 30px;
+          font-size: 14px;
+        }
+        font-size: 11px;
+        .avatar-upload {
+          .avatar-preview {
+            width: 137px;
+            height: 137px;
+            img {
+              width: 137px;
+              height: 137px;
+            }
+          }
+        }
+      }
+      table {
+        svg {
+          width: 16px;
+        }
+      }
+    }
+  }
+
+  .second-inside-sidebar {
+    margin-left: 60px !important;
+    font-size: 12px;
+    .logo-in-sidebar {
+      width: 100%;
+      padding: 16px 16px
+    }
+  }
+  .header-nav {
+    padding-left: 104px !important;
+    .profile-name {
+      font-size: 15px !important;
+    }
+    .header-tools {
+      svg {
+        width: 25px !important;
+        height: 25px !important;
+      }
+    }
+    .menu-icon-header {
+      width: 20px !important;
+      height: 20px !important;
+    }
+    .dropdown-item {
+      font-size: 11px !important;
     }
   }
 
   #sidebar {
-    z-index: 9999 !important;
+    z-index: 999 !important;
+    .first-inside-sidebar {
+      width: 60px !important;
+      .content-menus {
+        svg {
+          width: 18px !important;
+          height: 18px !important;
+        }
+      }
+    }
   }
 
   .tool-actions {
@@ -38,10 +167,6 @@
 
   .x-circle-icon {
     display: block;
-  }
-
-  .menu-icon-header {
-    display: none;
   }
 }
 
@@ -70,6 +195,131 @@
 }
 
 @media all and (max-width: 991px) {
+  //header
+  .header-nav {
+    .navbar-dark {
+      .navbar-toggler {
+        padding: 0px 2px !important;
+        .navbar-toggler-icon {
+          width: 25px !important;
+        }
+      }
+    }
+  }
+  //create document
+  .container {
+    .create-new-document-tabs {
+      ul {
+        li {
+          a {
+            padding: 10px 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  //counter-parties
+  .content {
+    .content-header {
+      .action-list {
+        .cuonter-tool-actions {
+          font-size: 10px;
+        }
+        .counter-tool {
+          svg {
+            width: 13px !important;
+          }
+        }
+      }
+      .table-filter-action {
+        font-size: 10px;
+        svg {
+          width: 13px !important;
+        }
+      }
+    }
+  }
+
+  //document-verify
+  .content {
+    .content-info {
+      font-size: 13px;
+      .infoicon {
+        width: 28px;
+        height: 27px;
+      }
+    }
+    .content-first-second-step {
+      h6 {
+        font-size: 13px !important;
+      }
+      .step-number {
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 7px !important;
+      }
+      button {
+        padding: 7px !important;
+      }
+    }
+    .content-third-step {
+      h6 {
+        font-size: 13px !important;
+      }
+      .step-number {
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 7px !important;
+      }
+      button {
+        padding: 7px !important;
+      }
+    }
+  }
+
+  //agreement-document-view
+  .content {
+    .content-header {
+      .action-list {
+        .counter-tool {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  //for ../personal-area page
+  .content-body {
+    .h-panel {
+       .panel-body {
+         font-size: 11px;
+         .form-control {
+           height: 27px;
+           font-size: 12px;
+         }
+         .list-group-item {
+           font-size: 12px;
+         }
+         .avatar-upload {
+           .avatar-preview {
+             width: 125px;
+             height: 125px;
+             img {
+               width: 125px;
+               height: 125px;
+             }
+           }
+         }
+       }
+      table {
+        svg {
+          width: 16px;
+        }
+      }
+    }
+  }
+
   #nav-collapse {
     background: #f2f2f2 !important;
     position: absolute;
@@ -85,9 +335,9 @@
 }
 
 @media all and (max-width: 767px) {
-  .container {
-    max-width: fit-content !important;
-  }
+  //.container {
+  //  max-width: fit-content !important;
+  //}
 
   .nav-link, .fs21 {
     font-size: 12px !important;
@@ -180,9 +430,6 @@
 }
 
 @media all and (max-width: 475px) {
-  .nav-link {
-    font-size: 8px !important;
-  }
 
   .home-header-action {
     h6 {

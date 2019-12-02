@@ -2,8 +2,8 @@
   <div class="content no-title">
     <div class="content-body">
       <div class="table-body">
-        <b-container fluid class="pb-4 personal-area">
-          <div class="h-panel shadow-sm">
+        <b-container fluid class="pb-4">
+          <div class="mb-4 h-panel shadow-sm">
             <div class="panel-heading">
               <b-row>
                 <b-col><span>Персональные данные</span></b-col>
@@ -35,7 +35,8 @@
                 </b-col>
                 <b-col md="8">
                   <b-form-group
-                    label-cols-sm="3"
+                    label-cols-lg="3"
+                    label-cols-md="2"
                     label="Фамилия:"
                     label-align-sm="right"
                     label-for="last_name"
@@ -44,7 +45,8 @@
                   </b-form-group>
 
                   <b-form-group
-                    label-cols-sm="3"
+                    label-cols-lg="3"
+                    label-cols-md="2"
                     label="Имя:"
                     label-align-sm="right"
                     label-for="first_name"
@@ -53,7 +55,8 @@
                   </b-form-group>
 
                   <b-form-group
-                    label-cols-sm="3"
+                    label-cols-lg="3"
+                    label-cols-md="2"
                     label="Отчество:"
                     label-align-sm="right"
                     label-for="middle_name"
@@ -62,7 +65,8 @@
                   </b-form-group>
 
                   <b-form-group
-                    label-cols-sm="3"
+                    label-cols-lg="3"
+                    label-cols-md="2"
                     label="ИНН:"
                     label-align-sm="right"
                     label-for="inn"
@@ -71,7 +75,7 @@
                   </b-form-group>
 
                   <div class="mt-3 d-flex flex-row-reverse">
-                    <b-button class="btn-sm" variant="outline-success">Сохранить</b-button>
+                    <b-button class="btn-sm" variant="outline-success" @click="onClickCancelPersonalData">Сохранить</b-button>
                     <b-button class="mr-3 btn-sm" variant="outline-secondary" @click="onClickCancelPersonalData">Отмена
                     </b-button>
                   </div>
@@ -97,9 +101,7 @@
               </b-row>
             </div>
           </div>
-        </b-container>
-        <b-container fluid class="pb-4">
-          <div class="h-panel shadow-sm">
+          <div class="mb-4 h-panel shadow-sm">
             <div class="panel-heading">
               <b-row>
                 <b-col class="text-left"><span>Права в организации</span></b-col>
@@ -109,16 +111,14 @@
               <b-row>
                 <b-col>
                   <b-list-group>
-                    <b-list-group-item><b>Подразделение </b> Руководства</b-list-group-item>
-                    <b-list-group-item><b>Должность </b> Директор</b-list-group-item>
+                    <b-list-group-item><b>Подразделение: </b> Руководства</b-list-group-item>
+                    <b-list-group-item><b>Должность: </b> Директор</b-list-group-item>
                   </b-list-group>
                 </b-col>
               </b-row>
             </div>
           </div>
-        </b-container>
-        <b-container fluid class="pb-4">
-          <div class="h-panel shadow-sm">
+          <div class="mb-4 h-panel shadow-sm">
             <div class="panel-heading">
               <b-row>
                 <b-col><span>Настройки уведомления</span></b-col>
@@ -151,7 +151,7 @@
                   >
                     <b-form-input class="email-addres" id="mail_address" type="email" v-model="form.mail_address"></b-form-input>
                     <b-input-group-append >
-                      <b-button size="sm" class="email-addres" variant="outline-secondary">Подтвердить</b-button>
+                      <b-button size="sm" class="email-addres" variant="secondary">Подтвердить</b-button>
                     </b-input-group-append>
                   </b-input-group>
 
@@ -164,12 +164,12 @@
                   >
                     <b-form-input class="phone-number" id="phone_number" type="email" v-model="form.phone_number"></b-form-input>
                     <b-input-group-append>
-                      <b-button size="sm" class="phone-number"  variant="outline-secondary">Подтвердить</b-button>
+                      <b-button size="sm" class="phone-number" variant="secondary">Подтвердить</b-button>
                     </b-input-group-append>
                   </b-input-group>
 
                   <div class="mt-3 d-flex flex-row-reverse">
-                    <b-button size="sm" variant="outline-success" >Сохранить</b-button>
+                    <b-button size="sm" variant="outline-success" @click="onClickNotificationSettings(false)" >Сохранить</b-button>
                     <b-button  size="sm" variant="outline-secondary" class="mr-3" @click="onClickNotificationSettings(false)">Отмена
                     </b-button>
                   </div>
@@ -186,9 +186,7 @@
               </b-row>
             </div>
           </div>
-        </b-container>
-        <b-container fluid>
-          <div class="h-panel shadow-sm">
+          <div class="mb-4 h-panel shadow-sm">
             <div class="panel-heading">
               <b-row>
                 <b-col><span>Смена пароля</span></b-col>
@@ -211,7 +209,7 @@
   } from 'vue-feather-icons'
 
   export default {
-    name: 'personal-info-settings-view',
+    name: 'agreement-document-view',
     components: {
       EditIcon,
       DeleteIcon
