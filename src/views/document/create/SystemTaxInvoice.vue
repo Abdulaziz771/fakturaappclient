@@ -209,7 +209,10 @@
 
 <script>
     export default {
-        name: 'SystemTaxInvoice'
+        name: 'SystemTaxInvoice',
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
+        }
     }
 </script>
 

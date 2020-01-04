@@ -39,20 +39,21 @@
                   </b-form-group>
 
                   <div class="mb-3" v-show="vatpayer">
-                   <b-row>
-                     <b-col md="6">
-                       <label class="register-code-VAT">Рег.код плательщика НДС:</label>
-                       <b-input-group class="register-input-VAT" size="sm">
-                         <b-form-input v-model="form.VATCode"></b-form-input>
-                       </b-input-group>
-                     </b-col>
-                     <b-col md="6">
-                       <label class="rate">Ставка НДС:</label>
-                       <b-input-group class="rate-inp" size="sm" append="%">
-                         <b-form-input v-model="form.VAT"></b-form-input>
-                       </b-input-group>
-                     </b-col>
-                   </b-row>
+                    <b-row>
+                      <b-col md="6">
+                        <label class="register-code-VAT">Рег.код плательщика НДС:</label>
+                        <b-input-group class="register-input-VAT" size="sm">
+                          <b-form-input maxlength="12" v-model.trim.lazy="$v.form.VATCode.$model"></b-form-input>
+                        </b-input-group>
+                        <span v-show="$v.form.VATCode.$error" class="text-danger">Код плательщика НДС должен состоять из 12 цыфр</span>
+                      </b-col>
+                      <b-col md="6">
+                        <label class="rate">Ставка НДС:</label>
+                        <b-input-group class="rate-inp" size="sm" append="%">
+                          <b-form-input type="number" v-model="form.VAT"></b-form-input>
+                        </b-input-group>
+                      </b-col>
+                    </b-row>
                   </div>
 
                   <b-form-group
@@ -96,54 +97,24 @@
             <div class="panel-body">
               <b-row v-if="showNotificationSettings">
                 <b-col cols="12">
-                  <b-row class="mb-3">
+                  <b-row class="mb-3" v-for="(payment, index) in payments">
                     <b-col class="text-right pr-0" cols="2">
                       <label class="pt-2">Расчётный счёт</label>
                     </b-col>
                     <b-col cols="2">
-                      <b-form-input size="sm" v-model="form.paymentAcc" placeholder="Рассчетный счет"></b-form-input>
+                      <b-form-input size="sm" v-model="payment.paymentAcc" placeholder="Рассчетный счет"></b-form-input>
                     </b-col>
                     <b-col cols="7">
-                      <b-form-input size="sm" list="input-list" v-model="form.account" id="input-with-list"></b-form-input>
-                      <b-form-datalist size="sm" id="input-list" :options="form.account"></b-form-datalist>
+                      <b-form-input size="sm" list="input-list" v-model="payment.account" id="input-with-list"></b-form-input>
+                      <b-form-datalist size="sm" id="input-list"></b-form-datalist>
                     </b-col>
                     <b-col class="pl-0" cols="1">
-                      <b-button variant="danger" size="sm">Удалить</b-button>
-                    </b-col>
-                  </b-row>
-                  <b-row class="mb-3">
-                    <b-col class="text-right pr-0" cols="2">
-                      <label class="pt-2">Расчётный счёт</label>
-                    </b-col>
-                    <b-col cols="2">
-                      <b-form-input size="sm" v-model="form.paymentAcc1" placeholder="Рассчетный счет"></b-form-input>
-                    </b-col>
-                    <b-col cols="7">
-                      <b-form-input size="sm" list="input-list" v-model="form.account1" id="input-with-list"></b-form-input>
-                      <b-form-datalist size="sm" id="input-list" :options="form.account1"></b-form-datalist>
-                    </b-col>
-                    <b-col class="pl-0" cols="1">
-                      <b-button variant="danger" size="sm">Удалить</b-button>
-                    </b-col>
-                  </b-row>
-                  <b-row class="mb-3">
-                    <b-col class="text-right pr-0" cols="2">
-                      <label class="pt-2">Расчётный счёт</label>
-                    </b-col>
-                    <b-col cols="2">
-                      <b-form-input size="sm" v-model="form.paymentAcc2" placeholder="Рассчетный счет"></b-form-input>
-                    </b-col>
-                    <b-col cols="7">
-                      <b-form-input size="sm" list="input-list" v-model="form.account2" id="input-with-list"></b-form-input>
-                      <b-form-datalist size="sm" id="input-list" :options="form.account2"></b-form-datalist>
-                    </b-col>
-                    <b-col class="pl-0" cols="1">
-                      <b-button variant="danger" size="sm">Удалить</b-button>
+                      <b-button variant="danger" size="sm" @click="deleteRow(index)">Удалить</b-button>
                     </b-col>
                   </b-row>
                   <b-row class="mb-3">
                     <b-col offset="11" cols="1" class="pl-0">
-                      <b-button size="sm" variant="secondary">Добаить</b-button>
+                      <b-button size="sm" variant="secondary" @click="pushRow">Добаить</b-button>
                     </b-col>
                   </b-row>
                 </b-col>
@@ -158,9 +129,11 @@
               <b-row v-else>
                 <b-col>
                   <b-list-group>
-                    <b-list-group-item><b>Рассчетный счет:</b> {{form.paymentAcc}} <b class="pl-4">Аддрес:</b> {{ form.account[0] }}</b-list-group-item>
-                    <b-list-group-item><b>Рассчетный счет:</b> {{form.paymentAcc1}} <b class="pl-4">Аддрес:</b> {{ form.account1[0] }}</b-list-group-item>
-                    <b-list-group-item><b>Рассчетный счет:</b> {{form.paymentAcc2}} <b class="pl-4">Аддрес:</b> {{ form.account2[0] }}</b-list-group-item>
+
+                    <b-list-group-item v-for="payment in payments">
+                      <b>Рассчетный счет:</b> {{payment.paymentAcc}}
+                      <b class="pl-4">Аддрес:</b> {{ payment.account }}
+                     </b-list-group-item>
 
                   </b-list-group>
                 </b-col>
@@ -191,7 +164,8 @@
                     label="Код по ОКОНХ:"
                     label-align-sm="right"
                   >
-                    <b-form-input v-model="form.OKONX"></b-form-input>
+                    <b-form-input v-model="form.OKONX" @blur="$v.form.OKONX.$touch()" ></b-form-input>
+                    <p v-show="$v.form.OKONX.$error" class="pt-2 text-danger">Неправильный формат. Значение должно состоять из пяти цифр</p>
                   </b-form-group>
                   <b-form-group
                     label-cols-sm="2"
@@ -199,13 +173,30 @@
                     label-align-sm="right"
                     label-for="last_name"
                   >
-                    <b-form-input id="last_name" v-model="form.OKED"></b-form-input>
+                    <b-form-input id="last_name" v-model="form.OKED" @blur="$v.form.OKED.$touch()"></b-form-input>
+                    <p v-show="$v.form.OKED.$error" class="pt-2 text-danger">Неправильный формат. Значение должно состоять из пяти цифр</p>
                   </b-form-group>
                 </b-col>
                 <b-col>
                   <div class="mt-3 d-flex flex-row-reverse">
-                    <b-button size="sm" variant="outline-success" @click="onSpecialSettings(false)">Сохранить</b-button>
-                    <b-button  size="sm" variant="outline-secondary" class="mr-3" @click="onSpecialSettings(false)">Отмена
+                    <b-button
+                      size="sm"
+                      variant="outline-success"
+                      v-if="$v.form.OKONX.$error || $v.form.OKED.$error"
+                      disabled
+                    > Сохранить
+                    </b-button>
+                    <b-button
+                      v-else
+                      size="sm"
+                      variant="outline-success"
+                      @click="onSpecialSettings(false)"
+                    >Сохранить</b-button>
+                    <b-button
+                      size="sm" variant="outline-secondary"
+                      class="mr-3"
+                      @click="onSpecialSettings(false)"
+                    > Отмена
                     </b-button>
                   </div>
                 </b-col>
@@ -301,12 +292,14 @@
                     label="Индекс:"
                     label-align-sm="right"
                   >
-                    <b-form-input v-model="form.index"></b-form-input>
+                    <b-form-input v-model="form.index" @blur="$v.form.index.$touch()"></b-form-input>
+                    <p v-show="$v.form.index.$error" class="pt-2 text-danger">Неправильный формат. Значение должно состоять из шести цифр</p>
                   </b-form-group>
                 </b-col>
                 <b-col>
                   <div class="mt-3 d-flex flex-row-reverse">
-                    <b-button size="sm" variant="outline-success" @click="onLocationSettings(false)">Сохранить</b-button>
+                    <b-button size="sm" variant="outline-success" v-if="$v.form.index.$error" disabled >Сохранить</b-button>
+                    <b-button size="sm" variant="outline-success" v-else @click="onLocationSettings(false)">Сохранить</b-button>
                     <b-button  size="sm" variant="outline-secondary" class="mr-3" @click="onLocationSettings(false)">Отмена
                     </b-button>
                   </div>
@@ -320,7 +313,6 @@
                     <b-list-group-item><b>Улица:</b> {{form.street}} </b-list-group-item>
                     <b-list-group-item><b>Дом:</b> {{form.house}} </b-list-group-item>
                     <b-list-group-item><b>Индекс:</b> {{form.index}} </b-list-group-item>
-
                   </b-list-group>
                 </b-col>
               </b-row>
@@ -343,7 +335,8 @@
                     label="Городской телефон:"
                     label-align-sm="right"
                   >
-                    <b-form-input v-model="form.home_phone"></b-form-input>
+                    <b-form-input v-model="form.home_phone" @blur="$v.form.home_phone.$touch()"></b-form-input>
+                    <p v-show="$v.form.home_phone.$error" class="pt-2 text-danger">Введен неправильный формат</p>
                   </b-form-group>
 
                   <b-form-group
@@ -351,7 +344,8 @@
                     label="Сотовый телефон:"
                     label-align-sm="right"
                   >
-                    <b-form-input v-model="form.mobile_phone"></b-form-input>
+                    <b-form-input v-model="form.mobile_phone" @blur="$v.form.mobile_phone.$touch()"></b-form-input>
+                    <p v-show="$v.form.mobile_phone.$error" class="pt-2 text-danger">Введен неправильный формат</p>
                   </b-form-group>
 
                   <b-form-group
@@ -360,7 +354,8 @@
                     label-align-sm="right"
                     label-for="last_name"
                   >
-                    <b-form-input id="last_name" v-model="form.email"></b-form-input>
+                    <b-form-input id="last_name" v-model="form.emailAddres" @blur="$v.form.emailAddres.$touch()"></b-form-input>
+                    <p v-show="$v.form.emailAddres.$error" class="pt-2 text-danger">Введен неправильный формат</p>
                   </b-form-group>
 
                   <b-form-group
@@ -374,7 +369,8 @@
                 </b-col>
                 <b-col>
                   <div class="mt-3 d-flex flex-row-reverse">
-                    <b-button size="sm" variant="outline-success" @click="onPhoneSettings(false)">Сохранить</b-button>
+                    <b-button size="sm" variant="outline-success" v-if="$v.form.home_phone.$error || $v.form.mobile_phone.$error || $v.form.emailAddres.$error" disabled >Сохранить</b-button>
+                    <b-button size="sm" variant="outline-success" v-else @click="onPhoneSettings(false)">Сохранить</b-button>
                     <b-button  size="sm" variant="outline-secondary" class="mr-3" @click="onPhoneSettings(false)">Отмена
                     </b-button>
                   </div>
@@ -385,7 +381,7 @@
                   <b-list-group>
                     <b-list-group-item><b>Городской телефон:</b> {{form.home_phone}}</b-list-group-item>
                     <b-list-group-item><b>Сотовый телефон:</b> {{form.mobile_phone}}</b-list-group-item>
-                    <b-list-group-item><b>Email:</b> {{form.email}}</b-list-group-item>
+                    <b-list-group-item><b>Email:</b> {{form.emailAddres}}</b-list-group-item>
                     <b-list-group-item><b>Маркет код:</b> {{form.market_password}}</b-list-group-item>
                   </b-list-group>
                 </b-col>
@@ -398,6 +394,8 @@
   </div>
 </template>
 <script>
+    import { email, numeric, minLength   } from "vuelidate/lib/validators"
+    import { oked, okonh, index, phoneWithout998 } from '../../js/custom-validators'
     import {
         EditIcon,
         DeleteIcon,
@@ -424,28 +422,45 @@
                     selected: 'Нет',
                     selectedRegion: 'ГОРОД ТАШКЕНТ',
                     selectedDistrict: 'ЮНУСАБАДСКИЙ РАЙОН',
-                    VATCode: "",
+                    VATCode: 998575647234,
                     VAT: "",
-                    paymentAcc: "20208000900214706001",
-                    paymentAcc1: "20208000900186481033",
-                    paymentAcc2: "20208000900186481007",
-                    account: [ 'ТОШКЕНТ Ш., "ИПАК ЙУЛИ" АИТ БАНКИНИНГ ЧИЛОНЗОР ФИЛИАЛИ' ],
-                    account1: [ 'ТОШКЕНТ Ш., "ТРАСТБАНК" ХА БАНКИНИНГ БОШ ОФИСИ' ],
-                    account2: [ 'ДАНГАРА Т., АТ ХАЛК БАНКИ ДАНГАРА ФИЛИАЛИ' ],
-                    OKONX: '',
                     special_check: '',
                     OKED: '',
+                    OKONX: '',
                     street: '',
                     house: '1',
                     index: '',
                     home_phone: '',
                     mobile_phone: '',
-                    email: '',
+                    emailAddres: '',
                     market_password: ''
                 },
+                payments: [
+                    {
+                        paymentAcc: "20208000900214706001",
+                        account: 'ТОШКЕНТ Ш., "ИПАК ЙУЛИ" АИТ БАНКИНИНГ ЧИЛОНЗОР ФИЛИАЛИ'
+                    },
+                    {
+                        paymentAcc: "20208000900186481033",
+                        account: 'ТОШКЕНТ Ш., "ТРАСТБАНК" ХА БАНКИНИНГ БОШ ОФИСИ'
+                    },
+                    {
+                        paymentAcc: "20208000900186481007",
+                        account:  'ДАНГАРА Т., АТ ХАЛК БАНКИ ДАНГАРА ФИЛИАЛИ'
+                    },
+                ]
             }
         },
         methods: {
+            pushRow() {
+                this.payments.push({
+                    paymentAcc: "20208000900186481007",
+                    account:  'ДАНГАРА Т., АТ ХАЛК БАНКИ ДАНГАРА ФИЛИАЛИ'
+                })
+            },
+            deleteRow(index) {
+                this.$delete(this.payments, index)
+            },
             onChangeUploadAvatar() {
                 const file = this.$refs.imageUpload.files[0]
                 this.imgUrl = URL.createObjectURL(file)
@@ -478,6 +493,35 @@
                     this.vatpayer = false;
                 }
             }
+        },
+        validations: {
+            form: {
+                VATCode: {
+                    numeric,
+                    minLength: minLength(12)
+                },
+                OKED: {
+                    oked
+                },
+                OKONX: {
+                    okonh
+                },
+                index: {
+                    index
+                },
+                home_phone: {
+                    phoneWithout998
+                },
+                mobile_phone: {
+                    phoneWithout998
+                },
+                emailAddres: {
+                    email
+                }
+            },
+        },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
         }
     }
 </script>
@@ -522,3 +566,4 @@
   }
 
 </style>
+

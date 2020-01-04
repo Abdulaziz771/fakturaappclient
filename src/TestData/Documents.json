@@ -338,5 +338,22 @@
       "inn": "302563857",
       "name": "302563857 Corporation"
     }
+  },
+  {
+    "uniqueId": "16beafac833d4d658d8aa718f0abf712",
+    "title": "Заявления на открыть счет",
+    "fileName": "hCwk9bq5dMF7znb1GjJ4.pdf",
+    "labelName": "",
+    "totalPrice": "3831003,36",
+    "createdDateTime": 1552917128943,
+    "updatedDateTime": "21.05.2019",
+    "isNew": true,
+    "isAgreementApproved": false,
+    "registry": null,
+    "status": "документ подписан",
+    "contractor": {
+      "inn": "302563857",
+      "name": "302563857 Corporation"
+    }
   }
 ]

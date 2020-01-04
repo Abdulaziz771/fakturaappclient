@@ -19,21 +19,60 @@
 
 @media all and (max-width: 1200px) {
 
-  .open {
-    .header-nav {
-      padding-left: 104px !important;
+  .content-deposit-body {
+    .depost-back-link {
+      .deposit-title {
+        margin-top: 20px;
+      }
+    }
+    .deposit-toggle {
+      height: 70vh !important;
+    }
+    .table {
+      font-size: 10px;
+    }
+  }
+
+  .header-nav {
+    .header-logo {
+      width: 170px !important;
+      img {
+        padding: 6px 15px 8px 20px !important;
+      }
+    }
+  }
+
+  .content-search {
+    padding-top: 5px;
+    .input-group {
+      .form-control {
+        font-size: 12px !important;
+      }
+      .input-group-append {
+        height: 32px;
+      }
     }
   }
 
   .content-header {
+    .title-border {
+      height: 10px !important;
+    }
+    .cuonter-tool-actions {
+      padding: 0 12px !important;
+      padding-top: 8px !important;
+      div {
+        font-size: 13px !important;
+      }
+    }
     h5 {
-      font-size: 15px !important;
+      font-size: 12px !important;
     }
   }
 
   //for ../index page
   .content-body {
-    left: 74px !important;
+    left: 59px !important;
     .document-tabs {
       .newdoc-tab {
         .d-flex {
@@ -65,6 +104,19 @@
 
   //for ../inbox page
   .content-body {
+    .table-body {
+      top: 40px !important;
+    }
+    .content-header {
+      .padding-for-pages-with-table {
+        padding: 0 !important;
+      }
+      .home-header-action {
+        h6 {
+          font-size: 13px;
+        }
+      }
+    }
     .btn-sm {
       font-size: 0.675rem !important;
     }
@@ -118,22 +170,29 @@
   }
 
   .second-inside-sidebar {
-    margin-left: 60px !important;
-    font-size: 12px;
+    left: 60px !important;
+    font-size: 13px !important;
     .logo-in-sidebar {
       width: 100%;
       padding: 16px 16px
     }
   }
   .header-nav {
-    padding-left: 104px !important;
+    //padding-left: 104px !important;
     .profile-name {
       font-size: 15px !important;
     }
     .header-tools {
+      padding-top: 8px !important;
       svg {
         width: 25px !important;
         height: 25px !important;
+      }
+    }
+    .header-logo {
+      img {
+        position: relative;
+        right: 15px;
       }
     }
     .menu-icon-header {
@@ -149,6 +208,12 @@
     z-index: 999 !important;
     .first-inside-sidebar {
       width: 60px !important;
+      .logo-sidebar {
+        .menu-icon-header {
+          width: 60px !important;
+          padding: 20px !important;
+        }
+      }
       .content-menus {
         svg {
           width: 18px !important;
@@ -177,6 +242,12 @@
     }
   }
 
+  #header {
+    .input-group {
+      width: 270px !important;
+    }
+  }
+
   .phone-number, .email-addres {
     font-size: 10px !important;
   }
@@ -195,6 +266,33 @@
 }
 
 @media all and (max-width: 991px) {
+  //details
+  .doc-iframe {
+    height: 330px;
+  }
+
+  .agreement-dropdwon {
+    li {
+      font-size: 11px;
+    }
+  }
+
+  .download-modal {
+    .btn {
+      font-size: 10px;
+    }
+    .form-control {
+      font-size: 10px;
+    }
+    .table {
+      font-size: 10px;
+      .TrashIcon, .DownloadCloudIcon {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
   //header
   .header-nav {
     .navbar-dark {
@@ -320,11 +418,14 @@
     }
   }
 
+  //hedaer colapse
   #nav-collapse {
-    background: #f2f2f2 !important;
+    background: #ffffff !important;
     position: absolute;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     right: 18px;
-    top: 53px;
+    top: 36px;
     padding: 10px;
     ul {
       li:nth-child(1) {
@@ -332,6 +433,36 @@
       }
     }
   }
+
+  //filter
+  #collapse-1 {
+    font-size: 10px;
+    .custom-select {
+      font-size: 11px;
+    }
+    .multiselect__content-wrapper {
+      font-size: 11px;
+    }
+    .multiselect__option {
+      min-height: 25px;
+    }
+    .multiselect__select {
+      height: 31px !important;
+    }
+    .form-control {
+      font-size: 11px;
+    }
+    .input-group-text {
+      height: 26px;
+    }
+    //vue select
+    .multiselect__tags {
+      min-height: 31px !important;
+      height: 31px !important;
+      font-size: 11px;
+    }
+  }
+
 }
 
 @media all and (max-width: 767px) {
@@ -429,6 +560,40 @@
   }
 }
 
+@media all and (max-width: 650px) {
+  .register-block {
+    width: 300px !important;
+    .input-block {
+      width: 245px !important;
+    }
+  }
+  .registration-page {
+    .registr-logo {
+      img {
+        //width: 120px !important;
+      }
+    }
+  }
+  .register {
+    .register-block {
+      width: 300px !important;
+      .input-block {
+        width: 300px !important;
+        padding: 10px !important;
+        .back-button {
+          padding-right: 1rem !important;
+          padding-left: 1rem !important;
+        }
+        .register-org-button {
+          button {
+            width: -webkit-fill-available;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media all and (max-width: 475px) {
 
   .home-header-action {
@@ -467,5 +632,31 @@
     .input-group-text {
       font-size: 10px !important;
     }
+  }
+}
+
+@media all and (max-height: 800px) {
+  .registration-page  {
+    .registr-logo {
+      img {
+        top: 10px !important;
+        width: 169px !important;
+      }
+    }
+    .register-block {
+      top: 60px !important;
+    }
+    .register-line {
+      top: 75px;
+      width: 220px;
+    }
+  }
+}
+
+
+//especially for container
+@media (max-width: 768px) {
+  .container {
+    max-width: initial !important;
   }
 }

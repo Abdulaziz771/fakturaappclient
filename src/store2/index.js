@@ -3,10 +3,10 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-import layout from './layout'
+import sidebar from './modules/sidebar'
 
 export default new Vuex.Store({
   modules: {
-    layout
+    sidebar
   }
 })

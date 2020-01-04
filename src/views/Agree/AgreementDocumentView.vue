@@ -30,79 +30,79 @@
             </div>
           </b-col>
         </b-row>
+        <b-collapse  id="collapse-1">
+          <b-card style="z-index: 9;">
+            <b-row>
+              <b-col md="6">
+                <div class="input-group input-group-sm mb-3">
+                  <span class="filter-form" for="Counterparty">Контрагент</span>
+                  <select class="custom-select custom-select-ftr left-form" id="Counterparty" placeholder="Введите инн или название"></select>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" >Создан</label>
+                  <div class="input-group input-group-sm left-form">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text">с</label>
+                    </div>
+                    <b-form-input type="date" id="inputId5"></b-form-input>
+                    <div class="input-group-prepend">
+                      <label class="input-group-text">по</label>
+                    </div>
+                    <b-form-input type="date" id="inputId4"></b-form-input>
+                  </div>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" for="status">Статус</label>
+                  <select class="custom-select custom-select-ftr left-form" id="status">
+                    <option value="1"></option>
+                    <option value="2">Требуется подпись</option>
+                    <option value="3">На рассмотрении аннулирования</option>
+                  </select>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" for="Subdivision">Подразделение</label>
+                  <select class="custom-select custom-select-ftr left-form" id="Subdivision">
+                    <option></option>
+                    <option value="18">Бухгалтерия</option>
+                    <option value="40">Руководства</option>
+                    <option value="861">Call center (код:)</option>
+                    <option value="898">Sub Accounting</option>
+                  </select>
+                </div>
+              </b-col>
+              <b-col md="6">
+                <label  class="multi-select-label">Тип документа</label>
+                <multiselect class="multi-select" v-model="value" tag-placeholder="Add this as new tag"
+                             label="name" track-by="code" :options="options" :multiple="true" :taggable="true"
+                             @tag="addTag">
+                </multiselect>
+                <div class="input-group input-group-sm pt-2 mb-3">
+                  <label class="filter-form" >Реестр</label>
+                  <b-form-input class="left-form" type="text" id="inputId3"></b-form-input>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" >Наименование документа</label>
+                  <b-form-input class="left-form" type="text" id="inputId2"></b-form-input>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <label class="filter-form" >Метка</label>
+                  <b-form-input class="left-form" type="text" id="inputId1"></b-form-input>
+                </div>
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col cols="12">
+                <div class="text-right">
+                  <b-button size="sm" variant="outline-secondary" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Отменить</b-button>
+                  <b-button size="sm" variant="outline-success" class="ml-2" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Применить</b-button>
+                </div>
+              </b-col>
+            </b-row>
+          </b-card>
+        </b-collapse>
       </div>
       <div class="table-body">
         <div>
-          <b-collapse id="collapse-1">
-            <b-card>
-              <b-row>
-                <b-col md="6">
-                  <div class="input-group input-group-sm mb-3">
-                    <span class="filter-form" for="Counterparty">Контрагент</span>
-                    <select class="custom-select custom-select-ftr left-form" id="Counterparty" placeholder="Введите инн или название"></select>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" >Создан</label>
-                    <div class="input-group input-group-sm left-form">
-                      <div class="input-group-prepend">
-                        <label class="input-group-text">с</label>
-                      </div>
-                      <b-form-input type="date" id="inputId5"></b-form-input>
-                      <div class="input-group-prepend">
-                        <label class="input-group-text">по</label>
-                      </div>
-                      <b-form-input type="date" id="inputId4"></b-form-input>
-                    </div>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" for="status">Статус</label>
-                    <select class="custom-select custom-select-ftr left-form" id="status">
-                      <option value="1"></option>
-                      <option value="2">Требуется подпись</option>
-                      <option value="3">На рассмотрении аннулирования</option>
-                    </select>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" for="Subdivision">Подразделение</label>
-                    <select class="custom-select custom-select-ftr left-form" id="Subdivision">
-                      <option></option>
-                      <option value="18">Бухгалтерия</option>
-                      <option value="40">Руководства</option>
-                      <option value="861">Call center (код:)</option>
-                      <option value="898">Sub Accounting</option>
-                    </select>
-                  </div>
-                </b-col>
-                <b-col md="6">
-                  <label  class="multi-select-label" for="selectDoc">Тип документа</label>
-                  <multiselect class="multi-select" id="selectDoc" v-model="value" tag-placeholder="Add this as new tag"
-                               label="name" track-by="code" :options="options" :multiple="true" :taggable="true"
-                               @tag="addTag">
-                  </multiselect>
-                  <div class="input-group input-group-sm pt-2 mb-3">
-                    <label class="filter-form" >Реестр</label>
-                    <b-form-input class="left-form" type="text" id="inputId3"></b-form-input>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" >Наименование документа</label>
-                    <b-form-input class="left-form" type="text" id="inputId2"></b-form-input>
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <label class="filter-form" >Метка</label>
-                    <b-form-input class="left-form" type="text" id="inputId1"></b-form-input>
-                  </div>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="12">
-                  <div class="text-right">
-                    <b-button size="sm" variant="outline-secondary" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Отменить</b-button>
-                    <b-button size="sm" variant="outline-success" class="ml-2" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Применить</b-button>
-                  </div>
-                </b-col>
-              </b-row>
-            </b-card>
-          </b-collapse>
           <div class="document-tabs table-responsive">
             <b-table hover :fields="fields" :items="documents"
                      class="documentTable inboxDocTable" >
@@ -287,6 +287,9 @@
                 this.options.push(tag)
                 this.value.push(tag)
             }
+        },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
         }
     }
 </script>

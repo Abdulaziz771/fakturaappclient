@@ -39,6 +39,9 @@
                     { key: "userName", label: "Пользователи" }
                 ]
             }
+        },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
         }
     }
 </script>

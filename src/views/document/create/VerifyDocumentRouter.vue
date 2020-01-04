@@ -62,12 +62,9 @@
         components: {
             InfoIcon
         },
-         // created() {
-         //     this.$store.dispatch("showsetWholeMenuInSidebar");
-         //     this.$store.dispatch("openToggleMenuButtonInHeader");
-         //
-         //     this.$store.dispatch('hideToggleMenuButtonInHeader');
-         // }
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
+        }
     }
 </script>
 

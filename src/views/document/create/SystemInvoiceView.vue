@@ -80,8 +80,8 @@
               <b-col>
                 <b-row class="pb-2">
                   <b-col cols="4" class="text-right"><b>Заказчик :</b></b-col>
-                  <b-col cols="8" class="text-left">
-                      <multiselect v-model="value" :options="options" placeholder="Select one" class="invoice-select" label="name" track-by="name"></multiselect>
+                  <b-col cols="8" class="text-left special-select">
+                    <v-select v-model="selected" :options="options" label="name"></v-select>
                   </b-col>
                 </b-row>
                 <b-row class="pb-2">
@@ -154,17 +154,17 @@
                       <b-form-input v-model="row.measurement" @focus="onFocus(index)" @blur="onBlur(index)" class="table-input text-center"></b-form-input>
                     </td>
                     <td class=" table-input-td">
-                      <b-form-input v-model="row.amount" @focus="onFocus(index)" @blur="onBlur(index)" class="table-input text-center"></b-form-input>
+                      <b-form-input type="number" v-model="row.amount" @focus="onFocus(index)" @blur="onBlur(index)" class="table-input text-center"></b-form-input>
                     </td>
                     <td class="table-input-td">
-                      <b-form-input   v-model="row.price" @focus="onFocus(index)" @blur="onBlur(index)" class="table-input text-center"></b-form-input>
+                      <b-form-input type="number" v-model="row.price" @focus="onFocus(index)" @blur="onBlur(index)" class="table-input text-center"></b-form-input>
                     </td>
                     <td class="table-input-td disabled-td">
 <!--                      <b-form-input v-model="row.deliveries_cost" disabled class="table-input-disabled"></b-form-input>-->
                       <p class="pl-1 m-0">{{ row.deliveries_cost | format }}</p>
                     </td>
                     <td class="table-input-td-precent">
-                      <b-form-input v-model="row.rate" @focus="onFocus(index)" @blur="onBlur(index)" style="width: 80%" class="table-input form-control text-right float-left"></b-form-input>
+                      <b-form-input type="number" v-model="row.rate" @focus="onFocus(index)" @blur="onBlur(index)" style="width: 80%" class="table-input form-control text-right float-left"></b-form-input>
                       <span class="pt-1 float-right precent">%</span>
                     </td>
                     <td class="text-center table-input-td disabled-td">
@@ -172,7 +172,7 @@
                       <p class="pl-1 m-0">{{ row.coast }}</p>
                     </td>
                     <td class="table-input-td-precent">
-                      <b-form-input v-model="row.rate_nds" @focus="onFocus(index)" @blur="onBlur(index)" style="width: 80%" class="table-input form-control text-right float-left"></b-form-input>
+                      <b-form-input type="number" v-model="row.rate_nds" @focus="onFocus(index)" @blur="onBlur(index)" style="width: 80%" class="table-input form-control text-right float-left"></b-form-input>
                       <span class="pt-1 float-right precent">%</span>
                     </td>
                     <td class="text-center table-input-td disabled-td">
@@ -208,10 +208,10 @@
                       <td class="p-2">Руководитель</td>
                       <td class="p-2">
                         <b-input-group>
-                          <b-form-input class="invoice-form"  size="sm"></b-form-input>
+                          <b-form-input v-model="supervisor" class="invoice-form"  size="sm"></b-form-input>
                           <b-dropdown class="invoice-dropdown" size="sm" text="Из списка" slot="append">
-                            <b-dropdown-item size="sm">Жамшид Касымов</b-dropdown-item>
-                            <b-dropdown-item size="sm">Мирол Косимов</b-dropdown-item>
+                            <b-dropdown-item @click="choosePerson('supervisor','Жамшид Касымов')" size="sm">Жамшид Касымов</b-dropdown-item>
+                            <b-dropdown-item @click="choosePerson('supervisor','Мирол Косимов')" size="sm">Мирол Косимов</b-dropdown-item>
                           </b-dropdown>
                         </b-input-group>
                       </td>
@@ -220,10 +220,10 @@
                       <td class="p-2">Главный бухгалтер</td>
                       <td class="p-2">
                         <b-input-group>
-                          <b-form-input class="invoice-form"  size="sm"></b-form-input>
+                          <b-form-input v-model="mainCounter" class="invoice-form"  size="sm"></b-form-input>
                           <b-dropdown class="invoice-dropdown" size="sm" text="Из списка" slot="append">
-                            <b-dropdown-item>Жамшид Касымов</b-dropdown-item>
-                            <b-dropdown-item>Мирол Косимов</b-dropdown-item>
+                            <b-dropdown-item @click="choosePerson('mainCounter','Жамшид Касымов')">Жамшид Касымов</b-dropdown-item>
+                            <b-dropdown-item @click="choosePerson('mainCounter','Мирол Косимов')">Мирол Косимов</b-dropdown-item>
                           </b-dropdown>
                         </b-input-group>
                       </td>
@@ -232,10 +232,10 @@
                       <td class="p-2">Товар отпустил</td>
                       <td class="p-2">
                         <b-input-group>
-                          <b-form-input class="invoice-form" size="sm"></b-form-input>
+                          <b-form-input v-model="staffSender" class="invoice-form" size="sm"></b-form-input>
                           <b-dropdown class="invoice-dropdown" size="sm" text="Из списка" slot="append">
-                            <b-dropdown-item>Жамшид Касымов</b-dropdown-item>
-                            <b-dropdown-item>Мирол Косимов</b-dropdown-item>
+                            <b-dropdown-item @click="choosePerson('staffSender','Жамшид Касымов')">Жамшид Касымов</b-dropdown-item>
+                            <b-dropdown-item @click="choosePerson('staffSender','Мирол Косимов')">Мирол Косимов</b-dropdown-item>
                           </b-dropdown>
                         </b-input-group>
                       </td>
@@ -256,7 +256,7 @@
                       <td class="pt-2 pl-2 text-right">
                         <b-form-input style="max-width: 160px; margin-right: 20px" placeholder="Номер" class="float-left invoice-form"
                                       size="sm"></b-form-input>
-                        <b-form-input style="max-width: 105px;"  placeholder="Дата" class="float-left invoice-form" size="sm"></b-form-input>
+                        <b-form-input style="max-width: 105px;" type="date" placeholder="Дата" class="float-left invoice-form" size="sm"></b-form-input>
                       </td>
                     </tr>
                     </tbody>
@@ -274,6 +274,7 @@
   </div>
 </template>
 <script>
+    import 'vue-select/dist/vue-select.css';
   import {
       PlusSquareIcon
   } from 'vue-feather-icons'
@@ -284,10 +285,13 @@
       },
       data() {
         return {
-            value: { name: 'Zero organization 21314242'},
             options: [
-                { name: 'First organization 21314242'},
-                { name: 'Second organization 543523'}
+                {
+                    name: 'First organization 21314242',
+                },
+                {
+                    name: 'Second organization 543523'
+                }
             ],
             rows: [
                 {
@@ -304,12 +308,19 @@
                     overall: '',
                     isActive: false
                 }
-            ]
+            ],
+            supervisor: null,
+            mainCounter: null,
+            staffSender: null,
+            selected: null
         }
       },
       methods: {
           nameWithLang ({ name, language }) {
               return `${name} — [${language}]`
+          },
+          choosePerson(model, text) {
+            this[model] = text
           },
           onFocus(index) {
               this.rows[index].isActive = true
@@ -354,6 +365,9 @@
           format(value) {
               return value.toString().replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ');
           },
+      },
+      created() {
+          this.$store.commit('setWholeMenuInSidebar', true)
       }
   }
 </script>
@@ -544,8 +558,8 @@
 
   #invoice-table {
     .active {
-      border: 2px solid #67ff67;
-      border-top: 3px solid #67ff67;
+      /*border: 2px solid #67ff67;*/
+      /*border-top: 3px solid #67ff67;*/
     }
     .table-input-td {
       position: relative;
@@ -647,6 +661,13 @@
 
   .create-button {
     font-size: 11px;
+  }
+
+  .special-select {
+    .vs__dropdown-toggle {
+      background: #f6f6f6;
+      border: 1px solid #e6e6e6;
+    }
   }
 
 </style>

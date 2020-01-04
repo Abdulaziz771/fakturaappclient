@@ -4,13 +4,13 @@
       <div class="content-header border-bottom-tool">
           <div class="pl-3 d-sm-flex action-list d-none">
             <div class="tool-actions pt-3 cursor-pointer hover-effect-active">
-              <Edit2Icon v-b-tooltip.hover title="Удалить" /><span>Удалить</span>
+              <Edit2Icon v-b-tooltip.hover title="Удалить" /><span>Подписать</span>
             </div>
             <div class="tool-actions pt-3 cursor-pointer hover-effect-active">
-              <XIcon v-b-tooltip.hover title="Подписать"/><span>Подписать</span>
+              <XIcon v-b-tooltip.hover title="Подписать"/><span>Удалить</span>
             </div>
             <div >
-              <b-dropdown size="sm" text="Согласование">
+              <b-dropdown size="sm" class="agreement-dropdwon" text="Согласование">
                 <b-dropdown-item href="#">Отправить на согласование</b-dropdown-item>
                 <b-dropdown-item href="#">Отправить на подписание</b-dropdown-item>
               </b-dropdown>
@@ -22,12 +22,12 @@
           <h5 class="">Договор</h5>
         </div>
         <b-row>
-          <b-col  class="doc-iframe pr-0" md="8">
+          <b-col  class="doc-iframe pr-0" lg="7">
             <div class="document-content" style="height: 100%;">
               <embed style="border: 0;padding-bottom: 20px;" type="application/pdf"  allowfullscreen src="http://www.pdf995.com/samples/pdf.pdf#page=1&view=fitH&toolbar=0&scrollbar=0" width="100%" height="100%"/>
             </div>
           </b-col>
-          <b-col class="pl-0" md="4">
+          <b-col class="pl-0" lg="5">
             <b-container fluid>
               <div class="describe-doc p-0  ">
                 <h6 class="in-block-title">Описание</h6>
@@ -165,19 +165,18 @@
         </b-row>
         <b-row class="footer-modal">
           <b-col md="12" class="text-right">
-            <div class="closeModal"><p @click="modalOrg">Отправить</p></div>
-            <div class="canelMdoal"><p @click="modalOrg">Отмена</p></div>
+            <div class="canelMdoal"><p @click="modalOrg">Закрыть</p></div>
           </b-col>
         </b-row>
       </div>
     </b-modal>
     <b-modal  size="lg" ref="open-attached" hide-footer title="Прикрепление">
-      <div class="d-block">
+      <div class="d-block download-modal">
         <b-row>
           <b-col md="6">
             <b-input-group>
             <b-input-group-prepend>
-              <b-button size="sm" variant="light">Выбрать</b-button>
+              <b-button size="sm">Выбрать</b-button>
             </b-input-group-prepend>
             <b-form-input disabled type="text"></b-form-input>
             </b-input-group>
@@ -185,7 +184,7 @@
           <b-col md="6">
             <b-input-group>
               <b-input-group-prepend>
-                <b-button size="sm" variant="light">Загрузить</b-button>
+                <b-button size="sm">Загрузить</b-button>
               </b-input-group-prepend>
               <b-form-input list="my-list-id"></b-form-input>
               <datalist id="my-list-id">
@@ -210,8 +209,8 @@
               {{ data.item.type }}
             </template>
             <template class="text-center" style="width: 79px;" slot="action">
-              <DownloadCloudIcon class="mr-2 cursor-pointer"></DownloadCloudIcon>
-              <TrashIcon class="cursor-pointer"></TrashIcon>
+              <DownloadCloudIcon class="DownloadCloudIcon mr-2 cursor-pointer"></DownloadCloudIcon>
+              <TrashIcon class="TrashIcon cursor-pointer"></TrashIcon>
             </template>
           </b-table>
         </b-row>
@@ -273,7 +272,10 @@
         modalAtted() {
             this.$refs['open-attached'].toggle('#loadAtted')
         }
-    }
+    },
+      created() {
+          this.$store.commit('setWholeMenuInSidebar', true)
+      }
   }
 </script>
 <style scoped lang="scss">

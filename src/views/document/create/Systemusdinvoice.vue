@@ -274,7 +274,10 @@
 
 <script>
 export default {
-  name: 'SystemUsdInvoice'
+  name: 'SystemUsdInvoice',
+    created() {
+        this.$store.commit('setWholeMenuInSidebar', true)
+    }
 }
 </script>
 

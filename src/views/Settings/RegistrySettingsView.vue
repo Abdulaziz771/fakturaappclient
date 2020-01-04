@@ -107,6 +107,9 @@
                 this.showReestrSettings = value;
             }
         },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
+        }
     }
 </script>
 <style lang="scss">

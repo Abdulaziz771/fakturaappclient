@@ -209,7 +209,10 @@
 
 <script>
     export default {
-        name: 'SystemVatInvoice'
+        name: 'SystemVatInvoice',
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
+        }
     }
 </script>
 

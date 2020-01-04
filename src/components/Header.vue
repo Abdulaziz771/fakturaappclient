@@ -1,10 +1,10 @@
 <template>
-  <div :class="{ 'open' : $store.getters.isToggleMenuButtonInHeaderOpen && $store.getters.isToggleMenuButtonInHeaderShow }" id="header">
+  <div id="header" v-if="$store.getters.isnavigatorsVisivle" :class="{ 'header-without-sidbar' : !$store.getters.iswholeMenuToggleButtonSidebar}">
     <div class="header-nav row" :class="{ 'box-shadow-header' : !$store.getters.iswholeMenuToggleButtonSidebar}">
-      <div class="col-3 col-sm-7 col-lg-5">
-        <div class="float-left" style="width: 211px;">
+      <div class="col-3 col-sm-8 col-lg-6">
+        <div class="float-left header-logo">
           <router-link class="bg-none" :to="{name: 'home'}" >
-            <img src="../assets/newlogo.png" style="width:179px; padding:6px 15px 0 16px;" v-if="!$store.getters.isToggleMenuButtonInHeaderOpen">
+            <img src="../assets/newlogo.png" v-if="!$store.getters.isToggleMenuButtonInHeaderOpen">
           </router-link>
         </div>
         <div class="content-search" v-show="$store.getters.iswholeMenuToggleButtonSidebar">
@@ -18,7 +18,7 @@
           </b-input-group>
         </div>
       </div>
-      <div class="col-9 col-sm-5 col-lg-7 text-right">
+      <div class="col-9 col-sm-4 col-lg-6 text-right">
         <b-navbar toggleable="lg" type="dark" class="pt-0 float-right">
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
           <b-collapse id="nav-collapse" class="float-right" is-nav>
@@ -66,7 +66,7 @@
                 <b-dropdown-item id="list" @click="openOrgList">
                   Список организаций
                 </b-dropdown-item>
-                <b-dropdown-item href="#">Выход</b-dropdown-item>
+                <b-dropdown-item :to="{name: 'sign-in'}">Выход</b-dropdown-item>
               </b-nav-item-dropdown>
             </b-navbar-nav>
           </b-collapse>
@@ -144,7 +144,7 @@
         },
         methods: {
             offSecondSidebar() {
-                this.isSidebarOpen = !this.isSidebarOpen
+                this.isSidebarOpen = !this.isSidebarOpen;
                 eventBus.$emit('offSecondSidebar');
             },
             openOrgList() {
@@ -229,6 +229,12 @@
 
   .blue {
     color: #017df7;
+  }
+
+  .header-without-sidbar {
+    left: 0 !important;
+    right: 0 !important;
+    padding-right: 0 !important;
   }
 
   .ribbon {

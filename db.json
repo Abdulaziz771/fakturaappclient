@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "id": 99,
+      "title": "Abdulaziz text",
+      "author": "Some author text",
+      "body": "hello-guyss"
+    },
+    {
+      "id": 98,
+      "title": "Abdulaziz text",
+      "author": "Some author text",
+      "body": "hello-guyss"
+    },
+    {
+      "id": 122,
+      "title": "Abdulaziz text",
+      "author": "Some author text",
+      "body": "hello-guyss"
+    },
+    [
+      {
+        "id": 123,
+        "text": "hello"
+      },
+      {
+        "id": 124,
+        "text": "bye"
+      }
+    ],
+    {
+      "id": 124
+    },
+    {
+      "id": 125,
+      "text": "hello"
+    },
+    {
+      "id": 127,
+      "text": "hello"
+    },
+    {
+      "id": 202,
+      "name": "Lasst Test POST"
+    },
+    {
+      "id": 205,
+      "name": "Lasst Test POST"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

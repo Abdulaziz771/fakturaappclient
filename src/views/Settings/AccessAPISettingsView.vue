@@ -16,14 +16,14 @@
               <b-row style="transition: 1s" v-if="showMatchingSettings">
                 <b-col cols="12">
                   <div>
-                    <b-row class="dataOfuser mb-3">
+                    <b-row class="dataOfuser mb-3" v-for="api in apies">
                       <b-col  md="12" xl="3">
                         <b-form-group
                           label-cols-sm="3"
                           label="ID клиента:"
                           label-align-sm="right"
                         >
-                          <b-form-input disabled size="sm" v-model="dataAPI[0].clientId"></b-form-input>
+                          <b-form-input disabled size="sm" v-model="api.clientId"></b-form-input>
                         </b-form-group>
                       </b-col>
                       <b-col  md="12" xl="4">
@@ -32,7 +32,7 @@
                           label="Секрет клиента:"
                           label-align-sm="right"
                         >
-                          <b-form-input v-model="dataAPI[0].clientSecret" disabled size="sm"></b-form-input>
+                          <b-form-input v-model="api.clientSecret" disabled size="sm"></b-form-input>
                         </b-form-group>
                       </b-col>
                       <b-col md="12" xl="3">
@@ -42,82 +42,16 @@
                           label="Обратный URL:"
                           label-align-sm="right"
                         >
-                          <b-form-input v-model="dataAPI[0].callbackURL" size="sm"></b-form-input>
+                          <b-form-input v-model="api.callbackURL" size="sm"></b-form-input>
                         </b-form-group>
                       </b-col>
                       <b-col offset-md="10" md="2" offset-xl="0" xl="2">
-                        <b-button size="sm">Сгенерировать сейчас</b-button>
-                      </b-col>
-                    </b-row>
-                    <b-row class="dataOfuser mb-3">
-                      <b-col md="12" xl="3">
-                        <b-form-group
-                          label-cols-sm="3"
-                          label="ID клиента:"
-                          label-align-sm="right"
-                        >
-                          <b-form-input disabled size="sm" v-model="dataAPI[1].clientId"></b-form-input>
-                        </b-form-group>
-                      </b-col>
-                      <b-col md="12" xl="4">
-                        <b-form-group
-                          label-cols-sm="3"
-                          label="Секрет клиента:"
-                          label-align-sm="right"
-                        >
-                          <b-form-input v-model="dataAPI[1].clientSecret" disabled size="sm"></b-form-input>
-                        </b-form-group>
-                      </b-col>
-                      <b-col md="12" xl="3">
-                        <b-form-group
-                          label-cols-xl="4"
-                          label-cols-sm="3"
-                          label="Обратный URL:"
-                          label-align-sm="right"
-                        >
-                          <b-form-input v-model="dataAPI[1].callbackURL" size="sm"></b-form-input>
-                        </b-form-group>
-                      </b-col>
-                      <b-col offset-md="10" md="2" offset-xl="0" xl="2">
-                        <b-button size="sm">Сгенерировать сейчас</b-button>
-                      </b-col>
-                    </b-row>
-                    <b-row class="dataOfuser mb-3">
-                      <b-col md="12" xl="3">
-                        <b-form-group
-                          label-cols-sm="3"
-                          label="ID клиента:"
-                          label-align-sm="right"
-                        >
-                          <b-form-input disabled size="sm" v-model="dataAPI[2].clientId"></b-form-input>
-                        </b-form-group>
-                      </b-col>
-                      <b-col md="12" xl="4">
-                        <b-form-group
-                          label-cols-sm="3"
-                          label="Секрет клиента:"
-                          label-align-sm="right"
-                        >
-                          <b-form-input v-model="dataAPI[2].clientSecret" disabled size="sm"></b-form-input>
-                        </b-form-group>
-                      </b-col>
-                      <b-col md="12" xl="3">
-                        <b-form-group
-                          label-cols-xl="4"
-                          label-cols-md="3"
-                          label="Обратный URL:"
-                          label-align-sm="right"
-                        >
-                          <b-form-input v-model="dataAPI[2].callbackURL" size="sm"></b-form-input>
-                        </b-form-group>
-                      </b-col>
-                      <b-col 	offset-md="10" md="2" offset-xl="0" xl="2">
                         <b-button size="sm">Сгенерировать сейчас</b-button>
                       </b-col>
                     </b-row>
                     <b-row class="mb-3">
                       <b-col offset-sm="10" sm="2" offset-md="10" md="2">
-                        <b-button size="sm">Добавить</b-button>
+                        <b-button size="sm" @click="toggleModal">Добавить</b-button>
                       </b-col>
                     </b-row>
                   </div>
@@ -133,28 +67,11 @@
               <b-row v-else style="transition: 1s">
               <b-col>
                 <b-list-group>
-
-                  <b-list-group-item>
+                  <b-list-group-item v-for="api in apies">
                     <b-row>
-                      <b-col cols="12"><b>ID клиента:</b> {{ dataAPI[0].clientId }} </b-col>
-                      <b-col cols="12"><b>Секрет клиента:</b> {{ dataAPI[0].clientSecret }}</b-col>
-                      <b-col cols="12"><b>Обратный URL:</b> {{ dataAPI[0].callbackURL }} </b-col>
-                    </b-row>
-                  </b-list-group-item>
-
-                  <b-list-group-item>
-                    <b-row>
-                      <b-col cols="12"><b>ID клиента:</b> {{ dataAPI[1].clientId }} </b-col>
-                      <b-col cols="12"><b>Секрет клиента:</b> {{ dataAPI[1].clientSecret }}</b-col>
-                      <b-col cols="12"><b>Обратный URL:</b> {{ dataAPI[1].callbackURL }} </b-col>
-                    </b-row>
-                  </b-list-group-item>
-
-                  <b-list-group-item>
-                    <b-row>
-                      <b-col cols="12"><b>ID клиента:</b> {{ dataAPI[2].clientId }} </b-col>
-                      <b-col cols="12"><b>Секрет клиента:</b> {{ dataAPI[2].clientSecret }}</b-col>
-                      <b-col cols="12"><b>Обратный URL:</b> {{ dataAPI[2].callbackURL }} </b-col>
+                      <b-col cols="12"><b>ID клиента:</b> {{ api.clientId }} </b-col>
+                      <b-col cols="12"><b>Секрет клиента:</b> {{ api.clientSecret }}</b-col>
+                      <b-col cols="12"><b>Обратный URL:</b> {{ api.callbackURL }} </b-col>
                     </b-row>
                   </b-list-group-item>
                 </b-list-group>
@@ -165,6 +82,39 @@
         </b-container>
       </div>
     </div>
+    <b-modal  class="special-modal" size="lg" ref="chnage" hide-footer title="Добавить API">
+      <div class="d-block">
+        <b-row>
+          <b-col cols="12">
+            <b-form-group
+              label-cols-sm="3"
+              label="Client Id:"
+              label-align-sm="right"
+            >
+              <b-form-input size="sm" v-model="clientId"></b-form-input>
+            </b-form-group>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col cols="12">
+            <b-form-group
+              label-cols-sm="3"
+              label="Callback URL:"
+              label-align-sm="right"
+            >
+              <b-form-input size="sm" v-model="callBackUrl"></b-form-input>
+            </b-form-group>
+          </b-col>
+        </b-row>
+      </div>
+      <b-row class="footer-modal">
+        <b-col md="12" class="text-right">
+          <div class="closeModal" v-if="false"><p>Сохранить изменение</p></div>
+          <div class="closeModal" v-else @click="addRow"><p >Сохранить изменение</p></div>
+          <div class="canelMdoal"><p @click="toggleModal">Закрыть</p></div>
+        </b-col>
+      </b-row>
+    </b-modal>
   </div>
 </template>
 <script>
@@ -179,7 +129,9 @@
         data () {
             return {
                 showMatchingSettings: false,
-                dataAPI: [
+                clientId: null,
+                callBackUrl: null,
+                apies: [
                     { clientId: "FinboxOnlineService", clientSecret: "nhnFzFbXjTM4zW4N304FK1w6rZqueYK9eoadbJXPNcOgQY2bF62YsVw1B7kP", callbackURL: "https://finbox.uz/callback" },
                     { clientId: "NewTestClient1", clientSecret: "apDrVENtMXLMAzIs1x6dYZckediouCtfwfYeSKIlmuxR4n3QuhQM", callbackURL: "https://noname.com/callback" },
                     { clientId: "AkhmedovService", clientSecret: "apDrVENtashdJHkjHKSJDAzIs1x6dYZckediouCtfwfYeSKIlmuxR4n3QuhQM", callbackURL: "https://PrimaWeb.uz/callback" }
@@ -188,11 +140,21 @@
         },
         methods: {
             toggleModal() {
-                this.$refs['edit'].toggle('#toggle-btn');
+                this.$refs['chnage'].toggle('#toggle-btn');
             },
             onMatchingSettings(value) {
                 this.showMatchingSettings = value;
+            },
+            addRow() {
+                this.apies.push({
+                    clientId: this.clientId,
+                    clientSecret: 'nhnFzFbXjTM4zW4N304FK1w6rZqueYK9eoadbJXPNcOgQY2bF62YsVw1B7kP',
+                    callbackURL: this.callBackUrl
+                })
             }
+        },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
         }
     }
 </script>

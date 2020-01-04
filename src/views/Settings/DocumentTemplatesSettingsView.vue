@@ -52,6 +52,9 @@
                     { key: "action", label: "Действие" }
                 ]
             }
+        },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
         }
     }
 </script>

@@ -8,15 +8,6 @@
               <XIcon v-b-tooltip.hover title="Удалить"/>
               <span>Удалить</span>
             </div>
-<!--            <div class="doc-search" @click="isActiveSrch = !isActiveSrch" :class="{ activeDocSearch : isActiveSrch }">-->
-<!--              <label for="search" @click="isActiveSrch = !isActiveSrch">-->
-<!--                <SearchIcon></SearchIcon>-->
-<!--              </label>-->
-<!--              <b-input-group size="sm" class="">-->
-<!--                <b-form-input placeholder="Поиск" id="search"></b-form-input>-->
-<!--              </b-input-group>-->
-<!--              <span><XIcon></XIcon></span>-->
-<!--            </div>-->
           </b-col>
           <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end pr-2 padding-for-pages-with-table"
                  :class="bindClass3">
@@ -239,6 +230,9 @@
                 this.options.push(tag)
                 this.value.push(tag)
             }
+        },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
         }
     }
 </script>
@@ -345,55 +339,6 @@
       display: block !important;
     }
   }
-
-  /*.doc-search {*/
-  /*  position: relative;*/
-  /*  left: 495px;*/
-  /*  z-index: 99;*/
-  /*  transition: 0.1s;*/
-  /*  width: 487px;*/
-  /*  margin: 8px;*/
-  /*  display: flex;*/
-  /*  border-radius: 5px;*/
-  /*  flex-direction: unset;*/
-  /*  background: #f6f6f7;*/
-  /*  cursor: pointer;*/
-
-  /*  label {*/
-  /*    margin: 6px;*/
-  /*    margin-left: 11px;*/
-
-  /*    svg {*/
-  /*      color: #a5a5a5;*/
-  /*      width: 20px;*/
-  /*      cursor: pointer;*/
-  /*    }*/
-  /*  }*/
-
-  /*  span {*/
-  /*    display: none;*/
-  /*    margin: 6px;*/
-
-  /*    svg {*/
-  /*      color: #a5a5a5;*/
-  /*      width: 20px;*/
-  /*      cursor: pointer;*/
-  /*    }*/
-  /*  }*/
-
-  /*  .form-control {*/
-  /*    height: auto !important;*/
-  /*    background: transparent;*/
-  /*    border: none;*/
-
-  /*    &:focus {*/
-  /*      box-shadow: none !important;*/
-  /*      border: none;*/
-  /*      background: transparent;*/
-  /*    }*/
-  /*  }*/
-  /*}*/
-
   #collapse-1 {
     //filter forms
     .form-control, .custom-select, .multiselect__tags, .multiselect__input {

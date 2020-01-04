@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ 'open' : this.$store.getters.isvalueSecondSidebar}">
     <div class="content without-second-sidebar">
       <div class="content-body">
         <div class="content-header">
@@ -68,13 +68,9 @@
       }
     },
     created() {
-        this.$store.dispatch('hideToggleMenuButtonInHeader');
-        this.$store.dispatch('showsetWholeMenuInSidebar');
-        this.$store.dispatch('closeToggleMenuButtonInHeader');
-        this.$store.dispatch('hideMainPage');
-    },
-    beforeDestroy() {
-        this.$store.dispatch('showMainPage');
+        this.$store.commit('toggleAllNavigators', true);
+        this.$store.commit('toggleSecondSidebar', false);
+        this.$store.commit('setWholeMenuInSidebar', true);
     }
   }
 </script>

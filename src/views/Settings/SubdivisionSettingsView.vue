@@ -14,39 +14,23 @@
                 <b-col md="12" lg="6">
                  <div>
                    <ul class="main">
-                     <li class="main-list">
-                       <div class="main-list-content"><UsersIcon></UsersIcon>Бухгалтерия
-                         <TrashIcon class="float-right"></TrashIcon>
-                         <Edit3Icon id="toggle-btn" @click="toggleModal" class="float-right"></Edit3Icon></div>
-                       <ol class="child-elements">
-                         <li>
-                           <div><UserIcon></UserIcon>Михаил Дашкиевич
-                             <TrashIcon class="float-right"></TrashIcon>
-                             <Edit3Icon id="toggle-btn" @click="toggleModal" class="float-right"></Edit3Icon></div>
-                         </li>
-                         <li>
-                           <div><UserIcon></UserIcon>Григорий Миалдзе
-                             <TrashIcon class="float-right"></TrashIcon>
-                             <Edit3Icon id="toggle-btn" @click="toggleModal" class="float-right"></Edit3Icon></div>
-                         </li>
-                       </ol>
-                     </li>
-                     <li class="main-list"><div class="main-list-content">
-                       <UsersIcon></UsersIcon>Кол-центр
-                       <TrashIcon class="float-right"></TrashIcon>
-                       <Edit3Icon id="toggle-btn" @click="toggleModal" class="float-right"></Edit3Icon>
-
-                     </div>
-                     </li>
-                     <li class="main-list"><div class="main-list-content last-one">
-                       <UsersIcon></UsersIcon>Руководство
-                       <TrashIcon class="float-right"></TrashIcon>
-                       <Edit3Icon id="toggle-btn" @click="toggleModal" class="float-right"></Edit3Icon>
-                     </div>
+                     <li class="main-list" v-for="(subdivison, index) in subdivisons">
+                       <div class="main-list-content"><UsersIcon></UsersIcon>{{ subdivison.name }}
+                         <TrashIcon class="float-right" @click="deleteAction(index)"></TrashIcon>
+                         <Edit3Icon @click="toggleModal" class="float-right"></Edit3Icon></div>
+                       <div v-for="childelement in subdivison.childelements" v-show="subdivison.childelements">
+<!--                         <ol class="child-elements">-->
+<!--                           <li>-->
+<!--                             <div><UserIcon></UserIcon>{{ childelement.childName }}-->
+<!--                               <TrashIcon class="float-right" @click="deleteAction"></TrashIcon>-->
+<!--                               <Edit3Icon id="toggle-btn" @click="toggleModal" class="float-right"></Edit3Icon></div>-->
+<!--                           </li>-->
+<!--                         </ol>-->
+                       </div>
                      </li>
                    </ul>
                  </div>
-                  <b-button size="sm" class="float-right">Добавить</b-button>
+                  <b-button size="sm" class="float-right" @click="toggleModal">Добавить</b-button>
                 </b-col>
               </b-row>
             </div>
@@ -54,6 +38,17 @@
         </b-container>
       </div>
     </div>
+    <b-modal size="md" ref="delet" hide-footer title="Удаление">
+      <div class="d-block">
+        <h6 class="pb-4">Вы действительно хотите удалить?</h6>
+      </div>
+      <b-row class="footer-modal">
+        <b-col md="12" class="text-right">
+          <div class="closeDeletAction mr-2"><p @click="deleteSub">Удалить</p></div>
+          <div class="canelDeletAction"><p @click="deleteAction">Отмена</p></div>
+        </b-col>
+      </b-row>
+    </b-modal>
     <b-modal  class="special-modal" size="lg" ref="edit" hide-footer title="Редактирование подразделения">
       <div class="d-block">
         <b-row>
@@ -63,22 +58,17 @@
               label="Название:"
               label-align-sm="right"
             >
-              <b-form-input size="sm"></b-form-input>
+              <b-form-input size="sm" v-model="subdivisionName"></b-form-input>
             </b-form-group>
 
             <b-form-group
               label-cols-sm="3"
-              label="Область:"
+              label="Родительское подразделение:"
               label-align-sm="right"
             >
-              <select class="select-destrict form-control">
-                <option>Без родительского подразделения</option>
-                <option>Бухгалтерия</option>
-                <option>Руководства</option>
-                <option>Call center</option>
-                <option>Sub Accounting</option>
-                <option>Sub Account 2</option>
-              </select>
+              <b-form-select v-model="districtSelected" :options="subdivisons" text-field="name" size="sm" class="mt-3">
+
+              </b-form-select>
 
             </b-form-group>
 
@@ -103,7 +93,7 @@
               </b-form-checkbox>
             </b-form-group>
 
-            <div v-show="status == 'accepted'">
+            <div v-if="status == 'accepted'">
               <b-form-group
                 label-cols-sm="3"
                 label="Область:"
@@ -148,7 +138,8 @@
                 label="Индекс:"
                 label-align-sm="right"
               >
-                <b-form-input size="sm"></b-form-input>
+                <b-form-input size="sm" v-model="index" @blur="$v.index.$touch()"></b-form-input>
+                <span class="pt-2 text-danger" v-show="$v.index.$error">Индекс должен состоять из шести цифр</span>
               </b-form-group>
 
               <b-form-group
@@ -156,7 +147,8 @@
                 label="Городской телефон:"
                 label-align-sm="right"
               >
-                <b-form-input size="sm"></b-form-input>
+                <b-form-input size="sm" v-model="house_phone" @blur="$v.house_phone.$touch()"></b-form-input>
+                <span class="pt-2 text-danger" v-show="$v.house_phone.$error">Введен неправильный формат</span>
               </b-form-group>
 
               <b-form-group
@@ -164,7 +156,8 @@
                 label="Сотовый телефон:"
                 label-align-sm="right"
               >
-                <b-form-input size="sm"></b-form-input>
+                <b-form-input size="sm" v-model="$v.mobile_phone.$model" @blur="$v.mobile_phone.$touch()"></b-form-input>
+                <span class="pt-2 text-danger" v-show="$v.mobile_phone.$error">Введен неправильный формат</span>
               </b-form-group>
             </div>
 
@@ -173,14 +166,20 @@
       </div>
       <b-row class="footer-modal">
         <b-col md="12" class="text-right">
-          <div class="closeModal"><p @click="toggleModal">Сохранить изменение</p></div>
+          <div class="closeModal" v-if="($v.mobile_phone.$error || $v.house_phone.$error || $v.index.$error) && status == 'accepted'"><p >Сохранить изменение</p></div>
+          <div class="closeModal" v-else><p @click="addSubdivion(subdivisionName)">Сохранить изменение</p></div>
           <div class="canelMdoal"><p @click="toggleModal">Закрыть</p></div>
         </b-col>
       </b-row>
     </b-modal>
+
   </div>
 </template>
 <script>
+
+    import {  } from "vuelidate/lib/validators"
+    import { index, phoneWithout998 } from '../../js/custom-validators'
+
     import {
         UsersIcon,
         UserIcon,
@@ -198,14 +197,66 @@
         },
         data () {
             return {
-                status: 'not_accepted'
+                status: 'not_accepted',
+                index: null,
+                house_phone: null,
+                mobile_phone: null,
+                currentIndex: null,
+                subdivisionName: '',
+                districtSelected: null,
+                subdivisons: [
+                    {
+                        name: 'Бухгалтерия',
+                        parent: null,
+                        id: 1
+                    },
+                    {
+                        name: 'Кол-центр',
+                        parent: null,
+                        id: 2
+                    },
+                    {
+                        name: 'Руководство',
+                        parent: null,
+                        id: 3
+                    }
+                ],
+
             }
         },
         methods: {
             toggleModal() {
                 this.$refs['edit'].toggle('#toggle-btn')
+            },
+            deleteAction(index) {
+                this.$refs['delet'].toggle('#delet-btn');
+                this.currentIndex = index
+            },
+            deleteSub() {
+                this.$delete(this.subdivisons, this.currentIndex);
+                this.$refs['delet'].toggle('#delet-btn')
+            },
+            addSubdivion() {
+                this.$refs['edit'].toggle('#toggle-btn');
+                this.subdivisons.push(
+                    { name: this.subdivisionName }
+                )
             }
         },
+        validations: {
+            index: {
+                index
+            },
+            house_phone: {
+                phoneWithout998
+            },
+            mobile_phone: {
+                phoneWithout998
+            }
+        },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
+        }
     }
 </script>
 <style lang="scss">

@@ -5,6 +5,6 @@
 </template>
 <script>
   export default {
-    name: 'finance-router-view'
+    name: 'finance-router-view',
   }
 </script>

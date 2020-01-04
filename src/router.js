@@ -1,238 +1,238 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-Vue.use(Router)
+Vue.use(Router);
 
 const router = new Router({
   mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('./views/Home')
+      redirect: {name: 'auth'}
     },
     {
-      path: '/agree',
-      name: '',
-      component: () => import('./views/document/DocumentAgreeView'),
+      path: '/auth',
+      name: 'auth',
+      component: () => import('./layoutsView/Auth'),
+      redirect: {name: 'sign-in'},
       children: [
         {
-          path: '',
-          name: 'agree',
-          redirect: { name: "agreement-document-view" }
+          path: '/sign-in',
+          name: 'sign-in',
+          component: () => import('./registration/SignIn')
         },
         {
-          path: '/agree/agreement-document-view',
-          name: 'agreement-document-view',
-          component: () => import('./views/Agree/AgreementDocumentView')
+          path: '/registration',
+          name: 'registration',
+          component: () => import('./registration/Registration')
         },
         {
-          path: '/agree/agreement-done-document-view',
-          name: 'agreement-done-document-view',
-          component: () => import('./views/Agree/AgreementDoneDocumentView')
+          path: '/recoveryUsername',
+          name: 'forgot-username',
+          component: () => import('./registration/forgotUserName')
+        },
+        {
+          path: '/recoveryPassword',
+          name: 'forgot-password',
+          component: () => import('./registration/forgotPassword')
         },
       ]
     },
     {
-      path: '/document-verify',
-      name: '',
-      component: () => import('./views/document/VerifyDocumentView'),
+      path: '/main',
+      name: 'main',
+      component: () => import('./layoutsView/Main'),
+      redirect: {name: 'home'},
       children: [
         {
           path: '',
-          name: 'document-verify',
-          redirect: { name: "document-router-verify" }
+          name: 'home',
+          component: () => import('./views/Home')
+        },
+        {
+          path: '/document',
+          name: 'document',
+          component: () => import('./views/document/DocumentRouterView'),
+          children: [
+            {
+              path: 'inbox',
+              name: 'document-inbox',
+              component: () => import('./views/document/InboxDocumentsView')
+            },
+            {
+              path: 'outbox',
+              name: 'document-outbox',
+              component: () => import('./views/document/OutboxDocumentsView')
+            },
+            {
+              path: 'draft',
+              name: 'document-draft',
+              component: () => import('./views/document/DraftDocumentsView')
+            },
+            {
+              path: 'import',
+              name: 'document-import',
+              component: () => import('./views/document/ImportDocumentView')
+            },
+            {
+              path: 'details',
+              name: 'document-details',
+              component: () => import('./views/document/DocumentDetailsView')
+            },
+            {
+              path: 'create',
+              name: 'create',
+              component: () => import('./views/document/create/CreateDocumentRouterView'),
+              children: [
+                {
+                  path: 'index',
+                  name: 'document-create-index',
+                  component: () => import('./views/document/create/CreateDocumentView')
+                },
+                {
+                  path: 'system-invoice',
+                  name: 'document-create-system-invoice',
+                  component: () => import('./views/document/create/SystemInvoiceView')
+                },
+                {
+                  path: 'system-usd-invoice',
+                  name: 'document-create-system-usd-invoice',
+                  component: () => import('./views/document/create/Systemusdinvoice')
+                },
+                {
+                  path: 'system-vat-invoice',
+                  name: 'document-create-system-vat-invoice',
+                  component: () => import('./views/document/create/SystemVatInvoice')
+                },
+                {
+                  path: 'system-vat-invoice',
+                  name: 'document-create-system-tax-invoice',
+                  component: () => import('./views/document/create/SystemTaxInvoice')
+                }
+              ]
+            }
+          ]
+        },
+        {
+          path: '/agree',
+          name: 'agree',
+          component: () => import('./views/document/DocumentAgreeView'),
+          children: [
+            {
+              path: '/agree/agreement-document-view',
+              name: 'agreement-document-view',
+              component: () => import('./views/Agree/AgreementDocumentView')
+            },
+            {
+              path: '/agree/agreement-done-document-view',
+              name: 'agreement-done-document-view',
+              component: () => import('./views/Agree/AgreementDoneDocumentView')
+            },
+          ]
         },
         {
           path: '/document-verify',
-          name: 'document-router-verify',
-          component: () => import('./views/document/create/VerifyDocumentRouter.vue')
-        }
-      ]
-    },
-    {
-      path: '/document',
-      name: 'document',
-      component: () => import('./views/document/DocumentRouterView'),
-      children: [
-        {
-          path: '',
-          name: 'document-home',
-          redirect: {name: 'document-create-home'}
-        },
-        {
-          path: 'inbox',
-          name: 'document-inbox',
-          component: () => import('./views/document/InboxDocumentsView')
-        },
-        {
-          path: 'outbox',
-          name: 'document-outbox',
-          component: () => import('./views/document/OutboxDocumentsView')
-        },
-        {
-          path: 'draft',
-          name: 'document-draft',
-          component: () => import('./views/document/DraftDocumentsView')
-        },
-        {
-          path: 'import',
-          name: 'document-import',
-          component: () => import('./views/document/ImportDocumentView')
-        },
-        {
-          path: 'details',
-          name: 'document-details',
-          component: () => import('./views/document/DocumentDetailsView')
-        },
-        {
-          path: 'create',
-          name: 'create',
-          component: () => import('./views/document/create/CreateDocumentRouterView'),
+          name: 'document-verify',
+          component: () => import('./views/document/VerifyDocumentView'),
           children: [
             {
-              path: '',
-              name: 'document-create-home',
-              redirect: {name: 'document-create-index'}
+              path: '/document-verify',
+              name: 'document-router-verify',
+              component: () => import('./views/document/create/VerifyDocumentRouter.vue')
+            }
+          ]
+        },
+        {
+          path: "/settings",
+          name: "settings",
+          component: () => import('./views/document/create/DocumentSettingsVew'),
+          children: [
+            {
+              path: 'personal-area',
+              name: 'settings-personal-area',
+              component: () => import('./views/Settings/PersonalAreaSettingsView')
             },
             {
-              path: 'index',
-              name: 'document-create-index',
-              component: () => import('./views/document/create/CreateDocumentView')
+              path: 'props-personal-area',
+              name: 'props-area-settings-view',
+              component: () => import('./views/Settings/PropsAreaSettingsView')
             },
             {
-              path: 'system-invoice',
-              name: 'document-create-system-invoice',
-              component: () => import('./views/document/create/SystemInvoiceView')
+              path: 'subdivision',
+              name: 'subdivision-settings-view',
+              component: () => import('./views/Settings/SubdivisionSettingsView')
             },
             {
-              path: 'system-usd-invoice',
-              name: 'document-create-system-usd-invoice',
-              component: () => import('./views/document/create/Systemusdinvoice')
+              path: 'label',
+              name: 'label-settings-view',
+              component: () => import('./views/Settings/LabelSettingsView')
             },
             {
-              path: 'system-vat-invoice',
-              name: 'document-create-system-vat-invoice',
-              component: () => import('./views/document/create/SystemVatInvoice')
+              path: 'employee',
+              name: 'employee-settings-view',
+              component: () => import('./views/Settings/EmployeeSettingsView')
             },
             {
-              path: 'system-vat-invoice',
-              name: 'document-create-system-tax-invoice',
-              component: () => import('./views/document/create/SystemTaxInvoice')
+              path: 'reestr',
+              name: 'reestr-settings-view',
+              component: () => import('./views/Settings/RegistrySettingsView')
+            },
+            {
+              path: 'matching',
+              name: 'matching-settings-view',
+              component: () => import('./views/Settings/MatchingSettingsView')
+            },
+            {
+              path: 'roles',
+              name: 'roles-settings-view',
+              component: () => import('./views/Settings/RolesSettingsView')
+            },
+            {
+              path: 'document-templates',
+              name: 'document-templates-settings-view',
+              component: () => import('./views/Settings/DocumentTemplatesSettingsView')
+            },
+            {
+              path: 'access-api',
+              name: 'access-api-settings-view',
+              component: () => import('./views/Settings/AccessAPISettingsView')
+            },
+          ]
+
+        },
+        {
+          path: '/counter-parties',
+          name: 'counter-parties',
+          component: () => import('./views/counterparties/Counterparties'),
+          children: [
+            {
+              path: 'counter-parties',
+              name: 'counter-parties-view',
+              component: () => import('./views/counterparties/CounterPartiesView')
+            },
+          ]
+        },
+        {
+          path: '/finance',
+          name: 'finance',
+          component: () => import('./views/finance/FinanceRouterView'),
+          children: [
+            {
+              path: 'deposit',
+              name: 'finance-deposit',
+              component: () => import('./views/finance/Deposit')
+            },
+            {
+              path: 'finance-information',
+              name: 'finance-information',
+              component: () => import('./views/finance/FinanceInformation')
             }
           ]
         }
       ]
-    },
-    {
-      path: "/settings",
-      name: "",
-      component: () => import('./views/document/create/DocumentSettingsVew'),
-      children: [
-        {
-          path: '',
-          name: 'settings',
-          redirect: {name: 'settings-personal-area'}
-        },
-        {
-          path: '/settings/personal-area',
-          name: 'settings-personal-area',
-          component: () => import('./views/Settings/PersonalAreaSettingsView')
-        },
-        {
-          path: '/settings/props-personal-area',
-          name: 'props-area-settings-view',
-          component: () => import('./views/Settings/PropsAreaSettingsView')
-        },
-        {
-          path: '/settings/subdivision',
-          name: 'subdivision-settings-view',
-          component: () => import('./views/Settings/SubdivisionSettingsView')
-        },
-        {
-          path: '/settings/label',
-          name: 'label-settings-view',
-          component: () => import('./views/Settings/LabelSettingsView')
-        },
-        {
-          path: '/settings/employee',
-          name: 'employee-settings-view',
-          component: () => import('./views/Settings/EmployeeSettingsView')
-        },
-        {
-          path: '/settings/reestr',
-          name: 'reestr-settings-view',
-          component: () => import('./views/Settings/RegistrySettingsView')
-        },
-        {
-          path: '/settings/matching',
-          name: 'matching-settings-view',
-          component: () => import('./views/Settings/MatchingSettingsView')
-        },
-        {
-          path: '/settings/roles',
-          name: 'roles-settings-view',
-          component: () => import('./views/Settings/RolesSettingsView')
-        },
-        {
-          path: '/settings/document-templates',
-          name: 'document-templates-settings-view',
-          component: () => import('./views/Settings/DocumentTemplatesSettingsView')
-        },
-        {
-          path: '/settings/access-api',
-          name: 'access-api-settings-view',
-          component: () => import('./views/Settings/AccessAPISettingsView')
-        },
-      ]
-
-    },
-    {
-      path: '/counter-parties',
-      name: '',
-      component: () => import('./views/counterparties/Counterparties'),
-      children: [
-        {
-          path: '',
-          name: 'counter-parties',
-          redirect: { name: "counter-parties-view" }
-        },
-        {
-          path: '/counter-parties',
-          name: 'counter-parties-view',
-          component: () => import('./views/counterparties/CounterPartiesView')
-        },
-      ]
-    },
-    {
-      path: '/finance',
-      name: '',
-      component: () => import('./views/finance/FinanceRouterView'),
-      children: [
-        {
-          path: '',
-          name: 'finance-home',
-          redirect: {name: 'finance-index'}
-        },
-        {
-          path: 'index',
-          name: 'finance-index',
-          component: () => import('./views/finance/Index')
-        },
-        {
-          path: 'deposit',
-          name: 'finance-deposit',
-          component: () => import('./views/finance/Deposit')
-        },
-        {
-          path: 'finance-information',
-          name: 'finance-information',
-          component: () => import('./views/finance/FinanceInformation')
-        }
-      ]
     }
   ]
-})
+});
 
 /*router.beforeEach((to, from, next) => {
   const isPublic = to.matched.some(record => record.meta.public)

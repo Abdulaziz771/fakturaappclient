@@ -222,6 +222,11 @@
                       </div>
                     </b-card-text>
                   </b-tab>
+                  <b-tab title="TEST">
+                    <b-card-text>
+                      <H1>ASDASDASD</H1>
+                    </b-card-text>
+                  </b-tab>
                 </b-tabs>
               </b-card>
             </b-col>
@@ -306,11 +311,7 @@
             BookOpenIcon
         },
         created() {
-            this.$store.dispatch('hidesetWholeMenuInSidebar');
-            this.$store.dispatch('hideToggleMenuButtonInHeader');
-            this.$store.dispatch('closeToggleMenuButtonInHeader');
-        },
-        beforeDestroy() {
+            this.$store.commit('setWholeMenuInSidebar', false);
         }
     }
 </script>
@@ -327,7 +328,7 @@
   .deposit-tab-block {
     .deposit-toggle {
       width: 254px !important;
-      height: 620px;
+      height: 58vh;
       .nav-pills {
         .nav-link.active {
           color: black;

@@ -326,11 +326,9 @@
             SlidersIcon,
             DatabaseIcon
         },
-        created() {
-            this.$store.dispatch('hidesetWholeMenuInSidebar');
-            this.$store.dispatch('hideToggleMenuButtonInHeader');
-            this.$store.dispatch('closeToggleMenuButtonInHeader');
-        }
+      created() {
+          this.$store.commit('setWholeMenuInSidebar', false);
+      },
     }
 </script>
 

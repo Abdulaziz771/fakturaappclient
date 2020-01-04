@@ -51,7 +51,7 @@
                     label-align-sm="right"
                     label-for="first_name"
                   >
-                    <b-form-input id="first_name" v-model="form.middle_name"></b-form-input>
+                    <b-form-input id="first_name" v-model="form.first_name"></b-form-input>
                   </b-form-group>
 
                   <b-form-group
@@ -71,7 +71,7 @@
                     label-align-sm="right"
                     label-for="inn"
                   >
-                    <b-form-input id="inn" v-model="form.inn"></b-form-input>
+                    <b-form-input id="inn" v-model="form.inn" disabled></b-form-input>
                   </b-form-group>
 
                   <div class="mt-3 d-flex flex-row-reverse">
@@ -149,24 +149,28 @@
                     label-for="mail_address"
                     class="w-50 pb-3 input-group-email "
                   >
-                    <b-form-input class="email-addres" id="mail_address" type="email" v-model="form.mail_address"></b-form-input>
+                    <b-form-input class="email-addres" id="mail_address" type="email" v-model.trim.lazy="$v.form.mail_address.$model"></b-form-input>
                     <b-input-group-append >
-                      <b-button size="sm" class="email-addres" variant="secondary">Подтвердить</b-button>
+                      <b-button size="sm" class="phone-number" variant="secondary" v-if="$v.form.mail_address.$error" disabled >Подтвердить</b-button>
+                      <b-button size="sm" class="phone-number" variant="secondary" @click="deleteAction" v-else>Подтвердить</b-button>
                     </b-input-group-append>
                   </b-input-group>
+                  <span v-show="$v.form.mail_address.$error" class="text-danger">Введен неправельный формат</span>
 
                   <b-input-group
                     label-cols-sm="1"
                     label="Сотовый телефон:"
                     label-align-sm="right"
                     label-for="phone_number"
-                    class="w-50 input-group-phone"
+                    class="w-50 pt-3 pb-3 input-group-phone"
                   >
-                    <b-form-input class="phone-number" id="phone_number" type="email" v-model="form.phone_number"></b-form-input>
+                    <b-form-input class="phone-number" id="phone_number" type="email" v-model.trim.lazy="$v.form.phone_number.$model"></b-form-input>
                     <b-input-group-append>
-                      <b-button size="sm" class="phone-number" variant="secondary">Подтвердить</b-button>
+                      <b-button size="sm" class="phone-number" variant="secondary" v-if="$v.form.phone_number.$error" disabled >Подтвердить</b-button>
+                      <b-button size="sm" class="phone-number" variant="secondary" v-else>Подтвердить</b-button>
                     </b-input-group-append>
                   </b-input-group>
+                  <span v-show="$v.form.phone_number.$error" class="text-danger">Введен неправельный формат</span>
 
                   <div class="mt-3 d-flex flex-row-reverse">
                     <b-button size="sm" variant="outline-success" @click="onClickNotificationSettings(false)" >Сохранить</b-button>
@@ -200,10 +204,23 @@
         </b-container>
       </div>
     </div>
+    <b-modal size="md" ref="delet" hide-footer title="Удаление">
+      <div class="d-block">
+        <h6 class="pb-4">Вы действительно хотите подтвердить почты?</h6>
+      </div>
+      <b-row class="footer-modal">
+        <b-col md="12" class="text-right">
+          <div class="closeDeletAction mr-2"><p @click="deleteAction">Подтвердить</p></div>
+          <div class="canelDeletAction"><p @click="deleteAction">Отмена</p></div>
+        </b-col>
+      </b-row>
+    </b-modal>
   </div>
 </template>
 <script>
-  import {
+    import { email } from "vuelidate/lib/validators"
+    import { phoneWithout998 } from '../../js/custom-validators'
+    import {
     EditIcon,
     DeleteIcon,
   } from 'vue-feather-icons'
@@ -224,15 +241,15 @@
           first_name: 'Иван',
           middle_name: 'Иванович',
           inn: '457896123',
-            notifications: 'Выключено',
-            mail_address: 'Testorganization@gmail.com',
-            phone_number: '+998998342345'
+          notifications: 'Выключено',
+          mail_address: 'Testorganization@gmail.com',
+          phone_number: '998998342345'
         }
       }
     },
     methods: {
       onChangeUploadAvatar () {
-        const file = this.$refs.imageUpload.files[0]
+        const file = this.$refs.imageUpload.files[0];
         this.imgUrl = URL.createObjectURL(file)
       },
       onClickDeleteAvatar () {
@@ -244,9 +261,25 @@
       onClickCancelPersonalData () {
         this.showEditingPersonalData = false
       },
-        onClickNotificationSettings(value) {
-            this.showNotificationSettings = value
-        },
+      onClickNotificationSettings(value) {
+          this.showNotificationSettings = value
+      },
+      deleteAction() {
+          this.$refs['delet'].toggle('#delet-btn')
+      }
+    },
+    validations: {
+        form: {
+            mail_address: {
+                email
+            },
+            phone_number: {
+                phoneWithout998
+            }
+        }
+    },
+    created() {
+        this.$store.commit('setWholeMenuInSidebar', true)
     }
   }
 </script>
@@ -332,5 +365,10 @@
       outline: 0;
       box-shadow: 0 0 0 0.2rem rgba(51, 111, 153, 0.25) !important;
     }
+  }
+
+  .email-addres, .phone-number {
+    font-size: 13px;
+    padding: 3px 7px;
   }
 </style>

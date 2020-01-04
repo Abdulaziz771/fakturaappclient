@@ -5,7 +5,7 @@
         <b-row class="m-0">
           <b-col sm="6" md="6" xl="8" class="d-sm-flex action-list d-none" :class="bindClass2">
             <div class="tool-actions pt-3" :class="bindClass">
-              <Edit2Icon v-b-tooltip.hover title="Подписать" /><span>Подписать</span>
+              <Edit2Icon v-b-tooltip.hover  title="Подписать" @click="" /><span>Подписать</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
               <XIcon v-b-tooltip.hover title="Удалить"/><span>Удалить</span>
@@ -25,7 +25,7 @@
               <span class="page-counter">
                 <span>
                   <span>1</span>–<span>20</span>
-                </span> из <span>21</span>
+                </span> из <span>{{ this.documents.length }}</span>
               </span>
             </div>
             <div class="counter-tool cursor-pointer toggle-page-left rounded-circle mr-2">
@@ -35,7 +35,7 @@
               <ChevronRightIcon class=""/>
             </div>
             <div class="counter-tool cursor-pointer filter-view" :class="{ fltrBtonAct : isActiveFltr }" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>
-              <SlidersIcon class=""/>
+              <SlidersIcon/>
             </div>
           </b-col>
         </b-row>
@@ -44,11 +44,11 @@
             <b-row>
               <b-col md="6">
                 <div class="input-group input-group-sm mb-3">
-                  <span class="filter-form" for="Counterparty">Контрагент</span>
-                  <select class="custom-select custom-select-ftr left-form" id="Counterparty" placeholder="Введите инн или название"></select>
+                  <span class="filter-form">Контрагент</span>
+                  <v-select class="w-75" v-model="selectedSelect" :options="innOptions" label="inn"> </v-select>
                 </div>
                 <div class="input-group input-group-sm mb-3">
-                  <label class="filter-form" >Создан</label>
+                  <label class="filter-form">Создан</label>
                   <div class="input-group input-group-sm left-form">
                     <div class="input-group-prepend">
                       <label class="input-group-text">с</label>
@@ -80,8 +80,8 @@
                 </div>
               </b-col>
               <b-col md="6">
-                <label  class="multi-select-label" for="selectDoc">Тип документа</label>
-                <multiselect class="multi-select" id="selectDoc" v-model="value" tag-placeholder="Add this as new tag"
+                <label  class="multi-select-label" >Тип документа</label>
+                <multiselect class="multi-select"  v-model="value" tag-placeholder="Add this as new tag"
                              label="name" track-by="code" :options="options" :multiple="true" :taggable="true"
                              @tag="addTag">
                 </multiselect>
@@ -95,7 +95,10 @@
                 </div>
                 <div class="input-group input-group-sm mb-3">
                   <label class="filter-form" >Метка</label>
-                  <b-form-input class="left-form" type="text" id="inputId1"></b-form-input>
+                  <multiselect class="multi-select" v-model="tags" tag-placeholder="Add this as new tag"
+                               label="name" track-by="code" :options="tagOptions" :multiple="true" :taggable="true"
+                               @tag="addTag">
+                  </multiselect>
                 </div>
               </b-col>
             </b-row>
@@ -212,31 +215,18 @@
                 </b-table>
               </b-tab>
           </b-tabs>
-<!--          <RightSidebar :active="activeRightSidebar"/>-->
         </div>
       </div>
     </div>
-
-    <vue-slideout-panel
-      closeHtml='<span>X</span>'
-      v-model="slideOut.extraShow"
-      @close="slideOut.extraShow=false"
-      :count=2
-      :styles="slideOut.styles"
-    >
-      slideOut
-      <div slot="extra">extrashow Text</div>
-    </vue-slideout-panel>
+    <RightSidebar/>
   </div>
 </template>
 <script>
+    import 'vue-select/dist/vue-select.css';
     import Documents from '../../TestData/Documents'
-    import Multiselect from 'vue-multiselect'
-    import RightSidebar from '../../components/sidebar/RightSidebar'
-    import VueSlideOutPanel from 'vue-slideout-panel'
-
+    import RightSidebar from './../../components/sidebar/RightSidebar'
     import {
-        ArrowLeftCircleIcon,
+          ArrowLeftCircleIcon,
         ChevronRightIcon,
         ChevronLeftIcon,
         EyeIcon,
@@ -273,33 +263,16 @@
             SlidersIcon,
             LayersIcon,
             FileIcon,
-            'vue-slideout-panel': VueSlideOutPanel
+            RightSidebar
         },
         data () {
             return {
-                slideOut: {
-                    styles: [
-                        {},
-                        {
-                            backgroundColor: '#ffc29c',
-                            paddingTop: '2rem',
-                            paddingBottom: '1rem'
-                        },
-                        {},
-                        {
-                            color: '#555',
-                            textDecoration: 'none',
-                            top: '8px',
-                            right: '1rem'
-                        }
-                    ],
-                    isActiveSlideOut: false,
-                    extraShow: false,
-                },
                 selected: [],
+                selectedSelect: null,
                 fixed: true,
                 selectAll: false,
                 activeRightSidebar: false,
+                tags: null,
                 isActiveFltr: false,
                 fields: [
                     { key: 'selected', label: '' },
@@ -322,6 +295,15 @@
                     { name: 'Акт на штрафные санкции', code: '8' },
                     { name: 'Доверенность', code: '9' },
                     { name: 'Справка', code: '10' }
+                ],
+                tagOptions:[
+                    { name: 'Организация', code: '1' },
+                    { name: 'Фирма', code: '2' }
+                ],
+                innOptions: [
+                    { inn: 98778961, name: 'OOO Pepsi-Cola' },
+                    { inn: 98778961, name: 'OOO Coca-Cola' },
+                    { inn: 98778961, name: 'OOO Fanta-Cola' }
                 ]
             }
         },
@@ -350,8 +332,16 @@
             }
         },
         methods: {
+            showPanel() {
+                debugger
+                const panel = this.$showPanel({
+                    component: "RightSidebar",
+                    cssClass: "panel-1",
+                    props: {}
+                });
+            },
             select () {
-                this.selected = []
+                this.selected = [];
                 if (!this.selectAll) {
                     for (let i in this.documents) {
                         this.selected.push(this.documents[i].uniqueId)
@@ -362,10 +352,13 @@
                 const tag = {
                     name: newTag,
                     code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-                }
-                this.options.push(tag)
+                };
+                this.options.push(tag);
                 this.value.push(tag)
-            }
+            },
+        },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
         }
     }
 </script>
@@ -377,6 +370,10 @@
     border-right:1px solid rgba(0, 0, 0, 0.125);
     border-left: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0;
+  }
+
+  .panel-1 {
+    background: black;
   }
 </style>
 <style lang="scss">
@@ -471,6 +468,13 @@
   table td:nth-child(6), table thead th:nth-child(6)  {
     width: 162px;
     text-align: center;
+  }
+
+  .input-group {
+    .vs__dropdown-toggle {
+      border: 1px solid #e8e8e8 ;
+      background: white;
+    }
   }
 </style>
 

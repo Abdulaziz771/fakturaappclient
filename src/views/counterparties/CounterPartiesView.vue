@@ -115,17 +115,12 @@
                 this.$refs['my-modal'].show()
             },
             toggleModal() {
-                // We pass the ID of the button that we want to return focus to
-                // when the modal has hidden
                 this.$refs['my-modal'].toggle('#toggle-btn')
             }
         },
-        // created() {
-        //     this.$store.dispatch("showsetWholeMenuInSidebar");
-        //     this.$store.dispatch("openToggleMenuButtonInHeader");
-        //
-        //     this.$store.dispatch('hideToggleMenuButtonInHeader');
-        // }
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
+        }
     }
 </script>
 

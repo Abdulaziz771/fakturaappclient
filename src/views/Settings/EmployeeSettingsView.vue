@@ -34,6 +34,11 @@
                   </div>
                 </b-col>
               </b-row>
+              <b-row class="mb-3">
+                <b-col  md="12" class="text-right">
+                  <b-button size="sm" @click="toggleModal">Добавить</b-button>
+                </b-col>
+              </b-row>
             </div>
           </div>
         </b-container>
@@ -188,8 +193,10 @@
             deleteAction() {
                 this.$refs['delet'].toggle('#delet-btn')
             }
-
         },
+        created() {
+            this.$store.commit('setWholeMenuInSidebar', true)
+        }
     }
 </script>
 <style lang="scss">

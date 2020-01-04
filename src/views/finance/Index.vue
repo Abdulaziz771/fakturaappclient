@@ -86,6 +86,9 @@
         AlertCircleIcon,
         ChevronRightIcon,
         ChevronLeftIcon
+    },
+    created() {
+        this.$store.commit('setWholeMenuInSidebar', true)
     }
   }
 </script>
