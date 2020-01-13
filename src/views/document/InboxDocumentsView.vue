@@ -5,27 +5,33 @@
         <b-row class="m-0">
           <b-col sm="6" md="6" xl="8" class="d-sm-flex action-list d-none" :class="bindClass2">
             <div class="tool-actions pt-3" :class="bindClass">
-              <Edit2Icon v-b-tooltip.hover  title="Подписать" @click="" /><span>Подписать</span>
+              <Edit2Icon v-b-tooltip.hover title="Подписать" @click=""/>
+              <span>Подписать</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
-              <XIcon v-b-tooltip.hover title="Удалить"/><span>Удалить</span>
+              <XIcon v-b-tooltip.hover title="Удалить"/>
+              <span>Удалить</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
-              <UsersIcon v-b-tooltip.hover title="Согласовать"/><span>Согласовать</span>
+              <UsersIcon v-b-tooltip.hover title="Согласовать"/>
+              <span>Согласовать</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
-              <StarIcon v-b-tooltip.hover title="Отметить"/><span>Отметить</span>
+              <StarIcon v-b-tooltip.hover title="Отметить"/>
+              <span>Отметить</span>
             </div>
             <div class="tool-actions pt-3" :class="bindClass">
-              <PrinterIcon v-b-tooltip.hover title="Печать"/><span>Печать</span>
+              <PrinterIcon v-b-tooltip.hover title="Печать"/>
+              <span>Печать</span>
             </div>
           </b-col>
-          <b-col cols="12" sm="6" md="6" xl="4" class="d-sm-flex action-list justify-content-end padding-for-pages-with-table" :class="bindClass3">
+          <b-col cols="12" sm="6" md="6" xl="4"
+                 class="d-sm-flex action-list justify-content-end padding-for-pages-with-table" :class="bindClass3">
             <div class="counter-tool counter cursor-pointer">
               <span class="page-counter">
                 <span>
                   <span>1</span>–<span>20</span>
-                </span> из <span>{{ this.documents.length }}</span>
+                </span> из <span>{{ this.inboxDocuments.length }}</span>
               </span>
             </div>
             <div class="counter-tool cursor-pointer toggle-page-left rounded-circle mr-2">
@@ -34,18 +40,19 @@
             <div class="counter-tool cursor-pointer toggle-page-right rounded-circle">
               <ChevronRightIcon class=""/>
             </div>
-            <div class="counter-tool cursor-pointer filter-view" :class="{ fltrBtonAct : isActiveFltr }" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>
+            <div class="counter-tool cursor-pointer filter-view" :class="{ fltrBtonAct : isActiveFltr }"
+                 @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>
               <SlidersIcon/>
             </div>
           </b-col>
         </b-row>
-        <b-collapse  id="collapse-1">
+        <b-collapse id="collapse-1">
           <b-card style="z-index: 9;">
             <b-row>
               <b-col md="6">
                 <div class="input-group input-group-sm mb-3">
                   <span class="filter-form">Контрагент</span>
-                  <v-select class="w-75" v-model="selectedSelect" :options="innOptions" label="inn"> </v-select>
+                  <v-select class="w-75" v-model="selectedSelect" :options="innOptions" label="inn"></v-select>
                 </div>
                 <div class="input-group input-group-sm mb-3">
                   <label class="filter-form">Создан</label>
@@ -80,21 +87,21 @@
                 </div>
               </b-col>
               <b-col md="6">
-                <label  class="multi-select-label" >Тип документа</label>
-                <multiselect class="multi-select"  v-model="value" tag-placeholder="Add this as new tag"
+                <label class="multi-select-label">Тип документа</label>
+                <multiselect class="multi-select" v-model="value" tag-placeholder="Add this as new tag"
                              label="name" track-by="code" :options="options" :multiple="true" :taggable="true"
                              @tag="addTag">
                 </multiselect>
                 <div class="input-group input-group-sm pt-2 mb-3">
-                  <label class="filter-form" >Реестр</label>
+                  <label class="filter-form">Реестр</label>
                   <b-form-input class="left-form" type="text" id="inputId3"></b-form-input>
                 </div>
                 <div class="input-group input-group-sm mb-3">
-                  <label class="filter-form" >Наименование документа</label>
+                  <label class="filter-form">Наименование документа</label>
                   <b-form-input class="left-form" type="text" id="inputId2"></b-form-input>
                 </div>
                 <div class="input-group input-group-sm mb-3">
-                  <label class="filter-form" >Метка</label>
+                  <label class="filter-form">Метка</label>
                   <multiselect class="multi-select" v-model="tags" tag-placeholder="Add this as new tag"
                                label="name" track-by="code" :options="tagOptions" :multiple="true" :taggable="true"
                                @tag="addTag">
@@ -105,8 +112,12 @@
             <b-row>
               <b-col cols="12">
                 <div class="text-right">
-                  <b-button size="sm" variant="outline-secondary" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Отменить</b-button>
-                  <b-button size="sm" variant="outline-success" class="ml-2" @click="isActiveFltr = !isActiveFltr" v-b-toggle.collapse-1>Применить</b-button>
+                  <b-button size="sm" variant="outline-secondary" @click="isActiveFltr = !isActiveFltr"
+                            v-b-toggle.collapse-1>Отменить
+                  </b-button>
+                  <b-button size="sm" variant="outline-success" class="ml-2" @click="isActiveFltr = !isActiveFltr"
+                            v-b-toggle.collapse-1>Применить
+                  </b-button>
                 </div>
               </b-col>
             </b-row>
@@ -116,119 +127,138 @@
       <div class="table-body">
         <div>
           <b-tabs justified class="document-tabs table-responsive inbox-document-tabs">
-              <b-tab title-item-class="h5 " active>
-                <template slot="title"><FileIcon class="tab-icon"></FileIcon>Счет фактуры</template>
-                <b-table hover :fields="fields" :items="documents"
-                         class="documentTable inboxDocTable" >
-                  <template slot="HEAD_selected" slot-scope="data">
-                    <b-form-checkbox v-model="selectAll" @change="select" />
-                  </template>
-                  <template slot="selected" slot-scope="data">
-                    <b-form-checkbox :value="data.item.uniqueId" v-model="selected" />
-                  </template>
-                  <template slot="title" slot-scope="data">
-                    <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
-                      <b>{{ data.item.title }} <br>
-                        <small><ClockIcon class="clockIcon"></ClockIcon> Создан: {{ data.item.createdDateTime }}</small></b>
-                    </router-link>
-                  </template>
-                  <template slot="totalPrice" slot-scope="data">
-                    {{ data.item.totalPrice }}
-                  </template>
-                  <template slot="company_name" slot-scope="data">
-                    {{ data.item.contractor.name }} <br>
-                    <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }}</small>
-                  </template>
-                  <template slot="updatedDateTime" slot-scope="data">
-                    {{ data.item.updatedDateTime }}
-                  </template>
-                  <template slot="status" slot-scope="data">
-                  <span class="badge  badge-success">
+            <b-tab title-item-class="h5 " active>
+              <template slot="title">
+                <FileIcon class="tab-icon"></FileIcon>
+                Счет фактуры
+              </template>
+              <b-table hover :fields="fields" :items="inboxDocuments"
+                       class="documentTable inboxDocTable">
+                <template slot="HEAD_selected" slot-scope="data">
+                  <b-form-checkbox v-model="selectAll" @change="select"/>
+                </template>
+                <template slot="selected" slot-scope="data">
+                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+                </template>
+                <template slot="title" slot-scope="data">
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
+                    <b>{{ data.item.title }} <br>
+                      <small>
+                        <ClockIcon class="clockIcon"></ClockIcon>
+                        Создан: {{ data.item.createdDateTime }}</small></b>
+                  </router-link>
+                </template>
+                <template slot="totalPrice" slot-scope="data">
+                  {{ data.item.totalPrice }}
+                </template>
+                <template slot="company_name" slot-scope="data">
+                  {{ data.item.contractor.name }} <br>
+                  <small>
+                    <AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon>
+                    ИНН: {{ data.item.contractor.inn }}</small>
+                </template>
+                <template slot="updatedDateTime" slot-scope="data">
+                  {{ data.item.updatedDateTime }}
+                </template>
+                <template slot="status" slot-scope="data">
+                  <span class="badge badge-success" >
                     {{ data.item.status }}
                   </span>
-                  </template>
-                </b-table>
-              </b-tab>
-              <b-tab title-item-class="h5">
-                <template slot="title"><LayersIcon class="tab-icon"></LayersIcon>Договоры</template>
-                <b-table hover :fields="fields" :items="documents" class="scrollTable inboxDocTable">
+                </template>
+              </b-table>
+            </b-tab>
+            <b-tab title-item-class="h5">
+              <template slot="title">
+                <LayersIcon class="tab-icon"></LayersIcon>
+                Договоры
+              </template>
+              <b-table hover :fields="fields" :items="inboxDocuments" class="scrollTable inboxDocTable">
 
-                  <template slot="HEAD_selected" slot-scope="data">
-                    <b-form-checkbox v-model="selectAll" @change="select"/>
-                  </template>
-                  <template slot="selected" slot-scope="data">
-                    <b-form-checkbox :value="data.item.uniqueId" v-model="selected" />
-                  </template>
-                  <template slot="title" slot-scope="data">
-                    <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
-                      <b>{{ data.item.title }} <br>
-                        <small><ClockIcon class="clockIcon"></ClockIcon>Создан: {{ data.item.createdDateTime }} </small></b>
-                    </router-link>
-                  </template>
-                  <template slot="totalPrice" slot-scope="data">
-                    {{ data.item.totalPrice }}
-                  </template>
-                  <template slot="company_name" slot-scope="data">
-                    {{ data.item.contractor.name }} <br>
-                    <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }} </small>
-                  </template>
-                  <template slot="updatedDateTime" slot-scope="data">
-                    {{ data.item.updatedDateTime }}
-                  </template>
-                  <template slot="status" slot-scope="data">
+                <template slot="HEAD_selected" slot-scope="data">
+                  <b-form-checkbox v-model="selectAll" @change="select"/>
+                </template>
+                <template slot="selected" slot-scope="data">
+                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+                </template>
+                <template slot="title" slot-scope="data">
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details'}">
+                    <b>{{ data.item.title }} <br>
+                      <small>
+                        <ClockIcon class="clockIcon"></ClockIcon>
+                        Создан: {{ data.item.createdDateTime }} </small></b>
+                  </router-link>
+                </template>
+                <template slot="totalPrice" slot-scope="data">
+                  {{ data.item.totalPrice }}
+                </template>
+                <template slot="company_name" slot-scope="data">
+                  {{ data.item.contractor.name }} <br>
+                  <small>
+                    <AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon>
+                    ИНН: {{ data.item.contractor.inn }} </small>
+                </template>
+                <template slot="updatedDateTime" slot-scope="data">
+                  {{ data.item.updatedDateTime }}
+                </template>
+                <template slot="status" slot-scope="data">
                   <span class="badge badge-warning">
                     {{ data.item.status }}
                   </span>
-                  </template>
-                </b-table>
-              </b-tab>
-              <b-tab title-item-class="h5">
-                <template slot="title" ><FileTextIcon class="tab-icon"></FileTextIcon>Акты</template>
-                <b-table hover :fields="fields" :items="documents" class="scrollTable inboxDocTable">
-                  <template slot="HEAD_selected" slot-scope="data" >
-                    <b-form-checkbox v-model="selectAll" @change="select" />
-                  </template>
-                  <template slot="selected" slot-scope="data" class="checkbox-table">
-                    <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
-                  </template>
-                  <template slot="title" slot-scope="data">
-                    <router-link class="router-link table-router-link" :to="{name: 'document-details', }">
-                      <b>{{ data.item.title }} <br>
-                        <small><ClockIcon class="clockIcon"></ClockIcon> Создан: {{ data.item.createdDateTime }}</small></b>
-                    </router-link>
-                  </template>
-                  <template slot="totalPrice" slot-scope="data">
-                    {{ data.item.totalPrice }}
-                  </template>
-                  <template slot="company_name" slot-scope="data">
-                    {{ data.item.contractor.name }}<br>
-                    <small><AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon> ИНН: {{ data.item.contractor.inn }}</small>
-                  </template>
-                  <template slot="updatedDateTime" slot-scope="data">
-                    {{ data.item.updatedDateTime }}
-                  </template>
-                  <template slot="status" slot-scope="data">
+                </template>
+              </b-table>
+            </b-tab>
+            <b-tab title-item-class="h5">
+              <template slot="title">
+                <FileTextIcon class="tab-icon"></FileTextIcon>
+                Акты
+              </template>
+              <b-table hover :fields="fields" :items="inboxDocuments" class="scrollTable inboxDocTable">
+                <template slot="HEAD_selected" slot-scope="data">
+                  <b-form-checkbox v-model="selectAll" @change="select"/>
+                </template>
+                <template slot="selected" slot-scope="data" class="checkbox-table">
+                  <b-form-checkbox :value="data.item.uniqueId" v-model="selected"/>
+                </template>
+                <template slot="title" slot-scope="data">
+                  <router-link class="router-link table-router-link" :to="{name: 'document-details', }">
+                    <b>{{ data.item.title }} <br>
+                      <small>
+                        <ClockIcon class="clockIcon"></ClockIcon>
+                        Создан: {{ data.item.createdDateTime }}</small></b>
+                  </router-link>
+                </template>
+                <template slot="totalPrice" slot-scope="data">
+                  {{ data.item.totalPrice }}
+                </template>
+                <template slot="company_name" slot-scope="data">
+                  {{ data.item.contractor.name }}<br>
+                  <small>
+                    <AlertCircleIcon class="alertCircleIcon"></AlertCircleIcon>
+                    ИНН: {{ data.item.contractor.inn }}</small>
+                </template>
+                <template slot="updatedDateTime" slot-scope="data">
+                  {{ data.item.updatedDateTime }}
+                </template>
+                <template slot="status" slot-scope="data">
                   <span class="badge badge-info">
                     <i class="fab fa-accessible-icon"></i>{{ data.item.status }}
                   </span>
-                  </template>
-                </b-table>
-              </b-tab>
+                </template>
+              </b-table>
+            </b-tab>
           </b-tabs>
         </div>
       </div>
     </div>
-    <RightSidebar/>
   </div>
 </template>
 <script>
     import 'vue-select/dist/vue-select.css';
-    import Documents from '../../TestData/Documents'
-    import RightSidebar from './../../components/sidebar/RightSidebar';
+    // import Documents from '../../TestData/Documents'
     import DocumentInboxService from "../../services/document/document.inbox.service";
 
     import {
-          ArrowLeftCircleIcon,
+        ArrowLeftCircleIcon,
         ChevronRightIcon,
         ChevronLeftIcon,
         EyeIcon,
@@ -265,9 +295,8 @@
             SlidersIcon,
             LayersIcon,
             FileIcon,
-            RightSidebar
         },
-        data () {
+        data() {
             return {
                 selected: [],
                 selectedSelect: null,
@@ -277,75 +306,72 @@
                 tags: null,
                 isActiveFltr: false,
                 fields: [
-                    { key: 'selected', label: '' },
-                    { key: 'title', label: 'Наименование документа' },
-                    { key: 'totalPrice', label: 'Общая сумма' },
-                    { key: 'company_name', label: 'Контрагент' },
-                    { key: 'updatedDateTime', label: 'Обновлен' },
-                    { key: 'status', label: 'Статус' },
+                    {key: 'selected', label: ''},
+                    {key: 'title', label: 'Наименование документа'},
+                    {key: 'totalPrice', label: 'Общая сумма'},
+                    {key: 'company_name', label: 'Контрагент'},
+                    {key: 'updatedDateTime', label: 'Обновлен'},
+                    {key: 'status', label: 'Статус'},
                 ],
-                documents: Documents,
+                inboxDocuments: [],
                 value: [],
                 options: [
-                    { name: 'Договор', code: '1' },
-                    { name: 'Счёт-фактура', code: '2' },
-                    { name: 'Оферта', code: '3' },
-                    { name: 'Отчёт по транзакциям', code: '4' },
-                    { name: 'Акт и счёт фактура', code: '5' },
-                    { name: 'Счет на оплату', code: '6' },
-                    { name: 'Материальный отчет', code: '7' },
-                    { name: 'Акт на штрафные санкции', code: '8' },
-                    { name: 'Доверенность', code: '9' },
-                    { name: 'Справка', code: '10' }
+                    {name: 'Договор', code: '1'},
+                    {name: 'Счёт-фактура', code: '2'},
+                    {name: 'Оферта', code: '3'},
+                    {name: 'Отчёт по транзакциям', code: '4'},
+                    {name: 'Акт и счёт фактура', code: '5'},
+                    {name: 'Счет на оплату', code: '6'},
+                    {name: 'Материальный отчет', code: '7'},
+                    {name: 'Акт на штрафные санкции', code: '8'},
+                    {name: 'Доверенность', code: '9'},
+                    {name: 'Справка', code: '10'}
                 ],
-                tagOptions:[
-                    { name: 'Организация', code: '1' },
-                    { name: 'Фирма', code: '2' }
+                tagOptions: [
+                    {name: 'Организация', code: '1'},
+                    {name: 'Фирма', code: '2'}
                 ],
                 innOptions: [
-                    { inn: 98778961, name: 'OOO Pepsi-Cola' },
-                    { inn: 98778961, name: 'OOO Coca-Cola' },
-                    { inn: 98778961, name: 'OOO Fanta-Cola' }
+                    {inn: 98778961, name: 'OOO Pepsi-Cola'},
+                    {inn: 98778961, name: 'OOO Coca-Cola'},
+                    {inn: 98778961, name: 'OOO Fanta-Cola'}
                 ]
             }
         },
         computed: {
-          bindClass() {
-              if (this.selected.length > 0) {
-                  return 'cursor-pointer hover-effect-active';
-
-              } else if (this.selected.length == 0) {
-                  return 'text-disabled cursor-default'
-              }
-          },
-          bindClass2() {
-              if (this.selected.length > 0) {
-                  return 'd-flex'
-              } else if (this.selected.length == 0) {
-                  return 'd-none'
-              }
-          },
+            bindClass() {
+                if (this.selected.length > 0) {
+                    return 'cursor-pointer hover-effect-active';
+                } else if (this.selected.length == 0) {
+                    return 'text-disabled cursor-default'
+                }
+            },
+            bindClass2() {
+                if (this.selected.length > 0) {
+                    return 'd-flex'
+                } else if (this.selected.length == 0) {
+                    return 'd-none'
+                }
+            },
             bindClass3() {
-              if (this.selected.length > 0) {
-                  return 'd-none'
-              } else if (this.selected.length == 0) {
-                  return 'd-flex'
-              }
+                if (this.selected.length > 0) {
+                    return 'd-none'
+                } else if (this.selected.length == 0) {
+                    return 'd-flex'
+                }
             }
         },
         methods: {
-          getAllInboxDocuments(){
-            DocumentInboxService.getAll();
-          },
-            showPanel() {
-                debugger
-                const panel = this.$showPanel({
-                    component: "RightSidebar",
-                    cssClass: "panel-1",
-                    props: {}
-                });
+            getAllInboxDocuments() {
+                DocumentInboxService.GetDocumentStatuses().then((response) => {
+                    console.log(response.data)
+                    //this.inboxDocuments = response.data
+                })
+                DocumentInboxService.getAllInboxDocuments().then((response) => {
+                    this.inboxDocuments = response.data
+                })
             },
-            select () {
+            select() {
                 this.selected = [];
                 if (!this.selectAll) {
                     for (let i in this.documents) {
@@ -353,7 +379,7 @@
                     }
                 }
             },
-            addTag (newTag) {
+            addTag(newTag) {
                 const tag = {
                     name: newTag,
                     code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
@@ -363,7 +389,7 @@
             },
         },
         created() {
-          this.getAllInboxDocuments();
+            this.getAllInboxDocuments();
             this.$store.commit('setWholeMenuInSidebar', true)
         }
     }
@@ -373,7 +399,7 @@
     background: #f7f9fd !important;
     border-top: none;
     border-bottom: 0;
-    border-right:1px solid rgba(0, 0, 0, 0.125);
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
     border-left: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0;
   }
@@ -384,7 +410,7 @@
 </style>
 <style lang="scss">
   .page:hover {
-    background:rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
   }
 
   .counter {
@@ -400,9 +426,10 @@
     margin-right: 8px;
   }
 
-  .inboxDocTable thead th:nth-child(1)  {
+  .inboxDocTable thead th:nth-child(1) {
     width: 37px;
     padding-left: 15px;
+
     div {
       border: none !important;
     }
@@ -453,7 +480,7 @@
 
   #collapse-1 {
     //filter forms
-    .form-control, .custom-select, .multiselect__tags, .multiselect__input{
+    .form-control, .custom-select, .multiselect__tags, .multiselect__input {
       background: white;
       border-radius: 4px !important;
     }
@@ -471,14 +498,14 @@
     }
   }
 
-  table td:nth-child(6), table thead th:nth-child(6)  {
+  table td:nth-child(6), table thead th:nth-child(6) {
     width: 162px;
     text-align: center;
   }
 
   .input-group {
     .vs__dropdown-toggle {
-      border: 1px solid #e8e8e8 ;
+      border: 1px solid #e8e8e8;
       background: white;
     }
   }

@@ -1,0 +1,72 @@
+[
+  {
+    "description": "Недоступен",
+    "id": 20,
+    "code": "None"
+  },
+  {
+    "description": "Ожидается ответ контрагента",
+    "id": 21,
+    "code": "AwaitContractor"
+  },
+  {
+    "description": "Требуется подпись",
+    "id": 22,
+    "code": "AwaitAction"
+  },
+  {
+    "description": "Отклонен контрагентом",
+    "id": 23,
+    "code": "Rejected"
+  },
+  {
+    "description": "Опубликован",
+    "id": 24,
+    "code": "Archived"
+  },
+  {
+    "description": "На согласовании",
+    "id": 25,
+    "code": "AwaitAgreement"
+  },
+  {
+    "description": "На подписании",
+    "id": 26,
+    "code": "AwaitSign"
+  },
+  {
+    "description": "Удален",
+    "id": 27,
+    "code": "Deleted"
+  },
+  {
+    "description": "Запрошен на аннулирование",
+    "id": 31,
+    "code": "ArchiveCancelRequested"
+  },
+  {
+    "description": "На рассмотрении аннулирования",
+    "id": 32,
+    "code": "AwaitCancelArchiveRequest"
+  },
+  {
+    "description": "Аннулирование  отменено",
+    "id": 33,
+    "code": "RejectArchiveCancelRequest"
+  },
+  {
+    "description": "Аннулирован",
+    "id": 34,
+    "code": "ArchiveCanceled"
+  },
+  {
+    "description": "Соглашение согласен",
+    "id": 41,
+    "code": "AgreementAgreed"
+  },
+  {
+    "description": "Соглашение не согласен",
+    "id": 42,
+    "code": "AgreementReject"
+  }
+]

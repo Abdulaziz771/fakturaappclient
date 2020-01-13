@@ -7,38 +7,6 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      redirect: {name: 'auth'}
-    },
-    {
-      path: '/auth',
-      name: 'auth',
-      component: () => import('./layoutsView/Auth'),
-      redirect: {name: 'sign-in'},
-      children: [
-        {
-          path: '/sign-in',
-          name: 'sign-in',
-          component: () => import('./registration/SignIn')
-        },
-        {
-          path: '/registration',
-          name: 'registration',
-          component: () => import('./registration/Registration')
-        },
-        {
-          path: '/recoveryUsername',
-          name: 'forgot-username',
-          component: () => import('./registration/forgotUserName')
-        },
-        {
-          path: '/recoveryPassword',
-          name: 'forgot-password',
-          component: () => import('./registration/forgotPassword')
-        },
-      ]
-    },
-    {
       path: '/mains',
       name: 'mains',
       component: () => import('./layoutsView/Main'),
@@ -229,6 +197,38 @@ const router = new Router({
             }
           ]
         }
+      ]
+    },
+    {
+      path: '/',
+      redirect: {name: 'mains'}
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: () => import('./layoutsView/Auth'),
+      redirect: {name: 'sign-in'},
+      children: [
+        {
+          path: '/sign-in',
+          name: 'sign-in',
+          component: () => import('./registration/SignIn')
+        },
+        {
+          path: '/registration',
+          name: 'registration',
+          component: () => import('./registration/Registration')
+        },
+        {
+          path: '/recoveryUsername',
+          name: 'forgot-username',
+          component: () => import('./registration/forgotUserName')
+        },
+        {
+          path: '/recoveryPassword',
+          name: 'forgot-password',
+          component: () => import('./registration/forgotPassword')
+        },
       ]
     }
   ]
