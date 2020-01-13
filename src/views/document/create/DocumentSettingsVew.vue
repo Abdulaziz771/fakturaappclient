@@ -24,23 +24,12 @@ export default {
         XCircleIcon
     },
     methods: {
-        // updateStoreSidebarValue() {
-        //     if (this.isSidebarOpen)
-        //         this.$store.dispatch("openToggleMenuButtonInHeader");
-        //     else{
-        //         //this.$store.dispatch("closeToggleMenuButtonInHeader")
-        //     }
-        // },
         onToggleSidebarByHeaderButton() {
             this.isSidebarOpen = !this.isSidebarOpen;
             // this.updateStoreSidebarValue()
         }
     },
     created() {
-        // this.$store.dispatch("showToggleMenuButtonInHeader");
-        // this.updateStoreSidebarValue();
-        //
-        // this.$store.dispatch("openToggleMenuButtonInHeader");
         eventBus.$on("offSecondSidebar", this.onToggleSidebarByHeaderButton)
         this.$store.commit('setWholeMenuInSidebar', true)
     },

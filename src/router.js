@@ -39,8 +39,8 @@ const router = new Router({
       ]
     },
     {
-      path: '/main',
-      name: 'main',
+      path: '/mains',
+      name: 'mains',
       component: () => import('./layoutsView/Main'),
       redirect: {name: 'home'},
       children: [

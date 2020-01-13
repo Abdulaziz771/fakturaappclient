@@ -224,7 +224,9 @@
 <script>
     import 'vue-select/dist/vue-select.css';
     import Documents from '../../TestData/Documents'
-    import RightSidebar from './../../components/sidebar/RightSidebar'
+    import RightSidebar from './../../components/sidebar/RightSidebar';
+    import DocumentInboxService from "../../services/document/document.inbox.service";
+
     import {
           ArrowLeftCircleIcon,
         ChevronRightIcon,
@@ -332,6 +334,9 @@
             }
         },
         methods: {
+          getAllInboxDocuments(){
+            DocumentInboxService.getAll();
+          },
             showPanel() {
                 debugger
                 const panel = this.$showPanel({
@@ -358,6 +363,7 @@
             },
         },
         created() {
+          this.getAllInboxDocuments();
             this.$store.commit('setWholeMenuInSidebar', true)
         }
     }

@@ -11,7 +11,7 @@
     import sidebarComponent from '../components/sidebar/Sidebar'
 
     export default {
-        name: 'main',
+        name: 'mains',
         components: {
             headerComponent,
             sidebarComponent

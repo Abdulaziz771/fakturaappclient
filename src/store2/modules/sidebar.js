@@ -1,12 +1,33 @@
+import axios from 'axios'
+
 export default {
   state: {
     wholeMenuToggleButtonSidebar: true,
     secondMenuValue: false,
     currentSidebar: null,
-    allNavigators: true
+    allNavigators: true,
+    //posts: []
+  },
+
+  actions: {
+    //   getPosts({commit}, limit = 3) {
+    //    axios.get('https://jsonplaceholder.typicode.com/posts?_limit=' + limit)
+    //      .then(response => {
+    //        const post = response.data;
+    //        commit('updatePosts', post)
+    //      })
+    // }
   },
 
   getters: {
+    //filternNewPosts(state) {
+    //  return state.posts.filter(post => {
+    //    return post.title && post.body
+    //  })
+    //},
+    //postsCount(state, getters) {
+    //  return getters.filternNewPosts.length
+    //},
     iswholeMenuToggleButtonSidebar(state) {
       return state.wholeMenuToggleButtonSidebar
     },
@@ -22,6 +43,12 @@ export default {
   },
 
   mutations: {
+    //updatePosts(state, posts) {
+    //  state.posts = posts
+    //},
+    //createPost(state, newPost) {
+    //  state.posts.unshift(newPost)
+    //},
     setWholeMenuInSidebar(state, value) {
       state.wholeMenuToggleButtonSidebar = value;
     },

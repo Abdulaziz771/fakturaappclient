@@ -13,10 +13,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueProgressBar from 'vue-progressbar';
 
 import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate);
-
 import VueSlideoutPanel from 'vue-slideout-panel';
-Vue.use(VueSlideoutPanel);
+
+Vue.use(Vuelidate, VueSlideoutPanel);
 
 Vue.component('v-select', vSelect);
 
