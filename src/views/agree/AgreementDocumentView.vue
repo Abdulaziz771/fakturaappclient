@@ -135,27 +135,13 @@
               </template>
             </b-table>
           </div>
-<!--          <RightSidebar :active="activeRightSidebar"/>-->
         </div>
       </div>
     </div>
-
-    <vue-slideout-panel
-      closeHtml='<span>X</span>'
-      v-model="slideOut.extraShow"
-      @close="slideOut.extraShow=false"
-      :count=2
-      :styles="slideOut.styles"
-    >
-      slideOut
-      <div slot="extra">extrashow Text</div>
-    </vue-slideout-panel>
   </div>
 </template>
 <script>
-    import Documents from '../../TestData/Documents'
-    import VueSlideOutPanel from 'vue-slideout-panel'
-
+    import Documents from '../../testData/Documents'
     import {
         ArrowLeftCircleIcon,
         ChevronRightIcon,
@@ -198,25 +184,6 @@
         },
         data () {
             return {
-                slideOut: {
-                    styles: [
-                        {},
-                        {
-                            backgroundColor: '#ffc29c',
-                            paddingTop: '2rem',
-                            paddingBottom: '1rem'
-                        },
-                        {},
-                        {
-                            color: '#555',
-                            textDecoration: 'none',
-                            top: '8px',
-                            right: '1rem'
-                        }
-                    ],
-                    isActiveSlideOut: false,
-                    extraShow: false,
-                },
                 selected: [],
                 fixed: true,
                 selectAll: false,

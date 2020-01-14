@@ -74,7 +74,7 @@
 </template>
 
 <script>
-    import Counterpartiestable from '../../TestData/Counterpartiestable'
+    import Counterpartiestable from '../../testData/Counterpartiestable'
     import {
         Trash2Icon,
         SendIcon,

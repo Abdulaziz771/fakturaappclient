@@ -16,21 +16,21 @@
 </template>
 
 <script>
-  import {
-      XCircleIcon
-  } from 'vue-feather-icons'
-  export default {
-      name: 'cuonter-parties-sidebar',
-      components: {
-          XCircleIcon
-      },
-      methods: {
-          toggle() {
-              this.$store.commit('toggleSidebar');
-          }
-      },
-      created() {
-          this.$store.commit('toggleSecondSidebar', true)
-      }
-  }
+import {
+    XCircleIcon
+} from 'vue-feather-icons'
+export default {
+    name: 'cuonter-parties-sidebar',
+    components: {
+        XCircleIcon
+    },
+    methods: {
+        toggle() {
+            this.$store.commit('toggleSidebar');
+        }
+    },
+    created() {
+        this.$store.commit('toggleSecondSidebar', true)
+    }
+}
 </script>

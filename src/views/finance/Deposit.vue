@@ -265,8 +265,8 @@
 </template>
 
 <script>
-    import InfoAboutPaymentsData from '../../TestData/InfoAboutPaymentsData'
-    import ReplenishmentAccountTable from '../../TestData/Replenishmentaccounttable'
+    import InfoAboutPaymentsData from '../../testData/InfoAboutPaymentsData'
+    import ReplenishmentAccountTable from '../../testData/Replenishmentaccounttable'
     import eventBus from '../../eventBus';
     import {
         CreditCardIcon,

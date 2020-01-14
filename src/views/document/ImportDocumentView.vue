@@ -87,7 +87,7 @@
   </div>
 </template>
 <script>
-    import Documents from '../../TestData/ImportDocs'
+    import Documents from '../../testData/ImportDocs'
     import Multiselect from 'vue-multiselect'
     import RightSidebar from '../../components/sidebar/RightSidebar'
     import VueSlideOutPanel from 'vue-slideout-panel'

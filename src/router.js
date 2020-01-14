@@ -89,12 +89,12 @@ const router = new Router({
             {
               path: '/agree/agreement-document-view',
               name: 'agreement-document-view',
-              component: () => import('./views/Agree/AgreementDocumentView')
+              component: () => import('./views/agree/AgreementDocumentView')
             },
             {
               path: '/agree/agreement-done-document-view',
               name: 'agreement-done-document-view',
-              component: () => import('./views/Agree/AgreementDoneDocumentView')
+              component: () => import('./views/agree/AgreementDoneDocumentView')
             },
           ]
         },
@@ -118,52 +118,52 @@ const router = new Router({
             {
               path: 'personal-area',
               name: 'settings-personal-area',
-              component: () => import('./views/Settings/PersonalAreaSettingsView')
+              component: () => import('./views/settings/PersonalAreaSettingsView')
             },
             {
               path: 'props-personal-area',
               name: 'props-area-settings-view',
-              component: () => import('./views/Settings/PropsAreaSettingsView')
+              component: () => import('./views/settings/PropsAreaSettingsView')
             },
             {
               path: 'subdivision',
               name: 'subdivision-settings-view',
-              component: () => import('./views/Settings/SubdivisionSettingsView')
+              component: () => import('./views/settings/SubdivisionSettingsView')
             },
             {
               path: 'label',
               name: 'label-settings-view',
-              component: () => import('./views/Settings/LabelSettingsView')
+              component: () => import('./views/settings/LabelSettingsView')
             },
             {
               path: 'employee',
               name: 'employee-settings-view',
-              component: () => import('./views/Settings/EmployeeSettingsView')
+              component: () => import('./views/settings/EmployeeSettingsView')
             },
             {
               path: 'reestr',
               name: 'reestr-settings-view',
-              component: () => import('./views/Settings/RegistrySettingsView')
+              component: () => import('./views/settings/RegistrySettingsView')
             },
             {
               path: 'matching',
               name: 'matching-settings-view',
-              component: () => import('./views/Settings/MatchingSettingsView')
+              component: () => import('./views/settings/MatchingSettingsView')
             },
             {
               path: 'roles',
               name: 'roles-settings-view',
-              component: () => import('./views/Settings/RolesSettingsView')
+              component: () => import('./views/settings/RolesSettingsView')
             },
             {
               path: 'document-templates',
               name: 'document-templates-settings-view',
-              component: () => import('./views/Settings/DocumentTemplatesSettingsView')
+              component: () => import('./views/settings/DocumentTemplatesSettingsView')
             },
             {
               path: 'access-api',
               name: 'access-api-settings-view',
-              component: () => import('./views/Settings/AccessAPISettingsView')
+              component: () => import('./views/settings/AccessAPISettingsView')
             },
           ]
 
@@ -222,12 +222,12 @@ const router = new Router({
         {
           path: '/recoveryUsername',
           name: 'forgot-username',
-          component: () => import('./registration/forgotUserName')
+          component: () => import('./registration/ForgotUserName')
         },
         {
           path: '/recoveryPassword',
           name: 'forgot-password',
-          component: () => import('./registration/forgotPassword')
+          component: () => import('./registration/ForgotPassword')
         },
       ]
     }

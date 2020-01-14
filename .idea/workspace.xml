@@ -2,70 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5671f65d-e3fb-4d92-af62-6b97cdb46e23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/fakturaappclient.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/app.65b32326.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-0267803f.4108dec9.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-03a949a6.4dc5b4d8.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-147ab8e8.b5af1645.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-37b07dae.6d4d3dc9.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-508c8cf9.10ad9f49.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-63eb7a84.be3bad6c.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-7102661b.b63418aa.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-7450fc6f.327d7296.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-7e62e340.f91ab97f.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-a7e7422c.ce4c2c3f.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-eb394a46.681c413d.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-vendors.1fbee06a.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/newlogo.f55c4dfc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/payme.9e483321.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/user.2b156a14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/app.7f3e2c1f.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/app.7f3e2c1f.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-0267803f.f1ad1c00.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-0267803f.f1ad1c00.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-03a949a6.2b6aa72a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-03a949a6.2b6aa72a.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-147ab8e8.944b4476.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-147ab8e8.944b4476.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0c4e56.507abdc4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0c4e56.507abdc4.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0c8d69.f0ac9d20.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0c8d69.f0ac9d20.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0db808.c638133c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0db808.c638133c.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d21e576.5304c295.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d21e576.5304c295.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-37b07dae.bf2cbe73.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-37b07dae.bf2cbe73.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-508c8cf9.d575292a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-508c8cf9.d575292a.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-63eb7a84.01a2c7c6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-63eb7a84.01a2c7c6.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7102661b.08bf3270.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7102661b.08bf3270.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7450fc6f.e4b83b56.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7450fc6f.e4b83b56.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7e62e340.74614e5f.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7e62e340.74614e5f.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-a7e7422c.e9d345ac.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-a7e7422c.e9d345ac.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-eb394a46.da6d56d2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-eb394a46.da6d56d2.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-vendors.c4edb0a1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/js/chunk-vendors.c4edb0a1.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestData/Documents.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestData/Documents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/APISettingData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/APISettingData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/AttachedDocsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/AttachedDocsData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/Counterpartiestable.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/Counterpartiestable.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/DocumentTemplatesDocsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/DocumentTemplatesDocsData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/Documents.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/Documents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/EmpolyeeSettingsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/EmpolyeeSettingsData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/HomepageData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/HomepageData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/ImportDocs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/ImportDocs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/InfoAboutConsumptionData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/InfoAboutConsumptionData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/InfoAboutPaymentsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/InfoAboutPaymentsData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/LabelData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/LabelData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/Replenishmentaccounttable.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/Replenishmentaccounttable.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/RolesDocsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/RolesDocsData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestData/TariffBagsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/testData/TariffBagsData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo-faktura.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/CuonterPartiesSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/CuonterPartiesSidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/DocumentSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/DocumentSidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registration/SignIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/registration/SignIn.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registration/forgotPassword.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/registration/ForgotPassword.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registration/forgotUserName.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/registration/ForgotUserName.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/document/document.inbox.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/document/document.inbox.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Agree/AgreementDocumentView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/agree/AgreementDocumentView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Agree/AgreementDoneDocumentView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/agree/AgreementDoneDocumentView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/AccessAPISettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/AccessAPISettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/DocumentTemplatesSettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/DocumentTemplatesSettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/EmployeeSettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/EmployeeSettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/LabelSettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/LabelSettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/MatchingSettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/MatchingSettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/PersonalAreaSettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/PersonalAreaSettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/PropsAreaSettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/PropsAreaSettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/RegistrySettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/RegistrySettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/RolesSettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/RolesSettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Settings/SubdivisionSettingsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/settings/SubdivisionSettingsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/counterparties/CounterPartiesView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/counterparties/CounterPartiesView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/document/DocumentDetailsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/document/DocumentDetailsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/document/DraftDocumentsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/document/DraftDocumentsView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/document/ImportDocumentView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/document/ImportDocumentView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/document/InboxDocumentsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/document/InboxDocumentsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/document/OutboxDocumentsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/document/OutboxDocumentsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/finance/Deposit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/finance/Deposit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/finance/FinanceInformation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/finance/FinanceInformation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/finance/Index.vue" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,9 +65,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QSGSxbNUc9IufsdRbEOJ0XmMPs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/TestData" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -98,18 +87,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\fakturaappclient\src\store2\modules" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -127,6 +104,18 @@
         <item itemvalue="npm.serve" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -254,6 +243,7 @@
       <workItem from="1578564146549" duration="3000" />
       <workItem from="1578908507842" duration="8601000" />
       <workItem from="1578983959569" duration="18508000" />
+      <workItem from="1579026019881" duration="1958000" />
     </task>
     <servers />
   </component>
@@ -273,15 +263,30 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/views/document/DocumentDetailsView.vue</url>
-          <line>172</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="370" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579026943469">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="370" y="126" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.760@0.0.1280.760" timestamp="1579026943469" />
+    <state width="1258" height="185" key="GridCell.Tab.0.bottom" timestamp="1579028018596">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1258" height="185" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1579028018596" />
+    <state width="1258" height="185" key="GridCell.Tab.0.center" timestamp="1579028018595">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1258" height="185" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1579028018595" />
+    <state width="1258" height="185" key="GridCell.Tab.0.left" timestamp="1579028018594">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1258" height="185" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1579028018594" />
+    <state width="1258" height="185" key="GridCell.Tab.0.right" timestamp="1579028018595">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1258" height="185" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1579028018595" />
+    <state x="0" y="0" width="1280" height="760" key="find.popup" timestamp="1579027967300">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="0" y="0" width="1280" height="760" key="find.popup/0.0.1280.760@0.0.1280.760" timestamp="1579027967300" />
   </component>
 </project>

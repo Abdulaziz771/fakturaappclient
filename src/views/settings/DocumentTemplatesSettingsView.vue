@@ -35,7 +35,7 @@
     import {
         DownloadIcon
     } from 'vue-feather-icons'
-    import DocumentTemplate from "./../../TestData/DocumentTemplatesDocsData"
+    import DocumentTemplate from "../../testData/DocumentTemplatesDocsData"
 
     export default {
         name: 'document-templates-settings-view',

@@ -158,7 +158,7 @@
   </div>
 </template>
 <script>
-    import EmployeeData from "./../../TestData/EmpolyeeSettingsData"
+    import EmployeeData from "../../testData/EmpolyeeSettingsData"
     import {
         TrashIcon,
         Edit3Icon,

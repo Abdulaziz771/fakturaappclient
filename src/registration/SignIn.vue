@@ -2,7 +2,6 @@
   <div class="registration-page">
     <div class="registr-logo">
       <img src="./../assets/newlogo-white.png" alt="">
-<!--      <button @click="doPostRequest">POST</button>-->
     </div>
     <form @submit.prevent="enterToSystem">
       <div class="register-block">
@@ -96,34 +95,6 @@
                 documents: [],
                 finel: null,
             }
-        },
-        methods: {
-            // doPostRequest() {
-            //       axios.post('https://testaccount.faktura.uz/token', {
-            //           'grant_type':'password','username':'info@faktura.uz','password':'123','client_id':'FinboxOnlineService','client_secret':'5GcvEG0BHeainIZb4ErrYaAoyK4zPgeHoDPptTFZDj6Kn4QCNBrpO6C4hH1B',
-            //           headers: {
-            //               "Access-Control-Allow-Origin": "*"
-            //           }
-            //       })
-            //           .then((response) => {
-            //               console.log(response)
-            //           })
-            //           .catch((error) => {
-            //               console.log(error)
-            //           })
-            // }
-        },
-        mounted() {
-            // axios.get('https://testapi.Faktura.uz/Api/Document/GetDocumentStatuses')
-            //     .then((response) => {
-            //         console.log(response.data);
-            //     })
-            //     .catch((error) => {
-            //         console.log(error)
-            //     })
-            //     .finally( () => {
-            //         console.log("Messages Download")
-            //     })
         },
         validations: {
             username: {

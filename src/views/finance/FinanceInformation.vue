@@ -35,7 +35,6 @@
                                   </router-link>
                                 </div>
                                 <div class="tariff-plan">
-<!--                                  <DatabaseIcon class="databaseicon"></DatabaseIcon>-->
                                   <span>Ваш активный тарифный план:</span><span>Пробный пероид ещё не предоставлен.</span>
                                 </div>
                                 <div class="info-pay">
@@ -276,8 +275,8 @@
 </template>
 
 <script>
-    import TariffBagsData from "./../../TestData/TariffBagsData"
-    import InfoAboutConsumption from './../../TestData/InfoAboutConsumptionData'
+    import TariffBagsData from "../../testData/TariffBagsData"
+    import InfoAboutConsumption from '../../testData/InfoAboutConsumptionData'
     import eventBus from '../../eventBus';
     import {
         AlertCircleIcon,

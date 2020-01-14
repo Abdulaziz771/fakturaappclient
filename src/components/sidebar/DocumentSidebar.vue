@@ -31,7 +31,7 @@
 </template>
 
 <script>
-    import {
+  import {
         XCircleIcon
     } from 'vue-feather-icons'
   export default {

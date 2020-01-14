@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-    import RolesDocsData from "./../../TestData/RolesDocsData"
+    import RolesDocsData from "../../testData/RolesDocsData"
 
     export default {
         name: 'roles-settings-view',

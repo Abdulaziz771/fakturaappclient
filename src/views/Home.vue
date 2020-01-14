@@ -47,7 +47,7 @@
     HelpCircleIcon,
     ChevronRightIcon
   } from 'vue-feather-icons'
-  import Documents from '../TestData/HomepageData'
+  import Documents from '../testData/HomepageData'
 
   export default {
     name: 'home',

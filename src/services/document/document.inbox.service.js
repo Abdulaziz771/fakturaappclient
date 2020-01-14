@@ -19,10 +19,10 @@ class DocumentInbox extends BaseService {
     })
   }
   getAllInboxDocuments() {
-    return axios.get('/TestData/ImportDocuments.json');
+    return axios.get('/testData/ImportDocuments.json');
   }
   GetDocumentStatuses() {
-    return axios.get('/TestData/GetDocumentStatuses.json');
+    return axios.get('/testData/GetDocumentStatuses.json');
   }
 }
 

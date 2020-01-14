@@ -25,11 +25,6 @@
             <b-navbar-nav class="mr-2">
               <b-nav-item-dropdown right class="mr-4">
                 <template slot="button-content"><span class="profile-name pr-2">Баланс: 6 000 сум</span></template>
-<!--                <b-dropdown-item @click="offSecondSidebar" href="#">-->
-<!--                  <router-link  class="text-decoration-none router-link-drop" :to="{name: 'finance-index'}">-->
-<!--                      История счета на пополнение-->
-<!--                  </router-link>-->
-<!--                </b-dropdown-item>-->
                 <b-dropdown-item href="#">
                   <router-link class="text-decoration-none router-link-drop" :to="{name: 'finance-deposit'}">
                     <div @click="offSecondSidebar">
@@ -44,20 +39,6 @@
                     </div>
                   </router-link>
                 </b-dropdown-item>
-<!--                <b-dropdown-item href="#">-->
-<!--                  <router-link class="text-decoration-none router-link-drop" :to="{name: 'finance-deposit'}">-->
-<!--                    <div @click="offSecondSidebar">-->
-<!--                      Информация о платежах-->
-<!--                    </div>-->
-<!--                  </router-link>-->
-<!--                </b-dropdown-item>-->
-<!--                <b-dropdown-item href="#">-->
-<!--                  <router-link class="text-decoration-none router-link-drop" :to="{name: 'finance-deposit'}">-->
-<!--                    <div @click="offSecondSidebar">-->
-<!--                      Информация о расходах-->
-<!--                    </div>-->
-<!--                  </router-link>-->
-<!--                </b-dropdown-item>-->
               </b-nav-item-dropdown>
               <b-nav-item-dropdown right>
                 <template slot="button-content"><span class="profile-name pr-2">Иванов Иван</span></template>
@@ -117,44 +98,42 @@
   </div>
 </template>
 <script>
+import {
+    SearchIcon,
+    MessageSquareIcon,
+    BellIcon,
+    SettingsIcon,
+    MenuIcon
+} from 'vue-feather-icons'
 
-    import {
+import eventBus from '../eventBus';
+export default {
+    name: 'headerComponent',
+    data() {
+        return {
+            isSidebarOpen: true
+        }
+    },
+    components: {
         SearchIcon,
         MessageSquareIcon,
         BellIcon,
         SettingsIcon,
         MenuIcon
-    } from 'vue-feather-icons'
-
-    import eventBus from '../eventBus';
-
-    export default {
-        name: 'headerComponent',
-        data() {
-            return {
-                isSidebarOpen: true
-            }
+    },
+    methods: {
+        offSecondSidebar() {
+            this.isSidebarOpen = !this.isSidebarOpen;
+            eventBus.$emit('offSecondSidebar');
         },
-        components: {
-            SearchIcon,
-            MessageSquareIcon,
-            BellIcon,
-            SettingsIcon,
-            MenuIcon
+        openOrgList() {
+            this.$refs['orgList'].toggle('#list')
         },
-        methods: {
-            offSecondSidebar() {
-                this.isSidebarOpen = !this.isSidebarOpen;
-                eventBus.$emit('offSecondSidebar');
-            },
-            openOrgList() {
-                this.$refs['orgList'].toggle('#list')
-            },
-            onToggleSidebarByHeaderButton() {
-                this.isSidebarOpen = !this.isSidebarOpen;
-            }
+        onToggleSidebarByHeaderButton() {
+            this.isSidebarOpen = !this.isSidebarOpen;
         }
     }
+}
 </script>
 
 <style lang="scss" scoped>

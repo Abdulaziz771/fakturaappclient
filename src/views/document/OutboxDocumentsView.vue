@@ -224,7 +224,7 @@
   </div>
 </template>
 <script>
-    import Documents from '../../TestData/Documents'
+    import Documents from '../../testData/Documents'
     import Multiselect from 'vue-multiselect'
     import RightSidebar from '../../components/sidebar/RightSidebar'
     import VueSlideOutPanel from 'vue-slideout-panel'

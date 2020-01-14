@@ -225,7 +225,7 @@
   </div>
 </template>
 <script>
-  import AttachedDocsData from "../../TestData/AttachedDocsData"
+  import AttachedDocsData from "../../testData/AttachedDocsData"
   import {
     Edit2Icon,
     XIcon,
