@@ -2,10 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5671f65d-e3fb-4d92-af62-6b97cdb46e23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/TestData/GetDocumentStatuses.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fakturaappclient.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/app.65b32326.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-0267803f.4108dec9.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-03a949a6.4dc5b4d8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-147ab8e8.b5af1645.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-37b07dae.6d4d3dc9.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-508c8cf9.10ad9f49.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-63eb7a84.be3bad6c.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-7102661b.b63418aa.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-7450fc6f.327d7296.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-7e62e340.f91ab97f.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-a7e7422c.ce4c2c3f.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-eb394a46.681c413d.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/chunk-vendors.1fbee06a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/img/newlogo.f55c4dfc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/img/payme.9e483321.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/img/user.2b156a14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/app.7f3e2c1f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/app.7f3e2c1f.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-0267803f.f1ad1c00.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-0267803f.f1ad1c00.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-03a949a6.2b6aa72a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-03a949a6.2b6aa72a.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-147ab8e8.944b4476.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-147ab8e8.944b4476.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0c4e56.507abdc4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0c4e56.507abdc4.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0c8d69.f0ac9d20.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0c8d69.f0ac9d20.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0db808.c638133c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d0db808.c638133c.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d21e576.5304c295.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-2d21e576.5304c295.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-37b07dae.bf2cbe73.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-37b07dae.bf2cbe73.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-508c8cf9.d575292a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-508c8cf9.d575292a.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-63eb7a84.01a2c7c6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-63eb7a84.01a2c7c6.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7102661b.08bf3270.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7102661b.08bf3270.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7450fc6f.e4b83b56.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7450fc6f.e4b83b56.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7e62e340.74614e5f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-7e62e340.74614e5f.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-a7e7422c.e9d345ac.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-a7e7422c.e9d345ac.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-eb394a46.da6d56d2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-eb394a46.da6d56d2.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-vendors.c4edb0a1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/js/chunk-vendors.c4edb0a1.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestData/Documents.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestData/Documents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/document/document.inbox.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/document/document.inbox.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/document/ImportDocumentView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/document/ImportDocumentView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/document/InboxDocumentsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/document/InboxDocumentsView.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -196,6 +253,7 @@
       <workItem from="1578560986120" duration="1779000" />
       <workItem from="1578564146549" duration="3000" />
       <workItem from="1578908507842" duration="8601000" />
+      <workItem from="1578983959569" duration="18508000" />
     </task>
     <servers />
   </component>

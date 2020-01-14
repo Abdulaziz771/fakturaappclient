@@ -56,11 +56,6 @@
                 {{ data.item.updatedDateTime }}
               </template>
               <template slot="status" slot-scope="data">
-                <template v-if='data.item.status === "обработана"'>
-                  <span class="badge fix-w-badge badge-success">
-                    {{ data.item.status }}
-                  </span>
-                </template>
                 <template v-if='data.item.status === "ошибка"'>
                   <span class="badge fix-w-badge badge-danger">
                     {{ data.item.status }}

@@ -161,8 +161,8 @@
                   {{ data.item.updatedDateTime }}
                 </template>
                 <template slot="status" slot-scope="data">
-                  <span class="badge badge-success" >
-                    {{ data.item.status }}
+                  <span class="badge" :class="documentStatusOptions[data.item.status].badgeClass">
+                    {{ documentStatusOptions[data.item.status].title }}
                   </span>
                 </template>
               </b-table>
@@ -201,8 +201,8 @@
                   {{ data.item.updatedDateTime }}
                 </template>
                 <template slot="status" slot-scope="data">
-                  <span class="badge badge-warning">
-                    {{ data.item.status }}
+                  <span class="badge" :class="documentStatusOptions[data.item.status].badgeClass">
+                    {{ documentStatusOptions[data.item.status].title }}
                   </span>
                 </template>
               </b-table>
@@ -240,8 +240,8 @@
                   {{ data.item.updatedDateTime }}
                 </template>
                 <template slot="status" slot-scope="data">
-                  <span class="badge badge-info">
-                    <i class="fab fa-accessible-icon"></i>{{ data.item.status }}
+                  <span class="badge" :class="documentStatusOptions[data.item.status].badgeClass">
+                    {{ documentStatusOptions[data.item.status].title }}
                   </span>
                 </template>
               </b-table>
@@ -254,8 +254,8 @@
 </template>
 <script>
     import 'vue-select/dist/vue-select.css';
-    // import Documents from '../../TestData/Documents'
     import DocumentInboxService from "../../services/document/document.inbox.service";
+    import documentStatusOptions from '../../services/document/document.status.titles'
 
     import {
         ArrowLeftCircleIcon,
@@ -314,6 +314,7 @@
                     {key: 'status', label: 'Статус'},
                 ],
                 inboxDocuments: [],
+                status: [],
                 value: [],
                 options: [
                     {name: 'Договор', code: '1'},
@@ -335,7 +336,8 @@
                     {inn: 98778961, name: 'OOO Pepsi-Cola'},
                     {inn: 98778961, name: 'OOO Coca-Cola'},
                     {inn: 98778961, name: 'OOO Fanta-Cola'}
-                ]
+                ],
+                documentStatusOptions
             }
         },
         computed: {
@@ -359,14 +361,13 @@
                 } else if (this.selected.length == 0) {
                     return 'd-flex'
                 }
-            }
+            },
         },
         methods: {
             getAllInboxDocuments() {
                 DocumentInboxService.GetDocumentStatuses().then((response) => {
-                    console.log(response.data)
-                    //this.inboxDocuments = response.data
-                })
+                    this.status = response.data
+                });
                 DocumentInboxService.getAllInboxDocuments().then((response) => {
                     this.inboxDocuments = response.data
                 })

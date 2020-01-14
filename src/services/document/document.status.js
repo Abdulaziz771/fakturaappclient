@@ -1,0 +1,14 @@
+export const NONE = 20;
+export const AWAIT_CONTRACTOR = 21;
+export const AWAIT_ACTION = 22;
+export const REJECTED = 23;
+export const ARCHIVED = 24;
+export const AWAIT_AGREEMENT = 25;
+export const AWAIT_SIGN = 26;
+export const DELETED = 27;
+export const ARCHIVE_CANCEL_REQUESTED = 31;
+export const AWAIT_ARCHIVE_CANCEL_REQUEST = 32;
+export const REJECT_ARCHIVE_CANCEL_REQUEST = 33;
+export const ARCHIVE_CANCELED = 34;
+export const AGREEMENT_AGREED = 41;
+export const AGREEMENT_REJECTED = 42;

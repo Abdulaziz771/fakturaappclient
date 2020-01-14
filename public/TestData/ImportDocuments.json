@@ -10,7 +10,7 @@
     "isNew": false,
     "isAgreementApproved": false,
     "registry": null,
-    "status": 21,
+    "status": 20,
     "contractor": {
       "inn": "302563857",
       "name": "302563857 Corporation"
@@ -44,7 +44,7 @@
     "isNew": false,
     "isAgreementApproved": false,
     "registry": null,
-    "status": 21,
+    "status": 22,
     "contractor": {
       "inn": "302563857",
       "name": "302563857 Corporation"
@@ -95,7 +95,7 @@
     "isNew": true,
     "isAgreementApproved": false,
     "registry": null,
-    "status": 20,
+    "status": 25,
     "contractor": {
       "inn": "302563857",
       "name": "302563857 Corporation"
