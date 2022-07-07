@@ -14,7 +14,7 @@
     "bootstrap-vue": "^2.0.0-rc.28",
     "core-js": "^3.2.1",
     "json-server": "^0.15.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "vue": "^2.6.10",
     "vue-animate-css": "^1.0.0",
     "vue-feather-icons": "^4.22.0",
